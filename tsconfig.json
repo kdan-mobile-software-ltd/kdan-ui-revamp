@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@src/*": ["src/*"]
+		},
+		"target": "es6",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"jsx": "react-jsx",
+		"sourceMap": true,
+		"strict": true,
+		"removeComments": false,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": false,
+		"noImplicitThis": false,
+		"noUnusedLocals": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"esModuleInterop": true,
+		"useDefineForClassFields": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"skipLibCheck": true,
+		"declaration": true,
+		"isolatedModules": true
+	},
+	"include": ["**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.test.ts", "**/*.js", "**/*.jsx"],
+	"exclude": ["node_modules"]
+}

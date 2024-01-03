@@ -1,0 +1,26 @@
+# name: PR Test
+# on:
+#   pull_request:
+#     types:
+#       - opened
+#       - synchronize
+#       - reopened
+#       - ready_for_review
+#     branches:
+#       - main
+# env:
+#   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+# jobs:
+#   unit-test:
+#     if: github.event.pull_request.draft == false
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: "16"
+#           cache: npm
+#       - name: Install dependencies
+#         run: npm ci
+#       - name: Unit test
+#         run: npm run test
