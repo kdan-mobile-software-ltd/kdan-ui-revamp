@@ -9,42 +9,40 @@ import ttypescript from 'ttypescript';
 import pkg from './package.json';
 
 export default {
-	input: 'src/index.tsx',
-	output: [
-		{
-			format: 'cjs',
-			dir: 'dist/cjs',
-			preserveModules: true,
-			preserveModulesRoot: 'src',
-			exports: 'named',
-		},
-		{
-			format: 'es',
-			dir: 'dist/esm',
-			preserveModules: true,
-			preserveModulesRoot: 'src',
-			exports: 'named',
-		},
-	],
-	external: [
-		...Object.keys(pkg.dependencies || {}),
-		...Object.keys(pkg.peerDependencies || {}),
-		'./src',
-	],
-	plugins: [
-		peerDepsExternal(),
-		typescript({
-			typescript: ttypescript,
-			tsconfig: './tsconfig.build.json',
-		}),
-		nodeResolve(),
-		commonjs(),
-		babel({
-			babelHelpers: 'runtime',
-			exclude: 'node_modules/**',
-			extensions: ['.ts', '.tsx'],
-		}),
-		terser(),
-		del({ targets: 'dist/*' }),
-	],
+  input: './index.tsx',
+  output: [
+    {
+      format: 'cjs',
+      dir: 'dist/cjs',
+      preserveModules: true,
+      exports: 'named',
+    },
+    {
+      format: 'es',
+      dir: 'dist/esm',
+      preserveModules: true,
+      exports: 'named',
+    },
+  ],
+  external: [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
+    './src',
+  ],
+  plugins: [
+    peerDepsExternal(),
+    typescript({
+      typescript: ttypescript,
+      tsconfig: './tsconfig.build.json',
+    }),
+    nodeResolve(),
+    commonjs(),
+    babel({
+      babelHelpers: 'runtime',
+      exclude: 'node_modules/**',
+      extensions: ['.ts', '.tsx'],
+    }),
+    terser(),
+    del({ targets: 'dist/*' }),
+  ],
 };
