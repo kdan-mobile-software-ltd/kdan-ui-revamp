@@ -3,6 +3,7 @@ node_modules
 build
 dist
 storybook-static
+storybook.log
 
 # debug
 npm-debug.log*
