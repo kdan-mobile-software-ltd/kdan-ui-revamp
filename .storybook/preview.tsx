@@ -16,10 +16,12 @@ const preview: Preview = {
   },
   decorators: [
     (StoryFn) => (
-      <ThemeProvider theme={themes}>
-        <GlobalStyles />
-        <StoryFn />
-      </ThemeProvider>
+      <div style={{ zoom: 0.7 }}>
+        <ThemeProvider theme={themes}>
+          <GlobalStyles />
+          <StoryFn />
+        </ThemeProvider>
+      </div>
     ),
   ],
 };

@@ -1,5 +1,5 @@
 import { CustomColor } from '@/constants/themes/colors';
-import { IsDisabledPropsType, ThemePropsType } from '@/constants/types/styled';
+import { IsDisabledPropsType } from '@/constants/types/styled';
 
 export type Variant = 'filled' | 'outlined' | 'text';
 export type Size = 'large' | 'small';
@@ -17,7 +17,7 @@ export type ButtonStyleProps = {
     hoverBackgroundColor?: CustomColor;
     hoverBorderColor?: CustomColor;
   }
-} & ThemePropsType & IsDisabledPropsType;
+} & IsDisabledPropsType;
 
 export type ButtonDataProps = {
   icon?: {
@@ -26,8 +26,6 @@ export type ButtonDataProps = {
   };
   children: string;
 };
-
-export type HocButtonStyleProps = Omit<ButtonStyleProps, 'theme'>;
 
 export type HocButtonDataProps = {
   icon?: {

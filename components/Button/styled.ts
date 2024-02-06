@@ -1,6 +1,8 @@
 import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 import * as fonts from '@/constants/fonts';
 import { CustomThemeType } from '@/constants/themes';
+import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
+import { ThemePropsType } from '@/constants/types/styled';
 import {
   Variant, Size, ButtonStyleProps, Corner,
 } from './types';
@@ -47,6 +49,11 @@ const getSizeStyle = (size: Size): FlattenSimpleInterpolation => {
       return css`
         ${fonts.button1FontStyle}
         padding: 12px 24px;
+
+        @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+          ${fonts.button3FontStyle}
+          padding: 8px 20px;
+        }
       `;
     }
   }
@@ -69,17 +76,25 @@ export const Icon = styled.img<{ size?: Size }>`
       margin-right:  ${isLarge ? '12px' : '8px'};
       width: ${isLarge ? '24px' : '20px'};
       height: ${isLarge ? '24px' : '20px'};
+      
+      @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+      }
     `;
   }};
 `;
 
-export const StyledButton = styled.button<ButtonStyleProps>`
+export const StyledButton = styled.button<ThemePropsType & ButtonStyleProps>`
   position: relative;
-  border: 1px solid;
+  border: 1.5px solid;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: fit-content;
   cursor: pointer;
+  white-space: nowrap;
 
   ::after { /* for hover and focus style */
     content: "";
