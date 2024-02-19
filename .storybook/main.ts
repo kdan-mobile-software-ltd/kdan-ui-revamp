@@ -1,15 +1,18 @@
+/* eslint-disable no-param-reassign */
 import type { StorybookConfig } from '@storybook/react-webpack5';
-
-const path = require('path');
+import path from 'path';
 
 const config: StorybookConfig = {
-  webpackFinal: async (config) => {
-    config.stats = 'errors-only';
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': path.resolve(__dirname, '../'),
+  webpackFinal: async (newConfig) => {
+    newConfig.stats = 'errors-only';
+    newConfig.resolve = {
+      ...newConfig.resolve,
+      alias: {
+        ...newConfig?.resolve?.alias,
+        '@': path.resolve(__dirname, '../'),
+      },
     };
-    return config;
+    return newConfig;
   },
   stories: [
     '../stories/**/*.mdx',
