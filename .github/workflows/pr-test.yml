@@ -1,3 +1,5 @@
+# unit-test to be wrote in future
+
 # name: PR Test
 # on:
 #   pull_request:
@@ -7,7 +9,7 @@
 #       - reopened
 #       - ready_for_review
 #     branches:
-#       - main
+#       - master
 # env:
 #   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 # jobs:
@@ -19,8 +21,10 @@
 #       - uses: actions/setup-node@v3
 #         with:
 #           node-version: "16"
-#           cache: npm
+#           cache: yarn
+#       - name: Install yarn
+#         run: npm install -g yarn
 #       - name: Install dependencies
-#         run: npm ci
+#         run: yarn install
 #       - name: Unit test
-#         run: npm run test
+#         run: yarn run test
