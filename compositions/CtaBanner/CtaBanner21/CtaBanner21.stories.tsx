@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import CtaBanner21 from '.';
+import { CtaBanner21 } from '.';
 
 const meta = {
   title: 'Competition/CtaBanner2-1',

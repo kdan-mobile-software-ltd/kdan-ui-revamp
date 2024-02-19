@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Content21 from '.';
+import { Content21 } from '.';
 
 const meta = {
   title: 'Competition/Content2-1',

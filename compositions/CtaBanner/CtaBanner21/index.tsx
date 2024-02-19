@@ -1,8 +1,8 @@
 import React from 'react';
-import Typography from '@/components/Typography';
+import { Typography } from '@/components/Typography';
 import { CustomColor } from '@/constants/themes/colors';
 import { HocButtonDataProps, ButtonStyleProps } from '@/components/Button/types';
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
 import { ButtonWrapper, WrapperWithFlexGap } from '../styled';
 
 type ComponentProps = {
@@ -27,7 +27,7 @@ type ComponentProps = {
   };
 };
 
-const CtaBanner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const CtaBanner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
   <WrapperWithFlexGap backgroundColor={customStyle?.background?.color}>
     <div>
       <Typography rwdFontSize={{ default: 'h5', tablet: 'h7' }} color={customStyle?.title?.color}>
@@ -55,4 +55,3 @@ const CtaBanner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
     )}
   </WrapperWithFlexGap>
 );
-export default CtaBanner21;

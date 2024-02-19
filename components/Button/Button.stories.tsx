@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Button from './index';
+import { Button } from './index';
 
 // https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

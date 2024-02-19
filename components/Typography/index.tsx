@@ -25,7 +25,7 @@ const styleTypeMap: Record<keyof typeof fonts.FONT_SIZE, FlattenSimpleInterpolat
   caption1: fonts.caption1FontStyle,
 };
 
-const Typography = styled.p<
+export const Typography = styled.p<
 ThemePropsType & FontSizePropsType &
 ColorPropsType & PaddingPropsType & MarginPropsType & TextAlignPropsType
 >`
@@ -44,5 +44,4 @@ ColorPropsType & PaddingPropsType & MarginPropsType & TextAlignPropsType
   word-wrap: break-word;
 `;
 
-export default Typography;
 // todo: 看要不要就捨去 fontSize 都改用rwdFontSize設定尺寸就好，跟 freeSizeImage align

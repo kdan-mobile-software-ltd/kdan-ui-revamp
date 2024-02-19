@@ -1,4 +1,4 @@
-import Typography from '@/components/Typography';
+import { Typography } from '@/components/Typography';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import styled from 'styled-components';
 import { LayoutNumberOfRow } from './types';

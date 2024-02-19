@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { FONT_SIZE } from '@/constants/fonts';
-import Typography from '.';
+import { Typography } from '.';
 
 const meta = {
   title: 'Components/Typography',

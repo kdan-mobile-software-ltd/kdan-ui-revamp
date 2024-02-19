@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Hyperlink from '.';
+import { Hyperlink } from '.';
 import { VARIANTS } from './types';
 
 const meta = {

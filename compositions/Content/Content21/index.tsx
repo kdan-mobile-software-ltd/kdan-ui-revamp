@@ -8,11 +8,10 @@ type Props = {
   customStyle: CustomStyle
 };
 
-const Content21: React.FC<Props> = ({ data, customStyle }) => (
+export const Content21: React.FC<Props> = ({ data, customStyle }) => (
   <GroupWrapper>
     {data.map((item, index) => (
       <Item key={item.title} customStyle={customStyle} data={item} index={index} />
     ))}
   </GroupWrapper>
 );
-export default Content21;

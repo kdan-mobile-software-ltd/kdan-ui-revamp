@@ -1,6 +1,6 @@
 import React from 'react';
-import Hyperlink from '@/components/Hyperlink';
-import Typography from '@/components/Typography';
+import { Hyperlink } from '@/components/Hyperlink';
+import { Typography } from '@/components/Typography';
 import { HyperlinkWrapper } from '../styled';
 import { Wrapper } from './styled';
 import { Item as ItemType } from '../Content11/types';
