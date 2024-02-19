@@ -17,7 +17,7 @@ export type Item = {
 export type Data = Item[];
 
 export type CustomStyle = {
-  image: {
+  image?: {
     width: BreakpointKeyObj<string>;
     height: BreakpointKeyObj<string>;
   }

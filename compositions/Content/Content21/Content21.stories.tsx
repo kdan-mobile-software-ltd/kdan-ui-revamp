@@ -60,3 +60,39 @@ export const Basic: Story = {
     ],
   },
 };
+export const CustomImageSize: Story = {
+  args: {
+    data: [
+      {
+        title: 'title aa',
+        desc: 'desc aa',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'alt aa',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+      {
+        title: 'title bb',
+        desc: 'desc bb',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'alt bb',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+    ],
+    customStyle: {
+      image: {
+        width: { default: '300px', mobile: '200px' },
+        height: { default: '300px' },
+      },
+    },
+  },
+};

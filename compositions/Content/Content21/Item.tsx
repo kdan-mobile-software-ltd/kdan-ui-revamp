@@ -16,8 +16,7 @@ const Item: React.FC<Props> = ({ data, customStyle, index }) => (
       <CustomSizeImage
         src={data.image.src}
         alt={data.image.alt}
-        width={customStyle?.image.width}
-        height={customStyle?.image.height}
+        customStyle={customStyle?.image}
       />
     )}
     <Content data={data} customStyle={customStyle} />
