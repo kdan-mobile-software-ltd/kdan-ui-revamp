@@ -1,37 +1,45 @@
 import { css } from 'styled-components';
 
 export const h1FontStyle = css`
-  line-height: 56px;
-  font-size: 70px;
+  font-size: 56px;
+  line-height: 70px;
 `;
 export const h2FontStyle = css`
-  line-height: 48px;
-  font-size: 62px;
+  font-size: 48px;
+  line-height: 62px;
 `;
 export const h3FontStyle = css`
   font-size: 36px;
+  line-height: 1.2; // 待定
 `;
 export const h4FontStyle = css`
   font-size: 32px;
+  line-height: 1.2; 
 `;
 export const h5FontStyle = css`
   font-size: 28px;
+  line-height: 1.2;
 `;
 export const h6FontStyle = css`
   font-size: 26px;
+  line-height: 1.2;
 `;
 export const h7FontStyle = css`
   font-size: 22px;
+  line-height: 1.2;
 `;
 export const h8FontStyle = css`
   font-size: 18px;
+  line-height: 1.2;
 `;
 export const h9FontStyle = css`
   font-size: 16px;
+  line-height: 1.2;
 `;
 
 export const body1FontStyle = css`
   font-size: 24px;
+  line-height: 1.2; // 待定
 `;
 export const body2FontStyle = css`
   font-size: 20px;

@@ -7,6 +7,10 @@ export type ThemePropsType = {
   theme: CustomThemeType;
 };
 
+export type AlignCenterPropsType = {
+  alignCenter?: boolean;
+};
+
 export type IsDisabledPropsType = {
   isDisabled?: boolean;
 };
