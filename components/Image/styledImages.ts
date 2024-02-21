@@ -15,26 +15,28 @@ export const Icon = styled.img<MarginPropsType>`
 `;
 
 export type CustomImageSize = {
-    width: BreakpointKeyObj<string>;
-    height: BreakpointKeyObj<string>;
-  };
+  width: BreakpointKeyObj<string>;
+  height: BreakpointKeyObj<string>;
+};
 
 type CustomSizeImageProps = {
   customStyle?: CustomImageSize;
 };
 
+// todo: 確定這邊調整後沒bug
 export const CustomSizeImage = styled.img<CustomSizeImageProps>`
   object-fit: cover;
+  width: 100%;
 
   ${({ customStyle = { width: { default: '480px' }, height: { default: '360px' } } }) => Object.keys(customStyle.width).map((breakpoint) => (
     breakpoint === 'default'
       ? `
-          width: ${customStyle.width.default};
-          height: ${customStyle.height.default};
+          max-width: ${customStyle.width.default};
+          max-height: ${customStyle.height.default};
         `
       : `@media screen and (${MAX_WIDTH_QUERY[breakpoint]}) {
-          width: ${customStyle.width?.[breakpoint] || 'auto'};
-          height: ${customStyle.height?.[breakpoint] || 'auto'};
+          max-width: ${customStyle.width?.[breakpoint] || 'auto'};
+          max-height: ${customStyle.height?.[breakpoint] || 'auto'};
         }`
   )).join(' ')}
 `;

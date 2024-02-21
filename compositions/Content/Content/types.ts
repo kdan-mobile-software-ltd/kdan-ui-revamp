@@ -1,3 +1,4 @@
+import { HyperlinkStyle } from '@/components/Hyperlink/types';
 import { CustomColor } from '@/constants/themes/colors';
 
 export type ContentCustomStyle = {
@@ -7,7 +8,5 @@ export type ContentCustomStyle = {
   desc?: {
     color: CustomColor;
   };
-  hyperlink?: {
-    color: CustomColor;
-  };
+  hyperlink?: HyperlinkStyle;
 };

@@ -20,8 +20,7 @@ export type ColorPropsType = {
 };
 
 export type FontSizePropsType = {
-  fontSize?: FontSize;
-  rwdFontSize?: BreakpointKeyObj<FontSize>;
+  fontSize?: BreakpointKeyObj<FontSize>;
 };
 
 export type TextAlignPropsType = {

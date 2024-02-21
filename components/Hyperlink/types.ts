@@ -1,4 +1,4 @@
-import { CustomColor } from '@/constants/themes/colors';
+import { TextCustomCssProps } from '@/utils/style/textStyle';
 
 export const VARIANTS = {
   noUnderline: 'noUnderline',
@@ -15,8 +15,7 @@ export type ComponentProps = {
 
 export type HyperlinkStyle = {
   variant?: Variant;
-  color?: CustomColor;
-};
+} & TextCustomCssProps;
 
 export type HocHyperlinkData = {
   href: string;

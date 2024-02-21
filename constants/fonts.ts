@@ -62,15 +62,19 @@ export const caption1FontStyle = css`
 
 export const button1FontStyle = css`
   font-size: 22px;
+  line-height: 1.2; // 待定
 `;
 export const button2FontStyle = css`
   font-size: 20px;
+  line-height: 1.2;
 `;
 export const button3FontStyle = css`
   font-size: 16px;
+  line-height: 1.2;
 `;
 export const button4FontStyle = css`
   font-size: 14px;
+  line-height: 1.2;
 `;
 
 export const FONT_SIZE = {
@@ -89,6 +93,10 @@ export const FONT_SIZE = {
   body4: 'body4',
   body5: 'body5',
   caption1: 'caption1',
+  button1: 'button1',
+  button2: 'button2',
+  button3: 'button3',
+  button4: 'button4',
 } as const;
 
 export type FontSize = keyof typeof FONT_SIZE;

@@ -1,13 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { FONT_SIZE } from '@/constants/fonts';
 import { Typography } from '.';
 
 const meta = {
   title: 'Components/Typography',
   component: Typography,
   argTypes: {
-    fontSize: { control: 'inline-radio', options: [...Object.keys(FONT_SIZE)] },
-    rwdFontSize: { control: 'object', description: '跟 `fontSize` "擇一"設定字體大小即可`' },
+    fontSize: { control: 'object' },
     color: { control: 'color' },
     padding: { control: 'text' },
     margin: { control: 'text' },
@@ -32,7 +30,7 @@ export const CommonStyle: Story = {
 
 export const RwdFontSizeStyle: Story = {
   args: {
-    rwdFontSize: { default: 'h3', tablet: 'h7' },
+    fontSize: { default: 'h3', tablet: 'h7' },
     color: 'gray900',
     padding: '10px',
     margin: '10px',

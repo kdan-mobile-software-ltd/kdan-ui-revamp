@@ -1,16 +1,12 @@
+import { HocHyperlinkData } from '@/components/Hyperlink/types';
+import { ImgData } from '@/constants/types/global';
 import { ContentCustomStyle } from '../Content/types';
 
 export type Item = {
   title: string;
   desc?: string;
-  icon?: {
-    src: string;
-    alt: string;
-  };
-  hyperlink?: {
-    href: string;
-    label: string;
-  };
+  icon?: ImgData;
+  hyperlink?: HocHyperlinkData;
 };
 
 export type LayoutNumberOfRow = {

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
 import { CustomColor } from '@/constants/themes/colors';
-import { HocButtonDataProps, ButtonStyleProps } from '@/components/Button/types';
+import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
 import { BottomButtonWrapper, Wrapper } from '../styled';
 
 type ComponentProps = {
   data: {
     title: string;
-    button1?: HocButtonDataProps;
-    button2?: HocButtonDataProps;
+    button1?: HocButtonData;
+    button2?: HocButtonData;
   };
   customStyle?: {
     background?: {
@@ -18,14 +18,14 @@ type ComponentProps = {
     title?: {
       color: CustomColor;
     };
-    button1?: ButtonStyleProps;
-    button2?: ButtonStyleProps;
+    button1?: ButtonStyle;
+    button2?: ButtonStyle;
   };
 };
 
 export const CtaBanner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
   <Wrapper backgroundColor={customStyle?.background?.color}>
-    <Typography rwdFontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" color={customStyle?.title?.color}>
+    <Typography fontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" color={customStyle?.title?.color}>
       {data.title}
     </Typography>
     {(data?.button1 || data?.button2) && (

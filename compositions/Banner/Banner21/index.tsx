@@ -33,11 +33,11 @@ type ComponentProps = {
 
 export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
   <Wrapper alignCenter>
-    <Title rwdFontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color}>
+    <Title fontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color}>
       {data.title}
     </Title>
     {data.desc && (
-    <Desc rwdFontSize={{ default: 'body1', tablet: 'body3' }} color={customStyle?.desc?.color} margin="12px 0 0">
+    <Desc fontSize={{ default: 'body1', tablet: 'body3' }} color={customStyle?.desc?.color} margin="12px 0 0">
       {data.desc}
     </Desc>
     )}
@@ -60,6 +60,8 @@ export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
       <Hyperlink
         {...customStyle?.hyperlink}
         href={data.hyperlink.href}
+        fontSize={{ default: 'button1', tablet: 'button3' }}
+        variant="underline"
       >
         {data.hyperlink.label}
       </Hyperlink>
