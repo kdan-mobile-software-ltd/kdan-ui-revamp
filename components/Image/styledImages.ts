@@ -14,11 +14,13 @@ export const Icon = styled.img<MarginPropsType>`
   }
 `;
 
-type CustomSizeImageProps = {
-  customStyle?: {
+export type CustomImageSize = {
     width: BreakpointKeyObj<string>;
     height: BreakpointKeyObj<string>;
   };
+
+type CustomSizeImageProps = {
+  customStyle?: CustomImageSize;
 };
 
 export const CustomSizeImage = styled.img<CustomSizeImageProps>`

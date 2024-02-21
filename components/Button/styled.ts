@@ -4,7 +4,7 @@ import { CustomThemeType } from '@/constants/themes';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { ThemePropsType } from '@/constants/types/styled';
 import {
-  Variant, Size, ButtonStyleProps, Corner,
+  Variant, Size, ButtonStyle, Corner,
 } from './types';
 
 const getVariantStyle = (
@@ -86,7 +86,7 @@ export const Icon = styled.img<{ size?: Size }>`
   }};
 `;
 
-export const StyledButton = styled.button<ThemePropsType & ButtonStyleProps>`
+export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   position: relative;
   border: 1.5px solid;
   display: flex;

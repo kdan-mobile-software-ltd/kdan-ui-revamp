@@ -1,11 +1,12 @@
 import { CustomColor } from '@/constants/themes/colors';
+import { ImgData } from '@/constants/types/global';
 import { IsDisabledPropsType } from '@/constants/types/styled';
 
 export type Variant = 'filled' | 'outlined' | 'text';
 export type Size = 'large' | 'small';
 export type Corner = 'round' | 'square';
 
-export type ButtonStyleProps = {
+export type ButtonStyle = {
   variant?: Variant; // default is `filled`
   size?: Size; // default is `large`
   corner?: Corner; // default is `round`
@@ -20,19 +21,13 @@ export type ButtonStyleProps = {
 } & IsDisabledPropsType;
 
 export type ButtonDataProps = {
-  icon?: {
-    src: string;
-    alt: string;
-  };
+  icon?: ImgData;
   children: string;
 };
 
-export type HocButtonDataProps = {
-  icon?: {
-    src: string;
-    alt: string;
-  };
+export type HocButtonData = {
+  icon?: ImgData;
   text: string;
 };
 
-export type ButtonProps = ButtonDataProps & ButtonStyleProps;
+export type ButtonProps = ButtonDataProps & ButtonStyle;

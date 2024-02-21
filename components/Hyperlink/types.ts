@@ -9,8 +9,16 @@ export const VARIANTS = {
 export type Variant = keyof typeof VARIANTS;
 
 export type ComponentProps = {
-  variant?: Variant;
   children: string;
   href: string;
+} & HyperlinkStyle;
+
+export type HyperlinkStyle = {
+  variant?: Variant;
   color?: CustomColor;
+};
+
+export type HocHyperlinkData = {
+  href: string;
+  label: string;
 };
