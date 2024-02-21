@@ -74,7 +74,6 @@ export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
         width: { default: '800px', tablet: '576px', mobile: '288px' },
         height: { default: '400px', tablet: '288px', mobile: '288px' },
       }}
-      alignCenter
     />
   </Wrapper>
 );
