@@ -50,5 +50,5 @@ module.exports = {
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'react/jsx-props-no-spreading': 0,
     quotes: ['error', 'single'],
-  },
+    'react/require-default-props': 0,
 };
