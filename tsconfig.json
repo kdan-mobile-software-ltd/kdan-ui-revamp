@@ -7,7 +7,7 @@
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "react-jsx",
+    "jsx": "react", // https://github.com/microsoft/TypeScript/issues/41882#issuecomment-940734525
     "sourceMap": true,
     "strict": true,
     "removeComments": false,
