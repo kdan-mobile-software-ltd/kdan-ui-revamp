@@ -1,4 +1,5 @@
-import { DefaultTheme } from 'styled-components';
+import React, { ReactNode } from 'react'
+import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { Color, colors } from './colors';
 import { boxShadows, transition } from './others';
 
@@ -12,5 +13,11 @@ const themes = {
   boxShadows,
   transition,
 };
+
+export const KdanUiThemeProvider: React.FC<{ children: ReactNode }> = ({children}) => (
+  <ThemeProvider theme={themes}>
+    {children}
+  </ThemeProvider>
+)
 
 export default themes;
