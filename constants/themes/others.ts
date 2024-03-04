@@ -5,5 +5,5 @@ export const boxShadows = {
 };
 
 export const transition = {
-  common: 'all 0.3s ease 0s',
+  normal: 'all 0.3s ease 0s',
 };

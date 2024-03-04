@@ -6,6 +6,7 @@ import { ThemePropsType } from '@/constants/types/styled';
 import {
   Variant, Size, ButtonStyle, Corner,
 } from './types';
+import { getCustomColorFromTheme } from '@/utils/style';
 
 const getVariantStyle = (
   variants: Variant,
@@ -96,27 +97,29 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   cursor: pointer;
   white-space: nowrap;
 
-  ::after { /* for hover and focus style */
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: 0;
-    transition: ${({ theme }) => theme.transition.common};
-  }
-  &:hover::after {
-    background-color: ${({ theme }) => theme.colors.hoverLayer};
-    opacity: 1;
-  }
-  &:focus::after {
-    background-color: ${({ theme }) => theme.colors.focusLayer};
-    opacity: 1;
-  }
-  &:disabled {
-    opacity: 0.5;
-  }
+  ${({ theme }) => css`
+    &::after { /* for hover and focus style */
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border: 0;
+      transition: ${theme.transition.normal};
+    }
+    &:hover::after {
+      background-color: ${theme.colors.hoverLayer};
+      opacity: 1;
+    }
+    &:focus::after {
+      background-color: ${theme.colors.focusLayer};
+      opacity: 1;
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+  `};
   
   /* styling: variant, size, corner */
   ${({
@@ -136,16 +139,15 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
     } = customStyle || {};
 
     return css`
-      ${color ? css`color: ${theme.colors?.[color] || color};` : ''}
-      ${borderColor && css`border-color: ${theme.colors?.[borderColor] || borderColor};`}
-      ${backgroundColor && css`background-color: ${theme.colors?.[backgroundColor] || backgroundColor};`}
-      ${hoverColor && css`&:hover { color: ${theme.colors?.[hoverColor] || hoverColor}; }`}
-      ${hoverBorderColor && css`&:hover { border-color: ${theme.colors?.[hoverBorderColor] || hoverBorderColor}; }`}
-      ${hoverBackgroundColor && css`
-          &:hover { background-color: ${theme.colors?.[hoverBackgroundColor] || hoverBackgroundColor}; }
+      ${color ? css`color: ${getCustomColorFromTheme(theme, color)};` : ''}
+      ${borderColor ? css`border-color: ${getCustomColorFromTheme(theme, borderColor)};` : ''}
+      ${backgroundColor ? css`background-color: ${getCustomColorFromTheme(theme, backgroundColor)};` : ''}
+      ${hoverColor ? css`&:hover { color: ${getCustomColorFromTheme(theme, hoverColor)}; }` : ''}
+      ${hoverBorderColor ? css`&:hover { border-color: ${getCustomColorFromTheme(theme, hoverBorderColor)}; }` : ''}
+      ${hoverBackgroundColor ? css`
+          &:hover { background-color: ${getCustomColorFromTheme(theme, hoverBackgroundColor)}; }
           &:hover::after { opacity: 0; }
-      `}
+      ` : ''}
     `;
   }}
 `;
-// todo: 改成 getCustomColorFromTheme

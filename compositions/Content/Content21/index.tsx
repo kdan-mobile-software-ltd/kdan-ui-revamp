@@ -7,13 +7,13 @@ import {
 
 type Props = {
   data: Data;
-  customStyle: CustomStyle;
+  customStyle?: CustomStyle;
   itemLayout?: ItemLayout;
 };
 
 export const Content21: React.FC<Props> = ({
   data,
-  customStyle,
+  customStyle = {},
   itemLayout = ITEM_LAYOUT.SEQUENTIAL_ALTERNATING,
 }) => (
   <GroupWrapper>

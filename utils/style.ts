@@ -4,4 +4,4 @@ import { CustomColor } from '@/constants/themes/colors';
 export const getCustomColorFromTheme = (
   theme: CustomThemeType,
   customColor: CustomColor,
-): CustomColor => theme.colors?.[customColor] || customColor;
+): CustomColor => theme.colors?.[customColor] || customColor || '';

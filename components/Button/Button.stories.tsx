@@ -34,14 +34,6 @@ export const Basic: Story = {
     variant: 'filled',
     size: 'large',
     corner: 'round',
-    customStyle: {
-      color: '',
-      borderColor: '',
-      backgroundColor: '',
-      hoverColor: '',
-      hoverBackgroundColor: '',
-      hoverBorderColor: '',
-    },
   },
 };
 export const IconAppended: Story = {
@@ -51,5 +43,22 @@ export const IconAppended: Story = {
     variant: 'filled',
     size: 'large',
     corner: 'square',
+  },
+};
+
+export const CustomColor: Story = {
+  args: {
+    children: 'buttonText',
+    variant: 'filled',
+    size: 'large',
+    corner: 'round',
+    customStyle: {
+      color: 'black',
+      borderColor: 'gray500',
+      backgroundColor: 'gray100',
+      hoverColor: 'gray1000',
+      hoverBackgroundColor: 'gray600',
+      hoverBorderColor: 'gray200',
+    },
   },
 };

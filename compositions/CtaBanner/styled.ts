@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
-import { BackgroundColorPropsType } from '@/constants/types/styled';
+import { BackgroundColorPropsType, ThemePropsType } from '@/constants/types/styled';
 import { getCustomColorFromTheme } from '@/utils/style';
 
-export const Wrapper = styled.div<BackgroundColorPropsType>`
+export const Wrapper = styled.div<BackgroundColorPropsType & ThemePropsType>`
   padding: 64px 40px;
   width: 100%;
   background-color: ${({ theme, backgroundColor = 'transparent' }) => getCustomColorFromTheme(theme, backgroundColor)};
