@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
-import themes from '../constants/themes';
 import { GlobalStyles } from '@/constants/themes/globalstyle';
+import themes from '../constants/themes';
 
 const customViewports = {
   desktop: {
@@ -63,9 +63,8 @@ const preview: Preview = {
         <GlobalStyles />
         <StoryFn />
       </ThemeProvider>
-    )
-  ]
+    ),
+  ],
 };
-
 
 export default preview;

@@ -1,7 +1,7 @@
 import { FontSize } from '../fonts';
 import { CustomThemeType } from '../themes';
 import { CustomColor } from '../themes/colors';
-import { BreakpointKeyObj } from './global';
+import { BreakpointKeyObj } from '../breakpoints';
 
 export type ThemePropsType = {
   theme: CustomThemeType;

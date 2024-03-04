@@ -14,3 +14,4 @@ export const MAX_WIDTH_QUERY = {
   mobile: `max-width: ${BREAKPOINTS.mobile}`,
 };
 
+export type BreakpointKeyObj<T> = Partial<Record<Breakpoints | 'default', T>>;

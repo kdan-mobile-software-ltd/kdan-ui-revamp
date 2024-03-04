@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
+import { MAX_WIDTH_QUERY, BreakpointKeyObj } from '@/constants/breakpoints';
 import { MarginPropsType } from '@/constants/types/styled';
-import { BreakpointKeyObj } from '@/constants/types/global';
 
 export const Icon = styled.img<MarginPropsType>`
   width: 48px;
@@ -23,7 +22,6 @@ type CustomSizeImageProps = {
   customStyle?: CustomImageSize;
 };
 
-// todo: 確定這邊調整後沒bug
 export const CustomSizeImage = styled.img<CustomSizeImageProps>`
   object-fit: cover;
   width: 100%;
