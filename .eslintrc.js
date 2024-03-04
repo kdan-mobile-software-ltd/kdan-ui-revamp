@@ -30,6 +30,7 @@ module.exports = {
       },
     },
   },
+  include: ['.storybook/*'],
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
@@ -51,4 +52,5 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     quotes: ['error', 'single'],
     'react/require-default-props': 0,
+  },
 };
