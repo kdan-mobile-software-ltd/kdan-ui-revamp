@@ -38,4 +38,3 @@ export type MarginPropsType = {
 export type BackgroundColorPropsType = {
   backgroundColor?: CustomColor;
 };
-
