@@ -21,7 +21,7 @@ const Item: React.FC<Props> = ({ data, customStyle }) => (
         <HyperlinkWrapper>
           <Hyperlink
             {...customStyle?.hyperlink}
-            href={data.hyperlink.href}
+            {...data.hyperlink}
           >
             {data.hyperlink.label}
           </Hyperlink>

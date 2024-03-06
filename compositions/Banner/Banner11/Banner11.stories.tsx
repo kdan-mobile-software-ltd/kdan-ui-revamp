@@ -26,6 +26,7 @@ export const Basic: Story = {
           alt: 'img-multi-media-panel-1',
         },
         text: 'Buy it',
+        id: 'button-1',
       },
       button2: {
         icon: {

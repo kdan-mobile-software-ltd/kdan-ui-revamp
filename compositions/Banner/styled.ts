@@ -20,11 +20,13 @@ export const Wrapper = styled.div<BackgroundColorPropsType & AlignCenterPropsTyp
 export const WrapperWithFlexGap = styled(Wrapper)`
   display: flex;
   gap: 64px;
+  text-align: left;
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     gap: 48px;
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     flex-direction: column;
+    text-align: center;
     gap: 40px;
   }
 `;
@@ -74,6 +76,5 @@ export const HyperlinkWrapper = styled.div<AlignCenterPropsType>`
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     text-align: center;
-    margin-bottom: 0;
   }
 `;

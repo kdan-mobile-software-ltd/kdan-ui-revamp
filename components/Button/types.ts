@@ -1,3 +1,4 @@
+import { ComponentPropsWithoutRef } from 'react';
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData } from '@/constants/types/global';
 import { IsDisabledPropsType } from '@/constants/types/styled';
@@ -28,6 +29,10 @@ export type ButtonDataProps = {
 export type HocButtonData = {
   icon?: ImgData;
   text: string;
-};
+} & Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name'>;
 
-export type ButtonProps = ButtonDataProps & ButtonStyle;
+export type HTMLButtonProps = Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name'>; // https://github.com/styled-components/styled-components/issues/3191#issuecomment-655229877
+
+export type ButtonProps = ButtonDataProps
+& ButtonStyle
+& HTMLButtonProps;

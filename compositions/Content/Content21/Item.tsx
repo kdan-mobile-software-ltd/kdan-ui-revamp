@@ -33,8 +33,7 @@ const Item: React.FC<Props> = ({
   <ItemWrapper isReverse={getIsReverse(index, itemLayout)}>
     {data.image && (
       <CustomSizeImage
-        src={data.image.src}
-        alt={data.image.alt}
+        {...data.image}
         customStyle={customStyle?.image}
       />
     )}
