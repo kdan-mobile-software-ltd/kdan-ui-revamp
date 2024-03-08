@@ -18,6 +18,6 @@ ARG BRANCH=none
 ARG COMMIT=none
 LABEL branch=$BRANCH commit=$COMMIT env=$ENV
 
-EXPOSE 3000
+EXPOSE 6006
 
 CMD [ "yarn", "storybook" ]
