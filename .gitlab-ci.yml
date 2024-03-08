@@ -75,7 +75,6 @@ pulish_to_npm:
     - yarn install && yarn build
     # - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
     - npm config set -- //${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}
-    - cat .npmrc
-    # - npm publish
+    - npm publish
   rules:
     - !reference [.trigger_rules, preparing]
