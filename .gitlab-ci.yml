@@ -5,9 +5,9 @@ include:
   - project: "kdanmobile/deployment/cluster-cicd-config"
     ref: master
     file: "gitlab-ci/rules.yaml"
-  - project: "kdanmobile/deployment/cluster-cicd-config"
-    ref: master
-    file: "gitlab-ci/notify.yaml"
+  # - project: "kdanmobile/deployment/cluster-cicd-config"
+  #   ref: master
+  #   file: "gitlab-ci/notify.yaml"
 
 stages:
   - build
