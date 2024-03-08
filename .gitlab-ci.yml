@@ -73,9 +73,7 @@ pulish_to_npm:
   script:
     - export ENV=$PIPELINE_ENVIRONMENT
     - yarn install && yarn build
-    # - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-    - echo "@scope:registry=https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
-    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
     - npm publish
   rules:
     - !reference [.trigger_rules, preparing]
