@@ -1,4 +1,63 @@
 include:
   - project: "kdanmobile/deployment/cluster-cicd-config"
     ref: master
-    file: "FE/kdan-ui.yaml"
+    file: "gitlab-ci/common-script.yaml"
+  - project: "kdanmobile/deployment/cluster-cicd-config"
+    ref: master
+    file: "gitlab-ci/rules.yaml"
+  - project: "kdanmobile/deployment/cluster-cicd-config"
+    ref: master
+    file: "gitlab-ci/notify.yaml"
+
+stages:
+  - build
+  - upload
+  - notify
+
+variables:
+  extends: .arm64_runner
+  BUILD_BASE_IMAGE: "node:18.18.2-alpine"
+  TAGGING_TYPE: "4_4"
+
+build_static_files:
+  extends:
+    - .post_job_template
+  stage: build
+  image: "$REGISTRY_MIRROR/$BUILD_BASE_IMAGE"
+  tags:
+    - $RUNNER_TAG
+  script:
+    - export ENV=$PIPELINE_ENVIRONMENT
+    - yarn install && yarn build:storybook
+  rules:
+    - !reference [.trigger_rules, preparing]
+    - !reference [.trigger_rules, production]
+  artifacts:
+    paths:
+      - storybook-static/
+    expire_in: 1 day
+
+upload_static_files:
+  extends:
+    - .init_docker_template
+    - .post_job_template
+  stage: upload
+  variables:
+    PREP_CDN_DIST_ID: E3OPKYY4K0GIA6
+    PROD_CDN_DIST_ID: EOERYROISP66I
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker run --rm -d --name deploy_tools -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID_CDN -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY_CDN $DEPLOY_TOOLS_IMAGE tail -f /dev/null
+    - docker cp ./storybook-static deploy_tools:/tmp/storybook-static
+    - docker exec deploy_tools aws s3 cp /tmp/storybook-static/ s3://kdan-ui/$PIPELINE_ENVIRONMENT --recursive
+    - |-
+        if [ "$PIPELINE_ENVIRONMENT" = "production" ]; then
+          export CDN_DIST_ID="$PROD_CDN_DIST_ID"
+        else
+          export CDN_DIST_ID="$PREP_CDN_DIST_ID"
+        fi
+    - docker exec deploy_tools aws cloudfront create-invalidation --distribution-id $CDN_DIST_ID --paths "/*"
+    - docker stop deploy_tools
+  rules:
+    - !reference [.trigger_rules, preparing]
+    - !reference [.trigger_rules, production]
