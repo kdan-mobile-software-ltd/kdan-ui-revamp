@@ -1,0 +1,4 @@
+include:
+  - project: "kdanmobile/deployment/cluster-cicd-config"
+    ref: master
+    file: "FE/kdan-ui.yaml"
