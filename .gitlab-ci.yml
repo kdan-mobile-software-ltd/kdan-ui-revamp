@@ -12,7 +12,8 @@ include:
 stages:
   - build
   - upload
-  - notify
+  - publish
+  # - notify
 
 variables:
   extends: .arm64_runner
@@ -30,7 +31,7 @@ build_static_files:
     - export ENV=$PIPELINE_ENVIRONMENT
     - yarn install && yarn build:storybook
   rules:
-    - !reference [.trigger_rules, preparing]
+    # - !reference [.trigger_rules, preparing]
     - !reference [.trigger_rules, production]
   artifacts:
     paths:
@@ -59,5 +60,21 @@ upload_static_files:
     - docker exec deploy_tools aws cloudfront create-invalidation --distribution-id $CDN_DIST_ID --paths "/*"
     - docker stop deploy_tools
   rules:
-    - !reference [.trigger_rules, preparing]
+    # - !reference [.trigger_rules, preparing]
     - !reference [.trigger_rules, production]
+
+pulish_to_npm:
+  extends:
+    - .post_job_template
+  stage: publish
+  image: "$REGISTRY_MIRROR/$BUILD_BASE_IMAGE"
+  tags:
+    - $RUNNER_TAG
+  script:
+    - export ENV=$PIPELINE_ENVIRONMENT
+    - yarn install && yarn build
+    # - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+    - npm config set //${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}
+    - npm publish
+  rules:
+    - !reference [.trigger_rules, preparing]
