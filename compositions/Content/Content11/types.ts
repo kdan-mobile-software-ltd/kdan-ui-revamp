@@ -18,11 +18,17 @@ export type CustomStyle = {
 } & ContentCustomStyle;
 
 export type ComponentProps = {
-  data: Item[];
+  data: {
+    items: Item[];
+    toggleText?: {
+      open: string;
+      close: string;
+    }
+  };
   customStyle?: CustomStyle;
 };
 
 export type ItemProps = {
   data: Item;
-  customStyle: CustomStyle | undefined;
+  customStyle: (CustomStyle | undefined) & { hideAtMobile: boolean };
 };
