@@ -31,7 +31,7 @@ build_static_files:
     - export ENV=$PIPELINE_ENVIRONMENT
     - yarn install && yarn build:storybook
   rules:
-    - !reference [.trigger_rules, preparing]
+    # - !reference [.trigger_rules, preparing]
     - !reference [.trigger_rules, production]
   artifacts:
     paths:
@@ -60,7 +60,7 @@ upload_static_files:
     - docker exec deploy_tools aws cloudfront create-invalidation --distribution-id $CDN_DIST_ID --paths "/*"
     - docker stop deploy_tools
   rules:
-    - !reference [.trigger_rules, preparing]
+    # - !reference [.trigger_rules, preparing]
     - !reference [.trigger_rules, production]
 
 pulish_to_npm:
@@ -76,4 +76,5 @@ pulish_to_npm:
     - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
     - npm publish
   rules:
-    - !reference [.trigger_rules, production]
+    - !reference [.trigger_rules, preparing]
+    # - !reference [.trigger_rules, production]
