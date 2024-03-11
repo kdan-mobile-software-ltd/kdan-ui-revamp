@@ -20,6 +20,7 @@ const Item: React.FC<Props> = ({ data, customStyle }) => (
       && (
         <HyperlinkWrapper>
           <Hyperlink
+            fontSize={{ default: 'button2', tablet: 'button3' }}
             {...customStyle?.hyperlink}
             {...data.hyperlink}
           >

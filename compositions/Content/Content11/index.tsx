@@ -7,7 +7,7 @@ import { ComponentProps } from './types';
 export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
   const needToggle = data.items.length > 3;
   const [isOpen, setOpen] = useState(false);
-  const toggleText = isOpen ? (data?.toggleText?.open || 'Open') : (data?.toggleText?.close || 'Close');
+  const toggleText = !isOpen ? (data?.toggleText?.open || 'Open') : (data?.toggleText?.close || 'Close');
   const toggle = () => {
     setOpen((prev) => !prev);
   };

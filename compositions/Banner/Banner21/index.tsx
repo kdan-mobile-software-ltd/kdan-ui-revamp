@@ -6,7 +6,7 @@ import { Hyperlink } from '@/components/Hyperlink';
 import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import {
-  ButtonWrapper, ContainImage, Desc, HyperlinkWrapper, Title, Wrapper,
+  ButtonWrapper, ContainImage, Desc, HyperlinkVerticalWrapper, Title, Wrapper,
 } from '../styled';
 
 type ComponentProps = {
@@ -56,7 +56,7 @@ export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
     </ButtonWrapper>
     )}
     {data?.hyperlink && (
-    <HyperlinkWrapper>
+    <HyperlinkVerticalWrapper>
       <Hyperlink
         {...customStyle?.hyperlink}
         {...data.hyperlink}
@@ -65,7 +65,7 @@ export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
       >
         {data.hyperlink.label}
       </Hyperlink>
-    </HyperlinkWrapper>
+    </HyperlinkVerticalWrapper>
     )}
     <ContainImage
       {...data.image}

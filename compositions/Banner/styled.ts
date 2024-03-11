@@ -36,7 +36,6 @@ export const ButtonWrapper = styled.div<AlignCenterPropsType>`
   gap: 12px;
   ${({ alignCenter }) => css`justify-content: ${alignCenter ? 'center' : 'left'};`}
   align-items: center;
-  margin-bottom: 20px;
 
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     flex-direction: column;
@@ -68,12 +67,19 @@ export const Desc = styled(Typography)<AlignCenterPropsType>`
   }
 `;
 
-export const HyperlinkWrapper = styled.div<AlignCenterPropsType>`
+export const HyperlinkVerticalWrapper = styled.div<AlignCenterPropsType>`
+  margin-top: 20px;
   margin-bottom: 64px;
   
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     margin-bottom: 24px;
   }
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    text-align: center;
+  }
+`;
+export const HyperlinkHorizonWrapper = styled.div<AlignCenterPropsType>`
+  margin-top: 20px;
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     text-align: center;
   }
