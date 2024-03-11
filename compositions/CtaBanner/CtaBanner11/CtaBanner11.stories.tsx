@@ -9,6 +9,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
+  parameters: { layout: 'fullscreen' },
 } as Meta<typeof CtaBanner11>;
 
 export default meta;

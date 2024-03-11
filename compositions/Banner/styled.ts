@@ -3,14 +3,14 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { AlignCenterPropsType, BackgroundColorPropsType } from '@/constants/types/styled';
 import { CustomSizeImage } from '@/components/Image/styledImages';
 import { Typography } from '@/components/Typography';
+import { RwdWrapper } from '@/utils/style/wrapper';
 
-export const Wrapper = styled.div<BackgroundColorPropsType & AlignCenterPropsType>`
-  padding: 64px 40px;
-  width: 100%;
-  max-width: 1080px;
+export const Wrapper = styled(RwdWrapper)<BackgroundColorPropsType & AlignCenterPropsType>`
+  padding: 64px 0;
   ${({ alignCenter }) => alignCenter && css`text-align: center;`}
+
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    padding: 40px;
+    padding: 40px 0;
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     padding: 40px 16px;

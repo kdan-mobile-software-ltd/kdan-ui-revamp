@@ -22,6 +22,7 @@ const meta = {
     },
   },
   tags: ['autodocs'],
+  parameters: { layout: 'fullscreen' },
 } as Meta<typeof Content21>;
 
 export default meta;

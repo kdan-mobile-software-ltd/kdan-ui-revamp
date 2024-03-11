@@ -1,8 +1,8 @@
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
+import { RwdWrapper } from '@/utils/style/wrapper';
 import styled, { css } from 'styled-components';
 
-export const GroupWrapper = styled.div`
-  width: 100%;
+export const GroupWrapper = styled(RwdWrapper)`
   display: flex;
   flex-direction: column;
   align-items: center;
