@@ -49,6 +49,10 @@ table {
 
 export const GlobalStyles = createGlobalStyle`
  ${resetCss}
+
+ * {
+    box-sizing: border-box;
+ }
  
  body:lang(en) {
     font-family: 'Clear Sans', sans-serif;

@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { BackgroundColorPropsType, ThemePropsType } from '@/constants/types/styled';
 import { getCustomColorFromTheme } from '@/utils/style';
+import { RwdWrapper } from '@/utils/style/wrapper';
 
-export const Wrapper = styled.div<BackgroundColorPropsType & ThemePropsType>`
-  padding: 64px 40px;
-  width: 100%;
+export const Background = styled.div<BackgroundColorPropsType & ThemePropsType>`
   background-color: ${({ theme, backgroundColor = 'transparent' }) => getCustomColorFromTheme(theme, backgroundColor)};
-  max-width: 1080px;
+  width: 100%;
+`;
+
+export const Wrapper = styled(RwdWrapper)`
+  padding: 64px 0;
+  
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     padding: 40px 16px;
   }
