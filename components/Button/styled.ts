@@ -3,10 +3,10 @@ import * as fonts from '@/constants/fonts';
 import { CustomThemeType } from '@/constants/themes';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { ThemePropsType } from '@/constants/types/styled';
+import { getCustomColorFromTheme } from '@/utils/style';
 import {
   Variant, Size, ButtonStyle, Corner,
 } from './types';
-import { getCustomColorFromTheme } from '@/utils/style';
 
 const getVariantStyle = (
   variants: Variant,

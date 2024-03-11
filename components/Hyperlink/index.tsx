@@ -8,12 +8,17 @@ export const Hyperlink: React.FC<ComponentProps> = ({
   href,
   color = 'hyperlink',
   fontSize = { default: 'body3', tablet: 'body5' },
-  ...textCustomStyles
+  padding,
+  margin,
+  textAlign,
+  ...htmlProps
 }) => (
   <StyledHyperlink
     variant={variant}
     href={href}
-    {...{ color, fontSize, ...textCustomStyles }}
+    {...{
+      color, fontSize, padding, margin, textAlign, ...htmlProps,
+    }}
   >
     {children}
     {variant === 'arrow' && ' →'}

@@ -42,12 +42,12 @@ export const CtaBanner21: React.FC<ComponentProps> = ({ data, customStyle }) => 
     {(data?.button1 || data?.button2) && (
       <ButtonWrapper>
         {data?.button1 && (
-        <Button {...customStyle?.button1} icon={data.button1.icon}>
+        <Button {...customStyle?.button1} {...data.button1}>
           {data.button1.text}
         </Button>
         )}
         {data?.button2 && (
-        <Button {...customStyle?.button2} icon={data.button2.icon}>
+        <Button {...customStyle?.button2} {...data.button2}>
           {data.button2.text}
         </Button>
         )}

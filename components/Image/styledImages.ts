@@ -2,7 +2,13 @@ import styled from 'styled-components';
 import { MAX_WIDTH_QUERY, BreakpointKeyObj } from '@/constants/breakpoints';
 import { MarginPropsType } from '@/constants/types/styled';
 
-export const Icon = styled.img<MarginPropsType>`
+export const ActionIcon = styled.img<MarginPropsType>`
+  width: 24px;
+  height: 24px;
+  margin: ${({ margin }) => margin || 0};
+`;
+
+export const ContentIcon = styled.img<MarginPropsType>`
   width: 48px;
   height: 48px;
   margin: ${({ margin }) => margin || 0};

@@ -13,6 +13,8 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
+    id: { control: 'text' },
+    name: { control: 'text' },
     children: { control: 'text' },
     icon: { control: 'object' },
     variant: { control: 'inline-radio', options: ['filled', 'outlined', 'text'], description: '[optional]' },
@@ -30,6 +32,8 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Basic: Story = {
   args: {
+    id: 'button-id',
+    name: 'button-name',
     children: 'buttonText',
     variant: 'filled',
     size: 'large',
