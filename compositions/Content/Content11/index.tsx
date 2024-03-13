@@ -13,7 +13,7 @@ export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
   };
 
   return (
-    <GroupWrapper numberOfRow={customStyle?.others?.numberOfRow}>
+    <GroupWrapper numbersOfColumn={customStyle?.others?.numbersOfColumn}>
       {data.items.map((item, index) => (
         <Item
           key={item.title}
