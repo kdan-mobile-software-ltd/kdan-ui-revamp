@@ -70,3 +70,23 @@ export const SingleButton: Story = {
     },
   },
 };
+
+export const LessText: Story = {
+  args: {
+    data: {
+      title: 'Headline Text',
+      desc: 'Desc Text',
+      button1: {
+        text: 'Buy it',
+      },
+    },
+    customStyle: {
+      background: { color: 'gray200' },
+      button1: {
+        variant: 'filled',
+        size: 'large',
+        corner: 'square',
+      },
+    },
+  },
+};

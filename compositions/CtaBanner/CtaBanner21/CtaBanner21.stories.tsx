@@ -55,7 +55,7 @@ export const Basic: Story = {
 export const SingleButton: Story = {
   args: {
     data: {
-      title: 'Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text',
+      title: 'Headline Text',
       button1: {
         text: 'Buy it',
       },
