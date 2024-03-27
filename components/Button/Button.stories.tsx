@@ -47,6 +47,9 @@ export const IconAppended: Story = {
     variant: 'filled',
     size: 'large',
     corner: 'square',
+    customStyle: {
+      backgroundColor: 'hyperlink',
+    },
   },
 };
 
@@ -63,6 +66,7 @@ export const CustomColor: Story = {
       hoverColor: 'gray1000',
       hoverBackgroundColor: 'gray600',
       hoverBorderColor: 'gray200',
+      maxWidth: '240px',
     },
   },
 };

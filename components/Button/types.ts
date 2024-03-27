@@ -18,6 +18,7 @@ export type ButtonStyle = {
     hoverColor?: CustomColor;
     hoverBackgroundColor?: CustomColor;
     hoverBorderColor?: CustomColor;
+    maxWidth?: string;
   }
 } & IsDisabledPropsType;
 

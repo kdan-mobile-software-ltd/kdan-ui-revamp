@@ -4,6 +4,7 @@ import { CustomThemeType } from '@/constants/themes';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { ThemePropsType } from '@/constants/types/styled';
 import { getCustomColorFromTheme } from '@/utils/style';
+import { CustomColor } from '@/constants/themes/colors';
 import {
   Variant, Size, ButtonStyle, Corner,
 } from './types';
@@ -135,18 +136,24 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   /* customStyle */
   ${({ customStyle, theme }) => {
     const {
-      color, borderColor, backgroundColor, hoverColor, hoverBorderColor, hoverBackgroundColor,
+      color, borderColor, backgroundColor,
+      hoverColor, hoverBorderColor, hoverBackgroundColor,
+      maxWidth,
     } = customStyle || {};
 
     return css`
       ${color ? css`color: ${getCustomColorFromTheme(theme, color)};` : ''}
-      ${borderColor ? css`border-color: ${getCustomColorFromTheme(theme, borderColor)};` : ''}
       ${backgroundColor ? css`background-color: ${getCustomColorFromTheme(theme, backgroundColor)};` : ''}
+      ${borderColor || backgroundColor ? css`border-color: ${getCustomColorFromTheme(theme, (borderColor || backgroundColor) as CustomColor)};` : ''}
       ${hoverColor ? css`&:hover { color: ${getCustomColorFromTheme(theme, hoverColor)}; }` : ''}
       ${hoverBorderColor ? css`&:hover { border-color: ${getCustomColorFromTheme(theme, hoverBorderColor)}; }` : ''}
       ${hoverBackgroundColor ? css`
-          &:hover { background-color: ${getCustomColorFromTheme(theme, hoverBackgroundColor)}; }
-          &:hover::after { opacity: 0; }
+        &:hover { background-color: ${getCustomColorFromTheme(theme, hoverBackgroundColor)}; }
+        &:hover::after { opacity: 0; }
+      ` : ''}
+      ${maxWidth ? css`
+        max-width: ${maxWidth};
+        width: 100vw;
       ` : ''}
     `;
   }}
