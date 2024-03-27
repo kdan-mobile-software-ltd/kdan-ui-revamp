@@ -23,6 +23,10 @@ export type FontSizePropsType = {
   fontSize?: BreakpointKeyObj<FontSize>;
 };
 
+export type FontWeightPropsType = {
+  fontWeight?: string;
+};
+
 export type TextAlignPropsType = {
   textAlign?: string;
 };
