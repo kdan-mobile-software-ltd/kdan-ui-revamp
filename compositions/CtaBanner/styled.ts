@@ -41,6 +41,10 @@ export const WrapperWithFlexGap = styled(Wrapper)`
   }
 `;
 
+export const TextWrapper = styled.div`
+  flex-grow: 1;
+`;
+
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 12px;

@@ -27,3 +27,14 @@ export const CommonStyle: Story = {
     children: 'Typography',
   },
 };
+
+export const FontWeight: Story = {
+  args: {
+    fontSize: { default: 'h3', mobile: 'h7' },
+    color: 'red',
+    padding: '10px',
+    margin: '10px',
+    children: 'Hello World!',
+    fontWeight: '900',
+  },
+};

@@ -1,5 +1,10 @@
 <h1 align="center">Kdan UI</h1>
 
+[![License](https://img.shields.io/npm/l/reactstrap.svg)](https://github.com/kdan-mobile-software-ltd/kdan-ui-revamp/blob/master/LICENSE)
+
+[![NPM Version](https://img.shields.io/npm/v/kdan-ui-revamp.svg?branch=master)](https://www.npmjs.com/package/kdan-ui-revamp) 
+
+
 ## The Setup
 
 - [React v18][react-url]
@@ -24,12 +29,6 @@
   yarn storybook
   ```
 
-- Unit test component with:
-
-  ```sh
-  yarn test
-  ```
-
 - Create changeset:
 
   ```sh
@@ -38,18 +37,14 @@
 
 ## Release & Publish package
 
-This boilerplate uses [changesets][changesets-url] to automatically generate `CHANGELOG`, create releases and publish to NPM registry via GitHub Actions. You can see action details at [release.yml](/.github/workflows//release.yml).
+#### Developing and preview on Preparing
+1. `yarn build`
+2. login to your npm account
+3. update the version number in `package.json` (example of the conversion version name is `{previousStableVersion}-beta-{num}` e.g.`1.0.7-beta-1`)
+4. `npm publish`
 
-To automating publish your library, follow these steps:
-
-- Create a `NPM_TOKEN`. [See this article for more details](https://docs.npmjs.com/creating-and-viewing-access-tokens). Make sure the type of access token is **Automation**.
-
-- [Follow this instruction](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository) to add the created token to your GitHub Actions secrets. Name of the secret is `NPM_TOKEN`.
-
-- Install [changeset bot](https://github.com/apps/changeset-bot).
-
-**P/S**: Remember to check the `Allow GitHub Actions to create and approve pull requests` in your repo Settings > Actions > General & scroll to Workflow permissions.
-
+### Release a stable version of package (by pipeline)
+follow the pipeline flow which trigger by merging to master brach
 
 
 [boilertown-url]: https://github.com/boilertown
