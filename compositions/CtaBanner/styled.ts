@@ -1,11 +1,24 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { BackgroundColorPropsType, ThemePropsType } from '@/constants/types/styled';
 import { getCustomColorFromTheme } from '@/utils/style';
 import { RwdWrapper } from '@/utils/style/wrapper';
 
+const backgroundColorStyle = css<BackgroundColorPropsType>`background-color: ${({ theme, backgroundColor = 'transparent' }) => getCustomColorFromTheme(theme, backgroundColor)};`;
+
+export const ContentWidthBackground = styled(RwdWrapper)<BackgroundColorPropsType & ThemePropsType>`
+  ${backgroundColorStyle}
+  width: 100%;
+  border-radius: 8px;
+  padding: 0 40px;
+  
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    padding: 0;
+  }
+`;
+
 export const Background = styled.div<BackgroundColorPropsType & ThemePropsType>`
-  background-color: ${({ theme, backgroundColor = 'transparent' }) => getCustomColorFromTheme(theme, backgroundColor)};
+  ${backgroundColorStyle}
   width: 100%;
 `;
 
