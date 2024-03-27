@@ -79,13 +79,13 @@ export const Basic: Story = {
       ],
     },
     customStyle: {
-      others: { numberOfRow: 3 },
+      others: { numbersOfColumn: 3 },
       title: { color: 'gray700' },
     },
   },
 };
 
-export const TwoRow: Story = {
+export const TwoColumns: Story = {
   args: {
     data: {
       items: [
@@ -122,7 +122,7 @@ export const TwoRow: Story = {
       },
     },
     customStyle: {
-      others: { numberOfRow: 2 },
+      others: { numbersOfColumn: 2 },
       title: { color: '#22BBAA' },
     },
   },

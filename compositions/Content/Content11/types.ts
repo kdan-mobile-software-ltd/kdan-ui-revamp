@@ -9,12 +9,12 @@ export type Item = {
   hyperlink?: HocHyperlinkData;
 };
 
-export type LayoutNumberOfRow = {
-  numberOfRow?: 2 | 3;
+export type LayoutNumbersOfColumn = {
+  numbersOfColumn?: 2 | 3;
 };
 
 export type CustomStyle = {
-  others?: LayoutNumberOfRow;
+  others?: LayoutNumbersOfColumn;
 } & ContentCustomStyle;
 
 export type ComponentProps = {
