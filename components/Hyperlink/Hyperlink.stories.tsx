@@ -6,6 +6,8 @@ const meta = {
   title: 'Components/Hyperlink',
   component: Hyperlink,
   argTypes: {
+    id: { control: 'text' },
+    target: { control: 'text', description: 'e.g. `_blank`' },
     variant: { control: 'inline-radio', options: [...Object.keys(VARIANTS)] },
     children: { control: 'text' },
     href: { control: 'text' },
@@ -20,9 +22,11 @@ type Story = StoryObj<typeof meta>;
 
 export const UnderlineStyle: Story = {
   args: {
+    id: 'a-tag-id',
     variant: 'noUnderline',
     children: 'go to Goole',
     href: 'https://google.com/',
+    target: '_blank',
   },
 };
 

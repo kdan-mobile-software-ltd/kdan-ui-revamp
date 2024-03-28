@@ -10,31 +10,31 @@ export const h2FontStyle = css`
 `;
 export const h3FontStyle = css`
   font-size: 36px;
-  line-height: 1.2; // 待定
+  line-height: 49px;
 `;
 export const h4FontStyle = css`
   font-size: 32px;
-  line-height: 1.2; 
+  line-height: 43px; 
 `;
 export const h5FontStyle = css`
   font-size: 28px;
-  line-height: 1.2;
+  line-height: 38px;
 `;
 export const h6FontStyle = css`
   font-size: 26px;
-  line-height: 1.2;
+  line-height: 35px;
 `;
 export const h7FontStyle = css`
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 30px;
 `;
 export const h8FontStyle = css`
   font-size: 18px;
-  line-height: 1.2;
+  line-height: 24px;
 `;
 export const h9FontStyle = css`
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 22px;
 `;
 
 export const body1FontStyle = css`

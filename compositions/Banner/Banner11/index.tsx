@@ -7,7 +7,7 @@ import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { CustomImageSize } from '@/components/Image/styledImages';
 import {
-  AlignCenterImage, ButtonWrapper, Desc, HyperlinkWrapper, Title, WrapperWithFlexGap,
+  AlignCenterImage, ButtonWrapper, Desc, HyperlinkHorizonWrapper, Title, WrapperWithFlexGap,
 } from '../styled';
 
 type ComponentProps = {
@@ -47,33 +47,32 @@ export const Banner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
       {(data?.button1 || data?.button2) && (
       <ButtonWrapper>
         {data?.button1 && (
-        <Button {...customStyle?.button1} icon={data.button1.icon}>
+        <Button {...customStyle?.button1} {...data.button1}>
           {data.button1.text}
         </Button>
         )}
         {data?.button2 && (
-        <Button {...customStyle?.button2} icon={data.button2.icon}>
+        <Button {...customStyle?.button2} {...data.button2}>
           {data.button2.text}
         </Button>
         )}
       </ButtonWrapper>
       )}
       {data?.hyperlink && (
-      <HyperlinkWrapper>
+      <HyperlinkHorizonWrapper>
         <Hyperlink
           {...customStyle?.hyperlink}
-          href={data.hyperlink.href}
           fontSize={{ default: 'button1', tablet: 'button3' }}
           variant="underline"
+          {...data.hyperlink}
         >
           {data.hyperlink.label}
         </Hyperlink>
-      </HyperlinkWrapper>
+      </HyperlinkHorizonWrapper>
       )}
     </div>
     <AlignCenterImage
-      src={data.image.src}
-      alt={data.image.alt}
+      {...data.image}
       customStyle={customStyle?.image}
     />
   </WrapperWithFlexGap>

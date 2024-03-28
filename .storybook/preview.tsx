@@ -6,30 +6,37 @@ import themes from '../constants/themes';
 
 const customViewports = {
   desktop: {
-    name: 'desktop',
+    name: 'Desktop (Max)',
     styles: {
       width: '1920px',
       height: '100%',
     },
   },
   laptop: {
-    name: 'laptop',
+    name: 'Laptop (Max)',
     styles: {
       width: '1280px',
       height: '100%',
     },
   },
   tablet: {
-    name: 'tablet',
+    name: 'Tablet (Max)',
     styles: {
       width: '1024px',
       height: '100%',
     },
   },
   mobile: {
-    name: 'mobile',
+    name: 'Mobile (Max)',
     styles: {
       width: '768px',
+      height: '100%',
+    },
+  },
+  mobileMin: {
+    name: 'Mobile (Min)',
+    styles: {
+      width: '320px',
       height: '100%',
     },
   },
@@ -39,7 +46,7 @@ const preview: Preview = {
   parameters: {
     viewport: {
       viewports: customViewports,
-      defaultViewport: 'responsive',
+      defaultViewport: 'tablet',
     },
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {

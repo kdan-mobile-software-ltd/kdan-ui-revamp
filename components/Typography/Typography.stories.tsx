@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const CommonStyle: Story = {
   args: {
-    fontSize: 'h3',
+    fontSize: { default: 'h3', mobile: 'h7' },
     color: 'gray600',
     padding: '10px',
     margin: '10px',
@@ -28,12 +28,13 @@ export const CommonStyle: Story = {
   },
 };
 
-export const RwdFontSizeStyle: Story = {
+export const FontWeight: Story = {
   args: {
-    fontSize: { default: 'h3', tablet: 'h7' },
-    color: 'gray900',
+    fontSize: { default: 'h3', mobile: 'h7' },
+    color: 'red',
     padding: '10px',
     margin: '10px',
-    children: 'hallo world!',
+    children: 'Hello World!',
+    fontWeight: '900',
   },
 };

@@ -9,6 +9,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
+  parameters: { layout: 'fullscreen' },
 } as Meta<typeof Banner21>;
 
 export default meta;

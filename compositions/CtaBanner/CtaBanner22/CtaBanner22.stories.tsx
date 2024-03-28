@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { CtaBanner11 } from '.';
+import { CtaBanner22 } from '.';
 
 const meta = {
-  title: 'Competition/CtaBanner1-1',
-  component: CtaBanner11,
+  title: 'Competition/CtaBanner2-2',
+  component: CtaBanner22,
   argTypes: {
     data: { control: 'object' },
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
-} as Meta<typeof CtaBanner11>;
+} as Meta<typeof CtaBanner22>;
 
 export default meta;
 
@@ -20,6 +20,7 @@ export const Basic: Story = {
   args: {
     data: {
       title: 'Headline Text Headline Text Headline Text ',
+      desc: 'Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text',
       button1: {
         icon: {
           src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
@@ -32,7 +33,7 @@ export const Basic: Story = {
           src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
           alt: 'img-multi-media-panel-1',
         },
-        text: 'More Information',
+        text: 'More',
       },
     },
     customStyle: {
@@ -69,30 +70,22 @@ export const SingleButton: Story = {
     },
   },
 };
-export const TransparentBackground: Story = {
+
+export const LessText: Story = {
   args: {
     data: {
-      title: 'Headline Text Headline Text Headline Text ',
+      title: 'Headline Text',
+      desc: 'Desc Text',
       button1: {
         text: 'Buy it',
       },
-      button2: {
-        text: 'More Detail',
-      },
     },
     customStyle: {
-      title: { color: '#007aff' },
+      background: { color: 'gray200' },
       button1: {
         variant: 'filled',
         size: 'large',
         corner: 'square',
-        customStyle: { backgroundColor: '#10a0a0', borderColor: '#10a0a0' },
-      },
-      button2: {
-        variant: 'outlined',
-        size: 'large',
-        corner: 'square',
-        customStyle: { color: '#10a0a0', borderColor: '#10a0a0' },
       },
     },
   },

@@ -6,7 +6,7 @@ import { Hyperlink } from '@/components/Hyperlink';
 import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import {
-  ButtonWrapper, ContainImage, Desc, HyperlinkWrapper, Title, Wrapper,
+  ButtonWrapper, ContainImage, Desc, HyperlinkVerticalWrapper, Title, Wrapper,
 } from '../styled';
 
 type ComponentProps = {
@@ -44,32 +44,31 @@ export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
     {(data?.button1 || data?.button2) && (
     <ButtonWrapper alignCenter>
       {data?.button1 && (
-      <Button {...customStyle?.button1} icon={data.button1.icon}>
+      <Button {...customStyle?.button1} {...data.button1}>
         {data.button1.text}
       </Button>
       )}
       {data?.button2 && (
-      <Button {...customStyle?.button2} icon={data.button2.icon}>
+      <Button {...customStyle?.button2} {...data.button2}>
         {data.button2.text}
       </Button>
       )}
     </ButtonWrapper>
     )}
     {data?.hyperlink && (
-    <HyperlinkWrapper>
+    <HyperlinkVerticalWrapper>
       <Hyperlink
         {...customStyle?.hyperlink}
-        href={data.hyperlink.href}
+        {...data.hyperlink}
         fontSize={{ default: 'button1', tablet: 'button3' }}
         variant="underline"
       >
         {data.hyperlink.label}
       </Hyperlink>
-    </HyperlinkWrapper>
+    </HyperlinkVerticalWrapper>
     )}
     <ContainImage
-      src={data.image.src}
-      alt={data.image.alt}
+      {...data.image}
       customStyle={{
         width: { default: '800px', tablet: '576px', mobile: '288px' },
         height: { default: '400px', tablet: '288px', mobile: '288px' },

@@ -4,7 +4,7 @@ import { CustomColor } from '@/constants/themes/colors';
 import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
 import {
-  Background, ButtonWrapper, TextWrapper, WrapperWithFlexGap,
+  ButtonWrapper, ContentWidthBackground, TextWrapper, WrapperWithFlexGap,
 } from '../styled';
 
 type ComponentProps = {
@@ -29,8 +29,8 @@ type ComponentProps = {
   };
 };
 
-export const CtaBanner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
-  <Background backgroundColor={customStyle?.background?.color}>
+export const CtaBanner22: React.FC<ComponentProps> = ({ data, customStyle }) => (
+  <ContentWidthBackground backgroundColor={customStyle?.background?.color}>
     <WrapperWithFlexGap>
       <TextWrapper>
         <Typography fontSize={{ default: 'h5', tablet: 'h7' }} color={customStyle?.title?.color}>
@@ -57,5 +57,5 @@ export const CtaBanner21: React.FC<ComponentProps> = ({ data, customStyle }) => 
         </ButtonWrapper>
       )}
     </WrapperWithFlexGap>
-  </Background>
+  </ContentWidthBackground>
 );

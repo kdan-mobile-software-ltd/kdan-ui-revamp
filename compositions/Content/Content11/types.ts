@@ -9,20 +9,26 @@ export type Item = {
   hyperlink?: HocHyperlinkData;
 };
 
-export type LayoutNumberOfRow = {
-  numberOfRow?: 2 | 3;
+export type LayoutNumbersOfColumn = {
+  numbersOfColumn?: 2 | 3;
 };
 
 export type CustomStyle = {
-  others?: LayoutNumberOfRow;
+  others?: LayoutNumbersOfColumn;
 } & ContentCustomStyle;
 
 export type ComponentProps = {
-  data: Item[];
+  data: {
+    items: Item[];
+    toggleText?: {
+      open: string;
+      close: string;
+    }
+  };
   customStyle?: CustomStyle;
 };
 
 export type ItemProps = {
   data: Item;
-  customStyle: CustomStyle | undefined;
+  customStyle: (CustomStyle | undefined) & { hideAtMobile: boolean };
 };
