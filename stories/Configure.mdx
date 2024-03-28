@@ -1,0 +1,60 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Getting Started" />
+
+# Kdan UI
+
+#### Table of Contents
+
+- [References](#references)
+- [Getting Started](#getting-started)
+- [Quick Usage](#quick-usage)
+
+
+## References
+- [Figma Design Guide Line](https://www.figma.com/file/LWPqD8d0ItyVZ0pgigI6RU/KDAN-Web%EF%BD%9C-Design-Guideline_2023Q4?type=design&node-id=2902%3A50548&mode=design&t=2M5NkOamEzikRf8J-1)
+- [團隊進度管理公告](https://docs.google.com/spreadsheets/d/12hhi75w3Qg_UnatjCscy4mYM5vac8eD90ky_6EjmBhM/edit?usp=sharing)
+- Gitlab Repo: [kdanmobile/shared-code-base/kdan-ui](https://gitlab.kdanmobile.com/kdanmobile/shared-code-base/kdan-ui)
+- NPM: [kdan-ui-revamp](https://www.npmjs.com/package/kdan-ui-revamp)
+
+## Getting Started
+
+1. Installation
+```sh
+ yarn add kdan-ui-revamp@latest
+```
+
+2. Wrap `<KdanUiThemeProvider>` for Kdan UI theming
+```jsx
+// _app.tsx
+import { KdanUiThemeProvider } from 'kdan-ui-revamp';
+
+const App = ({ Component, pageProps }: AppProps) => {
+   return (
+      <KdanUiThemeProvider>
+        <Component {...pageProps} />
+      </KdanUiThemeProvider>
+    );
+};
+
+export default App;
+```
+
+## Quick Usage
+
+```jsx
+import React from 'react';
+import { Button } from 'kdan-ui-revamp';
+
+function Page() {
+  return (
+    <Button
+      corner="round"
+      size="large"
+      variant="filled"
+      onClick={() => { console.log('hello kdan!')}}
+    >
+      buttonText
+    </Button>);
+}
+```

@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react", // https://github.com/microsoft/TypeScript/issues/41882#issuecomment-940734525
+    "sourceMap": true,
+    "strict": true,
+    "removeComments": false,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "declaration": true,
+    "isolatedModules": true,
+  },
+  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.test.ts", "**/*.js", "**/*.jsx", ".eslintrc.js", ".storybook/*"], // "tests", "components"
+  "exclude": ["node_modules"],
+}

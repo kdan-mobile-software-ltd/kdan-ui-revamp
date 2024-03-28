@@ -1,0 +1,22 @@
+image: node:18.18.2
+
+stages:
+  - deploy
+
+publish-npm:
+  stage: deploy
+  script:
+    - echo "@scope:registry=https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - npm publish
+
+  script:
+    - echo CI_PROJECT_ID $CI_PROJECT_ID
+    - echo CI_JOB_TOKEN $CI_JOB_TOKEN
+    - echo "kdan-ui-revamp=https://${CI_SERVER_HOST}/api/v4/packages/npm/" >> .npmrc
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${NPM_TOKEN}" >> .npmrc
+    - cat .npmrc
+    - npm ci
+    - npm run build
+    - ls -al
+    - npm publish
