@@ -1,9 +1,9 @@
 import React from 'react';
 import { Hyperlink } from '@/components/Hyperlink';
 import { Typography } from '@/components/Typography';
-import { HyperlinkWrapper } from '../styled';
+import { HyperlinkWrapper } from '../../styled';
 import { Wrapper } from './styled';
-import { Item as ItemType } from '../Content11/types';
+import { Item as ItemType } from '../../Content11/types';
 import { ContentCustomStyle } from './types';
 
 type Props = {
@@ -11,10 +11,10 @@ type Props = {
   customStyle: ContentCustomStyle | undefined;
 };
 
-const Item: React.FC<Props> = ({ data, customStyle }) => (
+const ContentItem1: React.FC<Props> = ({ data, customStyle }) => (
   <Wrapper>
-    {data.title && <Typography fontSize={{ default: 'h5', tablet: 'h7' }} color={customStyle?.title?.color}>{data.title}</Typography>}
-    {data.desc && <Typography fontSize={{ default: 'body3', tablet: 'body5' }} color={customStyle?.desc?.color} margin="12px 0 0">{data.desc}</Typography>}
+    {data.title && <Typography fontSize={{ default: 'h5', tablet: 'h7' }} {...customStyle?.title}>{data.title}</Typography>}
+    {data.desc && <Typography fontSize={{ default: 'body3', tablet: 'body5' }} margin="12px 0 0" {...customStyle?.desc}>{data.desc}</Typography>}
 
     {data?.hyperlink
       && (
@@ -31,4 +31,4 @@ const Item: React.FC<Props> = ({ data, customStyle }) => (
   </Wrapper>
 );
 
-export default Item;
+export default ContentItem1;

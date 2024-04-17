@@ -1,7 +1,7 @@
 import { ImgData, ValueOf } from '@/constants/types/global';
 import { HocHyperlinkData } from '@/components/Hyperlink/types';
 import { CustomImageSize } from '@/components/Image/styledImages';
-import { ContentCustomStyle } from '../Content/types';
+import { ContentCustomStyle } from '../Item/ContentItem1/types';
 
 export const ITEM_LAYOUT = {
   SEQUENTIAL: 'sequential',

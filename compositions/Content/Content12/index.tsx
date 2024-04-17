@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { ActionIcon } from '@/components/Image/styledImages';
-import { Toggle } from '../styled';
 import Item from './Item';
 import { GroupWrapper } from './styled';
 import { ComponentProps } from './types';
+import { Toggle } from '../styled';
 
-export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
-  const needToggle = data.items.length > 3;
+export const Content12: React.FC<ComponentProps> = ({ data, customStyle }) => {
+  const needToggle = customStyle?.hideAtMobile && data.items.length > 3;
   const [isOpen, setOpen] = useState(false);
   const toggleText = !isOpen ? (data?.toggleText?.open || 'Open') : (data?.toggleText?.close || 'Close');
   const toggle = () => {
@@ -14,12 +14,13 @@ export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
   };
 
   return (
-    <GroupWrapper numbersOfColumn={customStyle?.others?.numbersOfColumn}>
+    <GroupWrapper>
       {data.items.map((item, index) => (
         <Item
           key={item.title}
           data={item}
-          customStyle={{ ...customStyle, hideAtMobile: index >= 3 && !isOpen }}
+          customStyle={customStyle}
+          hideAtMobile={Boolean(customStyle?.hideAtMobile && (index >= 3 && !isOpen))}
         />
       ))}
       {needToggle && (

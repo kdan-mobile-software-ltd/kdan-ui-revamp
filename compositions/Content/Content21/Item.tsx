@@ -4,7 +4,7 @@ import { ItemWrapper } from './styled';
 import {
   CustomStyle, ITEM_LAYOUT, ItemLayout, Item as ItemType,
 } from './data';
-import Content from '../Content';
+import ContentItem1 from '../Item/ContentItem1';
 
 type Props = {
   data: ItemType;
@@ -37,7 +37,7 @@ const Item: React.FC<Props> = ({
         customStyle={customStyle?.image}
       />
     )}
-    <Content data={data} customStyle={customStyle} />
+    <ContentItem1 data={data} customStyle={customStyle} />
   </ItemWrapper>
 );
 

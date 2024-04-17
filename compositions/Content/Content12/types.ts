@@ -7,15 +7,16 @@ export type Item = {
   desc?: string;
   icon?: ImgData;
   hyperlink?: HocHyperlinkData;
+  image?: ImgData;
 };
 
-export type LayoutNumbersOfColumn = {
-  numbersOfColumn?: 2 | 3;
-};
+// export type LayoutNumbersOfColumn = {
+//   numbersOfColumn?: 2 | 3;
+// };
 
-export type CustomStyle = {
-  others?: LayoutNumbersOfColumn;
-} & ContentCustomStyle;
+export type CustomStyle = ContentCustomStyle & {
+  hideAtMobile?: boolean;
+};
 
 export type ComponentProps = {
   data: {
@@ -30,5 +31,5 @@ export type ComponentProps = {
 
 export type ItemProps = {
   data: Item;
-  customStyle: (CustomStyle | undefined) & { hideAtMobile: boolean };
+  customStyle?: CustomStyle;
 };
