@@ -3,15 +3,9 @@ import { Hyperlink } from '@/components/Hyperlink';
 import { Typography } from '@/components/Typography';
 import { HyperlinkWrapper } from '../../styled';
 import { Wrapper } from './styled';
-import { Item as ItemType } from '../../Content11/types';
-import { ContentCustomStyle } from './types';
+import { Props } from './types';
 
-type Props = {
-  data: ItemType;
-  customStyle: ContentCustomStyle | undefined;
-};
-
-const ContentItem1: React.FC<Props> = ({ data, customStyle }) => (
+export const ContentItem1: React.FC<Props> = ({ data, customStyle }) => (
   <Wrapper>
     {data.title && <Typography fontSize={{ default: 'h5', tablet: 'h7' }} {...customStyle?.title}>{data.title}</Typography>}
     {data.desc && <Typography fontSize={{ default: 'body3', tablet: 'body5' }} margin="12px 0 0" {...customStyle?.desc}>{data.desc}</Typography>}
@@ -30,5 +24,3 @@ const ContentItem1: React.FC<Props> = ({ data, customStyle }) => (
       )}
   </Wrapper>
 );
-
-export default ContentItem1;

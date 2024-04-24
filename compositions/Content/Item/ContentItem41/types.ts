@@ -5,4 +5,6 @@ export type ContentItem41CustomStyle = {
   title?: TextCustomCssProps;
   desc?: TextCustomCssProps;
   borderColor?: CustomColor;
+  backgroundColor?: CustomColor;
+  arrowSvgColorFilter?: string;
 };

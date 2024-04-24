@@ -26,7 +26,7 @@ export const Content12: React.FC<ComponentProps> = ({ data, customStyle }) => {
       {needToggle && (
         <Toggle onClick={toggle} isOpen={isOpen}>
           {toggleText}
-          <ActionIcon margin="0 0 0 12px" src="/assets/icon/arrow.svg" alt="toggle-btn-icon" />
+          <ActionIcon margin="0 0 0 12px" src="/assets/icon/vertical-arrow.svg" alt="toggle-btn-icon" />
         </Toggle>
       )}
     </GroupWrapper>

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import ContentItem1 from '.';
+import { ContentItem1 } from '.';
 
 const meta = {
   title: 'Competition/Content/ContentItem1',

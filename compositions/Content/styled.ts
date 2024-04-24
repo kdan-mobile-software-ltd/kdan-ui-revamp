@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { button3FontStyle } from '@/constants/fonts';
 import { ThemePropsType } from '@/constants/types/styled';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
+import { arrowIconRotateStyle, upDownAnimation } from '@/utils/style';
 
 export const HyperlinkWrapper = styled.div`
   margin-top: auto;
@@ -10,39 +11,33 @@ export const HyperlinkWrapper = styled.div`
 
 export const ItemWrapperWithToggle = styled.div<{ hideAtMobile?: boolean } & ThemePropsType>`
   width: 100%;
+  ${upDownAnimation}
+  animation: animateShowFromBottom .3s ease-in-out;
   
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 1;
-  transform: translateY(0);
-  position: relative;
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     ${({ hideAtMobile }) => hideAtMobile && css`
-      opacity: 0; 
-      transform: translateY(50%);
-      position: absolute; 
+      animation: animateHideToBottom .3s forwards ease-in-out;
     `}
   }
 `;
 
 export const Toggle = styled.button<{ isOpen: boolean }>`
   display: none;
+  padding: 8px 12px;
+  ${button3FontStyle}
+  background-color: ${({ theme }) => theme.colors.transparent};
+  border-color: ${({ theme }) => theme.colors.transparent};
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
 
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {  
-    padding: 8px 12px;
-    ${button3FontStyle}
-    background-color: ${({ theme }) => theme.colors.transparent};
-    border-color: ${({ theme }) => theme.colors.transparent};
-    cursor: pointer;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    margin: auto;
     
     & > img {
-      transition: all 0.3s ease 0s;
-      transform: rotate(0);
-      ${({ isOpen }) => isOpen && css`transform: rotate(-180deg);`} 
+      ${arrowIconRotateStyle}
     }
   }
 `;

@@ -3,7 +3,7 @@ import { FlexWrapper, Image } from './styled';
 import {
   CustomStyle, Item as ItemType,
 } from './types';
-import ContentItem1 from '../Item/ContentItem1';
+import { ContentItem1 } from '../Item/ContentItem1';
 import { ItemWrapperWithToggle } from '../styled';
 
 type Props = {

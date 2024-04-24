@@ -4,7 +4,7 @@ import { ItemWrapper } from './styled';
 import {
   CustomStyle, ITEM_LAYOUT, ItemLayout, Item as ItemType,
 } from './data';
-import ContentItem1 from '../Item/ContentItem1';
+import { ContentItem1 } from '../Item/ContentItem1';
 
 type Props = {
   data: ItemType;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ContentIcon } from '@/components/Image/styledImages';
-import ContentItem1 from '../Item/ContentItem1';
+import { ContentItem1 } from '../Item/ContentItem1';
 import { ItemWrapperWithToggle } from '../styled';
 import { ItemProps } from './types';
 
