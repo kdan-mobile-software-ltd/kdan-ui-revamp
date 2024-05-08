@@ -2,7 +2,8 @@ import styled, { css } from 'styled-components';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
-import { Sizes, SliderCustomStyle } from './types';
+import { CustomColor } from '@/constants/themes/colors';
+import { Sizes } from './types';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -32,6 +33,7 @@ type ContentWrapperProps = {
   sizes?: Sizes;
 };
 export const ContentWrapper = styled.div<ContentWrapperProps>`
+  overflow: hidden;
   position: relative;
   width: 100%;
   
@@ -59,10 +61,9 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
-
 `;
 
-export const DesktopArrowButton = styled.button<SliderCustomStyle>`
+export const DesktopArrowButton = styled.button<{ arrowColor: CustomColor }>`
   background: url('/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
   background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
   position: absolute;
@@ -86,7 +87,7 @@ export const DesktopArrowButton = styled.button<SliderCustomStyle>`
   }
 `;
 
-export const BottomPaginationWrapper = styled.div<SliderCustomStyle>`
+export const BottomPaginationWrapper = styled.div`
   display: flex;
   gap: 12px;
   align-items: center;
@@ -104,7 +105,7 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
   transition: all 0.3s ease;
 `;
 
-export const MobileArrowButton = styled.button<SliderCustomStyle>`
+export const MobileArrowButton = styled.button`
   background: url('/assets/icon/horizon-arrow.svg') CENTER CENTER NO-REPEAT;
   width: 24px;
   height: 24px;
