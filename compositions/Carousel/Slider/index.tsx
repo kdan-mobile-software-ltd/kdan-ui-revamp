@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   DesktopArrowButton, Wrapper, MobileArrowButton,
   BottomPaginationWrapper, PaginationDot, ContentWrapper,
 } from './styled';
 import { ComponentProps } from './types';
 
-export const Slider: React.FC<ComponentProps> = ({
+export const Slider = forwardRef<unknown, ComponentProps>(({
   dataLength,
-  currentIndex: currentIndexProp,
-  sizes,
+  currentIndex: currentIndexProp = 0,
   customStyle,
   children,
-}) => {
+}, ref) => {
   const [activeIndex, setActiveIndex] = useState(
     { current: currentIndexProp, prev: currentIndexProp },
   );
@@ -38,16 +37,17 @@ export const Slider: React.FC<ComponentProps> = ({
   };
 
   return (
-    <Wrapper sizes={sizes}>
-      <DesktopArrowButton onClick={goPrevPage} className="left" type="button" />
+    <Wrapper sizes={customStyle.sizes}>
+      <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowColor={customStyle?.arrowColor} />
       <ContentWrapper
         currentActiveChild={activeIndex.current + 1}
         animationDirection={activeIndex.prev < activeIndex.current ? 'Right' : 'Left'}
-        sizes={sizes}
+        sizes={customStyle.sizes}
+        ref={ref}
       >
         {children}
       </ContentWrapper>
-      <DesktopArrowButton onClick={goNextPage} className="right" type="button" />
+      <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowColor={customStyle?.arrowColor} />
       <BottomPaginationWrapper>
         <MobileArrowButton onClick={goPrevPage} className="left" type="button" />
         {[...Array(dataLength).keys()].map((index) => (
@@ -61,4 +61,6 @@ export const Slider: React.FC<ComponentProps> = ({
       </BottomPaginationWrapper>
     </Wrapper>
   );
-};
+});
+
+Slider.displayName = 'Slider';
