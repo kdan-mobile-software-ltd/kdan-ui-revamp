@@ -1,21 +1,13 @@
 import React from 'react';
+import { ItemToggleAnimationWrapper } from '@/components/private/Toggle/styled';
 import { FlexWrapper, Image } from './styled';
-import {
-  CustomStyle, Item as ItemType,
-} from './types';
+import { ItemProps } from './types';
 import { ContentItem1 } from '../Item/ContentItem1';
-import { ItemWrapperWithToggle } from '../styled';
 
-type Props = {
-  data: ItemType;
-  customStyle?: CustomStyle;
-  hideAtMobile: boolean;
-};
-
-const Item: React.FC<Props> = ({
+const Item: React.FC<ItemProps> = ({
   data, customStyle, hideAtMobile,
 }) => (
-  <ItemWrapperWithToggle hideAtMobile={hideAtMobile}>
+  <ItemToggleAnimationWrapper hideAtMobile={hideAtMobile}>
     <FlexWrapper>
       {data.image && (
       <Image
@@ -28,7 +20,7 @@ const Item: React.FC<Props> = ({
       )}
       <ContentItem1 data={data} customStyle={customStyle} />
     </FlexWrapper>
-  </ItemWrapperWithToggle>
+  </ItemToggleAnimationWrapper>
 );
 
 export default Item;

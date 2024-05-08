@@ -42,3 +42,19 @@ export type MarginPropsType = {
 export type BackgroundColorPropsType = {
   backgroundColor?: CustomColor;
 };
+
+export type BorderColorPropsType = {
+  borderColor?: CustomColor;
+};
+
+export type DisplayPropsType = {
+  display?: string;
+};
+
+export type IsOpenPropsType = {
+  isOpen?: boolean;
+};
+
+export type HideAtMobilePropsType = {
+  hideAtMobile?: boolean;
+};

@@ -29,12 +29,15 @@ export const Image = styled(CustomSizeImage)`
     margin: 0 0 40px;
   }
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    margin: 0;
+    margin: auto;
   }
 `;
 
 export const FlexWrapper = styled.div`
+  width: 320px;
+
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+    width: 100%;
     display: flex;
     gap: 40px;
   }

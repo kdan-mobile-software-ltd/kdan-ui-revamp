@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import { ActionIcon } from '@/components/Image/styledImages';
-import { Toggle } from '../styled';
+import React from 'react';
+import { useToggle } from '@/hooks/useToggle';
 import Item from './Item';
 import { GroupWrapper } from './styled';
 import { ComponentProps } from './types';
 
 export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
-  const needToggle = data.items.length > 3;
-  const [isOpen, setOpen] = useState(false);
-  const toggleText = !isOpen ? (data?.toggleText?.open || 'Open') : (data?.toggleText?.close || 'Close');
-  const toggle = () => {
-    setOpen((prev) => !prev);
-  };
+  const hideLongerThan = 3;
+  const { ToggleButton, isOpenAtMobile } = useToggle({
+    length: data.items.length,
+    hideLongerThan,
+    toggleText: data.toggleText,
+  });
 
   return (
     <GroupWrapper numbersOfColumn={customStyle?.others?.numbersOfColumn}>
@@ -19,15 +18,10 @@ export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
         <Item
           key={item.title}
           data={item}
-          customStyle={{ ...customStyle, hideAtMobile: index >= 3 && !isOpen }}
+          customStyle={{ ...customStyle, hideAtMobile: index >= hideLongerThan && !isOpenAtMobile }}
         />
       ))}
-      {needToggle && (
-        <Toggle onClick={toggle} isOpen={isOpen}>
-          {toggleText}
-          <ActionIcon margin="0 0 0 12px" src="/assets/icon/vertical-arrow.svg" alt="toggle-btn-icon" />
-        </Toggle>
-      )}
+      {ToggleButton}
     </GroupWrapper>
   );
 };

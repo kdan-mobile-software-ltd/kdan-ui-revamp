@@ -1,7 +1,6 @@
 import React from 'react';
 import { Hyperlink } from '@/components/Hyperlink';
 import { Typography } from '@/components/Typography';
-import { HyperlinkWrapper } from '../../styled';
 import { Wrapper } from './styled';
 import { Props } from './types';
 
@@ -12,15 +11,15 @@ export const ContentItem1: React.FC<Props> = ({ data, customStyle }) => (
 
     {data?.hyperlink
       && (
-        <HyperlinkWrapper>
-          <Hyperlink
-            fontSize={{ default: 'button2', tablet: 'button3' }}
-            {...customStyle?.hyperlink}
-            {...data.hyperlink}
-          >
-            {data.hyperlink.label}
-          </Hyperlink>
-        </HyperlinkWrapper>
+      <Hyperlink
+        fontSize={{ default: 'button2', tablet: 'button3' }}
+        margin="24px 0 0"
+        display="block"
+        {...customStyle?.hyperlink}
+        {...data.hyperlink}
+      >
+        {data.hyperlink.label}
+      </Hyperlink>
       )}
   </Wrapper>
 );

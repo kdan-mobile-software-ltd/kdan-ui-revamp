@@ -1,16 +1,12 @@
 import styled, { css } from 'styled-components';
 import { button3FontStyle } from '@/constants/fonts';
-import { ThemePropsType } from '@/constants/types/styled';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { arrowIconRotateStyle, upDownAnimation } from '@/utils/style';
+import { HideAtMobilePropsType, IsOpenPropsType } from '@/constants/types/styled';
 
-export const HyperlinkWrapper = styled.div`
-  margin-top: auto;
-  padding-top: 24px;
-`;
+// use this combined with hooks/useToggle.tsx
 
-export const ItemWrapperWithToggle = styled.div<{ hideAtMobile?: boolean } & ThemePropsType>`
-  width: 100%;
+export const ItemToggleAnimationWrapper = styled.div<HideAtMobilePropsType>`
   ${upDownAnimation}
   animation: animateShowFromBottom .3s ease-in-out;
   
@@ -21,9 +17,9 @@ export const ItemWrapperWithToggle = styled.div<{ hideAtMobile?: boolean } & The
   }
 `;
 
-export const Toggle = styled.button<{ isOpen: boolean }>`
+export const Toggle = styled.button<IsOpenPropsType>`
   display: none;
-  padding: 8px 12px;
+  padding: 16px 12px;
   ${button3FontStyle}
   background-color: ${({ theme }) => theme.colors.transparent};
   border-color: ${({ theme }) => theme.colors.transparent};
@@ -31,7 +27,7 @@ export const Toggle = styled.button<{ isOpen: boolean }>`
   justify-content: center;
   align-items: center;
   width: fit-content;
-  margin: auto;
+  margin: 40px auto 0;
 
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {  
     display: flex;

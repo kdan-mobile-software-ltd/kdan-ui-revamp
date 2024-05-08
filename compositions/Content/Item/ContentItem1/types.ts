@@ -1,4 +1,5 @@
 import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
+import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 
 export type ContentCustomStyle = {
@@ -10,7 +11,7 @@ export type ContentCustomStyle = {
 export type Item = {
   title: string;
   desc?: string;
-  icon?: ImageData;
+  icon?: ImgData;
   hyperlink?: HocHyperlinkData;
 };
 

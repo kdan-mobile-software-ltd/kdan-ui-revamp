@@ -10,12 +10,10 @@ export type Item = {
   image?: ImgData;
 };
 
-// export type LayoutNumbersOfColumn = {
-//   numbersOfColumn?: 2 | 3;
-// };
-
-export type CustomStyle = ContentCustomStyle & {
-  hideAtMobile?: boolean;
+export type ItemProps = {
+  data: Item;
+  customStyle?: ContentCustomStyle;
+  hideAtMobile: boolean;
 };
 
 export type ComponentProps = {
@@ -26,10 +24,5 @@ export type ComponentProps = {
       close: string;
     }
   };
-  customStyle?: CustomStyle;
-};
-
-export type ItemProps = {
-  data: Item;
-  customStyle?: CustomStyle;
+  customStyle?: ContentCustomStyle;
 };

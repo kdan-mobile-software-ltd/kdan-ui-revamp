@@ -68,7 +68,6 @@ export const Basic: Story = {
     },
     customStyle: {
       title: { color: 'gray700' },
-      // hideAtMobile: true,
     },
   },
 };

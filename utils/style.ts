@@ -2,6 +2,8 @@ import { CustomThemeType } from '@/constants/themes';
 import { CustomColor } from '@/constants/themes/colors';
 
 export const getCustomColorFromTheme = (
-  theme: CustomThemeType,
-  customColor: CustomColor,
-): CustomColor => theme.colors?.[customColor] || customColor || '';
+export const arrowIconRotateStyle = css<IsOpenPropsType>`
+  transition: all 0.3s ease 0s;
+  transform: rotate(0);
+  ${({ isOpen }) => isOpen && css`transform: rotate(-180deg);`} 
+`;
