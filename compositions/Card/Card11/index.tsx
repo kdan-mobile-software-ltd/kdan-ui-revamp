@@ -5,7 +5,7 @@ import { CardItem11 } from '../Item/CardItem11';
 import { ContentWrapper, Wrapper } from './styled';
 import { ComponentProps } from './types';
 
-export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
+export const Card11: React.FC<ComponentProps> = ({ data, customStyle }) => {
   const hideLongerThan = 3;
   const { ToggleButton, isOpenAtMobile } = useToggle({
     length: data.items.length,

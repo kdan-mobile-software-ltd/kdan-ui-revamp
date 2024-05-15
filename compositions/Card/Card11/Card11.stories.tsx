@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Content11 } from '.';
+import { Card11 } from '.';
 
 const meta = {
   title: 'Competition/Card/Card1-1',
-  component: Content11,
+  component: Card11,
   argTypes: {
     data: { control: 'object' },
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
-} as Meta<typeof Content11>;
+} as Meta<typeof Card11>;
 
 export default meta;
 

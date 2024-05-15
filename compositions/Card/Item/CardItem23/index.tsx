@@ -1,9 +1,8 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
-import { CustomSizeImage } from '@/components/Image/styledImages';
 import { Hyperlink } from '@/components/Hyperlink';
 import { AlignBottomWrapper } from '@/utils/style';
-import { ContentWrapper, Wrapper } from './styled';
+import { ContentWrapper, Image, Wrapper } from './styled';
 import { CardItem23Props } from './types';
 
 export const CardItem23: React.FC<CardItem23Props> = ({ data, customStyle }) => (
@@ -12,7 +11,7 @@ export const CardItem23: React.FC<CardItem23Props> = ({ data, customStyle }) => 
     {...customStyle?.wrapper}
     isNoHover={!data?.hyperlink?.href}
   >
-    {data?.image?.src && <CustomSizeImage customStyle={{ width: { default: '100%' }, height: { default: '216px', tablet: '192px' } }} {...data.image} />}
+    {data?.image?.src && <Image customStyle={{ width: { default: '100%' }, height: { default: '216px', tablet: '192px' } }} {...data.image} />}
 
     <ContentWrapper>
       {data.title && <Typography fontSize={{ default: 'h5' }} fontWeight="700" {...customStyle?.title}>{data.title}</Typography>}
