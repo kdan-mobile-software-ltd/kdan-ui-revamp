@@ -1,18 +1,17 @@
-import React, { forwardRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   DesktopArrowButton, Wrapper, MobileArrowButton,
-  BottomPaginationWrapper, PaginationDot, ContentWrapper,
+  BottomPaginationWrapper, PaginationDot, ContentWrapper, Hidden,
 } from './styled';
 import { ComponentProps } from './types';
 
-export const Slider = forwardRef<unknown, ComponentProps>(({
+export const Slider: React.FC<ComponentProps> = ({
   dataLength,
-  currentIndex: currentIndexProp = 0,
   customStyle,
   children,
-}, ref) => {
+}) => {
   const [activeIndex, setActiveIndex] = useState(
-    { current: currentIndexProp, prev: currentIndexProp },
+    { current: 0, prev: 0 },
   );
 
   const goPrevPage = () => {
@@ -36,16 +35,24 @@ export const Slider = forwardRef<unknown, ComponentProps>(({
     }));
   };
 
+  useEffect(() => {
+    if (activeIndex.current >= dataLength) {
+      setActiveIndex((prev) => ({ current: dataLength - 1, prev: prev.current }));
+    }
+  }, [dataLength]);
+
   return (
-    <Wrapper sizes={customStyle.sizes}>
+    <Wrapper>
       <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowColor={customStyle?.arrowColor} />
       <ContentWrapper
         currentActiveChild={activeIndex.current + 1}
         animationDirection={activeIndex.prev < activeIndex.current ? 'Right' : 'Left'}
-        sizes={customStyle.sizes}
-        ref={ref}
       >
-        {children}
+        {/* eslint-disable-next-line react/jsx-key */}
+        {children.map((child) => <div>{child}</div>)}
+        <Hidden>
+          {children?.[0]}
+        </Hidden>
       </ContentWrapper>
       <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowColor={customStyle?.arrowColor} />
       <BottomPaginationWrapper>
@@ -61,6 +68,6 @@ export const Slider = forwardRef<unknown, ComponentProps>(({
       </BottomPaginationWrapper>
     </Wrapper>
   );
-});
+};
 
 Slider.displayName = 'Slider';

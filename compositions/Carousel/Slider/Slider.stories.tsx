@@ -38,12 +38,12 @@ export const Basic: Story = {
     dataLength: 6,
     currentIndex: 2,
     customStyle: {
-      sizes: {
-        default: { width: '1080px', height: '354px' },
-        laptop: { width: '944px', height: '316px' },
-        tablet: { width: '688px', height: '667px' },
-        mobile: { width: '480px', height: '498px' },
-      },
+      // sizes: {
+      //   default: { width: '1080px', height: '354px' },
+      //   laptop: { width: '944px', height: '316px' },
+      //   tablet: { width: '688px', height: '667px' },
+      //   mobile: { width: '480px', height: '498px' },
+      // },
       arrowColor: '#444444',
     },
   },

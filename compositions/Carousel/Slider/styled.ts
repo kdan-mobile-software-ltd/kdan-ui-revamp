@@ -3,7 +3,6 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
 import { CustomColor } from '@/constants/themes/colors';
-import { Sizes } from './types';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -11,45 +10,23 @@ const Z_INDEX = {
   inactiveSlide: 1,
 };
 
-export const Wrapper = styled.div<{ sizes?: Sizes }>`
-  width: 100%;
+export const Wrapper = styled.div`
   position: relative;
-
-  ${({ sizes = ({ default: { width: '1080px' } }) }) => Object.entries(sizes).map(([breakpoint, size]) => (
-    breakpoint === 'default'
-      ? `
-        max-width: ${size.width};
-      `
-      : `@media screen and (${MAX_WIDTH_QUERY[breakpoint]}) {
-          max-width: ${size.width};
-        }`
-  )).join(' ')}
+  width: fit-content;
 `;
 
 // each content item with slide animation
 type ContentWrapperProps = {
   currentActiveChild: number;
   animationDirection: 'Right' | 'Left'; // the fixed word from animation naming in /utils/style
-  sizes?: Sizes;
 };
 export const ContentWrapper = styled.div<ContentWrapperProps>`
   overflow: hidden;
   position: relative;
-  width: 100%;
   
   ${slideAnimation}
 
-  ${({ sizes = ({ default: { height: '480px' } }) }) => Object.entries(sizes).map(([breakpoint, size]) => (
-    breakpoint === 'default'
-      ? `
-        height: ${size.height};
-      `
-      : `@media screen and (${MAX_WIDTH_QUERY[breakpoint]}) {
-          height: ${size.height};
-        }`
-  )).join(' ')}
-
-  & > * {
+  & > div {
     animation: animateHide .3s forwards ease-in-out;
     z-index: ${Z_INDEX.inactiveSlide};
     position: absolute;
@@ -63,7 +40,7 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
   `}
 `;
 
-export const DesktopArrowButton = styled.button<{ arrowColor: CustomColor }>`
+export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
   background: url('/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
   background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
   position: absolute;
@@ -119,4 +96,8 @@ export const MobileArrowButton = styled.button`
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     display: block;
   }
+`;
+
+export const Hidden = styled.section`
+  visibility: hidden;
 `;
