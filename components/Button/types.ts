@@ -32,7 +32,7 @@ export type HocButtonData = {
   text: string;
 } & Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name'>;
 
-export type HTMLButtonProps = Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name'>; // https://github.com/styled-components/styled-components/issues/3191#issuecomment-655229877
+export type HTMLButtonProps = Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name' | 'onClick'>; // https://github.com/styled-components/styled-components/issues/3191#issuecomment-655229877
 
 export type ButtonProps = ButtonDataProps
 & ButtonStyle

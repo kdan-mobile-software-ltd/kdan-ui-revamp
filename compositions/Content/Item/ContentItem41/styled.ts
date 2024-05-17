@@ -16,10 +16,12 @@ export const Wrapper = styled.div<BorderColorPropsType & BackgroundColorPropsTyp
 `;
 
 export const ToggleWrapper = styled.button`
+  ${buttonStyleReset}
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  ${buttonStyleReset}
   text-align: left;
 `;
 

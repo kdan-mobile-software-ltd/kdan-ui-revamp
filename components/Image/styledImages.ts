@@ -8,20 +8,10 @@ export const ActionIcon = styled.img<MarginPropsType>`
   margin: ${({ margin }) => margin || 0};
 `;
 
-export const ContentIcon = styled.img<MarginPropsType>`
-  width: 48px;
-  height: 48px;
-  margin: ${({ margin }) => margin || 0};
-  
-  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    width: 40px;
-    height: 40px;
-  }
-`;
-
 export type CustomImageSize = {
   width: BreakpointKeyObj<string>;
   height: BreakpointKeyObj<string>;
+  margin?: string;
 };
 
 type CustomSizeImageProps = {
@@ -30,11 +20,14 @@ type CustomSizeImageProps = {
 
 export const CustomSizeImage = styled.img<CustomSizeImageProps>`
   object-fit: cover;
-  width: 100%;
+  display: block;
+  ${({ customStyle }) => customStyle?.margin && `margin: ${customStyle.margin};`};
 
   ${({ customStyle = { width: { default: '480px' }, height: { default: '360px' } } }) => Object.keys(customStyle.width).map((breakpoint) => (
     breakpoint === 'default'
       ? `
+          width: 100%;
+          height: ${customStyle.height.default || 'auto'};
           max-width: ${customStyle.width.default};
           max-height: ${customStyle.height.default};
         `

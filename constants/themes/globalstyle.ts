@@ -14,13 +14,20 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  padding-inline: 0;
+  padding-block: 0;
+
+  &:focus {
+    outline: none;
+    outline-width: 0;
+  }
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -54,7 +61,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
  }
  
- body:lang(en) {
+  body:lang(en) {
     font-family: 'Clear Sans', sans-serif;
   }
   body:lang(zh-tw) {

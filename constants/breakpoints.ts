@@ -6,6 +6,7 @@ export const BREAKPOINTS = {
 } as const;
 
 export type Breakpoints = keyof typeof BREAKPOINTS;
+export type BreakpointsWithDefault = Breakpoints | 'default';
 
 export const MAX_WIDTH_QUERY = {
   desktop: `max-width: ${BREAKPOINTS.desktop}`,
@@ -14,4 +15,4 @@ export const MAX_WIDTH_QUERY = {
   mobile: `max-width: ${BREAKPOINTS.mobile}`,
 };
 
-export type BreakpointKeyObj<T> = Partial<Record<Breakpoints | 'default', T>>;
+export type BreakpointKeyObj<T> = Partial<Record<BreakpointsWithDefault, T>>;
