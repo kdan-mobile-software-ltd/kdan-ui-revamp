@@ -6,3 +6,7 @@ export type ImgData = {
   src: string;
   alt: string;
 } & Pick<ComponentPropsWithoutRef<'img'>, 'id' >;
+
+export type SizeLS = 'large' | 'small';
+
+export type SizeLSProps = { size?: SizeLS };

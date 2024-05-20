@@ -4,7 +4,7 @@ import { BackgroundColorPropsType, ThemePropsType } from '@/constants/types/styl
 import { getCustomColorFromTheme } from '@/utils/style';
 import { RwdWrapper } from '@/utils/style/wrapper';
 
-const backgroundColorStyle = css<BackgroundColorPropsType>`background-color: ${({ theme, backgroundColor = 'transparent' }) => getCustomColorFromTheme(theme, backgroundColor)};`;
+const backgroundColorStyle = css<BackgroundColorPropsType>`background-color: ${({ backgroundColor = 'transparent' }) => getCustomColorFromTheme(backgroundColor)};`;
 
 export const ContentWidthBackground = styled(RwdWrapper)<BackgroundColorPropsType & ThemePropsType>`
   ${backgroundColorStyle}

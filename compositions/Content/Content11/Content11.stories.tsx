@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Content11 } from '.';
 
 const meta = {
-  title: 'Competition/Content1-1',
+  title: 'Competition/Content/Content1-1',
   component: Content11,
   argTypes: {
     data: { control: 'object', description: '[required] only `title` is require in each Item<br><br> `toggleText` default is `{open: \'Open\', close: \'Close\'}`' },

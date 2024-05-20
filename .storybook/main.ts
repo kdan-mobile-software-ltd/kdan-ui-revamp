@@ -15,7 +15,7 @@ const config: StorybookConfig = {
     return newConfig;
   },
   stories: [
-    '../stories/**/*.mdx',
+    '../**/*.mdx',
     '../**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
@@ -24,6 +24,7 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
+    '@storybook/addon-a11y',
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -37,11 +38,11 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   staticDirs: ['../public'],
-  managerHead: (head) => `
-    ${head}
-    <style>
-      [id^='competition-ctabanner2-2']{display: none !important;}
-    </style>
-  `,
+  // managerHead: (head) => `
+  //   ${head}
+  //   <style>
+  //     [id^='competition-ctabanner2-2']{display: none !important;}
+  //   </style>
+  // `,
 };
 export default config;

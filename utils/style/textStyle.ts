@@ -2,7 +2,7 @@ import { FlattenSimpleInterpolation, css } from 'styled-components';
 import * as fonts from '@/constants/fonts';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import {
-  ColorPropsType, FontSizePropsType, FontWeightPropsType, MarginPropsType,
+  ColorPropsType, DisplayPropsType, FontSizePropsType, FontWeightPropsType, MarginPropsType,
   PaddingPropsType, TextAlignPropsType,
 } from '@/constants/types/styled';
 
@@ -29,7 +29,7 @@ const styleTypeMap: Record<keyof typeof fonts.FONT_SIZE, FlattenSimpleInterpolat
 };
 
 export type TextCustomCssProps = FontSizePropsType & FontWeightPropsType &
-ColorPropsType & PaddingPropsType & MarginPropsType & TextAlignPropsType;
+ColorPropsType & PaddingPropsType & MarginPropsType & TextAlignPropsType & DisplayPropsType;
 
 export const textCustomCss = css<TextCustomCssProps>`
   ${({ fontSize = ({ default: 'button1' }) }) => Object.entries(fontSize).map(([breakpoint, size]) => (
@@ -45,4 +45,5 @@ export const textCustomCss = css<TextCustomCssProps>`
   ${({ margin }) => margin && css`margin: ${margin};`}
   ${({ textAlign }) => textAlign && css`text-align: ${textAlign};`}
   ${({ fontWeight }) => fontWeight && css`font-weight: ${fontWeight};`}
+  ${({ display }) => display && css`display: ${display};`}
 `;

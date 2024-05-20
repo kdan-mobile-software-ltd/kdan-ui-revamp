@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Content21 } from '.';
 
 const meta = {
-  title: 'Competition/Content2-1',
+  title: 'Competition/Content/Content2-1',
   component: Content21,
   argTypes: {
     data: { control: 'object', description: '[required] only `title` is require in each Item' },

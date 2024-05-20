@@ -8,7 +8,7 @@ const meta = {
     data: { control: 'object' },
     customStyle: { control: 'object' },
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', '!dev'],
   parameters: { layout: 'fullscreen' },
 } as Meta<typeof CtaBanner22>;
 
@@ -17,6 +17,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
+  tags: ['!dev', '!docs'],
   args: {
     data: {
       title: 'Headline Text Headline Text Headline Text ',
