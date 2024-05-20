@@ -38,11 +38,11 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   staticDirs: ['../public'],
-  // managerHead: (head) => `
-  //   ${head}
-  //   <style>
-  //     [id^='competition-ctabanner2-2']{display: none !important;}
-  //   </style>
-  // `,
+  managerHead: (head) => `
+    ${head}
+    <style>
+      [id^='competition-ctabanner2-2']{display: none !important;}
+    </style>
+  `,
 };
 export default config;
