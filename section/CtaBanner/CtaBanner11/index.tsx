@@ -3,6 +3,7 @@ import { Typography } from '@/components/Typography';
 import { CustomColor } from '@/constants/themes/colors';
 import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
+import { TextCustomCssProps } from '@/utils/style/textStyle';
 import { Background, BottomButtonWrapper, Wrapper } from '../styled';
 
 type ComponentProps = {
@@ -15,9 +16,7 @@ type ComponentProps = {
     background?: {
       color: CustomColor;
     }
-    title?: {
-      color: CustomColor;
-    };
+    title?: TextCustomCssProps;
     button1?: ButtonStyle;
     button2?: ButtonStyle;
   };
@@ -26,7 +25,7 @@ type ComponentProps = {
 export const CtaBanner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
   <Background backgroundColor={customStyle?.background?.color}>
     <Wrapper>
-      <Typography fontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" color={customStyle?.title?.color}>
+      <Typography fontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" {...customStyle?.title}>
         {data.title}
       </Typography>
       {(data?.button1 || data?.button2) && (

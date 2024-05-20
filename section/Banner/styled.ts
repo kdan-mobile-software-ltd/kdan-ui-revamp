@@ -4,10 +4,12 @@ import { AlignCenterPropsType, BackgroundColorPropsType } from '@/constants/type
 import { CustomSizeImage } from '@/components/Image/styledImages';
 import { Typography } from '@/components/Typography';
 import { RwdWrapper } from '@/utils/style/wrapper';
+import { getCustomColorFromTheme } from '@/utils/style';
 
 export const Wrapper = styled(RwdWrapper)<BackgroundColorPropsType & AlignCenterPropsType>`
   padding: 64px 0;
   ${({ alignCenter }) => alignCenter && css`text-align: center;`}
+  background-color: ${({ backgroundColor = 'transparent' }) => getCustomColorFromTheme(backgroundColor)};
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     padding: 40px 0;
