@@ -18,7 +18,7 @@ export const Wrapper = styled.a<CardItem11WrapperStyle & { isNoHover: boolean }>
     cursor: pointer;
     &:hover {
       transform: scale(1.1);
-      ${!isNoHoverShadow && css`box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.10);`}
+      ${!isNoHoverShadow && css`box-shadow: 0px 0px 12px 0px ${({ theme }) => theme.colors.boxShadow};`}
     }
   `}
 `;

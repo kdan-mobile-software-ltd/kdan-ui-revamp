@@ -1,15 +1,14 @@
 import { ComponentPropsWithoutRef } from 'react';
 import { CustomColor } from '@/constants/themes/colors';
-import { ImgData } from '@/constants/types/global';
+import { ImgData, SizeLS } from '@/constants/types/global';
 import { IsDisabledPropsType } from '@/constants/types/styled';
 
 export type Variant = 'filled' | 'outlined' | 'text';
-export type Size = 'large' | 'small';
 export type Corner = 'round' | 'square';
 
 export type ButtonStyle = {
   variant?: Variant; // default is `filled`
-  size?: Size; // default is `large`
+  size?: SizeLS; // default is `large`
   corner?: Corner; // default is `round`
   customStyle?: {
     color?: CustomColor;
@@ -27,12 +26,12 @@ export type ButtonDataProps = {
   children: string;
 };
 
+export type HTMLButtonProps = Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name' | 'onClick' | 'type'>; // https://github.com/styled-components/styled-components/issues/3191#issuecomment-655229877
+
 export type HocButtonData = {
   icon?: ImgData;
   text: string;
-} & Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name'>;
-
-export type HTMLButtonProps = Pick<ComponentPropsWithoutRef<'button'>, 'id' | 'name' | 'onClick'>; // https://github.com/styled-components/styled-components/issues/3191#issuecomment-655229877
+} & HTMLButtonProps;
 
 export type ButtonProps = ButtonDataProps
 & ButtonStyle

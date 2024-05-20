@@ -21,6 +21,7 @@ export const colors = {
   error: '#F25858',
   hoverLayer: 'rgba(0,0,0,0.2)',
   focusLayer: 'rgba(255,255,255,0.2)',
+  boxShadow: 'rgba(255,255,255,0.1)',
 } as const;
 
 export type Color = keyof typeof colors;

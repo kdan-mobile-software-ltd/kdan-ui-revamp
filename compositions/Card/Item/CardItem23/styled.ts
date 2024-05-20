@@ -20,7 +20,7 @@ export const Wrapper = styled.a<CardItem23WrapperStyle & { isNoHover: boolean }>
   ${({ isNoHover }) => !isNoHover && css`
     cursor: pointer;
     &:hover {  
-      box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.10);
+      box-shadow: 0px 0px 12px 0px ${({ theme }) => theme.colors.boxShadow};
     }
   `}
 
