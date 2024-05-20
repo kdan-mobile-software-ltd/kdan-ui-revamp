@@ -55,16 +55,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: { order: ['Component', 'Section'] },
+    },
   },
   decorators: [
-    // withThemeFromJSXProvider({
-    //   themes: {
-    //     light: themes,
-    //   },
-    //   defaultTheme: 'light',
-    //   Provider: ThemeProvider,
-    //   GlobalStyles,
-    // }) as Decorator<{ [x: string]: any }>,
     (StoryFn) => (
       <ThemeProvider theme={themes}>
         <GlobalStyles />
