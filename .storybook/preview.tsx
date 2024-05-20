@@ -56,7 +56,7 @@ const preview: Preview = {
       },
     },
     options: {
-      storySort: { order: ['Component', 'Section'] },
+      storySort: { order: ['Components', 'Section'] },
     },
   },
   decorators: [
