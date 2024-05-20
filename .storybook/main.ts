@@ -41,7 +41,7 @@ const config: StorybookConfig = {
   managerHead: (head) => `
     ${head}
     <style>
-      [id^='competition-ctabanner2-2']{display: none !important;}
+      [id^='section-ctabanner2-2']{display: none !important;}
     </style>
   `,
 };
