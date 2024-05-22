@@ -56,7 +56,7 @@ const preview: Preview = {
       },
     },
     options: {
-      storySort: { order: ['Components', 'Section'] },
+      storySort: { order: ['Components', 'Sections'] },
     },
     docs: {
       description: { component: '若有客製化需求 (e.g. backlog 元件)，請參考 source code 內既有 component 結構自行調整。ref: [kdan-ui](https://gitlab.kdanmobile.com/kdanmobile/shared-code-base/kdan-ui)/sections/' },
