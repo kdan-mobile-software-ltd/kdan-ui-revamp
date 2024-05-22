@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     data: {
-      title: 'Headline Text Headline Text Headline Text Headline Text',
+      title: 'Headline Text',
       desc: 'Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text',
       button1: {
         text: 'Buy it',
@@ -40,12 +40,12 @@ export const Basic: Story = {
     customStyle: {
       button1: {
         variant: 'filled',
-        size: 'large',
+        size: 'small',
         corner: 'square',
       },
       button2: {
         variant: 'outlined',
-        size: 'large',
+        size: 'small',
         corner: 'square',
       },
     },

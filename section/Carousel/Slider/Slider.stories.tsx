@@ -11,7 +11,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'fullpage' },
+  parameters: { layout: 'centered' },
 } as Meta<ComponentProps>;
 
 export default meta;
@@ -23,7 +23,7 @@ export const Basic: Story = {
     children: ['#323323', '#32A3A3', '#3233AA', '#32AA23', '#AA3323', '#AAAA23'].map((item, index) => (
       <div
         style={{
-          width: '100%', height: '100%', backgroundColor: item, opacity: 0.5,
+          width: '500px', height: '500px', backgroundColor: item, opacity: 0.5,
         }}
         key={item}
       >
@@ -36,15 +36,8 @@ export const Basic: Story = {
       </div>
     )),
     dataLength: 6,
-    currentIndex: 2,
     customStyle: {
-      // sizes: {
-      //   default: { width: '1080px', height: '354px' },
-      //   laptop: { width: '944px', height: '316px' },
-      //   tablet: { width: '688px', height: '667px' },
-      //   mobile: { width: '480px', height: '498px' },
-      // },
-      arrowColor: '#444444',
+      arrowColor: '#458f9c',
     },
   },
 };
