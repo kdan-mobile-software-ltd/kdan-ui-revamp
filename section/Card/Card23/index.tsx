@@ -1,6 +1,6 @@
 import React from 'react';
 import { Slider } from '@/section/Carousel/Slider';
-import { getCurrentBreakpoint } from '@/utils/slider';
+import { getCurrentBreakpoint } from '@/utils/getCurrentBreakpoint';
 import { useWindowWidth } from '@/hooks/useContainDimensions';
 import { GroupWrapper } from './styled';
 import { ComponentProps } from './types';
