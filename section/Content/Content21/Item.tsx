@@ -15,13 +15,13 @@ type Props = {
 
 const getIsReverse = (index: number, layout: ItemLayout) => {
   switch (layout) {
-    case ITEM_LAYOUT.SEQUENTIAL:
+    case ITEM_LAYOUT.RIGHT:
       return false;
-    case ITEM_LAYOUT.REVERSE:
+    case ITEM_LAYOUT.LEFT:
       return true;
-    case ITEM_LAYOUT.REVERSE_ALTERNATING:
+    case ITEM_LAYOUT.RIGHT_ALTERNATING:
       return index % 2 === 0;
-    case ITEM_LAYOUT.SEQUENTIAL_ALTERNATING:
+    case ITEM_LAYOUT.LEFT_ALTERNATING:
     default:
       return index % 2 === 1;
   }
@@ -34,7 +34,7 @@ const Item: React.FC<Props> = ({
     {data.image && (
       <CustomSizeImage
         {...data.image}
-        customStyle={customStyle?.image}
+        customStyle={{ width: { default: '50%', mobile: '100%' }, ...customStyle?.image }}
       />
     )}
     <ContentItem1 data={data} customStyle={customStyle} />

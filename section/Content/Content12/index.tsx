@@ -13,16 +13,18 @@ export const Content12: React.FC<ComponentProps> = ({ data, customStyle }) => {
   });
 
   return (
-    <GroupWrapper>
-      {data.items.map((item, index) => (
-        <Item
-          key={item.title}
-          data={item}
-          customStyle={customStyle}
-          hideAtMobile={index >= hideLongerThan && !isOpenAtMobile}
-        />
-      ))}
+    <div>
+      <GroupWrapper>
+        {data.items.map((item, index) => (
+          <Item
+            key={item.title}
+            data={item}
+            customStyle={customStyle}
+            hideAtMobile={index >= hideLongerThan && !isOpenAtMobile}
+          />
+        ))}
+      </GroupWrapper>
       {ToggleButton}
-    </GroupWrapper>
+    </div>
   );
 };

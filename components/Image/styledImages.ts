@@ -10,7 +10,7 @@ export const ActionIcon = styled.img<MarginPropsType>`
 
 export type CustomImageSize = {
   width: BreakpointKeyObj<string>;
-  height: BreakpointKeyObj<string>;
+  height?: BreakpointKeyObj<string>;
   margin?: string;
 };
 
@@ -27,13 +27,13 @@ export const CustomSizeImage = styled.img<CustomSizeImageProps>`
     breakpoint === 'default'
       ? `
           width: 100%;
-          height: ${customStyle.height.default || 'auto'};
+          height: ${customStyle?.height?.default || 'unset'};
           max-width: ${customStyle.width.default};
-          max-height: ${customStyle.height.default};
+          max-height: ${customStyle?.height?.default || 'unset'};
         `
       : `@media screen and (${MAX_WIDTH_QUERY[breakpoint]}) {
           max-width: ${customStyle.width?.[breakpoint] || 'auto'};
-          max-height: ${customStyle.height?.[breakpoint] || 'auto'};
+          max-height: ${customStyle.height?.[breakpoint] || 'unset'};
         }`
   )).join(' ')}
 `;

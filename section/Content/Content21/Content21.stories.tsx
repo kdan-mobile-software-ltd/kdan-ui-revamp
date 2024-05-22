@@ -33,8 +33,8 @@ export const Basic: Story = {
   args: {
     data: [
       {
-        title: 'title aa',
-        desc: 'desc aa',
+        title: 'Headline Text ',
+        desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text ',
         image: {
           src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
           alt: 'alt aa',
@@ -106,13 +106,13 @@ export const CustomImageSize: Story = {
     customStyle: {
       image: {
         width: { default: '300px', mobile: '200px' },
-        height: { default: '300px' },
+        height: { default: '300px', mobile: '200px' },
       },
     },
   },
 };
 
-export const RightAlignedLayout: Story = {
+export const ImageOnTheRight: Story = {
   args: {
     data: [
       {
@@ -140,6 +140,6 @@ export const RightAlignedLayout: Story = {
         },
       },
     ],
-    itemLayout: 'reverse',
+    itemLayout: 'right',
   },
 };
