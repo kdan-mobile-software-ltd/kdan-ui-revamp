@@ -24,7 +24,6 @@ export const ItemWrapper = styled.div<{ isReverse: boolean }>`
     gap: 40px;
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
-    width: fit-content;
     flex-direction: column;
   }
 `;

@@ -19,8 +19,8 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     data: {
-      title: 'Headline Text',
-      desc: 'Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text',
+      title: 'Headline Text Headline Text',
+      desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text',
       button1: {
         text: 'Buy it',
         id: 'button-1',
@@ -54,14 +54,14 @@ export const Basic: Story = {
 export const CustomImageSize: Story = {
   args: {
     data: {
-      title: 'Headline Text Headline Text Headline Text Headline Text',
-      desc: 'Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text',
+      title: 'Headline Text Headline Text',
+      desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text',
       button1: {
         icon: {
           src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
           alt: 'img-multi-media-panel-1',
         },
-        text: 'Buy it',
+        text: 'Button text',
         id: 'button-1',
       },
       button2: {
@@ -69,11 +69,11 @@ export const CustomImageSize: Story = {
           src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
           alt: 'img-multi-media-panel-1',
         },
-        text: 'More',
+        text: 'Button text',
       },
       hyperlink: {
         href: 'https://www.google.com/',
-        label: 'Google',
+        label: 'Hyperlink',
       },
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
@@ -93,7 +93,7 @@ export const CustomImageSize: Story = {
       },
       image: {
         width: { default: '300px' },
-        height: { default: '500px' },
+        height: { default: '300px' },
       },
     },
   },

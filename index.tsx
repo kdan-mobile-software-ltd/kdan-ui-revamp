@@ -15,4 +15,6 @@ export * from './section/Content/Item/ContentItem41';
 export * from './section/CtaBanner/CtaBanner11';
 export * from './section/CtaBanner/CtaBanner21';
 export * from './section/CtaBanner/CtaBanner22';
+export * from './section/Modal11';
+export * from './section/EventBar11';
 export { KdanUiThemeProvider } from './constants/themes';

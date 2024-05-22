@@ -7,7 +7,7 @@ import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { CustomImageSize } from '@/components/Image/styledImages';
 import {
-  AlignCenterImage, ButtonWrapper, Desc, HyperlinkHorizonWrapper, Title, WrapperWithFlexGap,
+  AlignCenterImage, ButtonWrapper, Desc, Title, WrapperWithFlexGap,
 } from '../styled';
 
 type ComponentProps = {
@@ -36,7 +36,7 @@ type ComponentProps = {
 export const Banner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
   <WrapperWithFlexGap>
     <div>
-      <Title fontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color}>
+      <Title fontSize={{ default: 'h2', tablet: 'h4' }} fontWeight="700" color={customStyle?.title?.color}>
         {data.title}
       </Title>
       {data.desc && (
@@ -59,16 +59,16 @@ export const Banner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
       </ButtonWrapper>
       )}
       {data?.hyperlink && (
-      <HyperlinkHorizonWrapper>
         <Hyperlink
-          {...customStyle?.hyperlink}
           fontSize={{ default: 'button1', tablet: 'button3' }}
           variant="underline"
+          margin="20px 0 0"
+          display="block"
+          {...customStyle?.hyperlink}
           {...data.hyperlink}
         >
           {data.hyperlink.label}
         </Hyperlink>
-      </HyperlinkHorizonWrapper>
       )}
     </div>
     <AlignCenterImage

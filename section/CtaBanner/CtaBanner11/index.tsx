@@ -25,7 +25,7 @@ type ComponentProps = {
 export const CtaBanner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
   <Background backgroundColor={customStyle?.background?.color}>
     <Wrapper>
-      <Typography fontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" {...customStyle?.title}>
+      <Typography fontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" fontWeight="700" {...customStyle?.title}>
         {data.title}
       </Typography>
       {(data?.button1 || data?.button2) && (

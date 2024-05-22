@@ -47,6 +47,11 @@ export const ButtonWrapper = styled.div<AlignCenterPropsType>`
 export const AlignCenterImage = styled(CustomSizeImage)`
   margin: 0 auto;
   display: block;
+  width: 50%;
+
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    width: 100%;
+  }
 `;
 
 export const ContainImage = styled(AlignCenterImage)`
@@ -76,12 +81,6 @@ export const HyperlinkVerticalWrapper = styled.div<AlignCenterPropsType>`
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     margin-bottom: 24px;
   }
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
-    text-align: center;
-  }
-`;
-export const HyperlinkHorizonWrapper = styled.div<AlignCenterPropsType>`
-  margin-top: 20px;
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     text-align: center;
   }

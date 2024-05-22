@@ -14,7 +14,7 @@ type Props = {
 export const Content21: React.FC<Props> = ({
   data,
   customStyle = {},
-  itemLayout = ITEM_LAYOUT.SEQUENTIAL_ALTERNATING,
+  itemLayout = ITEM_LAYOUT.RIGHT_ALTERNATING,
 }) => (
   <GroupWrapper>
     {data.map((item, index) => (

@@ -3,6 +3,7 @@ import { Typography } from '@/components/Typography';
 import { CustomColor } from '@/constants/themes/colors';
 import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
+import { TextCustomCssProps } from '@/utils/style/textStyle';
 import {
   ButtonWrapper, ContentWidthBackground, TextWrapper, WrapperWithFlexGap,
 } from '../styled';
@@ -18,12 +19,8 @@ type ComponentProps = {
     background?: {
       color: CustomColor;
     }
-    title?: {
-      color: CustomColor;
-    };
-    desc?: {
-      color: CustomColor;
-    };
+    title?: TextCustomCssProps;
+    desc?: TextCustomCssProps;
     button1?: ButtonStyle;
     button2?: ButtonStyle;
   };
@@ -33,11 +30,11 @@ export const CtaBanner22: React.FC<ComponentProps> = ({ data, customStyle }) => 
   <ContentWidthBackground backgroundColor={customStyle?.background?.color}>
     <WrapperWithFlexGap>
       <TextWrapper>
-        <Typography fontSize={{ default: 'h5', tablet: 'h7' }} color={customStyle?.title?.color}>
+        <Typography fontSize={{ default: 'h5', tablet: 'h7' }} {...customStyle?.title}>
           {data.title}
         </Typography>
         {data.desc && (
-        <Typography fontSize={{ default: 'body3', tablet: 'body5' }} color={customStyle?.desc?.color} margin="12px 0 0">
+        <Typography fontSize={{ default: 'body3', tablet: 'body5' }} {...customStyle?.desc} margin="12px 0 0">
           {data.desc}
         </Typography>
         )}

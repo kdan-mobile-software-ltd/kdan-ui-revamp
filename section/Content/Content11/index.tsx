@@ -13,15 +13,20 @@ export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
   });
 
   return (
-    <GroupWrapper numbersOfColumn={customStyle?.others?.numbersOfColumn}>
-      {data.items.map((item, index) => (
-        <Item
-          key={item.title}
-          data={item}
-          customStyle={{ ...customStyle, hideAtMobile: index >= hideLongerThan && !isOpenAtMobile }}
-        />
-      ))}
+    <div>
+      <GroupWrapper numbersOfColumn={customStyle?.others?.numbersOfColumn}>
+        {data.items.map((item, index) => (
+          <Item
+            key={item.title}
+            data={item}
+            customStyle={{
+              ...customStyle,
+              hideAtMobile: index >= hideLongerThan && !isOpenAtMobile,
+            }}
+          />
+        ))}
+      </GroupWrapper>
       {ToggleButton}
-    </GroupWrapper>
+    </div>
   );
 };
