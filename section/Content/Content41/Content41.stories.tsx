@@ -1,12 +1,10 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { GroupWrapper } from './styled';
 import { ComponentProps } from './types';
-import { ContentItem41 } from '../Item/ContentItem41';
+import { Content41 } from '.';
 
 const meta = {
   title: 'Section/Content/Content4-1',
-  subcomponents: { GroupWrapper, ContentItem41 },
+  component: Content41,
   argTypes: {
     data: { control: 'object', description: '[required] only `title` is require in each Item<br><br> `toggleText` default is `{open: \'Open\', close: \'Close\'}`' },
     customStyle: { control: 'object' },
@@ -19,22 +17,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Template: Story = {
-  render: ({ data, customStyle }) => (
-    <GroupWrapper numbersOfColumn={customStyle?.others?.numbersOfColumn}>
-      {data.map((item) => (
-        <ContentItem41
-          key={item.title}
-          data={item}
-          customStyle={customStyle}
-        />
-      ))}
-    </GroupWrapper>
-  ),
-};
-
 export const Basic: Story = {
-  ...Template,
   args: {
     data: [
       {
@@ -70,7 +53,6 @@ export const Basic: Story = {
 };
 
 export const TwoColumns: Story = {
-  ...Template,
   args: {
     data: [
       {

@@ -1,40 +1,22 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Slider } from '@/section/Carousel/Slider';
-import { ComponentProps } from './types';
-import { ContentItem31 } from '../Item/ContentItem31';
+import { Content31 } from '.';
 
 const meta = {
   title: 'Section/Content/Content3-1',
-  subcomponents: { Slider, ContentItem31 },
+  component: Content31,
   argTypes: {
     data: { control: 'object', description: '[required] only `title` is require in each Item<br><br> `toggleText` default is `{open: \'Open\', close: \'Close\'}`' },
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
-} as Meta<ComponentProps>;
+} as Meta<typeof Content31>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Template: Story = {
-  render: ({ data, customStyle }) => (
-    <Slider customStyle={customStyle.slider} dataLength={data.length}>
-      {data.map((item) => (
-        <ContentItem31
-          key={item.title}
-          data={item}
-          customStyle={customStyle?.item}
-        />
-      ))}
-    </Slider>
-  ),
-};
-
 export const Basic: Story = {
-  ...Template,
   args: {
     data: [{
       title: 'panel_1_title Subscription Policies',
