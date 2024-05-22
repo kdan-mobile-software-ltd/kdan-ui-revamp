@@ -19,6 +19,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'laptop',
+    },
+  },
   args: {
     data: {
       title: 'Headline 07 Headline 07 Headline 07',
@@ -40,7 +45,7 @@ export const Basic: Story = {
   },
 };
 
-export const NoImage: Story = {
+export const NoImageBelowTablet: Story = {
   args: {
     data: {
       title: 'Headline 07 Headline 07 Headline 07',

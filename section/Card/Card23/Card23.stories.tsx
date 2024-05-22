@@ -9,7 +9,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'centered' },
 } as Meta<typeof Card23>;
 
 export default meta;
@@ -103,7 +103,7 @@ export const Basic: Story = {
   },
 };
 
-export const NoCarousel: Story = {
+export const NoCarouselAtDesktop: Story = {
   args: {
     data: [
       {

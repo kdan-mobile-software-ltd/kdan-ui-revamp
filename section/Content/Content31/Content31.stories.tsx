@@ -12,7 +12,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'centered' },
 } as Meta<ComponentProps>;
 
 export default meta;
