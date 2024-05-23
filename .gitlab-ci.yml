@@ -7,9 +7,13 @@ include:
     file: "gitlab-ci/rules.yaml"
   - project: "kdanmobile/deployment/cluster-cicd-config"
     ref: master
+    file: "gitlab-ci/unit-test/fe-common.yaml"
+  - project: "kdanmobile/deployment/cluster-cicd-config"
+    ref: master
     file: "gitlab-ci/notify.yaml"
 
 stages:
+  - unit_test
   - build
   - upload
   - publish
@@ -18,6 +22,7 @@ stages:
 variables:
   extends: .arm64_runner
   BUILD_BASE_IMAGE: "node:18.18.2-alpine"
+  TEST_BASE_IMAGE: "node:18.18.2-alpine"
   TAGGING_TYPE: "4_4"
 
 build_static_files:
