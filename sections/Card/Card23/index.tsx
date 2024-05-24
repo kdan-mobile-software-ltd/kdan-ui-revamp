@@ -25,7 +25,6 @@ export const Card23: React.FC<ComponentProps> = ({ data, customStyle }) => {
   return (data.length > groupSize ? (
     <Slider
       customStyle={customStyle.slider}
-      dataLength={sliderPage}
     >
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key

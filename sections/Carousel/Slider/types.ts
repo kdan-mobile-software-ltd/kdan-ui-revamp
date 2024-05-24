@@ -5,7 +5,6 @@ export type SliderCustomStyle = {
 };
 
 export type ComponentProps = {
-  dataLength: number;
   customStyle: SliderCustomStyle;
   children: React.ReactNode[];
 };
