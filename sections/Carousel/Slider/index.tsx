@@ -6,10 +6,10 @@ import {
 import { ComponentProps } from './types';
 
 export const Slider: React.FC<ComponentProps> = ({
-  dataLength,
   customStyle,
   children,
 }) => {
+  const dataLength = children.length || 1;
   const [activeIndex, setActiveIndex] = useState(
     { current: 0, prev: 0 },
   );

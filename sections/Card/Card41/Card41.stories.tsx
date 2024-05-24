@@ -9,7 +9,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'centered' },
 } as Meta<typeof Card41>;
 
 export default meta;
@@ -96,7 +96,7 @@ export const Basic: Story = {
       item: {
         userTitle: { color: '#379fa1' },
         wrapper: {
-          height: { tablet: '400px' },
+          height: { default: '400px' },
         },
       },
       slider: {
@@ -107,6 +107,11 @@ export const Basic: Story = {
 };
 
 export const NoCarousel: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'desktop',
+    },
+  },
   args: {
     data: [
       {

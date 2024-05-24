@@ -104,6 +104,11 @@ export const Basic: Story = {
 };
 
 export const NoCarouselAtDesktop: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'desktop',
+    },
+  },
   args: {
     data: [
       {

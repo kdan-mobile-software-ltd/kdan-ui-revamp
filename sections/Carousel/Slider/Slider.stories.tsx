@@ -35,7 +35,6 @@ export const Basic: Story = {
         </span>
       </div>
     )),
-    dataLength: 6,
     customStyle: {
       arrowColor: '#458f9c',
     },

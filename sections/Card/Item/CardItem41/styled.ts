@@ -3,9 +3,10 @@ import styled, { css } from 'styled-components';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { SizeLSProps } from '@/constants/types/global';
 import { CustomSizeImage } from '@/components/Image/styledImages';
+import { ThemePropsType } from '@/constants/types/styled';
 import { CardItem41WrapperStyle } from './types';
 
-export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps>`
+export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps & ThemePropsType>`
   ${({ borderColor }) => css`border: solid 1.5px ${getCustomColorFromTheme(borderColor || 'transparent')};`}
   ${({ backgroundColor }) => css`background-color: ${getCustomColorFromTheme(backgroundColor || 'white')};`}
   border-radius: 8px;
@@ -19,7 +20,7 @@ export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps>`
   ${({ size, height }) => size === 'large' && css`
     display: flex;
     width: 100%;
-    height: ${height?.largeSize || 'auto'};
+    height: ${height?.largeSize || height?.default || 'auto'};
     justify-content: center;
     padding: 40px;
     @media screen and (${MAX_WIDTH_QUERY.mobile}) {
@@ -30,7 +31,11 @@ export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps>`
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
     width: 100%;
-    height: ${({ height }) => height?.tablet || 'auto'};
+    max-width: 688px;
+    height: ${({ height }) => height?.tablet || height?.default || 'auto'};
+  }
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    max-width: 480px;
   }
 `;
 
