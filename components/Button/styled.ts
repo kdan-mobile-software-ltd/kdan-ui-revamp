@@ -5,9 +5,8 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { ThemePropsType } from '@/constants/types/styled';
 import { getCustomColorFromTheme } from '@/utils/style';
 import { CustomColor } from '@/constants/themes/colors';
-import {
-  Variant, Size, ButtonStyle, Corner,
-} from './types';
+import { SizeLS } from '@/constants/types/global';
+import { Variant, ButtonStyle, Corner } from './types';
 
 const getVariantStyle = (
   variants: Variant,
@@ -38,7 +37,7 @@ const getVariantStyle = (
   }
 };
 
-const getSizeStyle = (size: Size): FlattenSimpleInterpolation => {
+const getSizeStyle = (size: SizeLS): FlattenSimpleInterpolation => {
   switch (size) {
     case 'small': {
       return css`
@@ -71,7 +70,7 @@ const getCornerStyle = (corner: Corner): FlattenSimpleInterpolation => {
   `;
 };
 
-export const Icon = styled.img<{ size?: Size }>`
+export const Icon = styled.img<{ size?: SizeLS }>`
   ${({ size = 'large' }) => {
     const isLarge = size === 'large';
     return css`
