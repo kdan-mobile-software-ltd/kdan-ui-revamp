@@ -55,16 +55,14 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: { order: ['Components', 'Sections'] },
+    },
+    docs: {
+      description: { component: '若有客製化需求 (e.g. backlog 元件)，請參考 source code 內既有 component 結構自行調整。ref: [kdan-ui](https://gitlab.kdanmobile.com/kdanmobile/shared-code-base/kdan-ui)/sections/' },
+    },
   },
   decorators: [
-    // withThemeFromJSXProvider({
-    //   themes: {
-    //     light: themes,
-    //   },
-    //   defaultTheme: 'light',
-    //   Provider: ThemeProvider,
-    //   GlobalStyles,
-    // }) as Decorator<{ [x: string]: any }>,
     (StoryFn) => (
       <ThemeProvider theme={themes}>
         <GlobalStyles />

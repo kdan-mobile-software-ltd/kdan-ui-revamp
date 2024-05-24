@@ -55,6 +55,13 @@ function Page() {
       onClick={() => { console.log('hello kdan!')}}
     >
       buttonText
-    </Button>);
+    </Button>
+  );
 }
 ```
+
+## For Infra Developers
+
+* 正式上線 (npm publish) 前要更新 package.json 的 `version` 版號
+* 要 export 的 components 要在 `index.tsx` 寫上
+* export 的 component file 要使用 named export 而非 default export
