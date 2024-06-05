@@ -20,6 +20,7 @@ export * from './sections/CtaBanner/CtaBanner22';
 export * from './sections/Modal11';
 export * from './sections/EventBar11';
 export * from './sections/Carousel/Slider';
+export * from './constants/fonts';
 export { KdanUiThemeProvider } from './constants/themes';
 export { useToggle } from './hooks/useToggle';
 export { getCurrentBreakpoint } from './utils/getCurrentBreakpoint';
