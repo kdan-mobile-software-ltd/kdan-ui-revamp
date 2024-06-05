@@ -2,9 +2,9 @@ import React from 'react';
 import { useToggle } from '@/hooks/useToggle';
 import Item from './Item';
 import { GroupWrapper } from './styled';
-import { ComponentProps } from './types';
+import { Content11Props } from './types';
 
-export const Content11: React.FC<ComponentProps> = ({ data, customStyle }) => {
+export const Content11: React.FC<Content11Props> = ({ data, customStyle }) => {
   const hideLongerThan = 3;
   const { ToggleButton, isOpenAtMobile } = useToggle({
     length: data.items.length,

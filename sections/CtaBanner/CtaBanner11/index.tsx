@@ -1,28 +1,10 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
-import { CustomColor } from '@/constants/themes/colors';
-import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
-import { TextCustomCssProps } from '@/utils/style/textStyle';
 import { Background, BottomButtonWrapper, Wrapper } from '../styled';
+import { CtaBanner11Props } from './types';
 
-type ComponentProps = {
-  data: {
-    title: string;
-    button1?: HocButtonData;
-    button2?: HocButtonData;
-  };
-  customStyle?: {
-    background?: {
-      color: CustomColor;
-    }
-    title?: TextCustomCssProps;
-    button1?: ButtonStyle;
-    button2?: ButtonStyle;
-  };
-};
-
-export const CtaBanner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const CtaBanner11: React.FC<CtaBanner11Props> = ({ data, customStyle }) => (
   <Background backgroundColor={customStyle?.background?.color}>
     <Wrapper>
       <Typography fontSize={{ default: 'h5', tablet: 'h7' }} textAlign="center" fontWeight="700" {...customStyle?.title}>

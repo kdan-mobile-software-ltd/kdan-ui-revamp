@@ -4,7 +4,7 @@ export type SliderCustomStyle = {
   arrowColor?: CustomColor;
 };
 
-export type ComponentProps = {
+export type SliderProps = {
   customStyle: SliderCustomStyle;
   children: React.ReactNode[];
 };

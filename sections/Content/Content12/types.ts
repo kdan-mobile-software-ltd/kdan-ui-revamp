@@ -1,8 +1,8 @@
 import { HocHyperlinkData } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
-import { ContentCustomStyle } from '../Item/ContentItem1/types';
+import { ContentItem1CustomStyle } from '../Item/ContentItem1/types';
 
-export type Item = {
+export type Content12Item = {
   title: string;
   desc?: string;
   icon?: ImgData;
@@ -10,19 +10,21 @@ export type Item = {
   image?: ImgData;
 };
 
-export type ItemProps = {
-  data: Item;
-  customStyle?: ContentCustomStyle;
+export type Content12ItemProps = {
+  data: Content12Item;
+  customStyle?: ContentItem1CustomStyle;
   hideAtMobile: boolean;
 };
 
-export type ComponentProps = {
-  data: {
-    items: Item[];
-    toggleText?: {
-      open: string;
-      close: string;
-    }
-  };
-  customStyle?: ContentCustomStyle;
+export type Content12Data = {
+  items: Content12Item[];
+  toggleText?: {
+    open: string;
+    close: string;
+  }
+};
+
+export type Content12Props = {
+  data: Content12Data;
+  customStyle?: ContentItem1CustomStyle;
 };

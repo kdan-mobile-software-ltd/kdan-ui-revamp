@@ -22,3 +22,8 @@ export type ContentItem31CustomStyle = {
   desc?: TextCustomCssProps;
   hyperlink?: HyperlinkStyle;
 };
+
+export type ContentItem31Props = {
+  data: ContentItem31Data;
+  customStyle?: ContentItem31CustomStyle;
+};

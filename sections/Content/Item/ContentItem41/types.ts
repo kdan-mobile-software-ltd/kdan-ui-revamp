@@ -8,3 +8,13 @@ export type ContentItem41CustomStyle = {
   backgroundColor?: CustomColor;
   arrowSvgColorFilter?: string;
 };
+
+export type ContentItem41Data = {
+  title: string;
+  desc: string;
+};
+
+export type ContentItem41Props = {
+  data: ContentItem41Data;
+  customStyle?: ContentItem41CustomStyle;
+};

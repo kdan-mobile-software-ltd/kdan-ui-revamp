@@ -2,18 +2,18 @@ import React from 'react';
 import { CustomSizeImage } from '@/components/Image/styledImages';
 import { ItemWrapper } from './styled';
 import {
-  CustomStyle, ITEM_LAYOUT, ItemLayout, Item as ItemType,
-} from './data';
+  Content21CustomStyle, ITEM_LAYOUT, Content21ItemLayout, Content21ItemData as ItemType,
+} from './types';
 import { ContentItem1 } from '../Item/ContentItem1';
 
 type Props = {
   data: ItemType;
-  customStyle: CustomStyle;
+  customStyle: Content21CustomStyle;
   index: number;
-  itemLayout: ItemLayout;
+  itemLayout: Content21ItemLayout;
 };
 
-const getIsReverse = (index: number, layout: ItemLayout) => {
+const getIsReverse = (index: number, layout: Content21ItemLayout) => {
   switch (layout) {
     case ITEM_LAYOUT.RIGHT:
       return false;

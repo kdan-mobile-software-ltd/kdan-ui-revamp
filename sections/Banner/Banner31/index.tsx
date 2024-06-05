@@ -1,27 +1,11 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
-import { CustomColor } from '@/constants/themes/colors';
-import { ImgData } from '@/constants/types/global';
-import { TextCustomCssProps } from '@/utils/style/textStyle';
 import {
   Background, ContentWrapper, Desc, SideImage,
 } from './styled';
+import { Banner31Props } from './types';
 
-type ComponentProps = {
-  data: {
-    title: string;
-    desc: string;
-    rightImage: ImgData;
-    leftImage: ImgData;
-  };
-  customStyle?: {
-    backgroundColor?: CustomColor;
-    title?: TextCustomCssProps;
-    desc?: TextCustomCssProps;
-  };
-};
-
-export const Banner31: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const Banner31: React.FC<Banner31Props> = ({ data, customStyle }) => (
   <Background backgroundColor={customStyle?.backgroundColor}>
     <SideImage
       {...data.rightImage}

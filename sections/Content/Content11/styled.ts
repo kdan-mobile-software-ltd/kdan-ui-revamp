@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { RwdWrapper } from '@/utils/style/wrapper';
-import { LayoutNumbersOfColumn } from './types';
+import { LayoutNumbersOfColumn } from '@/constants/types/global';
 
 export const GroupWrapper = styled(RwdWrapper)<LayoutNumbersOfColumn>`
   display: grid;
