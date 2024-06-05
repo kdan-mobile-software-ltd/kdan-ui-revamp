@@ -1,33 +1,20 @@
-import { ContentCustomStyle } from '@/sections/Content/Item/ContentItem1/types';
-import { ImgData } from '@/constants/types/global';
+import { ContentItem1CustomStyle } from '@/sections/Content/Item/ContentItem1/types';
+import { LayoutNumbersOfColumn } from '@/constants/types/global';
 import { CardItem11Data } from '../Item/CardItem11/types';
 
-export type Item = {
-  title: string;
-  desc?: string;
-  icon?: ImgData;
+export type Card11Data = {
+  items: CardItem11Data[];
+  toggleText?: {
+    open: string;
+    close: string;
+  }
 };
 
-export type LayoutNumbersOfColumn = {
-  numbersOfColumn?: 2 | 3;
-};
-
-export type CustomStyle = {
+export type Card11CustomStyle = {
   others?: LayoutNumbersOfColumn;
-} & ContentCustomStyle;
+} & ContentItem1CustomStyle;
 
-export type ComponentProps = {
-  data: {
-    items: CardItem11Data[];
-    toggleText?: {
-      open: string;
-      close: string;
-    }
-  };
-  customStyle?: CustomStyle;
-};
-
-export type ItemProps = {
-  data: Item;
-  customStyle: (CustomStyle | undefined) & { hideAtMobile: boolean };
+export type Card11Props = {
+  data: Card11Data;
+  customStyle?: Card11CustomStyle;
 };

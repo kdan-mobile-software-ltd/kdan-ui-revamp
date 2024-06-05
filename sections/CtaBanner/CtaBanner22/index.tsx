@@ -1,32 +1,12 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
-import { CustomColor } from '@/constants/themes/colors';
-import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
-import { TextCustomCssProps } from '@/utils/style/textStyle';
 import {
   ButtonWrapper, ContentWidthBackground, TextWrapper, WrapperWithFlexGap,
 } from '../styled';
+import { CtaBanner22Props } from './types';
 
-type ComponentProps = {
-  data: {
-    title: string;
-    desc?: string;
-    button1?: HocButtonData;
-    button2?: HocButtonData;
-  };
-  customStyle?: {
-    background?: {
-      color: CustomColor;
-    }
-    title?: TextCustomCssProps;
-    desc?: TextCustomCssProps;
-    button1?: ButtonStyle;
-    button2?: ButtonStyle;
-  };
-};
-
-export const CtaBanner22: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const CtaBanner22: React.FC<CtaBanner22Props> = ({ data, customStyle }) => (
   <ContentWidthBackground backgroundColor={customStyle?.background?.color}>
     <WrapperWithFlexGap>
       <TextWrapper>

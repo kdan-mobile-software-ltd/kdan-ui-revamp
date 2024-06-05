@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { ComponentProps } from './types';
+import { Content41Props } from './types';
 import { Content41 } from '.';
 
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
   },
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
-} as Meta<ComponentProps>;
+} as Meta<Content41Props>;
 
 export default meta;
 

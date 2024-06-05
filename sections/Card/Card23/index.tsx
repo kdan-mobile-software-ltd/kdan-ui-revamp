@@ -3,7 +3,7 @@ import { Slider } from '@/sections/Carousel/Slider';
 import { getCurrentBreakpoint } from '@/utils/getCurrentBreakpoint';
 import { useWindowWidth } from '@/hooks/useContainDimensions';
 import { GroupWrapper } from './styled';
-import { ComponentProps } from './types';
+import { Card23Props } from './types';
 import { CardItem23 } from '../Item/CardItem23';
 
 const groupSizes = {
@@ -14,7 +14,7 @@ const groupSizes = {
   mobile: 1,
 };
 
-export const Card23: React.FC<ComponentProps> = ({ data, customStyle }) => {
+export const Card23: React.FC<Card23Props> = ({ data, customStyle }) => {
   const width = useWindowWidth();
 
   const currentBreakpoint = getCurrentBreakpoint(width);

@@ -3,15 +3,9 @@ import { Typography } from '@/components/Typography';
 import {
   Wrapper, DescWrapper, ToggleWrapper, ToggleIcon, Title,
 } from './styled';
-import { Item as ItemType } from '../../Content41/types';
-import { ContentItem41CustomStyle } from './types';
+import { ContentItem41Props } from './types';
 
-type Props = {
-  data: ItemType;
-  customStyle?: ContentItem41CustomStyle;
-};
-
-export const ContentItem41: React.FC<Props> = ({ data, customStyle }) => {
+export const ContentItem41: React.FC<ContentItem41Props> = ({ data, customStyle }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (

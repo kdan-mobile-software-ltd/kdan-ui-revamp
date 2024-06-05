@@ -10,3 +10,7 @@ export type ImgData = {
 export type SizeLS = 'large' | 'small';
 
 export type SizeLSProps = { size?: SizeLS };
+
+export type LayoutNumbersOfColumn = {
+  numbersOfColumn?: 2 | 3;
+};

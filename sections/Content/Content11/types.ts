@@ -1,25 +1,24 @@
-import { ContentCustomStyle, Item } from '../Item/ContentItem1/types';
+import { LayoutNumbersOfColumn } from '@/constants/types/global';
+import { ContentItem1CustomStyle, ContentItem1Data } from '../Item/ContentItem1/types';
 
-export type LayoutNumbersOfColumn = {
-  numbersOfColumn?: 2 | 3;
-};
-
-export type CustomStyle = {
+export type Content11CustomStyle = {
   others?: LayoutNumbersOfColumn;
-} & ContentCustomStyle;
+} & ContentItem1CustomStyle;
 
-export type ComponentProps = {
-  data: {
-    items: Item[];
-    toggleText?: {
-      open: string;
-      close: string;
-    }
-  };
-  customStyle?: CustomStyle;
+export type Content11Data = {
+  items: ContentItem1Data[];
+  toggleText?: {
+    open: string;
+    close: string;
+  }
 };
 
-export type ItemProps = {
-  data: Item;
-  customStyle: (CustomStyle | undefined) & { hideAtMobile: boolean };
+export type Content11Props = {
+  data: Content11Data;
+  customStyle?: Content11CustomStyle;
+};
+
+export type ContentItem11ItemProps = {
+  data: ContentItem1Data;
+  customStyle: (Content11CustomStyle | undefined) & { hideAtMobile: boolean };
 };

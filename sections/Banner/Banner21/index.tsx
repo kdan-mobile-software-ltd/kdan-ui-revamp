@@ -1,37 +1,12 @@
 import React from 'react';
-import { CustomColor } from '@/constants/themes/colors';
-import { HocButtonData, ButtonStyle } from '@/components/Button/types';
 import { Button } from '@/components/Button';
 import { Hyperlink } from '@/components/Hyperlink';
-import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
-import { ImgData } from '@/constants/types/global';
 import {
   ButtonWrapper, ContainImage, Desc, HyperlinkVerticalWrapper, Title, Wrapper,
 } from '../styled';
+import { Banner21Props } from './types';
 
-type ComponentProps = {
-  data: {
-    title: string;
-    desc?: string;
-    button1?: HocButtonData;
-    button2?: HocButtonData;
-    hyperlink?: HocHyperlinkData;
-    image: ImgData;
-  };
-  customStyle?: {
-    title?: {
-      color: CustomColor;
-    };
-    desc?: {
-      color: CustomColor;
-    };
-    button1?: ButtonStyle;
-    button2?: ButtonStyle;
-    hyperlink?: HyperlinkStyle;
-  };
-};
-
-export const Banner21: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const Banner21: React.FC<Banner21Props> = ({ data, customStyle }) => (
   <Wrapper alignCenter>
     <Title fontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color}>
       {data.title}
