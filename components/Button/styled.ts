@@ -30,7 +30,7 @@ const getVariantStyle = (
     default: {
       return css`
         background-color: ${theme.colors.gray900};
-        border-color: ${theme.colors.gray900};
+        border-color: ${theme.colors.transparent};
         color: ${theme.colors.white};
         `;
     }
@@ -96,30 +96,7 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   width: fit-content;
   cursor: pointer;
   white-space: nowrap;
-
-  ${({ theme }) => css`
-    &::after { /* for hover and focus style */
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border: 0;
-      transition: ${theme.transition.normal};
-    }
-    &:hover::after {
-      background-color: ${theme.colors.hoverLayer};
-      opacity: 1;
-    }
-    &:focus::after {
-      background-color: ${theme.colors.focusLayer};
-      opacity: 1;
-    }
-    &:disabled {
-      opacity: 0.5;
-    }
-  `};
+  transition: ${({ theme }) => theme.transition.normal};
   
   /* styling: variant, size, corner */
   ${({
@@ -143,7 +120,7 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
     return css`
       ${color ? css`color: ${getCustomColorFromTheme(color)};` : ''}
       ${backgroundColor ? css`background-color: ${getCustomColorFromTheme(backgroundColor)};` : ''}
-      ${borderColor || backgroundColor ? css`border-color: ${getCustomColorFromTheme((borderColor || backgroundColor) as CustomColor)};` : ''}
+      ${borderColor ? css`border-color: ${getCustomColorFromTheme((borderColor) as CustomColor)};` : ''}
       ${hoverColor ? css`&:hover { color: ${getCustomColorFromTheme(hoverColor)}; }` : ''}
       ${hoverBorderColor ? css`&:hover { border-color: ${getCustomColorFromTheme(hoverBorderColor)}; }` : ''}
       ${hoverBackgroundColor ? css`
