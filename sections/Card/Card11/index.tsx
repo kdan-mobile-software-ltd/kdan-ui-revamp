@@ -6,7 +6,7 @@ import { ContentWrapper, Wrapper } from './styled';
 import { Card11Props } from './types';
 
 export const Card11: React.FC<Card11Props> = ({ data, customStyle }) => {
-  const hideLongerThan = 3;
+  const hideLongerThan = customStyle?.others?.hideLongerThan || 3;
   const { ToggleButton, isOpenAtMobile } = useToggle({
     length: data.items.length,
     hideLongerThan,

@@ -1,6 +1,5 @@
-import { ContentItem1CustomStyle } from '@/sections/Content/Item/ContentItem1/types';
-import { LayoutNumbersOfColumn } from '@/constants/types/global';
-import { CardItem11Data } from '../Item/CardItem11/types';
+import { LayoutHideLongerThan, LayoutNumbersOfColumn } from '@/constants/types/global';
+import { CardItem11Data, CardItem11Style } from '../Item/CardItem11/types';
 
 export type Card11Data = {
   items: CardItem11Data[];
@@ -11,8 +10,8 @@ export type Card11Data = {
 };
 
 export type Card11CustomStyle = {
-  others?: LayoutNumbersOfColumn;
-} & ContentItem1CustomStyle;
+  others?: LayoutNumbersOfColumn & LayoutHideLongerThan;
+} & CardItem11Style;
 
 export type Card11Props = {
   data: Card11Data;

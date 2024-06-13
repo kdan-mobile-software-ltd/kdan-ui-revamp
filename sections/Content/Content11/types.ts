@@ -1,8 +1,8 @@
-import { LayoutNumbersOfColumn } from '@/constants/types/global';
+import { LayoutHideLongerThan, LayoutNumbersOfColumn } from '@/constants/types/global';
 import { ContentItem1CustomStyle, ContentItem1Data } from '../Item/ContentItem1/types';
 
 export type Content11CustomStyle = {
-  others?: LayoutNumbersOfColumn;
+  others?: LayoutNumbersOfColumn & LayoutHideLongerThan;
 } & ContentItem1CustomStyle;
 
 export type Content11Data = {

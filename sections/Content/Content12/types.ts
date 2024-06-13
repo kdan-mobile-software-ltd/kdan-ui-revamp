@@ -1,5 +1,5 @@
 import { HocHyperlinkData } from '@/components/Hyperlink/types';
-import { ImgData } from '@/constants/types/global';
+import { ImgData, LayoutHideLongerThan } from '@/constants/types/global';
 import { ContentItem1CustomStyle } from '../Item/ContentItem1/types';
 
 export type Content12Item = {
@@ -26,5 +26,5 @@ export type Content12Data = {
 
 export type Content12Props = {
   data: Content12Data;
-  customStyle?: ContentItem1CustomStyle;
+  customStyle?: ContentItem1CustomStyle & { others?: LayoutHideLongerThan; };
 };
