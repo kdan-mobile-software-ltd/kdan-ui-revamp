@@ -13,9 +13,12 @@ export const CtaBanner21: React.FC<CtaBanner21Props> = ({ data, customStyle, chi
           {data.title}
         </Typography>
         {data.desc && (
-        <Typography fontSize={{ default: 'body3', tablet: 'body5' }} margin="12px 0 0" {...customStyle?.desc}>
-          {data.desc}
-        </Typography>
+        <Typography
+          fontSize={{ default: 'body3', tablet: 'body5' }}
+          margin="12px 0 0"
+          {...customStyle?.desc}
+          dangerouslySetInnerHTML={{ __html: data.desc }}
+        />
         )}
       </TextWrapper>
       <ButtonWrapper>

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
@@ -21,5 +21,5 @@ export type Modal11Data = {
 export type Modal11Props = {
   data: Modal11Data
   customStyle?: Modal11CustomStyle;
-  children: ReactElement;
+  children: ReactNode;
 };

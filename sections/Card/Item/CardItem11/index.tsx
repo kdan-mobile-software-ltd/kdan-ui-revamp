@@ -10,8 +10,29 @@ export const CardItem11: React.FC<CardItem11Props> = ({ data, customStyle }) => 
     {...data?.hyperlink}
     isNoHover={!data?.hyperlink?.href}
   >
-    {data?.icon?.src && <CustomSizeImage {...data.icon} customStyle={{ width: { default: '60px' }, height: { default: '60px' }, margin: '0 auto 24px' }} />}
-    {data.title && <Typography fontSize={{ default: 'h8' }} fontWeight="700" textAlign="center" {...customStyle?.title}>{data.title}</Typography>}
-    {data.desc && <Typography fontSize={{ default: 'body5' }} margin="8px 0 0" {...customStyle?.desc}>{data.desc}</Typography>}
+    {data?.icon?.src && (
+    <CustomSizeImage
+      {...data.icon}
+      customStyle={{ width: { default: '60px' }, height: { default: '60px' }, margin: '0 auto 24px' }}
+    />
+    )}
+    {data.title && (
+    <Typography
+      fontSize={{ default: 'h8' }}
+      fontWeight="700"
+      textAlign="center"
+      {...customStyle?.title}
+    >
+      {data.title}
+    </Typography>
+    )}
+    {data.desc && (
+    <Typography
+      fontSize={{ default: 'body5' }}
+      margin="8px 0 0"
+      {...customStyle?.desc}
+      dangerouslySetInnerHTML={{ __html: data.desc }}
+    />
+    )}
   </Wrapper>
 );

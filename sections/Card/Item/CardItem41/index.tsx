@@ -22,10 +22,34 @@ export const CardItem41: React.FC<CardItem41Props> = ({ data, customStyle }) => 
         alt="quotation-mark-img"
         customStyle={{ width: { default: '24px' }, height: { default: '24px' } }}
       />
-      {data.desc && <Typography fontSize={{ default: 'body5' }} margin="16px 0 12px" {...customStyle?.desc}>{data.desc}</Typography>}
-      {data.userTitle && <Typography fontSize={{ default: 'body5' }} fontWeight="700" {...customStyle?.userTitle}>{data.userTitle}</Typography>}
+      {data.desc && (
+      <Typography
+        fontSize={{ default: 'body5' }}
+        margin="16px 0 12px"
+        {...customStyle?.desc}
+        dangerouslySetInnerHTML={{ __html: data.desc }}
+      />
+      )}
+      {data.userTitle && (
+      <Typography
+        fontSize={{ default: 'body5' }}
+        fontWeight="700"
+        {...customStyle?.userTitle}
+      >
+        {data.userTitle}
+      </Typography>
+      )}
       {data.hyperlink?.href && (
-        <Hyperlink fontSize={{ default: 'body5' }} variant="underline" display="block" margin="20px 0 0" {...data?.hyperlink} {...customStyle?.hyperlink}>{data.hyperlink.label}</Hyperlink>
+        <Hyperlink
+          fontSize={{ default: 'body5' }}
+          variant="underline"
+          display="block"
+          margin="20px 0 0"
+          {...data?.hyperlink}
+          {...customStyle?.hyperlink}
+        >
+          {data.hyperlink.label}
+        </Hyperlink>
       )}
     </ContentWrapper>
   </Wrapper>

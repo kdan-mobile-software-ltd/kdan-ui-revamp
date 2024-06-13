@@ -12,9 +12,12 @@ export const Banner21: React.FC<Banner21Props> = ({ data, customStyle }) => (
       {data.title}
     </Title>
     {data.desc && (
-    <Desc fontSize={{ default: 'body1', tablet: 'body3' }} color={customStyle?.desc?.color} margin="12px 0 0">
-      {data.desc}
-    </Desc>
+    <Desc
+      fontSize={{ default: 'body1', tablet: 'body3' }}
+      color={customStyle?.desc?.color}
+      margin="12px 0 0"
+      dangerouslySetInnerHTML={{ __html: data.desc }}
+    />
     )}
     {(data?.button1 || data?.button2) && (
     <ButtonWrapper alignCenter>
