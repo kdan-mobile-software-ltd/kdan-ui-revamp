@@ -1,12 +1,11 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
-import { Button } from '@/components/Button';
 import {
   ButtonWrapper, ContentWidthBackground, TextWrapper, WrapperWithFlexGap,
 } from '../styled';
 import { CtaBanner22Props } from './types';
 
-export const CtaBanner22: React.FC<CtaBanner22Props> = ({ data, customStyle }) => (
+export const CtaBanner22: React.FC<CtaBanner22Props> = ({ data, customStyle, children }) => (
   <ContentWidthBackground backgroundColor={customStyle?.background?.color}>
     <WrapperWithFlexGap>
       <TextWrapper>
@@ -19,20 +18,9 @@ export const CtaBanner22: React.FC<CtaBanner22Props> = ({ data, customStyle }) =
         </Typography>
         )}
       </TextWrapper>
-      {(data?.button1 || data?.button2) && (
-        <ButtonWrapper>
-          {data?.button1 && (
-          <Button {...customStyle?.button1} {...data.button1}>
-            {data.button1.text}
-          </Button>
-          )}
-          {data?.button2 && (
-          <Button {...customStyle?.button2} {...data.button2}>
-            {data.button2.text}
-          </Button>
-          )}
-        </ButtonWrapper>
-      )}
+      <ButtonWrapper>
+        {children}
+      </ButtonWrapper>
     </WrapperWithFlexGap>
   </ContentWidthBackground>
 );

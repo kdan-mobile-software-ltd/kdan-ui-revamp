@@ -1,4 +1,6 @@
+import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@/components/Button';
 import { CtaBanner22 } from '.';
 
 const meta = {
@@ -19,75 +21,73 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   tags: ['!dev', '!docs'],
   args: {
+    children: (
+      <>
+        <Button
+          variant="outlined"
+          corner="square"
+          type="submit"
+          icon={{
+            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
+            alt: 'img-multi-media-panel-1',
+          }}
+        >
+          Buy
+        </Button>
+        <Button
+          variant="filled"
+          corner="square"
+        >
+          More
+        </Button>
+      </>
+    ),
     data: {
       title: 'Headline Text Headline Text Headline Text ',
       desc: 'Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text',
-      button1: {
-        icon: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
-          alt: 'img-multi-media-panel-1',
-        },
-        text: 'Buy it',
-      },
-      button2: {
-        icon: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
-          alt: 'img-multi-media-panel-1',
-        },
-        text: 'More',
-      },
     },
     customStyle: {
       background: { color: 'gray200' },
-      button1: {
-        variant: 'filled',
-        size: 'large',
-        corner: 'round',
-      },
-      button2: {
-        variant: 'outlined',
-        size: 'large',
-        corner: 'round',
-      },
     },
   },
 };
 
 export const SingleButton: Story = {
   args: {
+    children: (
+      <Button
+        variant="outlined"
+        corner="round"
+        type="button"
+      >
+        Buy
+      </Button>
+    ),
     data: {
       title: 'Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text Headline Text',
-      button1: {
-        text: 'Buy it',
-      },
     },
     customStyle: {
       background: { color: 'gray200' },
-      button1: {
-        variant: 'filled',
-        size: 'large',
-        corner: 'square',
-      },
     },
   },
 };
 
 export const LessText: Story = {
   args: {
+    children: (
+      <Button
+        corner="round"
+        type="button"
+      >
+        Buy
+      </Button>
+    ),
     data: {
       title: 'Headline Text',
       desc: 'Desc Text',
-      button1: {
-        text: 'Buy it',
-      },
     },
     customStyle: {
       background: { color: 'gray200' },
-      button1: {
-        variant: 'filled',
-        size: 'large',
-        corner: 'square',
-      },
     },
   },
 };
