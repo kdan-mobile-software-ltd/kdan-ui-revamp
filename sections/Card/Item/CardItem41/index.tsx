@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography } from '@/components/Typography';
 import { CustomSizeImage } from '@/components/Image/styledImages';
 import { Hyperlink } from '@/components/Hyperlink';
+import { HOST } from '@/constants/config';
 import { Wrapper, ContentWrapper, Image } from './styled';
 import { CardItem41Props } from './types';
 
@@ -17,7 +18,7 @@ export const CardItem41: React.FC<CardItem41Props> = ({ data, customStyle }) => 
 
     <ContentWrapper size={customStyle?.size}>
       <CustomSizeImage
-        src="/assets/decoration/quotation-mark.svg"
+        src={`${HOST}/assets/decoration/quotation-mark.svg`}
         alt="quotation-mark-img"
         customStyle={{ width: { default: '24px' }, height: { default: '24px' } }}
       />

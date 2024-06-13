@@ -1,5 +1,6 @@
 import { ActionIcon } from '@/components/Image/styledImages';
 import { Toggle } from '@/components/private/Toggle/styled';
+import { HOST } from '@/constants/config';
 import React, { useState } from 'react';
 
 export type UseToggleProps = {
@@ -37,7 +38,7 @@ export const useToggle = ({
       length > hideLongerThan ? (
         <Toggle onClick={toggle} isOpen={isOpen}>
           {text}
-          <ActionIcon margin="0 0 0 12px" src="/assets/icon/vertical-arrow.svg" alt="toggle-btn-icon" />
+          <ActionIcon margin="0 0 0 12px" src={`${HOST}/assets/icon/vertical-arrow.svg`} alt="toggle-btn-icon" />
         </Toggle>
       ) : <div />
     ),
