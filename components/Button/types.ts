@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { ImgData, SizeLS } from '@/constants/types/global';
-import { CustomCssPropsType, IsDisabledPropsType } from '@/constants/types/styled';
+import { CustomCssPropsType } from '@/constants/types/styled';
 
 export type Variant = 'filled' | 'outlined' | 'text';
 export type Corner = 'round' | 'square';
@@ -12,7 +12,7 @@ export type ButtonStyle = {
   customStyle?: {
     maxWidth?: string;
   } & CustomCssPropsType;
-} & IsDisabledPropsType;
+};
 
 export type ButtonDataProps = {
   icon?: ImgData;

@@ -78,7 +78,7 @@ export const DisableAndCustomStyle: Story = {
     variant: 'outlined',
     size: 'large',
     corner: 'round',
-    isDisabled: true,
+    disabled: true,
     customStyle: {
       customCss: css`
         background-color: white;
