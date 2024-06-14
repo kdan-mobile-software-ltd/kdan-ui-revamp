@@ -1,5 +1,5 @@
 import { TextCustomCssProps } from '@/utils/style/textStyle';
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 export const VARIANTS = {
   noUnderline: 'noUnderline',
@@ -10,7 +10,7 @@ export const VARIANTS = {
 export type Variant = keyof typeof VARIANTS;
 
 export type ComponentProps = {
-  children: string;
+  children: string | ReactNode;
   href: string;
 } & HyperlinkStyle & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
 

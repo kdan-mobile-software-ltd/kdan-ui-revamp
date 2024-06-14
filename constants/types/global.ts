@@ -14,3 +14,6 @@ export type SizeLSProps = { size?: SizeLS };
 export type LayoutNumbersOfColumn = {
   numbersOfColumn?: 2 | 3;
 };
+export type LayoutHideLongerThan = {
+  hideLongerThan?: number;
+};
