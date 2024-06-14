@@ -1,8 +1,9 @@
 export * from './constants/fonts';
+export * from './constants/themes/colors';
 export { KdanUiThemeProvider } from './constants/themes';
 export { useToggle } from './hooks/useToggle';
 export { getCurrentBreakpoint } from './utils/getCurrentBreakpoint';
-export { useWindowWidth } from '@/hooks/useContainDimensions';
+export { useWindowWidth } from './hooks/useContainDimensions';
 
 // components
 export * from './components/Button';
