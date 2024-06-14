@@ -1,12 +1,11 @@
 import React from 'react';
-import { Button } from '@/components/Button';
 import { Hyperlink } from '@/components/Hyperlink';
 import {
   ButtonWrapper, ContainImage, Desc, HyperlinkVerticalWrapper, Title, Wrapper,
 } from '../styled';
 import { Banner21Props } from './types';
 
-export const Banner21: React.FC<Banner21Props> = ({ data, customStyle }) => (
+export const Banner21: React.FC<Banner21Props> = ({ data, customStyle, children }) => (
   <Wrapper alignCenter>
     <Title fontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color}>
       {data.title}
@@ -19,20 +18,11 @@ export const Banner21: React.FC<Banner21Props> = ({ data, customStyle }) => (
       dangerouslySetInnerHTML={{ __html: data.desc }}
     />
     )}
-    {(data?.button1 || data?.button2) && (
+
     <ButtonWrapper alignCenter>
-      {data?.button1 && (
-      <Button {...customStyle?.button1} {...data.button1}>
-        {data.button1.text}
-      </Button>
-      )}
-      {data?.button2 && (
-      <Button {...customStyle?.button2} {...data.button2}>
-        {data.button2.text}
-      </Button>
-      )}
+      {children}
     </ButtonWrapper>
-    )}
+
     {data?.hyperlink && (
     <HyperlinkVerticalWrapper>
       <Hyperlink
