@@ -11,14 +11,41 @@ export const CardItem23: React.FC<CardItem23Props> = ({ data, customStyle }) => 
     {...customStyle?.wrapper}
     isNoHover={!data?.hyperlink?.href}
   >
-    {data?.image?.src && <Image customStyle={{ width: { default: '100%' }, height: { default: '216px', tablet: '192px' } }} {...data.image} />}
+    {data?.image?.src && (
+    <Image
+      customStyle={{ width: { default: '100%' }, height: { default: '216px', tablet: '192px' } }}
+      {...data.image}
+    />
+    )}
 
     <ContentWrapper>
-      {data.title && <Typography fontSize={{ default: 'h5' }} fontWeight="700" {...customStyle?.title}>{data.title}</Typography>}
-      {data.desc && <Typography fontSize={{ default: 'body3' }} margin="12px 0 0" {...customStyle?.desc}>{data.desc}</Typography>}
+      {data.title && (
+      <Typography
+        fontSize={{ default: 'h5' }}
+        fontWeight="700"
+        {...customStyle?.title}
+      >
+        {data.title}
+      </Typography>
+      )}
+      {data.desc && (
+      <Typography
+        fontSize={{ default: 'body3' }}
+        margin="12px 0 0"
+        {...customStyle?.desc}
+        dangerouslySetInnerHTML={{ __html: data.desc }}
+      />
+      )}
       {data.hyperlink?.href && (
         <AlignBottomWrapper>
-          <Hyperlink fontSize={{ default: 'button2' }} variant="underline" {...data?.hyperlink} {...customStyle?.hyperlink}>{data.hyperlink.label}</Hyperlink>
+          <Hyperlink
+            fontSize={{ default: 'button2' }}
+            variant="underline"
+            {...data?.hyperlink}
+            {...customStyle?.hyperlink}
+          >
+            {data.hyperlink.label}
+          </Hyperlink>
         </AlignBottomWrapper>
       )}
     </ContentWrapper>

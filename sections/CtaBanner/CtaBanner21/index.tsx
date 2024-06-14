@@ -1,12 +1,11 @@
 import React from 'react';
 import { Typography } from '@/components/Typography';
-import { Button } from '@/components/Button';
 import {
   Background, ButtonWrapper, TextWrapper, WrapperWithFlexGap,
 } from '../styled';
 import { CtaBanner21Props } from './types';
 
-export const CtaBanner21: React.FC<CtaBanner21Props> = ({ data, customStyle }) => (
+export const CtaBanner21: React.FC<CtaBanner21Props> = ({ data, customStyle, children }) => (
   <Background backgroundColor={customStyle?.background?.color}>
     <WrapperWithFlexGap>
       <TextWrapper>
@@ -14,25 +13,17 @@ export const CtaBanner21: React.FC<CtaBanner21Props> = ({ data, customStyle }) =
           {data.title}
         </Typography>
         {data.desc && (
-        <Typography fontSize={{ default: 'body3', tablet: 'body5' }} margin="12px 0 0" {...customStyle?.desc}>
-          {data.desc}
-        </Typography>
+        <Typography
+          fontSize={{ default: 'body3', tablet: 'body5' }}
+          margin="12px 0 0"
+          {...customStyle?.desc}
+          dangerouslySetInnerHTML={{ __html: data.desc }}
+        />
         )}
       </TextWrapper>
-      {(data?.button1 || data?.button2) && (
-        <ButtonWrapper>
-          {data?.button1 && (
-          <Button {...customStyle?.button1} {...data.button1}>
-            {data.button1.text}
-          </Button>
-          )}
-          {data?.button2 && (
-          <Button {...customStyle?.button2} {...data.button2}>
-            {data.button2.text}
-          </Button>
-          )}
-        </ButtonWrapper>
-      )}
+      <ButtonWrapper>
+        {children}
+      </ButtonWrapper>
     </WrapperWithFlexGap>
   </Background>
 );

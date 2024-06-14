@@ -16,8 +16,23 @@ export const Modal11: React.FC<Modal11Props> = ({ data, customStyle, children })
       )}
       <ContentWrapper>
         <TextWrapper>
-          {data.title && <Typography fontSize={{ default: 'h7' }} fontWeight="700" {...customStyle?.title}>{data.title}</Typography>}
-          {data.desc && <Typography fontSize={{ default: 'body5' }} margin="16px 0 0" {...customStyle?.desc}>{data.desc}</Typography>}
+          {data.title && (
+          <Typography
+            fontSize={{ default: 'h7' }}
+            fontWeight="700"
+            {...customStyle?.title}
+          >
+            {data.title}
+          </Typography>
+          )}
+          {data.desc && (
+          <Typography
+            fontSize={{ default: 'body5' }}
+            margin="16px 0 0"
+            {...customStyle?.desc}
+            dangerouslySetInnerHTML={{ __html: data.desc }}
+          />
+          )}
         </TextWrapper>
         <ButtonWrapper>
           {children}

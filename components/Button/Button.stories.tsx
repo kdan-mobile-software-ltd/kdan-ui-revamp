@@ -1,4 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { css } from 'styled-components';
+import { colors } from '@/constants/themes/colors';
 import { Button } from './index';
 
 // https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -47,25 +49,43 @@ export const IconAppended: Story = {
     variant: 'filled',
     size: 'large',
     corner: 'square',
-    customStyle: {
-      backgroundColor: 'hyperlink',
-    },
   },
 };
 
-export const CustomColor: Story = {
+export const CustomCss: Story = {
   args: {
     children: 'buttonText',
     variant: 'filled',
     size: 'large',
     corner: 'round',
     customStyle: {
-      color: 'black',
-      borderColor: 'gray500',
-      backgroundColor: 'gray100',
-      hoverColor: 'gray1000',
-      hoverBackgroundColor: 'gray600',
-      hoverBorderColor: 'gray200',
+      customCss: css`
+        color: black;
+        background-color: ${colors.gray200};
+        :hover {
+          color: white;
+          background-color: ${colors.gray600};
+        }
+      `,
+      maxWidth: '240px',
+    },
+  },
+};
+
+export const DisableAndCustomStyle: Story = {
+  args: {
+    children: 'buttonText',
+    variant: 'outlined',
+    size: 'large',
+    corner: 'round',
+    isDisabled: true,
+    customStyle: {
+      customCss: css`
+        background-color: white;
+        :disabled {
+          background-color: ${colors.gray400};
+        }
+      `,
       maxWidth: '240px',
     },
   },

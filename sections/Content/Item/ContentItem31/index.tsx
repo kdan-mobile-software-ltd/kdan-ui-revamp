@@ -14,7 +14,7 @@ export const ContentItem31: React.FC<ContentItem31Props> = ({ data, customStyle 
   >
     <ContentWrapper minHeight={customStyle?.wrapper?.contentMinHeight}>
       <Title fontSize={{ default: 'h5', tablet: 'h7' }} fontWeight="700" {...customStyle?.title}>{data.title}</Title>
-      <Typography fontSize={{ default: 'body5' }} margin="12px 0 0" {...customStyle?.desc}>{data.desc}</Typography>
+      <Typography fontSize={{ default: 'body5' }} margin="12px 0 0" {...customStyle?.desc} dangerouslySetInnerHTML={{ __html: data.desc }} />
       {data?.hyperlink && (
       <AlignBottomWrapper>
         <Hyperlink

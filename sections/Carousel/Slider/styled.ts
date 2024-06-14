@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { HOST } from '@/constants/config';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
@@ -41,7 +42,7 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
 `;
 
 export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
-  background: url('/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
+  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
   background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
   position: absolute;
   width: 60px;
@@ -83,7 +84,7 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
 `;
 
 export const MobileArrowButton = styled.button`
-  background: url('/assets/icon/horizon-arrow.svg') CENTER CENTER NO-REPEAT;
+  background: url('${HOST}/assets/icon/horizon-arrow.svg') CENTER CENTER NO-REPEAT;
   width: 24px;
   height: 24px;
   cursor: pointer;

@@ -1,10 +1,14 @@
-import { ThemeProps } from 'styled-components';
+import { ThemeProps, FlattenSimpleInterpolation } from 'styled-components';
 import { FontSize } from '../fonts';
 import { CustomThemeType } from '../themes';
 import { CustomColor } from '../themes/colors';
 import { BreakpointKeyObj } from '../breakpoints';
 
 export type ThemePropsType = ThemeProps<CustomThemeType>;
+
+export type CustomCssPropsType = {
+  customCss?: FlattenSimpleInterpolation;
+};
 
 export type AlignCenterPropsType = {
   alignCenter?: boolean;

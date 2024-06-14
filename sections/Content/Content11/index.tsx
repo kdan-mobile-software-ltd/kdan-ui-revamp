@@ -5,7 +5,7 @@ import { GroupWrapper } from './styled';
 import { Content11Props } from './types';
 
 export const Content11: React.FC<Content11Props> = ({ data, customStyle }) => {
-  const hideLongerThan = 3;
+  const hideLongerThan = customStyle?.others?.hideLongerThan || 3;
   const { ToggleButton, isOpenAtMobile } = useToggle({
     length: data.items.length,
     hideLongerThan,

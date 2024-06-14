@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Button } from '@/components/Button';
+import { css } from 'styled-components';
 import { Modal11 } from '.';
 
 const meta = {
@@ -17,6 +18,14 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+const customCss = css`
+  background-color: #57d8ff;
+
+  :disabled {
+    background-color: #bdc7ca;
+  }
+`;
 
 export const Basic: Story = {
   parameters: {
@@ -38,7 +47,7 @@ export const Basic: Story = {
     },
     children: (
       <>
-        <Button variant="outlined" corner="square" size="small" type="button">Cancel</Button>
+        <Button variant="outlined" corner="square" size="small" type="button" customStyle={{ customCss }} isDisabled>Cancel</Button>
         <Button variant="filled" corner="square" size="small" type="submit">Ok</Button>
       </>
     ),

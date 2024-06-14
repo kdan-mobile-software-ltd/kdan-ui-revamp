@@ -1,4 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@/components/Button';
+import React from 'react';
 import { Banner11 } from '.';
 
 const meta = {
@@ -18,16 +20,26 @@ type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   args: {
+    children: (
+      <>
+        <Button
+          variant="outlined"
+          corner="square"
+          onClick={() => console.log('hello')}
+        >
+          Buy
+        </Button>
+        <Button
+          variant="filled"
+          corner="square"
+        >
+          More
+        </Button>
+      </>
+    ),
     data: {
       title: 'Headline Text Headline Text',
       desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text',
-      button1: {
-        text: 'Buy it',
-        id: 'button-1',
-      },
-      button2: {
-        text: 'More',
-      },
       hyperlink: {
         href: 'https://www.google.com/',
         label: 'Google',
@@ -37,40 +49,22 @@ export const Basic: Story = {
         alt: 'alt cc',
       },
     },
-    customStyle: {
-      button1: {
-        variant: 'filled',
-        size: 'small',
-        corner: 'square',
-      },
-      button2: {
-        variant: 'outlined',
-        size: 'small',
-        corner: 'square',
-      },
-    },
   },
 };
 export const CustomImageSize: Story = {
   args: {
+    children: (
+      <Button
+        variant="outlined"
+        corner="round"
+        type="button"
+      >
+        Buy
+      </Button>
+    ),
     data: {
       title: 'Headline Text Headline Text',
       desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text',
-      button1: {
-        icon: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
-          alt: 'img-multi-media-panel-1',
-        },
-        text: 'Button text',
-        id: 'button-1',
-      },
-      button2: {
-        icon: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
-          alt: 'img-multi-media-panel-1',
-        },
-        text: 'Button text',
-      },
       hyperlink: {
         href: 'https://www.google.com/',
         label: 'Hyperlink',
@@ -81,16 +75,6 @@ export const CustomImageSize: Story = {
       },
     },
     customStyle: {
-      button1: {
-        variant: 'filled',
-        size: 'large',
-        corner: 'square',
-      },
-      button2: {
-        variant: 'outlined',
-        size: 'large',
-        corner: 'square',
-      },
       image: {
         width: { default: '300px' },
         height: { default: '300px' },
