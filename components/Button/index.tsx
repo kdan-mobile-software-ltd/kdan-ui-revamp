@@ -7,9 +7,11 @@ export const Button: React.FC<ButtonProps> = ({
   variant, size, corner, customStyle, isDisabled,
   ...htmlProps
 }) => (
-  <StyledButton {...{
-    variant, size, corner, customStyle, isDisabled, ...htmlProps,
-  }}
+  <StyledButton
+    {...{
+      variant, size, corner, customStyle, isDisabled, ...htmlProps,
+    }}
+    disabled={isDisabled}
   >
     {icon && <Icon size={size} alt={icon.alt} src={icon.src} />}
     <span>{children}</span>

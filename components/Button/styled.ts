@@ -2,9 +2,7 @@ import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 import * as fonts from '@/constants/fonts';
 import { CustomThemeType } from '@/constants/themes';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
-import { ThemePropsType } from '@/constants/types/styled';
-import { getCustomColorFromTheme } from '@/utils/style';
-import { CustomColor } from '@/constants/themes/colors';
+import { CustomCssPropsType, ThemePropsType } from '@/constants/types/styled';
 import { SizeLS } from '@/constants/types/global';
 import { Variant, ButtonStyle, Corner } from './types';
 
@@ -64,9 +62,6 @@ const getCornerStyle = (corner: Corner): FlattenSimpleInterpolation => {
   const radius = corner === 'round' ? '100px' : '4px';
   return css`
     border-radius: ${radius};
-    ::after { 
-      border-radius: ${radius};
-    }
   `;
 };
 
@@ -87,7 +82,7 @@ export const Icon = styled.img<{ size?: SizeLS }>`
   }};
 `;
 
-export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
+export const StyledButton = styled.button<ThemePropsType & ButtonStyle & CustomCssPropsType>`
   position: relative;
   border: 1.5px solid;
   display: flex;
@@ -97,6 +92,10 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   cursor: pointer;
   white-space: nowrap;
   transition: ${({ theme }) => theme.transition.normal};
+
+  :disabled {
+    cursor: default;
+  }
   
   /* styling: variant, size, corner */
   ${({
@@ -110,27 +109,12 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   )}
 
   /* customStyle */
-  ${({ customStyle }) => {
-    const {
-      color, borderColor, backgroundColor,
-      hoverColor, hoverBorderColor, hoverBackgroundColor,
-      maxWidth,
-    } = customStyle || {};
-
-    return css`
-      ${color ? css`color: ${getCustomColorFromTheme(color)};` : ''}
-      ${backgroundColor ? css`background-color: ${getCustomColorFromTheme(backgroundColor)};` : ''}
-      ${borderColor ? css`border-color: ${getCustomColorFromTheme((borderColor) as CustomColor)};` : ''}
-      ${hoverColor ? css`&:hover { color: ${getCustomColorFromTheme(hoverColor)}; }` : ''}
-      ${hoverBorderColor ? css`&:hover { border-color: ${getCustomColorFromTheme(hoverBorderColor)}; }` : ''}
-      ${hoverBackgroundColor ? css`
-        &:hover { background-color: ${getCustomColorFromTheme(hoverBackgroundColor)}; }
-        &:hover::after { opacity: 0; }
-      ` : ''}
-      ${maxWidth ? css`
+  ${({ customStyle: { maxWidth, customCss } = {} }) => css`
+      ${maxWidth && css`
         max-width: ${maxWidth};
         width: 100vw;
-      ` : ''}
-    `;
-  }}
+      `}
+
+      ${customCss}
+    `}
 `;
