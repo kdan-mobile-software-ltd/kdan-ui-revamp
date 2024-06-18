@@ -5,6 +5,7 @@ import {
   ColorPropsType, DisplayPropsType, FontSizePropsType, FontWeightPropsType, MarginPropsType,
   PaddingPropsType, TextAlignPropsType,
 } from '@/constants/types/styled';
+import { getCustomColorFromTheme } from '../style';
 
 const styleTypeMap: Record<keyof typeof fonts.FONT_SIZE, FlattenSimpleInterpolation> = {
   h1: fonts.h1FontStyle,
@@ -40,7 +41,7 @@ export const textCustomCss = css<TextCustomCssProps>`
         ${styleTypeMap[size]}
         }`
   )).join(' ')}
-  color: ${({ color = 'black', theme }) => theme.colors?.[color] || color};
+  color: ${({ color = 'black' }) => getCustomColorFromTheme(color)};
   ${({ padding }) => padding && css`padding: ${padding};`}
   ${({ margin }) => margin && css`margin: ${margin};`}
   ${({ textAlign }) => textAlign && css`text-align: ${textAlign};`}
