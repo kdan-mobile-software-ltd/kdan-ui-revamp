@@ -12,8 +12,7 @@ export type Variant = keyof typeof VARIANTS;
 
 export type ComponentProps = {
   children: string | ReactNode;
-  href: string;
-} & HyperlinkStyle & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
+} & HyperlinkStyle & ComponentPropsWithoutRef<'a'>;
 
 export type HyperlinkStyle = {
   variant?: Variant;
@@ -23,4 +22,4 @@ export type HyperlinkStyle = {
 export type HocHyperlinkData = {
   href: string;
   label: string;
-} & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
+} & ComponentPropsWithoutRef<'a'>;

@@ -36,7 +36,7 @@ export const ArrowStyle: Story = {
   args: {
     variant: 'underline',
     children: 'go to Goole',
-    href: 'https://google.com/',
+    onClick: () => { console.log('hello'); },
   },
 };
 
