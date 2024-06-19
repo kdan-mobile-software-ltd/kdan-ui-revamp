@@ -1,11 +1,11 @@
 {
   "name": "kdan-ui-revamp",
-  "version": "2.0.0-beta.3",
+  "version": "2.1.0",
   "license": "MIT",
   "description": "React library library of foundational and advanced components by Kdan web design system",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kdan-mobile-software-ltd/kdan-ui-revamp"
+    "url": "git+https://github.com/kdan-mobile-software-ltd/kdan-ui-revamp.git"
   },
   "sideEffects": false,
   "exports": {
