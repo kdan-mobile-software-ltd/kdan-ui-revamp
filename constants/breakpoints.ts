@@ -1,8 +1,8 @@
 export const BREAKPOINTS = {
   desktop: '1920px',
-  laptop: '1280px',
-  tablet: '1024px',
-  mobile: '768px',
+  laptop: '1279px',
+  tablet: '1023px',
+  mobile: '767px',
 } as const;
 
 export type Breakpoints = keyof typeof BREAKPOINTS;

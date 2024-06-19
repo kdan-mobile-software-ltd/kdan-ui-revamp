@@ -11,13 +11,14 @@ export const Hyperlink: React.FC<ComponentProps> = ({
   padding,
   margin,
   textAlign,
+  customCss,
   ...htmlProps
 }) => (
   <StyledHyperlink
     variant={variant}
     href={href}
     {...{
-      color, fontSize, padding, margin, textAlign, ...htmlProps,
+      color, fontSize, padding, margin, textAlign, customCss, ...htmlProps,
     }}
   >
     {children}

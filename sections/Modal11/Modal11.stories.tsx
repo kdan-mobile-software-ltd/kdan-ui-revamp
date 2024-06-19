@@ -47,7 +47,7 @@ export const Basic: Story = {
     },
     children: (
       <>
-        <Button variant="outlined" corner="square" size="small" type="button" customStyle={{ customCss }} isDisabled>Cancel</Button>
+        <Button variant="outlined" corner="square" size="small" type="button" customStyle={{ customCss }}>Cancel</Button>
         <Button variant="filled" corner="square" size="small" type="submit">Ok</Button>
       </>
     ),

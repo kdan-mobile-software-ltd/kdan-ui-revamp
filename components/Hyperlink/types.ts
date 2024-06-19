@@ -1,5 +1,6 @@
-import { TextCustomCssProps } from '@/utils/style/textStyle';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { FlattenSimpleInterpolation } from 'styled-components';
+import { TextCustomCssProps } from '@/utils/style/textStyle';
 
 export const VARIANTS = {
   noUnderline: 'noUnderline',
@@ -11,14 +12,14 @@ export type Variant = keyof typeof VARIANTS;
 
 export type ComponentProps = {
   children: string | ReactNode;
-  href: string;
-} & HyperlinkStyle & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
+} & HyperlinkStyle & ComponentPropsWithoutRef<'a'>;
 
 export type HyperlinkStyle = {
   variant?: Variant;
+  customCss?: FlattenSimpleInterpolation;
 } & TextCustomCssProps;
 
 export type HocHyperlinkData = {
   href: string;
   label: string;
-} & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
+} & ComponentPropsWithoutRef<'a'>;

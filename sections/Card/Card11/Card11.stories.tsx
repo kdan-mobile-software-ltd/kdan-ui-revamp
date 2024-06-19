@@ -102,7 +102,7 @@ export const Basic: Story = {
     },
     customStyle: {
       title: { color: 'gray700' },
-      wrapper: { backgroundColor: 'gray700' },
+      wrapper: { backgroundColor: 'gray100' },
     },
   },
 };
