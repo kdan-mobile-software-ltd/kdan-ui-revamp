@@ -24,4 +24,5 @@ const getVariantStyle = (variants: Variant): FlattenSimpleInterpolation => {
 export const StyledHyperlink = styled.a<HyperlinkStyle>`
   ${({ variant = 'noUnderline' }) => getVariantStyle(variant)}
   ${textCustomCss}
+  ${({ customCss = '' }) => customCss}
 `;

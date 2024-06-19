@@ -1,5 +1,6 @@
-import { TextCustomCssProps } from '@/utils/style/textStyle';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { FlattenSimpleInterpolation } from 'styled-components';
+import { TextCustomCssProps } from '@/utils/style/textStyle';
 
 export const VARIANTS = {
   noUnderline: 'noUnderline',
@@ -16,6 +17,7 @@ export type ComponentProps = {
 
 export type HyperlinkStyle = {
   variant?: Variant;
+  customCss?: FlattenSimpleInterpolation;
 } & TextCustomCssProps;
 
 export type HocHyperlinkData = {
