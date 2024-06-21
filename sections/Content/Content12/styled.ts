@@ -35,7 +35,10 @@ export const Image = styled(CustomSizeImage)`
 
 export const FlexWrapper = styled.div`
   width: 320px;
-
+  
+  @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+    width: 288px;
+  }
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     width: 100%;
     display: flex;
