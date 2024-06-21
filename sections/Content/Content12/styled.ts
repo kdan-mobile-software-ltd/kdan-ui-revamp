@@ -43,6 +43,7 @@ export const FlexWrapper = styled.div`
     width: 100%;
     display: flex;
     gap: 40px;
+    align-items: center;
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     display: flex;
