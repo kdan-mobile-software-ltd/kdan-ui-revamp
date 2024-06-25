@@ -3,6 +3,7 @@ import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '@/constants/themes/globalstyle';
 import themes from '../constants/themes';
+import '@/utils/style/storybookGlobalStyle.css';
 
 const customViewports = {
   desktop: {
