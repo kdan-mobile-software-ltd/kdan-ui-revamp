@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { Meta, StoryObj } from '@storybook/react';
 import { Hyperlink } from '.';
-import { VARIANTS } from './types';
+import { HYPERLINK_VARIANTS } from './types';
 
 const meta = {
   title: 'Components/Hyperlink',
@@ -9,7 +9,7 @@ const meta = {
   argTypes: {
     id: { control: 'text' },
     target: { control: 'text', description: 'e.g. `_blank`' },
-    variant: { control: 'inline-radio', options: [...Object.keys(VARIANTS)] },
+    variant: { control: 'inline-radio', options: [...Object.keys(HYPERLINK_VARIANTS)] },
     children: { control: 'text' },
     href: { control: 'text' },
     color: { control: 'color' },

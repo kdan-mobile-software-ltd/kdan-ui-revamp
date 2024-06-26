@@ -2,11 +2,11 @@ import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { ImgData, SizeLS } from '@/constants/types/global';
 import { CustomCssPropsType } from '@/constants/types/styled';
 
-export type Variant = 'filled' | 'outlined' | 'text';
+export type ButtonVariant = 'filled' | 'outlined' | 'text';
 export type Corner = 'round' | 'square';
 
-export type ButtonStyle = {
-  variant?: Variant; // default is `filled`
+export type ButtonCustomStyle = {
+  variant?: ButtonVariant; // default is `filled`
   size?: SizeLS; // default is `large`
   corner?: Corner; // default is `round`
   customStyle?: {
@@ -27,5 +27,5 @@ export type HocButtonData = {
 } & HTMLButtonProps;
 
 export type ButtonProps = ButtonDataProps
-& ButtonStyle
+& ButtonCustomStyle
 & HTMLButtonProps;

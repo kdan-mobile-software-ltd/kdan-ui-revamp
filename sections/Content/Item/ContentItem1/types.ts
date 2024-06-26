@@ -1,11 +1,11 @@
-import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
+import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 
 export type ContentItem1CustomStyle = {
   title?: TextCustomCssProps;
   desc?: TextCustomCssProps;
-  hyperlink?: HyperlinkStyle;
+  hyperlink?: HyperlinkCustomStyle;
 };
 
 export type ContentItem1Data = {
