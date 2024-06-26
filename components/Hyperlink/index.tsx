@@ -5,7 +5,6 @@ import { HyperlinkProps } from './types';
 export const Hyperlink: React.FC<HyperlinkProps> = ({
   variant,
   children,
-  href,
   color = 'hyperlink',
   fontSize = { default: 'body3', tablet: 'body5' },
   padding,
@@ -15,9 +14,8 @@ export const Hyperlink: React.FC<HyperlinkProps> = ({
   ...htmlProps
 }) => (
   <StyledHyperlink
-    variant={variant}
     {...{
-      color, fontSize, padding, margin, textAlign, customCss, ...htmlProps,
+      variant, color, fontSize, padding, margin, textAlign, customCss, ...htmlProps,
     }}
   >
     {children}
