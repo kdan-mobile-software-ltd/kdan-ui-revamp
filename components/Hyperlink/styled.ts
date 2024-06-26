@@ -1,8 +1,8 @@
 import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 import { textCustomCss } from '@/utils/style/textStyle';
-import { HyperlinkStyle, Variant } from './types';
+import { HyperlinkCustomStyle, HyperlinkVariant } from './types';
 
-const getVariantStyle = (variants: Variant): FlattenSimpleInterpolation => {
+const getVariantStyle = (variants: HyperlinkVariant): FlattenSimpleInterpolation => {
   switch (variants) {
     case 'underline': {
       return css`
@@ -21,7 +21,7 @@ const getVariantStyle = (variants: Variant): FlattenSimpleInterpolation => {
   }
 };
 
-export const StyledHyperlink = styled.a<HyperlinkStyle>`
+export const StyledHyperlink = styled.a<HyperlinkCustomStyle>`
   cursor: pointer;
   ${({ variant = 'noUnderline' }) => getVariantStyle(variant)}
   ${textCustomCss}

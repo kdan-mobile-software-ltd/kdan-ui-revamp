@@ -4,10 +4,10 @@ import { CustomThemeType } from '@/constants/themes';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { CustomCssPropsType, ThemePropsType } from '@/constants/types/styled';
 import { SizeLS } from '@/constants/types/global';
-import { Variant, ButtonStyle, Corner } from './types';
+import { ButtonVariant, ButtonCustomStyle, Corner } from './types';
 
 const getVariantStyle = (
-  variants: Variant,
+  variants: ButtonVariant,
   theme: CustomThemeType,
 ): FlattenSimpleInterpolation => {
   switch (variants) {
@@ -82,7 +82,7 @@ export const Icon = styled.img<{ size?: SizeLS }>`
   }};
 `;
 
-export const StyledButton = styled.button<ThemePropsType & ButtonStyle & CustomCssPropsType>`
+export const StyledButton = styled.button<ThemePropsType & ButtonCustomStyle & CustomCssPropsType>`
   position: relative;
   border: 1.5px solid;
   display: flex;

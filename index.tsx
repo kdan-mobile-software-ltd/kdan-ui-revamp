@@ -2,12 +2,16 @@ export * from './constants/fonts';
 export * from './constants/themes/colors';
 export { KdanUiThemeProvider } from './constants/themes';
 export { useToggle } from './hooks/useToggle';
-export { getCurrentBreakpoint } from './utils/getCurrentBreakpoint';
 export { useWindowWidth } from './hooks/useContainDimensions';
+export { getCurrentBreakpoint } from './utils/getCurrentBreakpoint';
+export * from './utils/style/textStyle';
+export { RwdWrapper } from './utils/style/wrapper';
 
 // components
 export * from './components/Button';
+export * from './components/Button/types';
 export * from './components/Hyperlink';
+export * from './components/Hyperlink/types';
 export * from './components/Typography';
 
 // sections

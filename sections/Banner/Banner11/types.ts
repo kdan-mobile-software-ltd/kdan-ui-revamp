@@ -1,5 +1,5 @@
 import { CustomColor } from '@/constants/themes/colors';
-import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
+import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { CustomImageSize } from '@/components/Image/styledImages';
 import { ReactNode } from 'react';
@@ -17,7 +17,7 @@ export type Banner11CustomStyle = {
   desc?: {
     color: CustomColor;
   };
-  hyperlink?: HyperlinkStyle;
+  hyperlink?: HyperlinkCustomStyle;
   image?: CustomImageSize;
 };
 

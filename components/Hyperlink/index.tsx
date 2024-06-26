@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledHyperlink } from './styled';
-import { ComponentProps } from './types';
+import { HyperlinkProps } from './types';
 
-export const Hyperlink: React.FC<ComponentProps> = ({
+export const Hyperlink: React.FC<HyperlinkProps> = ({
   variant,
   children,
   href,
