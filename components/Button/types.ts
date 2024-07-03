@@ -16,7 +16,7 @@ export type ButtonCustomStyle = {
 
 export type ButtonDataProps = {
   icon?: ImgData;
-  children: string | ReactNode;
+  children: ReactNode;
 };
 
 export type HTMLButtonProps = ComponentPropsWithoutRef<'button'>; // https://github.com/styled-components/styled-components/issues/3191#issuecomment-655229877

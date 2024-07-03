@@ -12,7 +12,7 @@ export const RwdWrapper = styled.div`
     max-width: 688px;
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
-    max-width: 480px;
+    max-width: 512px; // max-width: 480px (UI design with content-box)
     padding-left: 16px;
     padding-right: 16px;
   }
