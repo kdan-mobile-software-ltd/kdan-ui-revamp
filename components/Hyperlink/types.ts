@@ -13,7 +13,7 @@ export type HyperlinkVariant = keyof typeof HYPERLINK_VARIANTS;
 type HTMLHyperlinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'color'>;
 
 export type HyperlinkProps = {
-  children: string | ReactNode;
+  children: ReactNode;
 } & HyperlinkCustomStyle & HTMLHyperlinkProps;
 
 export type HyperlinkCustomStyle = {
