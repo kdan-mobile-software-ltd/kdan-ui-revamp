@@ -1,9 +1,10 @@
+import styled from 'styled-components';
 import { ThemePropsType } from '@/constants/types/styled';
 import { TextCustomCssProps, textCustomCss } from '@/utils/style/textStyle';
 
-import styled from 'styled-components';
+export type TypographyProps = ThemePropsType & TextCustomCssProps;
 
-export const Typography = styled.p<ThemePropsType & TextCustomCssProps>`
+export const Typography = styled.p<TypographyProps>`
   ${textCustomCss}
   word-wrap: break-word;
 `;

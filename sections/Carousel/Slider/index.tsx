@@ -3,9 +3,9 @@ import {
   DesktopArrowButton, Wrapper, MobileArrowButton,
   BottomPaginationWrapper, PaginationDot, ContentWrapper, Hidden,
 } from './styled';
-import { ComponentProps } from './types';
+import { SliderProps } from './types';
 
-export const Slider: React.FC<ComponentProps> = ({
+export const Slider: React.FC<SliderProps> = ({
   customStyle,
   children,
 }) => {

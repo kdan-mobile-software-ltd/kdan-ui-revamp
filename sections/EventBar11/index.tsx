@@ -1,26 +1,10 @@
 import React from 'react';
-import { CustomColor } from '@/constants/themes/colors';
-import { ImgData } from '@/constants/types/global';
-import { TextCustomCssProps } from '@/utils/style/textStyle';
-import { HocHyperlinkData } from '@/components/Hyperlink/types';
 import { CustomSizeImage } from '@/components/Image/styledImages';
 import { Hyperlink } from '@/components/Hyperlink';
 import { Wrapper, Title } from './styled';
+import { EventBar11Props } from './types';
 
-type ComponentProps = {
-  data: {
-    title: string;
-    hyperlink: HocHyperlinkData;
-    icon: ImgData;
-  };
-  customStyle?: {
-    backgroundColor?: CustomColor;
-    title?: TextCustomCssProps;
-    hyperlink?: TextCustomCssProps;
-  };
-};
-
-export const EventBar11: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const EventBar11: React.FC<EventBar11Props> = ({ data, customStyle }) => (
   <Wrapper backgroundColor={customStyle?.backgroundColor}>
     {data.icon.src && (
       <CustomSizeImage

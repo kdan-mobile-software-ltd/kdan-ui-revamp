@@ -40,6 +40,7 @@ export default {
       babelHelpers: 'runtime',
       exclude: 'node_modules/**',
       extensions: ['.ts', '.tsx'],
+      plugins: ['styled-components'],
     }),
     terser(),
     del({ targets: 'dist/*' }),

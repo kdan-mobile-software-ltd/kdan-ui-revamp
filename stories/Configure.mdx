@@ -8,6 +8,8 @@ import { Meta } from "@storybook/blocks";
 
 - [References](#references)
 - [Getting Started](#getting-started)
+- [For Users](#for-users)
+  - [重要版更](#重要版更)
 - [Quick Usage](#quick-usage)
 
 
@@ -59,6 +61,22 @@ function Page() {
   );
 }
 ```
+
+## For Users
+
+### 重要版更變動（depreciation notification）
+
+#### `2.0.0-beta.3` 之後
+
+* `<Banner>`, `<CtaBanner>` 的 button 傳入方式，從 data 改為 children。
+
+
+#### `2.0.0-beta.2` 之後
+
+* `<Button>` 元件不支援 `color`, `backgroundColor`, `borderColor`, `hoverColor`, `hoverBackgroundColor`, `hoverBorderColor` 等等 props，一律改成 `CustomCss` props 開放自行寫 css 的彈性。
+
+
+
 
 ## For Infra Developers
 

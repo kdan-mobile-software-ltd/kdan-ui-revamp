@@ -1,63 +1,29 @@
 import React from 'react';
-import { CustomColor } from '@/constants/themes/colors';
-import { HocButtonData, ButtonStyle } from '@/components/Button/types';
-import { Button } from '@/components/Button';
 import { Hyperlink } from '@/components/Hyperlink';
-import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
-import { ImgData } from '@/constants/types/global';
-import { CustomImageSize } from '@/components/Image/styledImages';
 import {
   AlignCenterImage, ButtonWrapper, Desc, Title, WrapperWithFlexGap,
 } from '../styled';
+import { Banner11Props } from './types';
 
-type ComponentProps = {
-  data: {
-    title: string;
-    desc?: string;
-    button1?: HocButtonData;
-    button2?: HocButtonData;
-    hyperlink?: HocHyperlinkData;
-    image: ImgData;
-  };
-  customStyle?: {
-    title?: {
-      color: CustomColor;
-    };
-    desc?: {
-      color: CustomColor;
-    };
-    button1?: ButtonStyle;
-    button2?: ButtonStyle;
-    hyperlink?: HyperlinkStyle;
-    image?: CustomImageSize;
-  };
-};
-
-export const Banner11: React.FC<ComponentProps> = ({ data, customStyle }) => (
+export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, children }) => (
   <WrapperWithFlexGap>
     <div>
       <Title fontSize={{ default: 'h2', tablet: 'h4' }} fontWeight="700" color={customStyle?.title?.color}>
         {data.title}
       </Title>
       {data.desc && (
-      <Desc fontSize={{ default: 'body1', tablet: 'body3' }} color={customStyle?.desc?.color} margin="12px 0 0">
-        {data.desc}
-      </Desc>
+      <Desc
+        fontSize={{ default: 'body1', tablet: 'body3' }}
+        color={customStyle?.desc?.color}
+        margin="12px 0 0"
+        dangerouslySetInnerHTML={{ __html: data.desc }}
+      />
       )}
-      {(data?.button1 || data?.button2) && (
+
       <ButtonWrapper>
-        {data?.button1 && (
-        <Button {...customStyle?.button1} {...data.button1}>
-          {data.button1.text}
-        </Button>
-        )}
-        {data?.button2 && (
-        <Button {...customStyle?.button2} {...data.button2}>
-          {data.button2.text}
-        </Button>
-        )}
+        {children}
       </ButtonWrapper>
-      )}
+
       {data?.hyperlink && (
         <Hyperlink
           fontSize={{ default: 'button1', tablet: 'button3' }}

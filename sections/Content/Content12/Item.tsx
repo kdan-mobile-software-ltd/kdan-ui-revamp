@@ -1,10 +1,10 @@
 import React from 'react';
 import { ItemToggleAnimationWrapper } from '@/components/private/Toggle/styled';
 import { FlexWrapper, Image } from './styled';
-import { ItemProps } from './types';
+import { Content12ItemProps } from './types';
 import { ContentItem1 } from '../Item/ContentItem1';
 
-const Item: React.FC<ItemProps> = ({
+const Item: React.FC<Content12ItemProps> = ({
   data, customStyle, hideAtMobile,
 }) => (
   <ItemToggleAnimationWrapper hideAtMobile={hideAtMobile}>

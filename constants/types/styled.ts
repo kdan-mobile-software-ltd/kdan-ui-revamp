@@ -1,10 +1,15 @@
-import { ThemeProps } from 'styled-components';
+import { ThemeProps, FlattenInterpolation } from 'styled-components';
 import { FontSize } from '../fonts';
 import { CustomThemeType } from '../themes';
 import { CustomColor } from '../themes/colors';
 import { BreakpointKeyObj } from '../breakpoints';
 
 export type ThemePropsType = ThemeProps<CustomThemeType>;
+
+export type CustomCssPropsType = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  customCss?: FlattenInterpolation<any>;
+};
 
 export type AlignCenterPropsType = {
   alignCenter?: boolean;

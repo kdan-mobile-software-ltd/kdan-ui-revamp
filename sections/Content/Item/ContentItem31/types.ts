@@ -1,4 +1,4 @@
-import { HocHyperlinkData, HyperlinkStyle } from '@/components/Hyperlink/types';
+import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
@@ -20,5 +20,10 @@ export type ContentItem31CustomStyle = {
     borderLeftColor: CustomColor;
   } & TextCustomCssProps;
   desc?: TextCustomCssProps;
-  hyperlink?: HyperlinkStyle;
+  hyperlink?: HyperlinkCustomStyle;
+};
+
+export type ContentItem31Props = {
+  data: ContentItem31Data;
+  customStyle?: ContentItem31CustomStyle;
 };

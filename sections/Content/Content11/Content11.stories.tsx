@@ -115,6 +115,15 @@ export const TwoColumns: Story = {
           title: 'panel_4_title 2',
           desc: 'panel_4_desc',
         },
+        {
+          title: 'panel_5_title 2',
+          desc: 'panel_5_desc',
+
+        },
+        {
+          title: 'panel_6_title 2',
+          desc: 'panel_6_desc',
+        },
       ],
       toggleText: {
         open: '開啟',
@@ -122,7 +131,10 @@ export const TwoColumns: Story = {
       },
     },
     customStyle: {
-      others: { numbersOfColumn: 2 },
+      others: {
+        numbersOfColumn: 2,
+        hideLongerThan: 4,
+      },
       title: { color: '#22BBAA' },
     },
   },

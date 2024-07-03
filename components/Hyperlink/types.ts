@@ -1,24 +1,27 @@
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { FlattenSimpleInterpolation } from 'styled-components';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
-import { ComponentPropsWithoutRef } from 'react';
 
-export const VARIANTS = {
+export const HYPERLINK_VARIANTS = {
   noUnderline: 'noUnderline',
   underline: 'underline',
   arrow: 'arrow',
 } as const;
 
-export type Variant = keyof typeof VARIANTS;
+export type HyperlinkVariant = keyof typeof HYPERLINK_VARIANTS;
 
-export type ComponentProps = {
-  children: string;
-  href: string;
-} & HyperlinkStyle & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
+type HTMLHyperlinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'color'>;
 
-export type HyperlinkStyle = {
-  variant?: Variant;
+export type HyperlinkProps = {
+  children: ReactNode;
+} & HyperlinkCustomStyle & HTMLHyperlinkProps;
+
+export type HyperlinkCustomStyle = {
+  variant?: HyperlinkVariant;
+  customCss?: FlattenSimpleInterpolation;
 } & TextCustomCssProps;
 
 export type HocHyperlinkData = {
   href: string;
   label: string;
-} & Pick<ComponentPropsWithoutRef<'a'>, 'target' | 'id'>;
+} & HTMLHyperlinkProps;

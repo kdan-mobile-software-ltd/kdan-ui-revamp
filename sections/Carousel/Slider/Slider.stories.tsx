@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ComponentProps } from './types';
+import { SliderProps } from './types';
 import { Slider } from '.';
 
 const meta = {
@@ -12,7 +12,7 @@ const meta = {
   },
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
-} as Meta<ComponentProps>;
+} as Meta<SliderProps>;
 
 export default meta;
 

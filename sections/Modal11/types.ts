@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
+import { ReactNode } from 'react';
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 
-export type CustomStyle = {
+export type Modal11CustomStyle = {
   wrapper?: {
     maskBackground?: CustomColor;
     modalBackground?: CustomColor;
@@ -12,12 +12,14 @@ export type CustomStyle = {
   desc?: TextCustomCssProps;
 };
 
-export type ComponentProps = {
-  data: {
-    title: string;
-    desc?: string;
-    image?: ImgData;
-  };
-  customStyle?: CustomStyle;
-  children: ReactElement;
+export type Modal11Data = {
+  title: string;
+  desc?: string;
+  image?: ImgData;
+};
+
+export type Modal11Props = {
+  data: Modal11Data
+  customStyle?: Modal11CustomStyle;
+  children: ReactNode;
 };

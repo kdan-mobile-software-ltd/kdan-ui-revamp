@@ -3,6 +3,7 @@ import type { Preview } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '@/constants/themes/globalstyle';
 import themes from '../constants/themes';
+import '@/utils/style/storybookGlobalStyle.css';
 
 const customViewports = {
   desktop: {
@@ -15,21 +16,21 @@ const customViewports = {
   laptop: {
     name: 'Laptop (Max)',
     styles: {
-      width: '1280px',
+      width: '1279px',
       height: '100%',
     },
   },
   tablet: {
     name: 'Tablet (Max)',
     styles: {
-      width: '1024px',
+      width: '1023px',
       height: '100%',
     },
   },
   mobile: {
     name: 'Mobile (Max)',
     styles: {
-      width: '768px',
+      width: '767px',
       height: '100%',
     },
   },

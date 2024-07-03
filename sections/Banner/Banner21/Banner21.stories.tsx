@@ -1,4 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Button } from '@/components/Button';
+import React from 'react';
 import { Banner21 } from '.';
 
 const meta = {
@@ -18,23 +20,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   args: {
+    children: (
+      <Button
+        variant="outlined"
+        corner="round"
+        type="button"
+      >
+        Buy
+      </Button>
+    ),
     data: {
       title: 'Headline Text Headline Text Headline Text Headline Text',
       desc: 'Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text Description Text',
-      button1: {
-        icon: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
-          alt: 'img-multi-media-panel-1',
-        },
-        text: 'Buy it',
-      },
-      button2: {
-        icon: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
-          alt: 'img-multi-media-panel-1',
-        },
-        text: 'More',
-      },
       hyperlink: {
         href: 'https://www.google.com/',
         label: 'go to google',
@@ -42,18 +39,6 @@ export const Basic: Story = {
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
         alt: 'alt cc',
-      },
-    },
-    customStyle: {
-      button1: {
-        variant: 'filled',
-        size: 'large',
-        corner: 'round',
-      },
-      button2: {
-        variant: 'outlined',
-        size: 'large',
-        corner: 'round',
       },
     },
   },

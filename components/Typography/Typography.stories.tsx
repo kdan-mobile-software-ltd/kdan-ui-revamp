@@ -11,6 +11,9 @@ const meta = {
     margin: { control: 'text' },
     children: { control: 'text' },
   },
+  parameters: {
+    controls: { exclude: ['as', 'forwardedAs', 'theme', 'ref'] },
+  },
   tags: ['autodocs'],
 } as Meta<typeof Typography>;
 

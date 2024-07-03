@@ -3,10 +3,10 @@ import { ItemToggleAnimationWrapper } from '@/components/private/Toggle/styled';
 import { useToggle } from '@/hooks/useToggle';
 import { CardItem11 } from '../Item/CardItem11';
 import { ContentWrapper, Wrapper } from './styled';
-import { ComponentProps } from './types';
+import { Card11Props } from './types';
 
-export const Card11: React.FC<ComponentProps> = ({ data, customStyle }) => {
-  const hideLongerThan = 3;
+export const Card11: React.FC<Card11Props> = ({ data, customStyle }) => {
+  const hideLongerThan = customStyle?.others?.hideLongerThan || 3;
   const { ToggleButton, isOpenAtMobile } = useToggle({
     length: data.items.length,
     hideLongerThan,

@@ -3,9 +3,9 @@ import { Typography } from '@/components/Typography';
 import {
   Mask, ButtonWrapper, ContentWrapper, TextWrapper, Wrapper, Image,
 } from './styled';
-import { ComponentProps } from './types';
+import { Modal11Props } from './types';
 
-export const Modal11: React.FC<ComponentProps> = ({ data, customStyle, children }) => (
+export const Modal11: React.FC<Modal11Props> = ({ data, customStyle, children }) => (
   <Mask backgroundColor={customStyle?.wrapper?.maskBackground}>
     <Wrapper backgroundColor={customStyle?.wrapper?.modalBackground}>
       {data?.image?.src && (
@@ -16,8 +16,23 @@ export const Modal11: React.FC<ComponentProps> = ({ data, customStyle, children 
       )}
       <ContentWrapper>
         <TextWrapper>
-          {data.title && <Typography fontSize={{ default: 'h7' }} fontWeight="700" {...customStyle?.title}>{data.title}</Typography>}
-          {data.desc && <Typography fontSize={{ default: 'body5' }} margin="16px 0 0" {...customStyle?.desc}>{data.desc}</Typography>}
+          {data.title && (
+          <Typography
+            fontSize={{ default: 'h7' }}
+            fontWeight="700"
+            {...customStyle?.title}
+          >
+            {data.title}
+          </Typography>
+          )}
+          {data.desc && (
+          <Typography
+            fontSize={{ default: 'body5' }}
+            margin="16px 0 0"
+            {...customStyle?.desc}
+            dangerouslySetInnerHTML={{ __html: data.desc }}
+          />
+          )}
         </TextWrapper>
         <ButtonWrapper>
           {children}

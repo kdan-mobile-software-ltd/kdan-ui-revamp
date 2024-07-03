@@ -2,14 +2,12 @@ import styled, { FlattenSimpleInterpolation, css } from 'styled-components';
 import * as fonts from '@/constants/fonts';
 import { CustomThemeType } from '@/constants/themes';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
-import { ThemePropsType } from '@/constants/types/styled';
-import { getCustomColorFromTheme } from '@/utils/style';
-import { CustomColor } from '@/constants/themes/colors';
+import { CustomCssPropsType, ThemePropsType } from '@/constants/types/styled';
 import { SizeLS } from '@/constants/types/global';
-import { Variant, ButtonStyle, Corner } from './types';
+import { ButtonVariant, ButtonCustomStyle, Corner } from './types';
 
 const getVariantStyle = (
-  variants: Variant,
+  variants: ButtonVariant,
   theme: CustomThemeType,
 ): FlattenSimpleInterpolation => {
   switch (variants) {
@@ -30,7 +28,7 @@ const getVariantStyle = (
     default: {
       return css`
         background-color: ${theme.colors.gray900};
-        border-color: ${theme.colors.gray900};
+        border-color: ${theme.colors.transparent};
         color: ${theme.colors.white};
         `;
     }
@@ -64,9 +62,6 @@ const getCornerStyle = (corner: Corner): FlattenSimpleInterpolation => {
   const radius = corner === 'round' ? '100px' : '4px';
   return css`
     border-radius: ${radius};
-    ::after { 
-      border-radius: ${radius};
-    }
   `;
 };
 
@@ -87,7 +82,7 @@ export const Icon = styled.img<{ size?: SizeLS }>`
   }};
 `;
 
-export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
+export const StyledButton = styled.button<ThemePropsType & ButtonCustomStyle & CustomCssPropsType>`
   position: relative;
   border: 1.5px solid;
   display: flex;
@@ -96,30 +91,11 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   width: fit-content;
   cursor: pointer;
   white-space: nowrap;
+  transition: ${({ theme }) => theme.transition.normal};
 
-  ${({ theme }) => css`
-    &::after { /* for hover and focus style */
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border: 0;
-      transition: ${theme.transition.normal};
-    }
-    &:hover::after {
-      background-color: ${theme.colors.hoverLayer};
-      opacity: 1;
-    }
-    &:focus::after {
-      background-color: ${theme.colors.focusLayer};
-      opacity: 1;
-    }
-    &:disabled {
-      opacity: 0.5;
-    }
-  `};
+  :disabled {
+    cursor: default;
+  }
   
   /* styling: variant, size, corner */
   ${({
@@ -133,27 +109,12 @@ export const StyledButton = styled.button<ThemePropsType & ButtonStyle>`
   )}
 
   /* customStyle */
-  ${({ customStyle }) => {
-    const {
-      color, borderColor, backgroundColor,
-      hoverColor, hoverBorderColor, hoverBackgroundColor,
-      maxWidth,
-    } = customStyle || {};
-
-    return css`
-      ${color ? css`color: ${getCustomColorFromTheme(color)};` : ''}
-      ${backgroundColor ? css`background-color: ${getCustomColorFromTheme(backgroundColor)};` : ''}
-      ${borderColor || backgroundColor ? css`border-color: ${getCustomColorFromTheme((borderColor || backgroundColor) as CustomColor)};` : ''}
-      ${hoverColor ? css`&:hover { color: ${getCustomColorFromTheme(hoverColor)}; }` : ''}
-      ${hoverBorderColor ? css`&:hover { border-color: ${getCustomColorFromTheme(hoverBorderColor)}; }` : ''}
-      ${hoverBackgroundColor ? css`
-        &:hover { background-color: ${getCustomColorFromTheme(hoverBackgroundColor)}; }
-        &:hover::after { opacity: 0; }
-      ` : ''}
-      ${maxWidth ? css`
+  ${({ customStyle: { maxWidth, customCss } = {} }) => css`
+      ${maxWidth && css`
         max-width: ${maxWidth};
         width: 100vw;
-      ` : ''}
-    `;
-  }}
+      `}
+
+      ${customCss}
+    `}
 `;
