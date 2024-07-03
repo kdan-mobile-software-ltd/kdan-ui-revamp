@@ -24,7 +24,9 @@ export type Content12Data = {
   }
 };
 
+export type Content12CustomStyle = ContentItem1CustomStyle & { others?: LayoutHideLongerThan; };
+
 export type Content12Props = {
   data: Content12Data;
-  customStyle?: ContentItem1CustomStyle & { others?: LayoutHideLongerThan; };
+  customStyle?: Content12CustomStyle;
 };
