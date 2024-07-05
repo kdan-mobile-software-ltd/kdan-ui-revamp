@@ -10,9 +10,14 @@ include:
     file: "gitlab-ci/unit-test/fe-common.yaml"
   - project: "kdanmobile/deployment/cluster-cicd-config"
     ref: master
+    file: "/gitlab-ci/node-brakeman-sast-upload.yaml"
+  - project: "kdanmobile/deployment/cluster-cicd-config"
+    ref: master
     file: "gitlab-ci/notify.yaml"
 
 stages:
+  - test
+  - sast_upload
   - unit_test
   - build
   - upload
