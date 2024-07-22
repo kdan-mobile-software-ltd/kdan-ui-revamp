@@ -11,6 +11,10 @@ const configs = {
     HOST: '',
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
   },
+  qa: {
+    HOST: '',
+    KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
+  },
   production: {
     HOST: 'https://kdan-ui.kdanmobile.com',
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
