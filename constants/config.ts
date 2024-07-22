@@ -17,7 +17,7 @@ const configs = {
   },
 };
 
-const config = configs[env];
+const config = configs[env] || configs.production;
 
 export const {
   HOST,
