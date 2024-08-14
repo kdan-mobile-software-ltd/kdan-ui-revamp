@@ -33,6 +33,7 @@ export const Wrapper = styled.a<CardItem23WrapperStyle & { isNoHover: boolean }>
 export const Image = styled(CustomSizeImage)`
   border-radius: 8px;
   margin-bottom: 24px;
+  object-fit: contain;
 `;
 
 export const ContentWrapper = styled.div`
