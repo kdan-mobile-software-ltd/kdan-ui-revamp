@@ -4,6 +4,7 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
 import { CustomColor } from '@/constants/themes/colors';
+import { RwdWrapper } from '@/utils/style/wrapper';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -11,9 +12,9 @@ const Z_INDEX = {
   inactiveSlide: 1,
 };
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(RwdWrapper)`
   position: relative;
-  width: fit-content;
+  /* width: fit-content; */
 `;
 
 // each content item with slide animation
@@ -31,6 +32,7 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
     animation: animateHide .3s forwards ease-in-out;
     z-index: ${Z_INDEX.inactiveSlide};
     position: absolute;
+    width: 100%;
   }
   
   ${({ currentActiveChild, animationDirection }) => css`
@@ -60,7 +62,7 @@ export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
     right: 0;
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: none;
   }
 `;
@@ -94,7 +96,7 @@ export const MobileArrowButton = styled.button`
     transform: rotate(180deg);
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
   }
 `;

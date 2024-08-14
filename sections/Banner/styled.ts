@@ -59,7 +59,7 @@ export const ContainImage = styled(AlignCenterImage)`
 `;
 
 export const Title = styled(Typography)<AlignCenterPropsType>`
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     margin-bottom: 16px;
@@ -67,10 +67,10 @@ export const Title = styled(Typography)<AlignCenterPropsType>`
 `;
 
 export const Desc = styled(Typography)<AlignCenterPropsType>`
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 `;
 

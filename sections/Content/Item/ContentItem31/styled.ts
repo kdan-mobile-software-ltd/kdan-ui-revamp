@@ -24,6 +24,10 @@ export const ContentWrapper = styled.div<{ minHeight?: string; }>`
   padding: 40px 60px 40px 84px;
   position: relative;
   min-height: ${({ minHeight }) => minHeight || '200px'};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     order: 1;
