@@ -10,7 +10,7 @@ const groupSizes = {
   default: 3,
   desktop: 3,
   laptop: 2,
-  tablet: 2,
+  tablet: 1,
   mobile: 1,
 };
 
@@ -24,7 +24,10 @@ export const Card41: React.FC<Card41Props> = ({ data, customStyle }) => {
 
   return (data.length > groupSize ? (
     <Slider
-      customStyle={customStyle.slider}
+      customStyle={{
+        ...customStyle?.slider,
+        isWide: true,
+      }}
     >
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key

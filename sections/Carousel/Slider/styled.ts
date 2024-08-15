@@ -12,9 +12,20 @@ const Z_INDEX = {
   inactiveSlide: 1,
 };
 
-export const Wrapper = styled(RwdWrapper)`
+export const Wrapper = styled(RwdWrapper)<{ isWide?: boolean }>`
   position: relative;
-  /* width: fit-content; */
+
+  ${({ isWide }) => isWide && css`
+    max-width: 1320px;
+
+    @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+      max-width: 900px;
+    }
+
+    @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+      max-width: 688px;
+    }
+  `}
 `;
 
 // each content item with slide animation
@@ -25,26 +36,28 @@ type ContentWrapperProps = {
 export const ContentWrapper = styled.div<ContentWrapperProps>`
   overflow: hidden;
   position: relative;
-  
+
   ${slideAnimation}
 
   & > div {
-    animation: animateHide .3s forwards ease-in-out;
+    animation: animateHide 0.3s forwards ease-in-out;
     z-index: ${Z_INDEX.inactiveSlide};
     position: absolute;
     width: 100%;
   }
-  
+
   ${({ currentActiveChild, animationDirection }) => css`
     & > :nth-child(${currentActiveChild}) {
-      animation: ${`animateShowFrom${animationDirection}`} .3s forwards ease-in-out;
+      animation: ${`animateShowFrom${animationDirection}`} 0.3s forwards
+        ease-in-out;
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
 `;
 
 export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
-  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
+  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER
+    NO-REPEAT;
   background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
   position: absolute;
   width: 60px;
@@ -80,13 +93,15 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: ${({ theme, isActive }) => (isActive
-    ? theme.colors.gray600 : theme.colors.gray400)};
+  background-color: ${({ theme, isActive }) => (
+    isActive ? theme.colors.gray600 : theme.colors.gray400
+  )};
   transition: all 0.3s ease;
 `;
 
 export const MobileArrowButton = styled.button`
-  background: url('${HOST}/assets/icon/horizon-arrow.svg') CENTER CENTER NO-REPEAT;
+  background: url('${HOST}/assets/icon/horizon-arrow.svg') CENTER CENTER
+    NO-REPEAT;
   width: 24px;
   height: 24px;
   cursor: pointer;

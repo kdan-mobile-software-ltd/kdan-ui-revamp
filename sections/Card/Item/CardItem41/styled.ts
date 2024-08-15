@@ -28,13 +28,16 @@ export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps & ThemePr
     }
   `}
 
+  @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+    width: 288px;
+  }
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
-    width: 100%;
-    max-width: 688px;
+    width: 688px;
     height: ${({ height }) => height?.tablet || height?.default || 'auto'};
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    width: 100%;
     max-width: 480px;
   }
 `;
