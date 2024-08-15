@@ -4,6 +4,7 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
 import { CustomColor } from '@/constants/themes/colors';
+import { RwdWrapper } from '@/utils/style/wrapper';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -11,9 +12,20 @@ const Z_INDEX = {
   inactiveSlide: 1,
 };
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(RwdWrapper)<{ isWide?: boolean }>`
   position: relative;
-  width: fit-content;
+
+  ${({ isWide }) => isWide && css`
+    max-width: 1320px;
+
+    @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+      max-width: 900px;
+    }
+
+    @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+      max-width: 688px;
+    }
+  `}
 `;
 
 // each content item with slide animation
@@ -24,25 +36,28 @@ type ContentWrapperProps = {
 export const ContentWrapper = styled.div<ContentWrapperProps>`
   overflow: hidden;
   position: relative;
-  
+
   ${slideAnimation}
 
   & > div {
-    animation: animateHide .3s forwards ease-in-out;
+    animation: animateHide 0.3s forwards ease-in-out;
     z-index: ${Z_INDEX.inactiveSlide};
     position: absolute;
+    width: 100%;
   }
-  
+
   ${({ currentActiveChild, animationDirection }) => css`
     & > :nth-child(${currentActiveChild}) {
-      animation: ${`animateShowFrom${animationDirection}`} .3s forwards ease-in-out;
+      animation: ${`animateShowFrom${animationDirection}`} 0.3s forwards
+        ease-in-out;
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
 `;
 
 export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
-  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
+  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER
+    NO-REPEAT;
   background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
   position: absolute;
   width: 60px;
@@ -60,7 +75,7 @@ export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
     right: 0;
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: none;
   }
 `;
@@ -78,13 +93,15 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: ${({ theme, isActive }) => (isActive
-    ? theme.colors.gray600 : theme.colors.gray400)};
+  background-color: ${({ theme, isActive }) => (
+    isActive ? theme.colors.gray600 : theme.colors.gray400
+  )};
   transition: all 0.3s ease;
 `;
 
 export const MobileArrowButton = styled.button`
-  background: url('${HOST}/assets/icon/horizon-arrow.svg') CENTER CENTER NO-REPEAT;
+  background: url('${HOST}/assets/icon/horizon-arrow.svg') CENTER CENTER
+    NO-REPEAT;
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -94,7 +111,7 @@ export const MobileArrowButton = styled.button`
     transform: rotate(180deg);
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
   }
 `;

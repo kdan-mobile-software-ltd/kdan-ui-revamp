@@ -25,7 +25,7 @@ export const ContentItem41: React.FC<ContentItem41Props> = ({ data, customStyle 
         <Typography
           fontSize={{ default: 'body5' }}
           {...customStyle?.desc}
-          margin="10px 0 0"
+          margin="12px 0 0"
           dangerouslySetInnerHTML={{ __html: data.desc }}
         />
         )}

@@ -11,7 +11,7 @@ export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps & ThemePr
   ${({ backgroundColor }) => css`background-color: ${getCustomColorFromTheme(backgroundColor || 'white')};`}
   border-radius: 8px;
   box-shadow: 0px 0px 12px 0px ${({ theme }) => theme.colors.boxShadow};
-  width: 288px;
+  width: 320px;
   height: ${({ height }) => height?.default || 'auto'};
   padding: 40px 16px;
   margin: 12px;
@@ -28,13 +28,16 @@ export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps & ThemePr
     }
   `}
 
+  @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+    width: 288px;
+  }
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
-    width: 100%;
-    max-width: 688px;
+    width: 688px;
     height: ${({ height }) => height?.tablet || height?.default || 'auto'};
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    width: 100%;
     max-width: 480px;
   }
 `;

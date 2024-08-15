@@ -8,11 +8,15 @@ import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div<BorderColorPropsType & BackgroundColorPropsType>`
   width: 100%;
-  padding: 40px;
+  padding: 40px 16px;
   border: ${({ borderColor }) => getCustomColorFromTheme(borderColor || 'gray400')} 1.5px solid;
   background-color: ${({ backgroundColor }) => getCustomColorFromTheme(backgroundColor || 'transparent')};
   margin-right: -1.5px;
   margin-bottom: -1.5px;
+
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    padding: 24px 16px;
+  }
 `;
 
 export const ToggleWrapper = styled.button`
@@ -20,7 +24,7 @@ export const ToggleWrapper = styled.button`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   text-align: left;
 `;

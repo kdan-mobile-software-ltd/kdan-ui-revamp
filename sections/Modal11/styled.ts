@@ -27,7 +27,11 @@ export const Wrapper = styled.div<BackgroundColorPropsType>`
   margin: auto 16px;
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    max-width: 640px;
+    max-width: 688px;
+  }
+
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    max-width: 480px;
   }
 `;
 

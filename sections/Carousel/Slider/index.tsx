@@ -28,7 +28,7 @@ export const Slider: React.FC<SliderProps> = ({
     }));
   };
 
-  const goSpecificPage = (index) => () => {
+  const goSpecificPage = (index: number) => () => {
     setActiveIndex((prev) => ({
       current: index,
       prev: prev.current,
@@ -42,7 +42,7 @@ export const Slider: React.FC<SliderProps> = ({
   }, [dataLength]);
 
   return (
-    <Wrapper>
+    <Wrapper isWide={customStyle?.isWide}>
       <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowColor={customStyle?.arrowColor} />
       <ContentWrapper
         currentActiveChild={activeIndex.current + 1}
