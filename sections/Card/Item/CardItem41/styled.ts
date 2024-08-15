@@ -11,7 +11,7 @@ export const Wrapper = styled.div<CardItem41WrapperStyle & SizeLSProps & ThemePr
   ${({ backgroundColor }) => css`background-color: ${getCustomColorFromTheme(backgroundColor || 'white')};`}
   border-radius: 8px;
   box-shadow: 0px 0px 12px 0px ${({ theme }) => theme.colors.boxShadow};
-  width: 288px;
+  width: 320px;
   height: ${({ height }) => height?.default || 'auto'};
   padding: 40px 16px;
   margin: 12px;
