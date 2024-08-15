@@ -25,7 +25,7 @@ export const Background = styled.div<BackgroundColorPropsType & ThemePropsType>`
 export const Wrapper = styled(RwdWrapper)`
   padding: 64px 0;
   
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     padding: 40px 16px;
   }
 `;
@@ -51,7 +51,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
 `;
 
