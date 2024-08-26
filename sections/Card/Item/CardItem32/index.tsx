@@ -95,7 +95,7 @@ export const CardItem32: React.FC<CardItem32Props> = ({ data, customStyle }) => 
     )}
 
     {data.depicts?.map((depict) => (
-      <Depict key={`${depict[0]}`}>
+      <Depict key={`${depict.length}-${Math.random() * 100}`}>
         <Typography
           fontSize={{ default: 'body5' }}
           dangerouslySetInnerHTML={{ __html: depict }}

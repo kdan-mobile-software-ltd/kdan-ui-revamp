@@ -3,6 +3,7 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 
 export const GroupWrapper = styled.div`
   display: flex;
+  justify-content: center;
   align-items: stretch;
   gap: 60px;
   padding: 64px 40px;
