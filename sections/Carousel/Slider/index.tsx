@@ -6,7 +6,10 @@ import {
 import { SliderProps } from './types';
 
 export const Slider: React.FC<SliderProps> = ({
-  customStyle,
+  customStyle: {
+    isArrow = true,
+    arrowColor,
+  },
   children,
 }) => {
   const dataLength = children.length || 1;
@@ -43,7 +46,7 @@ export const Slider: React.FC<SliderProps> = ({
 
   return (
     <Wrapper>
-      <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowColor={customStyle?.arrowColor} />
+      {isArrow && <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowColor={arrowColor} />}
       <ContentWrapper
         currentActiveChild={activeIndex.current + 1}
         animationDirection={activeIndex.prev < activeIndex.current ? 'Right' : 'Left'}
@@ -54,7 +57,7 @@ export const Slider: React.FC<SliderProps> = ({
           {children?.[0]}
         </Hidden>
       </ContentWrapper>
-      <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowColor={customStyle?.arrowColor} />
+      {isArrow && <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowColor={arrowColor} />}
       <BottomPaginationWrapper>
         <MobileArrowButton onClick={goPrevPage} className="left" type="button" />
         {[...Array(dataLength).keys()].map((index) => (
