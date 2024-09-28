@@ -9,10 +9,16 @@ export { RwdWrapper } from './utils/style/wrapper';
 
 // components
 export * from './components/Button';
-export * from './components/Button/types';
+export * from './components/Checkbox';
 export * from './components/Hyperlink';
-export * from './components/Hyperlink/types';
+export * from './components/RadioButton';
 export * from './components/Typography';
+
+// components - types
+export * from './components/Button/types';
+export * from './components/Checkbox/types';
+export * from './components/Hyperlink/types';
+export * from './components/RadioButton/types';
 
 // sections
 export * from './sections/Banner/Banner11';
@@ -41,7 +47,7 @@ export * from './sections/CtaBanner/CtaBanner22';
 export * from './sections/EventBar11';
 export * from './sections/Modal11';
 
-// types
+// sections - types
 export * from './sections/Banner/Banner11/types';
 export * from './sections/Banner/Banner21/types';
 export * from './sections/Banner/Banner31/types';

@@ -17,6 +17,8 @@ export const colors = {
   gray100: '#FAFAFA',
   white: '#FFFFFF',
 
+  kdanGreen: '#00DC87',
+
   hyperlink: '#007AFF',
   error: '#F25858',
   hoverLayer: 'rgba(0,0,0,0.2)',
