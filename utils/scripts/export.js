@@ -12,6 +12,16 @@ glob(componentPattern, { ignore }, (err, files) => {
   }
 });
 
+const componentTypePattern = './components/**/types.ts';
+glob(componentTypePattern, { ignore }, (err, files) => {
+  if (err) {
+    console.error('Error finding files:', err);
+  } else {
+    console.log('\n// components - types');
+    files.forEach((file) => console.log(`export * from '${file.slice(0, -3)}';`));
+  }
+});
+
 const pattern = './sections/**/index.tsx';
 glob(pattern, { ignore }, (err, files) => {
   if (err) {
@@ -27,7 +37,7 @@ glob(typePattern, { ignore }, (err, files) => {
   if (err) {
     console.error('Error finding files:', err);
   } else {
-    console.log('\n// types');
+    console.log('\n// sections - types');
     files.forEach((file) => console.log(`export * from '${file.slice(0, -3)}';`));
   }
 });
