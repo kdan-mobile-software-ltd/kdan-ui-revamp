@@ -71,7 +71,6 @@ export const DefaultOfFillWidth: Story = {
 };
 
 export const NoLabel: Story = {
-  parameters: { layout: 'padded' },
   args: {
     id: 'id-NoLabel',
     name: 'name-NoLabel',
