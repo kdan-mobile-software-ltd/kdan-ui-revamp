@@ -3,7 +3,6 @@ import { TextFieldProps } from './types';
 import {
   Label, ClearButton, Wrapper, Input,
 } from './styled';
-import { } from '../TesxtArea/styled';
 
 export const TextField: React.FC<TextFieldProps> = ({
   data, customStyle, ...htmlProps
