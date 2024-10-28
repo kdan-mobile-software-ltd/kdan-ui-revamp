@@ -15,6 +15,10 @@ export type AlignCenterPropsType = {
   alignCenter?: boolean;
 };
 
+export type IsActivePropsType = {
+  isActive?: boolean;
+};
+
 export type IsDisabledPropsType = {
   isDisabled?: boolean;
 };
