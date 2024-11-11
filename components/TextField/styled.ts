@@ -28,7 +28,7 @@ export const ClearButton = styled.button<ThemePropsType & IsActivePropsType>`
   cursor: pointer;
   display: none;
 
-  input:hover + &.isActive:not([disabled]), &.isActive:hover:not([disabled]) {
+  input:hover + &:not([disabled]), &:hover:not([disabled]) {
     display: block;
   }
 

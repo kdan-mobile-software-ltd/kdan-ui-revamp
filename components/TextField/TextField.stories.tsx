@@ -27,6 +27,7 @@ export const Basic: Story = {
     id: 'id-1',
     name: 'name-1',
     placeholder: 'Placeholder',
+    onChange: (e) => { console.log('input:', e.target.value); },
     data: {
       label: 'Label',
       isShowClearButton: true,
@@ -44,6 +45,7 @@ export const ColorStyle: Story = {
     placeholder: 'Placeholder',
     data: {
       label: 'testtest',
+      isShowClearButton: false,
     },
     customStyle: {
       label: { fontSize: { default: 'h5' }, color: '#ff9900' },
