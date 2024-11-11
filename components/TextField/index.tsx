@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { TextFieldProps } from './types';
 import {
   Label, ClearButton, Wrapper, Input,
@@ -7,9 +7,14 @@ import {
 export const TextField: React.FC<TextFieldProps> = ({
   data, customStyle, ...htmlProps
 }) => {
-  const [value, setValue] = useState(htmlProps.defaultValue);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [hasValue, setHasValue] = useState(false);
+
   const onClear = () => {
-    setValue('');
+    if (inputRef?.current?.value) {
+      inputRef.current.value = '';
+      setHasValue(false);
+    }
   };
 
   return (
@@ -19,17 +24,21 @@ export const TextField: React.FC<TextFieldProps> = ({
         type="text"
         id={htmlProps.name}
         name={htmlProps.name}
-        value={value}
-        onChange={(e) => { setValue(e.target.value); }}
         {...htmlProps}
         {...customStyle?.input}
+        ref={inputRef}
+        onChange={(e) => {
+          htmlProps?.onChange?.(e);
+          setHasValue(!!e.target.value);
+        }}
       />
-      <ClearButton
-        className={value ? 'isActive' : ''}
-        disabled={htmlProps?.disabled}
-        type="button"
-        onClick={onClear}
-      />
+      {data.isShowClearButton && hasValue && (
+        <ClearButton
+          disabled={htmlProps?.disabled}
+          type="button"
+          onClick={onClear}
+        />
+      )}
     </Wrapper>
   );
 };
