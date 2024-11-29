@@ -12,6 +12,7 @@ export * from './components/Button';
 export * from './components/Checkbox';
 export * from './components/Hyperlink';
 export * from './components/RadioButton';
+export * from './components/select';
 export * from './components/TextArea';
 export * from './components/TextField';
 export * from './components/Typography';
@@ -21,6 +22,7 @@ export * from './components/Button/types';
 export * from './components/Checkbox/types';
 export * from './components/Hyperlink/types';
 export * from './components/RadioButton/types';
+export * from './components/select/types';
 export * from './components/TextArea/types';
 export * from './components/TextField/types';
 
