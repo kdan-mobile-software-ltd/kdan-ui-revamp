@@ -3,6 +3,7 @@ import { button3FontStyle } from '@/constants/fonts';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { arrowIconRotateStyle, upDownAnimation } from '@/utils/style';
 import { HideAtMobilePropsType, IsOpenPropsType } from '@/constants/types/styled';
+import { HOST } from '@/constants/config';
 
 // use this combined with hooks/useToggle.tsx
 
@@ -17,23 +18,30 @@ export const ItemToggleAnimationWrapper = styled.div<HideAtMobilePropsType>`
   }
 `;
 
-export const Toggle = styled.button<IsOpenPropsType>`
+export const ToggleWrapper = styled.button<IsOpenPropsType>`
   display: none;
-  padding: 16px 12px;
+  margin: 40px auto;
+  padding: 12px 18px;
+  width: fit-content;
+  gap: 12px;
+  background-color: transparent;
+
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {  
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+`;
+
+export const SimpleToggle = styled.button<IsOpenPropsType>`
   ${button3FontStyle}
   background-color: ${({ theme }) => theme.colors.transparent};
+  width: 24px;
+  height: 24px;
   border-color: ${({ theme }) => theme.colors.transparent};
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  margin: 40px auto 0;
-
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {  
-    display: flex;
-    
-    & > img {
-      ${arrowIconRotateStyle}
-    }
-  }
+  background: url(${HOST}/assets/icon/vertical-arrow.svg) CENTER CENTER NO-REPEAT;
+  ${arrowIconRotateStyle}
 `;
