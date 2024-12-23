@@ -1,19 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { HOST } from '@/constants/config';
 import {
-  BorderColorPropsType, IsActivePropsType, ThemePropsType,
+  BorderColorPropsType, CustomCssPropsType, IsActivePropsType, ThemePropsType,
 } from '@/constants/types/styled';
 import { textCustomCss, TextCustomCssProps } from '@/utils/style/textStyle';
 import { body5FontStyle, h9FontStyle } from '@/constants/fonts';
 import { getCustomColorFromTheme } from '@/utils/style';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<CustomCssPropsType>`
   position: relative; // refer to ClearButton;
+  ${({ customCss }) => !!customCss && customCss}
 `;
 
 export const Label = styled.label<ThemePropsType & TextCustomCssProps>`
   font-weight: 700;
   display: block;
+  margin-bottom: 8px;
   ${h9FontStyle}
   ${textCustomCss}
 `;
@@ -37,23 +39,26 @@ export const ClearButton = styled.button<ThemePropsType & IsActivePropsType>`
   }
 `;
 
+export const inputBorderStyle = css<BorderColorPropsType>`
+  border: 1.5px solid ${({ borderColor, theme }) => borderColor || theme.colors.gray400};
+  transition: border-color 300ms ease;
+  border-radius: 4px;
+  
+  &:focus {
+    border-color: ${({ borderColor }) => getCustomColorFromTheme(borderColor || 'gray600')};
+  }
+`;
+
 export const Input = styled.input<ThemePropsType & BorderColorPropsType>`
   width: 100%;
   max-width: 800px;
-  border-radius: 4px;
-  margin-top: 8px;
   padding: 9px 12px;
-  border: 1.5px solid ${({ borderColor, theme }) => borderColor || theme.colors.gray400};
-  transition: border-color 300ms ease;
   outline: 0;
   ${body5FontStyle}
+  ${inputBorderStyle}
   
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray400};
-  }
-
-  &:focus {
-    border-color: ${({ borderColor }) => getCustomColorFromTheme(borderColor || 'gray600')};
   }
 
   &:disabled {

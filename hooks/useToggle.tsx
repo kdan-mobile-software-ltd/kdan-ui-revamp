@@ -1,16 +1,14 @@
-import { ActionIcon } from '@/components/Image/styledImages';
-import { Toggle } from '@/components/private/Toggle/styled';
-import { HOST } from '@/constants/config';
+import { SimpleToggle, ToggleWrapper } from '@/components/private/Toggle/styled';
 import React, { useState } from 'react';
 
 export type UseToggleProps = {
-  length: number;
+  length?: number;
   hideLongerThan?: number;
   toggleText?: {
     open: string;
     close: string;
   }
-};
+} | undefined;
 
 export type UseToggleResponse = {
   ToggleButton: React.ReactElement;
@@ -22,24 +20,25 @@ export type UseToggleResponse = {
 // 3. add ToggleButton returned by this hook in the Main Component
 // 4. wrap Items with `ItemToggleAnimationWrapper` from '@/components/private/Toggle/styled'
 
-export const useToggle = ({
-  length,
-  hideLongerThan = 3,
-  toggleText = { open: 'Open', close: 'Close' },
-}: UseToggleProps) => {
+export const useToggle = (param: UseToggleProps = {
+  length: 0,
+  hideLongerThan: 3,
+  toggleText: { open: '', close: '' },
+}):UseToggleResponse => {
+  const { length, hideLongerThan, toggleText } = param;
   const [isOpen, setOpen] = useState(false);
-  const text = !isOpen ? toggleText.open : toggleText.close;
+  const text = !isOpen ? toggleText?.open : toggleText?.close;
   const toggle = () => {
     setOpen((prev) => !prev);
   };
 
   return {
     ToggleButton: (
-      length > hideLongerThan ? (
-        <Toggle onClick={toggle} isOpen={isOpen}>
+      (!length || length > hideLongerThan) ? (
+        <ToggleWrapper>
           {text}
-          <ActionIcon margin="0 0 0 12px" src={`${HOST}/assets/icon/vertical-arrow.svg`} alt="toggle-btn-icon" />
-        </Toggle>
+          <SimpleToggle onClick={toggle} isOpen={isOpen} />
+        </ToggleWrapper>
       ) : <div />
     ),
     isOpenAtMobile: isOpen,
