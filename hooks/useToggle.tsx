@@ -34,7 +34,7 @@ export const useToggle = (param: UseToggleProps = {
 
   return {
     ToggleButton: (
-      (!length || length > hideLongerThan) ? (
+      (!length || (hideLongerThan && length > hideLongerThan)) ? (
         <ToggleWrapper>
           {text}
           <SimpleToggle onClick={toggle} isOpen={isOpen} />
