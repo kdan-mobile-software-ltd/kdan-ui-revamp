@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 import { BorderColorPropsType, CustomCssPropsType } from '@/constants/types/styled';
 import { ImgData } from '@/constants/types/global';
@@ -6,7 +6,7 @@ import { ImgData } from '@/constants/types/global';
 export type DropdownCustomStyle = {
   maxHeight?: string;
   openDirection?: DropdownDirection;
-};
+} & TextCustomCssProps;
 
 export type SelectCustomStyle = {
   label?: TextCustomCssProps;
@@ -17,7 +17,7 @@ export type SelectCustomStyle = {
 
 export type OptionType = {
   label: string;
-  value?: string;
+  value: string;
 };
 
 export type DropdownDirection = 'upward' | 'downward' | 'auto'; // default is `auto`
@@ -26,10 +26,12 @@ export type SelectDataProps = {
   label?: string;
   icon?: ImgData;
   options: OptionType[];
-  activeOption: OptionType;
+  activeOption: OptionType[];
   inputValue: string;
+  isMultiSelect?: boolean;
+  isShowSelectAllOption?: boolean;
   onChange: (option: OptionType) => unknown;
-  onInputChange: (e: ChangeEvent<HTMLInputElement>) => unknown;
+  onInputChange: (value: string) => unknown;
   closeAutocomplete?: boolean;
 };
 
