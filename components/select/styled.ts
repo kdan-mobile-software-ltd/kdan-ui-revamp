@@ -5,11 +5,13 @@ import {
 import { body5FontStyle } from '@/constants/fonts';
 import { inputBorderStyle } from '../TextField/styled';
 import { DropdownCustomStyle } from './types';
+import { ActionIcon } from '../Image/styledImages';
 
 export const Wrapper = styled.div`
   position: relative;
 `;
-export const InputWrapper = styled.div<ThemePropsType & BorderColorPropsType>`
+
+export const SelectionWrapper = styled.div<ThemePropsType & BorderColorPropsType>`
   ${inputBorderStyle}
   position: relative;
   display: flex;
@@ -18,18 +20,23 @@ export const InputWrapper = styled.div<ThemePropsType & BorderColorPropsType>`
   z-index: 20;
   background-color: ${({ theme: { colors } }) => colors.white};
   width: 100%;
+  min-height: 56px;
   cursor: pointer;
+`;
+
+export const Hr = styled.div<IsOpenPropsType & DropdownCustomStyle & CustomCssPropsType>`
+  border-right: 1px solid  ${({ theme }) => theme.colors.gray200};
 `;
 
 export const Dropdown = styled.ul<IsOpenPropsType & DropdownCustomStyle & CustomCssPropsType>`
   box-shadow: 0px 0px 12px 0px ${({ theme }) => theme.colors.boxShadow};
-  position: absolute;
   border-radius: 4px;
   overflow: scroll;
   z-index: 100;
   width: 100%;
   max-height: ${({ maxHeight }) => maxHeight || '220px'};
-  transition: all ease-in-out .1s;;
+  transition: all ease-in-out .1s;
+  cursor: pointer;
 
   ${({ isOpen }) => (isOpen
     ? css`
@@ -41,6 +48,7 @@ export const Dropdown = styled.ul<IsOpenPropsType & DropdownCustomStyle & Custom
     `
   )}
 
+  position: absolute;
   left: 0;
   top: ${({ openDirection }) => (openDirection === 'downward' ? '100%' : 'auto')};
   bottom: ${({ openDirection }) => (openDirection === 'upward' ? '100%' : 'auto')};
@@ -61,5 +69,38 @@ export const Option = styled.option<OptionStyleType>`
   &.isActive {
     background-color: ${({ theme }) => theme.colors.gray200};
   }
+  ${({ customCss }) => customCss}
+`;
+
+export const SearchIcon = styled(ActionIcon)`
+  filter: invert(50%) sepia(2%) saturate(6%) hue-rotate(314deg) brightness(97%) contrast(80%);
+`;
+
+export const ToggleButton = styled.button<OptionStyleType>`
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+`;
+
+export const SearchWrapper = styled.div<OptionStyleType>`
+  border: 1px solid  ${({ theme }) => theme.colors.gray200};
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  width: 100%;
+`;
+
+export const ToggleAllWrapper = styled.div<OptionStyleType>`
+  padding: 10px 12px;
+  color: ${({ theme }) => theme.colors.hyperlink};
+  background-color: ${({ theme }) => theme.colors.white};
+  
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  
+  ${body5FontStyle}
+  font-weight: bold;
+
   ${({ customCss }) => customCss}
 `;
