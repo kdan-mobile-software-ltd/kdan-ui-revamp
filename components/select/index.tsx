@@ -2,6 +2,7 @@ import React, {
   FocusEvent, useEffect, useRef, useState,
 } from 'react';
 import { css } from 'styled-components';
+import { HOST } from '@/constants/config';
 import { SimpleToggle } from '../private/Toggle/styled';
 import { Label } from '../TextField/styled';
 import { TextField } from '../TextField';
@@ -9,7 +10,12 @@ import { CustomSizeImage } from '../Image/styledImages';
 import { Typography } from '../Typography';
 import { DropdownDirection, OptionType, SelectProps } from './types';
 import {
-  Wrapper, Dropdown, Option, InputWrapper,
+  Wrapper, Dropdown, Option, SelectionWrapper,
+  ToggleAllWrapper,
+  ToggleButton,
+  Hr,
+  SearchWrapper,
+  SearchIcon,
 } from './styled';
 
 const transformToObject = (array: OptionType[]): Record<string, OptionType> => array.reduce((
@@ -17,14 +23,13 @@ const transformToObject = (array: OptionType[]): Record<string, OptionType> => a
   option,
 ) => ({ ...object, [option.value]: option }), {});
 
-const emptyOption = { label: '', value: '' };
-
 export const Select: React.FC<SelectProps> = ({
   data, customStyle, ...htmlProps
 }) => {
   const openDirectionProp = customStyle?.dropdown?.openDirection;
   const [openDirection, setOpenDirection] = useState<DropdownDirection>(openDirectionProp || 'downward');
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLUListElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [options, setOptions] = useState<OptionType[]>(data.options);
   const [isSearchFinish, setIsSearchFinish] = useState(false);
@@ -37,65 +42,60 @@ export const Select: React.FC<SelectProps> = ({
   } = data;
 
   useEffect(() => {
-    (function handleClearInput() {
-      if (!data.isMultiSelect && data.inputValue === '') data.onChange(emptyOption);
-    }());
-  }, [inputValue]);
-
-  useEffect(() => {
     (function filterOptions() {
-      if (data.closeAutocomplete || !data.options || !isOpen || !inputValue) return;
+      if (data.closeAutocomplete || !data.options || !isOpen) return;
       if (isSearchFinish) {
         setOptions(data.options);
         return;
       }
-      const filteredOptions = data.options.filter(
+
+      const filteredOptions = inputValue ? data.options.filter(
         (option) => option.label?.toLowerCase().includes(inputValue?.toLowerCase()),
-      );
+      ) : data.options;
 
       setIsSearchFinish(false);
       setOptions(filteredOptions);
     }());
   }, [inputValue, isOpen]);
 
-  const onChange = (option: OptionType) => () => {
+  const onOptionChange = (option: OptionType) => () => {
     if (!data.isMultiSelect) setIsOpen(false);
     data.onChange(option);
-
-    if (data.isMultiSelect) data.onInputChange('');
-
+    data.onInputChange('');
     setIsSearchFinish(true);
   };
 
-  const selectAll = () => {
-    const toBeSelect = options.filter((option) => !activeOptionsObject?.[option.value]);
+  const toggleAllOptions = (isSelect: boolean) => () => {
     setIsOpen(false);
 
-    if (!toBeSelect.length) {
-      // cancel all
-      options.forEach((option) => { data.onChange(option); });
+    if (isSelect) { // select all
+      const toBeSelect = options.filter((option) => !activeOptionsObject?.[option.value]);
+      toBeSelect.forEach((option) => { data.onChange(option); });
       return;
     }
-    // select all
-    toBeSelect.forEach((option) => { data.onChange(option); });
+    // cancel all
+    const toBeCancel = options.filter((option) => Boolean(activeOptionsObject?.[option.value]));
+    toBeCancel.forEach((option) => { data.onChange(option); });
   };
 
   const determineDropdownDirection = () => {
     if (openDirectionProp && openDirectionProp !== 'auto') return;
 
     if (wrapperRef.current) {
+      const dropdownRect = dropdownRef?.current?.getBoundingClientRect();
       const rect = wrapperRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const spaceBelow = viewportHeight - rect.bottom;
       const spaceAbove = rect.top;
+
       // Check if there's more space above or below the Select component
-      if (spaceBelow < 180 && spaceAbove > spaceBelow) {
+      if (spaceBelow < (dropdownRect?.height || 220) && spaceAbove > spaceBelow) {
         setOpenDirection('upward'); // Open upward if there's more space above
       } else {
         setOpenDirection('downward'); // Default to downward
       }
     }
-  }; // todo: fix this
+  };
 
   const toggleDropdown = () => {
     if (!isOpen) {
@@ -114,56 +114,76 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <>
-      {data?.label && <Label {...customStyle?.label}>{data.label}</Label>}
+      {!!data?.label && <Label {...customStyle?.label}>{data.label}</Label>}
       <Wrapper tabIndex={0} onBlur={closeDropdown} ref={wrapperRef}>
-        <InputWrapper onClick={toggleDropdown}>
+        <SelectionWrapper onClick={toggleDropdown}>
           {icon?.src && (
           <CustomSizeImage
             {...icon}
             customStyle={{ width: { default: '24px' }, height: { default: '24px' }, margin: '0 0 0 12px' }}
           />
           )}
-          { data.isMultiSelect && activeOption?.[0] && (
-            <Typography fontSize={{ default: 'button3' }} margin="0 0 0 12px">
-              {`${activeOption[0].label}${data.isMultiSelect && activeOption.length > 1 ? `, +${activeOption.length - 1}` : ''}`}
-            </Typography>
-          )}
-          <TextField
-            autoComplete="off"
-            type="text"
-            style={{ border: 0 }}
-            customStyle={{
-              ...customStyle?.input,
-              wrapper: { customCss: css`flex-grow: 1; width: auto;` },
-            }}
-            data={{ isShowClearButton: true }}
-            onChange={(e) => {
-              setIsSearchFinish(false);
-              data.onInputChange(e.target.value);
-            }}
-            value={inputValue}
-            {...htmlProps}
-          />
-          <SimpleToggle isOpen={isOpen} />
-        </InputWrapper>
+          <Typography fontSize={{ default: 'button3' }} margin="0 0 0 12px" style={{ width: '100%' }}>
+            {!activeOption[0]?.label
+              ? ''
+              : `${activeOption[0]?.label}${data.isMultiSelect && activeOption.length > 1 ? `, +${activeOption.length - 1}` : ''}`}
+          </Typography>
 
-        <Dropdown isOpen={isOpen} {...{ ...customStyle?.dropdown, openDirection }}>
-          {data.isShowSelectAllOption && (
-          <Option
-            id="select-all"
-            key="select-all"
-            value="value"
-            onClick={selectAll}
-            customCss={css`
-              font-weight: bold;
-              color: ${({ theme }) => theme.colors.hyperlink};
-              text-align: right;
-              ${customStyle?.option?.customCss || ''}
-            `}
+          <SimpleToggle isOpen={isOpen} />
+        </SelectionWrapper>
+
+        <Dropdown
+          isOpen={isOpen}
+          {...{ ...customStyle?.dropdown, openDirection, ref: dropdownRef }}
+        >
+          {(data.isShowSelectAllOption || !data.closeAutocomplete) && (
+          <ToggleAllWrapper
+            id="toggle-all"
+            key="toggle-all"
+            customCss={customStyle?.option?.customCss}
           >
-            {activeOption.length === data.options.length ? 'Clear all' : 'Select all'}
-          </Option>
+            {!data.closeAutocomplete && (
+              <SearchWrapper>
+                <SearchIcon
+                  src={`${HOST}/assets/icon/search.svg`}
+                  alt="search-img"
+                />
+                <TextField
+                  autoComplete="off"
+                  type="text"
+                  customStyle={{
+                    ...customStyle?.input,
+                    wrapper: {
+                      customCss: css` flex-grow: 1; width: auto;`,
+                    },
+                    input: {
+                      borderColor: 'transparent',
+                    },
+                  }}
+                  data={{ isShowClearButton: true }}
+                  onChange={(e) => {
+                    setIsSearchFinish(false);
+                    data.onInputChange(e.target.value);
+                  }}
+                  value={inputValue}
+                  {...htmlProps}
+                />
+              </SearchWrapper>
+            )}
+            {data.isShowSelectAllOption && (
+            <>
+              {!!activeOption.length && (
+              <>
+                <ToggleButton type="button" onClick={toggleAllOptions(false)}>Clear all</ToggleButton>
+                <Hr />
+              </>
+              )}
+              <ToggleButton type="button" onClick={toggleAllOptions(true)}>Select all</ToggleButton>
+            </>
+            )}
+          </ToggleAllWrapper>
           )}
+
           {options.map((option, index) => {
             const { value, label } = option;
             const isActive = !!activeOptionsObject?.[value];
@@ -173,7 +193,7 @@ export const Select: React.FC<SelectProps> = ({
                 key={value}
                 isBottom={index === options.length - 1}
                 value={value}
-                onClick={onChange(option)}
+                onClick={onOptionChange(option)}
                 className={isActive ? 'isActive' : ''}
                 customCss={customStyle?.option?.customCss}
               >

@@ -109,7 +109,7 @@ export const SingleSelect1: Story = {
 
 export const SingleSelect2: Story = {
   render: () => {
-    const [activeOption, setActiveOption] = useState<OptionType[]>([]);
+    const [activeOption, setActiveOption] = useState<OptionType[]>([{ label: '日本語', value: 'Japanese' }]);
     const [inputValue, setInputValue] = useState<string>('');
 
     const onInputChange = (value: string) => {
@@ -154,7 +154,7 @@ export const SingleSelect2: Story = {
         <Select {...{
           id: 'id-SingleSelect2',
           name: 'name-SingleSelect2',
-          placeholder: '點擊我！',
+          placeholder: 'search something...',
           data: {
             label: '請選擇語系',
             icon: {
@@ -185,7 +185,7 @@ export const SingleSelect2: Story = {
             `,
             },
             dropdown: {
-              maxHeight: 'auto',
+              maxHeight: '200px',
             },
           },
         }}
@@ -206,6 +206,10 @@ export const MultipleSelect3: Story = {
       { label: 'kdan6', value: '6' },
       { label: 'kdan7', value: '7' },
       { label: 'kdan8', value: '8' },
+      { label: 'kdan9', value: '9' },
+      { label: 'kdan10', value: '10' },
+      { label: 'kdan11', value: '11' },
+      { label: 'kdan12', value: '12' },
     ];
     const isMultiSelect = true;
     const defaultOption = [options[3]];
