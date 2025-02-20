@@ -86,6 +86,7 @@ export const SingleSelect1: Story = {
             inputValue,
             onChange,
             onInputChange,
+            isShowCancelAllOption: true,
           },
           customStyle: {
             label: { color: 'gray800' },
@@ -135,7 +136,7 @@ export const SingleSelect2: Story = {
             </p>
             <p>
               3.
-              <Code>closeAutocomplete</Code>
+              <Code>isHideAutocomplete</Code>
               可關閉 Autocomplete 功能
             </p>
           </p>
@@ -173,7 +174,7 @@ export const SingleSelect2: Story = {
             inputValue,
             onChange,
             onInputChange,
-            closeAutocomplete: true,
+            isHideAutocomplete: true,
           },
           customStyle: {
             label: { color: 'gray800' },
@@ -281,7 +282,7 @@ export const MultipleSelect3: Story = {
             onChange,
             onInputChange,
             isMultiSelect,
-            isShowSelectAllOption: true,
+            isShowCancelAllOption: true,
           },
           customStyle: {
             label: { color: 'gray800' },

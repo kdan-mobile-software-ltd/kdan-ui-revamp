@@ -12,10 +12,9 @@ import { DropdownDirection, OptionType, SelectProps } from './types';
 import {
   Wrapper, Dropdown, Option, SelectionWrapper,
   ToggleAllWrapper,
-  ToggleButton,
-  Hr,
   SearchWrapper,
   SearchIcon,
+  CancelAllButton,
 } from './styled';
 
 const transformToObject = (array: OptionType[]): Record<string, OptionType> => array.reduce((
@@ -30,6 +29,7 @@ export const Select: React.FC<SelectProps> = ({
   const [openDirection, setOpenDirection] = useState<DropdownDirection>(openDirectionProp || 'downward');
   const wrapperRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLUListElement>(null);
+  const cancelBtnRef = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [options, setOptions] = useState<OptionType[]>(data.options);
   const [isSearchFinish, setIsSearchFinish] = useState(false);
@@ -43,7 +43,7 @@ export const Select: React.FC<SelectProps> = ({
 
   useEffect(() => {
     (function filterOptions() {
-      if (data.closeAutocomplete || !data.options || !isOpen) return;
+      if (data.isHideAutocomplete || !data.options || !isOpen) return;
       if (isSearchFinish) {
         setOptions(data.options);
         return;
@@ -65,17 +65,10 @@ export const Select: React.FC<SelectProps> = ({
     setIsSearchFinish(true);
   };
 
-  const toggleAllOptions = (isSelect: boolean) => () => {
-    setIsOpen(false);
-
-    if (isSelect) { // select all
-      const toBeSelect = options.filter((option) => !activeOptionsObject?.[option.value]);
-      toBeSelect.forEach((option) => { data.onChange(option); });
-      return;
-    }
-    // cancel all
+  const cancelAllOptions = (e) => {
     const toBeCancel = options.filter((option) => Boolean(activeOptionsObject?.[option.value]));
     toBeCancel.forEach((option) => { data.onChange(option); });
+    e.stopPropagation();
   };
 
   const determineDropdownDirection = () => {
@@ -107,7 +100,9 @@ export const Select: React.FC<SelectProps> = ({
   const closeDropdown = (e: FocusEvent<HTMLDivElement>) => {
     const currentTarget = e.currentTarget as HTMLElement;
     const relatedTarget = e.relatedTarget as HTMLElement;
-    if (currentTarget?.contains(relatedTarget)) return;
+
+    if (currentTarget?.contains(relatedTarget)
+      && !relatedTarget?.isSameNode(cancelBtnRef.current)) return;
 
     setIsOpen(false);
   };
@@ -129,6 +124,10 @@ export const Select: React.FC<SelectProps> = ({
               : `${activeOption[0]?.label}${data.isMultiSelect && activeOption.length > 1 ? `, +${activeOption.length - 1}` : ''}`}
           </Typography>
 
+          {data.isShowCancelAllOption && !!activeOption.length && (
+            <CancelAllButton type="button" onClick={cancelAllOptions} disabled={htmlProps?.disabled} ref={cancelBtnRef} />
+          )}
+
           <SimpleToggle isOpen={isOpen} />
         </SelectionWrapper>
 
@@ -136,13 +135,13 @@ export const Select: React.FC<SelectProps> = ({
           isOpen={isOpen}
           {...{ ...customStyle?.dropdown, openDirection, ref: dropdownRef }}
         >
-          {(data.isShowSelectAllOption || !data.closeAutocomplete) && (
+          {(data.isShowCancelAllOption || !data.isHideAutocomplete) && (
           <ToggleAllWrapper
             id="toggle-all"
             key="toggle-all"
             customCss={customStyle?.option?.customCss}
           >
-            {!data.closeAutocomplete && (
+            {!data.isHideAutocomplete && (
               <SearchWrapper>
                 <SearchIcon
                   src={`${HOST}/assets/icon/search.svg`}
@@ -169,17 +168,6 @@ export const Select: React.FC<SelectProps> = ({
                   {...htmlProps}
                 />
               </SearchWrapper>
-            )}
-            {data.isShowSelectAllOption && (
-            <>
-              {!!activeOption.length && (
-              <>
-                <ToggleButton type="button" onClick={toggleAllOptions(false)}>Clear all</ToggleButton>
-                <Hr />
-              </>
-              )}
-              <ToggleButton type="button" onClick={toggleAllOptions(true)}>Select all</ToggleButton>
-            </>
             )}
           </ToggleAllWrapper>
           )}

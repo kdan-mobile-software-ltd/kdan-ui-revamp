@@ -21,7 +21,7 @@ export const Label = styled.label<ThemePropsType & TextCustomCssProps>`
 `;
 
 export const ClearButton = styled.button<ThemePropsType & IsActivePropsType>`
-  width: 20px;
+  width: 25px;
   height: 20px;
   background: url('${HOST}/assets/icon/clear.svg') CENTER CENTER NO-REPEAT;
   position: absolute;

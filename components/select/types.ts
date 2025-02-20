@@ -29,10 +29,10 @@ export type SelectDataProps = {
   activeOption: OptionType[];
   inputValue: string;
   isMultiSelect?: boolean;
-  isShowSelectAllOption?: boolean;
+  isShowCancelAllOption?: boolean;
   onChange: (option: OptionType) => unknown;
   onInputChange: (value: string) => unknown;
-  closeAutocomplete?: boolean;
+  isHideAutocomplete?: boolean;
 };
 
 export type HTMLInputProps = ComponentPropsWithoutRef<'input'>;
