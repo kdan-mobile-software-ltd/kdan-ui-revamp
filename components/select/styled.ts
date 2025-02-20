@@ -3,7 +3,7 @@ import {
   BorderColorPropsType, CustomCssPropsType, IsOpenPropsType, ThemePropsType,
 } from '@/constants/types/styled';
 import { body5FontStyle } from '@/constants/fonts';
-import { inputBorderStyle } from '../TextField/styled';
+import { ClearButton, inputBorderStyle } from '../TextField/styled';
 import { DropdownCustomStyle } from './types';
 import { ActionIcon } from '../Image/styledImages';
 
@@ -22,10 +22,6 @@ export const SelectionWrapper = styled.div<ThemePropsType & BorderColorPropsType
   width: 100%;
   min-height: 56px;
   cursor: pointer;
-`;
-
-export const Hr = styled.div<IsOpenPropsType & DropdownCustomStyle & CustomCssPropsType>`
-  border-right: 1px solid  ${({ theme }) => theme.colors.gray200};
 `;
 
 export const Dropdown = styled.ul<IsOpenPropsType & DropdownCustomStyle & CustomCssPropsType>`
@@ -76,18 +72,23 @@ export const SearchIcon = styled(ActionIcon)`
   filter: invert(50%) sepia(2%) saturate(6%) hue-rotate(314deg) brightness(97%) contrast(80%);
 `;
 
-export const ToggleButton = styled.button<OptionStyleType>`
-  background-color: transparent;
-  cursor: pointer;
-  color: inherit;
-`;
-
 export const SearchWrapper = styled.div<OptionStyleType>`
   border: 1px solid  ${({ theme }) => theme.colors.gray200};
   display: flex;
   align-items: center;
   padding-left: 12px;
   width: 100%;
+  border-radius: 4px;
+`;
+
+export const CancelAllButton = styled(ClearButton)`
+  position: unset;
+  bottom: 0;
+  right: 0;
+  margin-right: 6px;
+  *:is(:hover, :focus) + &:not([disabled]), &:is(:hover, :focus):not([disabled]) {
+    display: block;
+  }
 `;
 
 export const ToggleAllWrapper = styled.div<OptionStyleType>`
