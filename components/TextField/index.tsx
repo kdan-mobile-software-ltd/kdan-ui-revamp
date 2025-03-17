@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { TextFieldProps } from './types';
 import {
   Label, ClearButton, Wrapper, Input,
@@ -7,7 +7,6 @@ import {
 export const TextField: React.FC<TextFieldProps> = ({
   data, customStyle, ...htmlProps
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
   const hasValue = !!htmlProps.value;
 
   const onClear = () => {
@@ -25,7 +24,6 @@ export const TextField: React.FC<TextFieldProps> = ({
         name={htmlProps.name}
         {...htmlProps} // value
         {...customStyle?.input}
-        ref={inputRef}
         onChange={htmlProps?.onChange}
       />
       {data?.isShowClearButton && hasValue && (

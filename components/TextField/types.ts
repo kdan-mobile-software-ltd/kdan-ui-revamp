@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithRef } from 'react';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 import { BorderColorPropsType, CustomCssPropsType } from '@/constants/types/styled';
 
@@ -13,7 +13,7 @@ export type TextFieldDataProps = {
   isShowClearButton?: boolean;
 };
 
-export type HTMLTextFieldProps = ComponentPropsWithoutRef<'input'>;
+export type HTMLTextFieldProps = ComponentPropsWithRef<'input'>;
 
 export type TextFieldProps = {
   data?: TextFieldDataProps;
