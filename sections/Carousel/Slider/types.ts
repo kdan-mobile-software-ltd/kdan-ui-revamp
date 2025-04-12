@@ -1,9 +1,13 @@
 import { CustomColor } from '@/constants/themes/colors';
 
-export type SliderCustomStyle = {
-  arrowColor?: CustomColor;
-  isArrow?: boolean;
+export type ArrowCustomStyle = {
+  arrowBackgroundColor?: CustomColor;
+  arrowSvgColorFilter?: string;
 };
+
+export type SliderCustomStyle = {
+  isArrow?: boolean;
+} & ArrowCustomStyle;
 
 export type SliderProps = {
   customStyle: SliderCustomStyle;

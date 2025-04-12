@@ -3,7 +3,7 @@ import { HOST } from '@/constants/config';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
-import { CustomColor } from '@/constants/themes/colors';
+import { ArrowCustomStyle } from './types';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -41,16 +41,20 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
   `}
 `;
 
-export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
-  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
-  background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
+export const DesktopArrowButton = styled.button<ArrowCustomStyle>`
+  background-color: ${({ arrowBackgroundColor }) => getCustomColorFromTheme(arrowBackgroundColor || 'gray400')};
   position: absolute;
   width: 60px;
   height: 60px;
   border-radius: 100%;
+  border: 0;
   cursor: pointer;
   z-index: ${Z_INDEX.arrowButton};
   top: calc(50% - 32px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.left {
     transform: translate(-50%, -50%) rotate(180deg);
@@ -58,6 +62,14 @@ export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
   &.right {
     transform: translate(50%, -50%);
     right: 0;
+  }
+  > img {
+    width: 24px;
+    height: 24px;
+
+    ${({ arrowSvgColorFilter }) => arrowSvgColorFilter && css`
+      filter: ${arrowSvgColorFilter};
+    `}
   }
 
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {

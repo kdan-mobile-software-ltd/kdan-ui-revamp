@@ -97,7 +97,7 @@ export const Basic: Story = {
         title: { color: '#379fa1' },
       },
       slider: {
-        arrowColor: '#379fa1',
+        arrowBackgroundColor: '#379fa1',
       },
     },
   },
@@ -153,7 +153,7 @@ export const NoCarouselAtDesktop: Story = {
         title: { color: '#379fa1' },
       },
       slider: {
-        arrowColor: '#379fa1',
+        arrowBackgroundColor: '#379fa1',
       },
     },
   },

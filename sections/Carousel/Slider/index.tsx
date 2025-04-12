@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { HOST } from '@/constants/config';
 import {
   DesktopArrowButton, Wrapper, MobileArrowButton,
   BottomPaginationWrapper, PaginationDot, ContentWrapper, Hidden,
@@ -8,7 +9,8 @@ import { SliderProps } from './types';
 export const Slider: React.FC<SliderProps> = ({
   customStyle: {
     isArrow = true,
-    arrowColor,
+    arrowBackgroundColor,
+    arrowSvgColorFilter,
   },
   children,
 }) => {
@@ -46,18 +48,26 @@ export const Slider: React.FC<SliderProps> = ({
 
   return (
     <Wrapper>
-      {isArrow && <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowColor={arrowColor} />}
+      {isArrow && (
+        <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowBackgroundColor={arrowBackgroundColor} arrowSvgColorFilter={arrowSvgColorFilter}>
+          <img src={`${HOST}/assets/icon/horizon-large-arrow.svg`} alt="arrow-left" />
+        </DesktopArrowButton>
+      )}
       <ContentWrapper
         currentActiveChild={activeIndex.current + 1}
         animationDirection={activeIndex.prev < activeIndex.current ? 'Right' : 'Left'}
       >
-        {/* eslint-disable-next-line react/jsx-key */}
-        {children.map((child) => <div>{child}</div>)}
+        {/* eslint-disable-next-line react/no-array-index-key */}
+        {children.map((child, i) => <div key={i}>{child}</div>)}
         <Hidden>
           {children?.[0]}
         </Hidden>
       </ContentWrapper>
-      {isArrow && <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowColor={arrowColor} />}
+      {isArrow && (
+        <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowBackgroundColor={arrowBackgroundColor} arrowSvgColorFilter={arrowSvgColorFilter}>
+          <img src={`${HOST}/assets/icon/horizon-large-arrow.svg`} alt="arrow-left" />
+        </DesktopArrowButton>
+      )}
       <BottomPaginationWrapper>
         <MobileArrowButton onClick={goPrevPage} className="left" type="button" />
         {[...Array(dataLength).keys()].map((index) => (
