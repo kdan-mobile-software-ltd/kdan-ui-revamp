@@ -100,7 +100,7 @@ export const Basic: Story = {
         },
       },
       slider: {
-        arrowColor: '#379fa1',
+        arrowBackgroundColor: '#379fa1',
       },
     },
   },
@@ -159,7 +159,7 @@ export const NoCarousel: Story = {
         },
       },
       slider: {
-        arrowColor: '#379fa1',
+        arrowBackgroundColor: '#379fa1',
       },
     },
   },
