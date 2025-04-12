@@ -14,11 +14,12 @@ const groupSizes = {
   mobile: 1,
 };
 
-export const Card23: React.FC<Card23Props> = ({ data, customStyle }) => {
+export const Card23: React.FC<Card23Props> = ({ data = [], customStyle }) => {
   const width = useWindowWidth();
 
-  const currentBreakpoint = getCurrentBreakpoint(width);
+  if (!data || !data?.length) return null;
 
+  const currentBreakpoint = getCurrentBreakpoint(width);
   const groupSize = groupSizes?.[currentBreakpoint] || 1;
   const sliderPage = Math.ceil(data.length / groupSize);
 
@@ -28,7 +29,7 @@ export const Card23: React.FC<Card23Props> = ({ data, customStyle }) => {
     >
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key
-        <GroupWrapper>
+        <GroupWrapper key={index}>
           {...data.slice(index * groupSize, (index * groupSize) + groupSize).map((item) => (
             <CardItem23
               key={item.title}
