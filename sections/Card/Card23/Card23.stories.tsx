@@ -21,7 +21,7 @@ export const Basic: Story = {
     data: [
       {
         title: 'panel_1_title',
-        desc: 'panel_1_desc The subscription will automatically renew and your card.',
+        desc: 'panel_1_desc The subscription will automatically renew and your card. The subscription will automatically renew and your card.',
         image: {
           src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
           alt: 'img-multi-media-panel-1',
@@ -95,6 +95,71 @@ export const Basic: Story = {
     customStyle: {
       item: {
         title: { color: '#379fa1' },
+      },
+      slider: {
+        arrowBackgroundColor: '#379fa1',
+      },
+    },
+  },
+};
+
+export const Card22Style: Story = {
+  args: {
+    data: [
+      {
+        title: 'panel_2_title',
+        desc: 'The subscription will renew and your card.',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'img-multi-media-panel-1',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+      {
+        title: 'panel_3_title',
+        desc: 'panel_3_desc The subscription will automatically renew and your card.',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'img-multi-media-panel-1',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+      {
+        title: 'panel_4_title',
+        desc: 'panel_4_desc The subscription will automatically renew and your card.',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'img-multi-media-panel-1',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+      {
+        title: 'KDAN「數位永續種子培育計畫」，培育具備數位永續思維的未來人才',
+        desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'img-multi-media-panel-1',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+    ],
+    customStyle: {
+      item: {
+        title: { color: '#379fa1' },
+        image: { isNoMargin: true },
+        wrapper: { borderColor: 'gray500' },
       },
       slider: {
         arrowBackgroundColor: '#379fa1',

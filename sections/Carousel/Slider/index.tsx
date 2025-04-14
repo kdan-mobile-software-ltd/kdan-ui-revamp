@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  useEffect, useState, useRef,
+} from 'react';
 import { HOST } from '@/constants/config';
 import {
   DesktopArrowButton, Wrapper, MobileArrowButton,
-  BottomPaginationWrapper, PaginationDot, ContentWrapper, Hidden,
+  BottomPaginationWrapper, PaginationDot, ContentWrapper,
+  SlideItem,
+  Hidden,
 } from './styled';
 import { SliderProps } from './types';
 
@@ -15,9 +19,15 @@ export const Slider: React.FC<SliderProps> = ({
   children,
 }) => {
   const dataLength = children.length || 1;
-  const [activeIndex, setActiveIndex] = useState(
-    { current: 0, prev: 0 },
-  );
+  const [activeIndex, setActiveIndex] = useState({ current: 0, prev: 0 });
+  const touchStartX = useRef<number | null>(null); // for mobile swipe
+  const touchEndX = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (activeIndex.current >= dataLength) {
+      setActiveIndex((prev) => ({ current: dataLength - 1, prev: prev.current }));
+    }
+  }, [dataLength]);
 
   const goPrevPage = () => {
     setActiveIndex((prev) => ({
@@ -33,38 +43,76 @@ export const Slider: React.FC<SliderProps> = ({
     }));
   };
 
-  const goSpecificPage = (index) => () => {
+  const goSpecificPage = (index: number) => () => {
     setActiveIndex((prev) => ({
       current: index,
       prev: prev.current,
     }));
   };
 
-  useEffect(() => {
-    if (activeIndex.current >= dataLength) {
-      setActiveIndex((prev) => ({ current: dataLength - 1, prev: prev.current }));
+  const handleSwipe = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const diffX = touchStartX.current - touchEndX.current;
+
+      if (diffX > 50) { // left swipe
+        goNextPage();
+      } else if (diffX < -50) { // right swipe
+        goPrevPage();
+      }
     }
-  }, [dataLength]);
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
 
   return (
     <Wrapper>
       {isArrow && (
-        <DesktopArrowButton onClick={goPrevPage} className="left" type="button" arrowBackgroundColor={arrowBackgroundColor} arrowSvgColorFilter={arrowSvgColorFilter}>
+        <DesktopArrowButton
+          onClick={goPrevPage}
+          className="left"
+          type="button"
+          arrowBackgroundColor={arrowBackgroundColor}
+          arrowSvgColorFilter={arrowSvgColorFilter}
+        >
           <img src={`${HOST}/assets/icon/horizon-large-arrow.svg`} alt="arrow-left" />
         </DesktopArrowButton>
       )}
       <ContentWrapper
         currentActiveChild={activeIndex.current + 1}
         animationDirection={activeIndex.prev < activeIndex.current ? 'Right' : 'Left'}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
-        {/* eslint-disable-next-line react/no-array-index-key */}
-        {children.map((child, i) => <div key={i}>{child}</div>)}
+        {children.map((child, i) => (
+          <SlideItem
+            // eslint-disable-next-line react/no-array-index-key
+            key={i}
+          >
+            {child}
+          </SlideItem>
+        ))}
         <Hidden>
-          {children?.[0]}
+          {children?.[activeIndex.current]}
         </Hidden>
       </ContentWrapper>
       {isArrow && (
-        <DesktopArrowButton onClick={goNextPage} className="right" type="button" arrowBackgroundColor={arrowBackgroundColor} arrowSvgColorFilter={arrowSvgColorFilter}>
+        <DesktopArrowButton
+          onClick={goNextPage}
+          type="button"
+          className="right"
+          arrowBackgroundColor={arrowBackgroundColor}
+          arrowSvgColorFilter={arrowSvgColorFilter}
+        >
           <img src={`${HOST}/assets/icon/horizon-large-arrow.svg`} alt="arrow-left" />
         </DesktopArrowButton>
       )}

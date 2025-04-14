@@ -24,21 +24,20 @@ type ContentWrapperProps = {
 export const ContentWrapper = styled.div<ContentWrapperProps>`
   overflow: hidden;
   position: relative;
-  
   ${slideAnimation}
 
-  & > div {
-    animation: animateHide .3s forwards ease-in-out;
-    z-index: ${Z_INDEX.inactiveSlide};
-    position: absolute;
-  }
-  
   ${({ currentActiveChild, animationDirection }) => css`
-    & > :nth-child(${currentActiveChild}) {
+    & > div:nth-child(${currentActiveChild}) {
       animation: ${`animateShowFrom${animationDirection}`} .3s forwards ease-in-out;
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
+`;
+
+export const SlideItem = styled.div`
+  animation: animateHide .3s forwards ease-in-out;
+  z-index: ${Z_INDEX.inactiveSlide};
+  position: absolute;
 `;
 
 export const DesktopArrowButton = styled.button<ArrowCustomStyle>`
@@ -90,6 +89,7 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  cursor: pointer;
   background-color: ${({ theme, isActive }) => (isActive
     ? theme.colors.gray600 : theme.colors.gray400)};
   transition: all 0.3s ease;
@@ -101,6 +101,7 @@ export const MobileArrowButton = styled.button`
   height: 24px;
   cursor: pointer;
   display: none;
+  border: 0;
 
   &.left {
     transform: rotate(180deg);

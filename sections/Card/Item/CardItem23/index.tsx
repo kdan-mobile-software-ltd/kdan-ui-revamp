@@ -1,53 +1,63 @@
 import React from 'react';
-import { Typography } from '@/components/Typography';
 import { Hyperlink } from '@/components/Hyperlink';
-import { AlignBottomWrapper } from '@/utils/style';
-import { ContentWrapper, Image, Wrapper } from './styled';
+import {
+  Image, Wrapper, Title, Desc, ContentWrapper,
+} from './styled';
 import { CardItem23Props } from './types';
 
-export const CardItem23: React.FC<CardItem23Props> = ({ data, customStyle }) => (
-  <Wrapper
-    {...data?.hyperlink}
-    {...customStyle?.wrapper}
-    isNoHover={!data?.hyperlink?.href}
-  >
-    {data?.image?.src && (
-    <Image
-      customStyle={{ width: { default: '100%' }, height: { default: '216px', tablet: '192px' } }}
-      {...data.image}
-    />
-    )}
+export const CardItem23: React.FC<CardItem23Props> = ({ data, customStyle }) => {
+  const handleWrapperClick = () => {
+    if (data?.hyperlink?.href) {
+      window.location.href = data.hyperlink.href;
+    }
+  };
 
-    <ContentWrapper>
-      {data.title && (
-      <Typography
-        fontSize={{ default: 'h5' }}
-        fontWeight="700"
-        {...customStyle?.title}
-      >
-        {data.title}
-      </Typography>
+  return (
+    <Wrapper
+      {...customStyle?.wrapper}
+      isNoHover={!data?.hyperlink?.href}
+      hasHyperlink={!!data.hyperlink?.href}
+      onClick={handleWrapperClick}
+    >
+      {data?.image?.src && (
+        <Image
+          isNoMargin={customStyle?.image?.isNoMargin}
+          {...data.image}
+        />
       )}
-      {data.desc && (
-      <Typography
-        fontSize={{ default: 'body3' }}
-        margin="12px 0 0"
-        {...customStyle?.desc}
-        dangerouslySetInnerHTML={{ __html: data.desc }}
-      />
-      )}
-      {data.hyperlink?.href && (
-        <AlignBottomWrapper>
+
+      <ContentWrapper>
+        {data.title && (
+        <Title
+          fontSize={{ default: 'h5' }}
+          fontWeight="700"
+          {...customStyle?.title}
+        >
+          {data.title}
+        </Title>
+        )}
+        {data.desc && (
+        <Desc
+          fontSize={{ default: 'body3' }}
+          margin="12px 0 0"
+          {...customStyle?.desc}
+          dangerouslySetInnerHTML={{ __html: data.desc }}
+        />
+        )}
+        {data.hyperlink?.href && (
           <Hyperlink
             fontSize={{ default: 'button2' }}
             variant="underline"
+            margin="24px 0 0"
+            display="block"
             {...data?.hyperlink}
             {...customStyle?.hyperlink}
+            onClick={(e) => e.stopPropagation()}
           >
             {data.hyperlink.label}
           </Hyperlink>
-        </AlignBottomWrapper>
-      )}
-    </ContentWrapper>
-  </Wrapper>
-);
+        )}
+      </ContentWrapper>
+    </Wrapper>
+  );
+};
