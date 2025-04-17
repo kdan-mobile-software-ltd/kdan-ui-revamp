@@ -9,13 +9,14 @@ export type ContentItem31Data = {
   hyperlink?: HocHyperlinkData;
   image: ImgData;
 };
+export type IsTextPositionRightType = { isTextPositionRight?: boolean; };
 
 export type ContentItem31CustomStyle = {
   wrapper?: {
     borderColor?: CustomColor;
     backgroundColor?: CustomColor;
     contentMinHeight?: string;
-  }
+  } & IsTextPositionRightType;
   title?: {
     borderLeftColor: CustomColor;
   } & TextCustomCssProps;

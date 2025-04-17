@@ -1,9 +1,8 @@
 import React from 'react';
-import { Typography } from '@/components/Typography';
 import { Hyperlink } from '@/components/Hyperlink';
 import { AlignBottomWrapper } from '@/utils/style';
 import {
-  Wrapper, Title, ContentWrapper, Image,
+  Wrapper, Title, ContentWrapper, Image, Desc,
 } from './styled';
 import { ContentItem31Props } from './types';
 
@@ -15,7 +14,7 @@ export const ContentItem31: React.FC<ContentItem31Props> = ({ data, customStyle 
   >
     <ContentWrapper minHeight={customStyle?.wrapper?.contentMinHeight}>
       <Title fontSize={{ default: 'h5', tablet: 'h7' }} fontWeight="700" {...customStyle?.title}>{data.title}</Title>
-      <Typography fontSize={{ default: 'body5' }} margin="12px 0 0" {...customStyle?.desc} dangerouslySetInnerHTML={{ __html: data.desc }} />
+      <Desc fontSize={{ default: 'body5' }} margin="12px 0 0" {...customStyle?.desc} dangerouslySetInnerHTML={{ __html: data.desc }} />
       {data?.hyperlink && (
       <AlignBottomWrapper>
         <Hyperlink
