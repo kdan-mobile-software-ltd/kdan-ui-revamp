@@ -19,6 +19,17 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     data: [{
+      title: 'panel_1_title Subscription Policies',
+      desc: 'panel_1_desc The subscription will automatically renew and your card.',
+      image: {
+        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        alt: 'img-multi-media-panel-1',
+      },
+      hyperlink: {
+        href: 'https://www.google.com/',
+        label: 'go to google',
+      },
+    }, {
       title: '"Digital Seed Internship Program" — Nurturing Future Talent with a Digital Sustainability Mindset',
       desc: 'KDAN’s Digital Seed Internship Program aims to cultivate future-ready talent with a strong foundation in digital sustainability. Through personalized mentorship and diverse interdisciplinary courses, the program empowers interns to discover their potential, strengthen their professional skills, and unlock new growth opportunities.',
       image: {
@@ -30,18 +41,7 @@ export const Basic: Story = {
         label: 'go to google',
       },
     }, {
-      title: 'panel_2_title Subscription Policies',
-      desc: 'panel_2_desc The subscription will automatically renew and your card.',
-      image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
-        alt: 'img-multi-media-panel-1',
-      },
-      hyperlink: {
-        href: 'https://www.google.com/',
-        label: 'go to google',
-      },
-    }, {
-      title: 'panel_3_title Subscription Policies',
+      title: '"Digital Seed Internship Program" — Nurturing Future Talent with a Digital Sustainability Mindset',
       desc: 'panel_3_desc The subscription will automatically renew and your card.',
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
@@ -62,6 +62,7 @@ export const Basic: Story = {
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
+        height: { default: '320px', tablet: '564px' },
       },
     },
   },
@@ -70,8 +71,9 @@ export const Basic: Story = {
 export const TextAtRight: Story = {
   args: {
     data: [{
-      title: '"Digital Seed Internship Program" — Nurturing Future Talent with a Digital Sustainability Mindset',
-      desc: 'KDAN’s Digital Seed Internship Program aims to cultivate future-ready talent with a strong foundation in digital sustainability. Through personalized mentorship and diverse interdisciplinary courses, the program empowers interns to discover their potential, strengthen their professional skills, and unlock new growth opportunities.',
+
+      title: 'panel_1_title Subscription Policies',
+      desc: 'panel_1_desc The subscription will automatically renew and your card.',
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
         alt: 'img-multi-media-panel-1',
@@ -81,8 +83,8 @@ export const TextAtRight: Story = {
         label: 'go to google',
       },
     }, {
-      title: 'panel_2_title Subscription Policies',
-      desc: 'panel_2_desc The subscription will automatically renew and your card.',
+      title: '"Digital Seed Internship Program" — Nurturing Future Talent with a Digital Sustainability Mindset',
+      desc: 'KDAN’s Digital Seed Internship Program aims to cultivate future-ready talent with a strong foundation in digital sustainability. Through personalized mentorship and diverse interdisciplinary courses, the program empowers interns to discover their potential, strengthen their professional skills, and unlock new growth opportunities.',
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
         alt: 'img-multi-media-panel-1',
@@ -114,6 +116,7 @@ export const TextAtRight: Story = {
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
+        height: { default: '320px', tablet: '565px' },
       },
     },
   },

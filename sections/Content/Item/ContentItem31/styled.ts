@@ -22,11 +22,10 @@ export const Wrapper = styled.div<BorderColorPropsType & BackgroundColorPropsTyp
   }
 `;
 
-export const ContentWrapper = styled.div<{ minHeight?: string; }>`
+export const ContentWrapper = styled.div`
   width: 50%;
   padding: 40px 60px 40px 84px;
   position: relative;
-  min-height: ${({ minHeight }) => minHeight || '200px'};
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     order: 1;
@@ -52,6 +51,7 @@ export const Title = styled(Typography)<{ borderLeftColor?: CustomColor }>`
 
 export const Desc = styled(Typography)`
   ${limitedTextLine(5)}
+  min-height: calc(1.4em * 3);
 `;
 
 export const Image = styled.img`

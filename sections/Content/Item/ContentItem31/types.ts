@@ -15,7 +15,6 @@ export type ContentItem31CustomStyle = {
   wrapper?: {
     borderColor?: CustomColor;
     backgroundColor?: CustomColor;
-    contentMinHeight?: string;
   } & IsTextPositionRightType;
   title?: {
     borderLeftColor: CustomColor;
