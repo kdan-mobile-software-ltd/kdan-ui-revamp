@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import {
+  BackgroundColorPropsType,
   BorderColorPropsType, CustomCssPropsType, IsOpenPropsType, ThemePropsType,
 } from '@/constants/types/styled';
 import { body5FontStyle } from '@/constants/fonts';
@@ -7,18 +8,20 @@ import { ClearButton, inputBorderStyle } from '../TextField/styled';
 import { DropdownCustomStyle } from './types';
 import { ActionIcon } from '../Image/styledImages';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<CustomCssPropsType>`
   position: relative;
+
+  ${({ customCss }) => customCss}
 `;
 
-export const SelectionWrapper = styled.div<ThemePropsType & BorderColorPropsType>`
+export const SelectionWrapper = styled.div<ThemePropsType & BorderColorPropsType & BackgroundColorPropsType>`
   ${inputBorderStyle}
   position: relative;
   display: flex;
   align-items: center;
   padding-right: 12px;
   z-index: 20;
-  background-color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { colors }, backgroundColor }) => backgroundColor || colors.white};
   width: 100%;
   min-height: 56px;
   cursor: pointer;

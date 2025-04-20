@@ -1,4 +1,6 @@
+import { CustomSizeImage } from '@/components/Image/styledImages';
 import { SimpleToggle, ToggleWrapper } from '@/components/private/Toggle/styled';
+import { HOST } from '@/constants/config';
 import React, { useState } from 'react';
 
 export type UseToggleProps = {
@@ -36,8 +38,13 @@ export const useToggle = (param: UseToggleProps = {
     ToggleButton: (
       (!length || (hideLongerThan && length > hideLongerThan)) ? (
         <ToggleWrapper>
-          {text}
-          <SimpleToggle onClick={toggle} isOpen={isOpen} />
+          <SimpleToggle onClick={toggle} isOpen={isOpen}>
+            {text}
+            <CustomSizeImage
+              src={`${HOST}/assets/icon/vertical-arrow.svg`}
+              customStyle={{ width: { default: '24px' }, height: { default: '24px' } }}
+            />
+          </SimpleToggle>
         </ToggleWrapper>
       ) : <div />
     ),

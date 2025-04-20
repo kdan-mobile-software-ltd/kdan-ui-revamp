@@ -52,6 +52,11 @@ export const SingleSelect1: Story = {
     };
 
     const onChange = (option: OptionType) => {
+      if (option?.value === activeOption[0]?.value) {
+        setInputValue('');
+        setActiveOption([]);
+        return;
+      }
       setInputValue(option.label);
       setActiveOption([option]);
     };
@@ -72,8 +77,9 @@ export const SingleSelect1: Story = {
         <Select {...{
           id: 'id-SingleSelect1',
           name: 'name-SingleSelect1',
-          placeholder: 'Placeholder',
           data: {
+            placeholder: 'Placeholder',
+            searchPlaceholder: 'Search something...',
             label: 'Chose a fruit:',
             options: [
               { label: 'apple', value: 'apple' },
@@ -100,6 +106,7 @@ export const SingleSelect1: Story = {
               }
             `,
             },
+            text: { color: activeOption.length ? 'black' : 'gray400' }, // 'gray400' is for placeholder
           },
         }}
         />
@@ -111,14 +118,12 @@ export const SingleSelect1: Story = {
 export const SingleSelect2: Story = {
   render: () => {
     const [activeOption, setActiveOption] = useState<OptionType[]>([{ label: '日本語', value: 'Japanese' }]);
-    const [inputValue, setInputValue] = useState<string>('');
-
-    const onInputChange = (value: string) => {
-      setInputValue(value);
-    };
 
     const onChange = (option: OptionType) => {
-      setInputValue(option.label);
+      if (option?.value === activeOption[0]?.value) {
+        setActiveOption([]);
+        return;
+      }
       setActiveOption([option]);
     };
 
@@ -149,14 +154,14 @@ export const SingleSelect2: Story = {
           <Typography fontSize={{ default: 'body1' }} fontWeight="700">
             inputValue:
           </Typography>
-          {inputValue}
+          <Typography fontSize={{ default: 'body4' }} color="error">(turn off on this case)</Typography>
         </Description>
 
         <Select {...{
           id: 'id-SingleSelect2',
           name: 'name-SingleSelect2',
-          placeholder: 'search something...',
           data: {
+            placeholder: 'placeholder',
             label: '請選擇語系',
             icon: {
               src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-language.svg',
@@ -171,10 +176,8 @@ export const SingleSelect2: Story = {
               { label: 'Español', value: 'spanish' },
             ],
             activeOption,
-            inputValue,
             onChange,
-            onInputChange,
-            isHideAutocomplete: true,
+            isHideSearch: true,
           },
           customStyle: {
             label: { color: 'gray800' },
@@ -187,6 +190,12 @@ export const SingleSelect2: Story = {
             },
             dropdown: {
               maxHeight: '200px',
+            },
+            wrapper: {
+              customCss: css`
+              width: 288px;
+              margin: 0 auto;
+            `,
             },
           },
         }}
@@ -294,6 +303,104 @@ export const MultipleSelect3: Story = {
                 }
             `,
             },
+          },
+        }}
+        />
+      </>
+    );
+  },
+};
+export const CustomColor: Story = {
+  render: () => {
+    const options = [
+      { label: 'kdan1', value: '1' },
+      { label: 'kdan2', value: '2' },
+      { label: 'kdan3', value: '3' },
+      { label: 'kdan4', value: '4' },
+      { label: 'kdan5', value: '5' },
+      { label: 'kdan6', value: '6' },
+      { label: 'kdan7', value: '7' },
+      { label: 'kdan8', value: '8' },
+      { label: 'kdan9', value: '9' },
+      { label: 'kdan10', value: '10' },
+      { label: 'kdan11', value: '11' },
+      { label: 'kdan12', value: '12' },
+    ];
+    const isMultiSelect = true;
+    const defaultOption = [options[3]];
+    const [activeOption, setActiveOption] = useState<OptionType[]>(defaultOption);
+    const [inputValue, setInputValue] = useState<string>(
+      isMultiSelect ? '' : activeOption[0].label,
+    );
+
+    const onInputChange = (value: string) => {
+      setInputValue(value);
+    };
+
+    const onChange = (option: OptionType) => {
+      console.log('onchange:', option);
+      if (isMultiSelect) {
+        setActiveOption((prev) => {
+          const filtered = prev.filter((active) => active.value !== option.value);
+          return filtered.length === prev.length
+            ? [...prev, option] // add option
+            : filtered; // remove option
+        });
+      }
+    };
+
+    return (
+      <>
+        <Description>
+          <p>
+            可利用
+            <Code>backgroundColor</Code>
+            、
+            <Code>borderColor</Code>
+            、
+            <Code>arrowSvgColorFilter</Code>
+            、
+            <Code>option.customCss</Code>
+            等屬性調整顏色。
+          </p>
+          <Typography fontSize={{ default: 'body1' }} fontWeight="700">
+            activeOption:
+          </Typography>
+          {JSON.stringify(activeOption)}
+
+          <Typography fontSize={{ default: 'body1' }} fontWeight="700" margin="5px 0 0">
+            inputValue:
+          </Typography>
+          {inputValue}
+        </Description>
+
+        <Select {...{
+          id: 'id-MultipleSelect3',
+          name: 'name-MultipleSelect3',
+          data: {
+            label: 'Movies',
+            options,
+            activeOption,
+            inputValue,
+            onChange,
+            onInputChange,
+            isMultiSelect,
+            isShowCancelAllOption: true,
+          },
+          customStyle: {
+            label: { color: 'gray800' },
+            option: {
+              customCss: css<OptionStyleType>`
+                ${({ isBottom }) => !isBottom && css`border-bottom: #C8C8C8 solid 1px;`}
+                &.isActive {
+                  background-color: #defff2;
+                }
+            `,
+            },
+            text: { color: 'white' },
+            backgroundColor: '#002d37',
+            borderColor: '#00dc87',
+            arrowSvgColorFilter: 'invert(67%) sepia(23%) saturate(5141%) hue-rotate(110deg) brightness(98%) contrast(102%)',
           },
         }}
         />
