@@ -21,12 +21,12 @@ import { Meta } from "@storybook/blocks";
 
 ## Getting Started
 
-1. Installation
+#### 1. Installation
 ```sh
  yarn add kdan-ui-revamp@latest
 ```
 
-2. Wrap `<KdanUiThemeProvider>` for Kdan UI theming
+#### 2. Wrap `<KdanUiThemeProvider>` for Kdan UI theming
 ```jsx
 // _app.tsx
 import { KdanUiThemeProvider } from 'kdan-ui-revamp';
@@ -40,6 +40,41 @@ const App = ({ Component, pageProps }: AppProps) => {
 };
 
 export default App;
+```
+
+#### 3. [optional] 如果「目的專案」未設定 css reset，可以使用 kdan-ui 的 `kdanUiResetCss`。
+
+以 styled-components 的 `createGlobalStyle` 初始化為範例：
+
+in 「目的專案」 `pages/_globalStyle.tsx`
+
+```jsx
+import { createGlobalStyle } from 'styled-components';
+import { kdanUiResetCss } from 'kdan-ui-revamp';
+
+const GlobalStyle = createGlobalStyle`
+  ${kdanUiResetCss} /* <- reset css */
+`;
+
+export default GlobalStyle;
+```
+
+in 「目的專案」 `_app.tsx`
+```jsx
+...
+import GlobalStyle from './_globalStyle';
+
+const App = ({ Component, ...rest }: AppProps) => {
+  const { store, props } = wrapper.useWrappedStore(rest);
+  return (
+    <Provider store={store}>
+      <KdanUiThemeProvider>
+        <GlobalStyle /> {/* <- use styled-components syntax */}
+        <Component {...props.pageProps} />
+      </KdanUiThemeProvider>
+    </Provider>
+  );
+};
 ```
 
 ## Quick Usage
