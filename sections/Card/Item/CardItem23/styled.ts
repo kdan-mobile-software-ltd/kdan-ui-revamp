@@ -31,14 +31,14 @@ export const Image = styled.img<CardItem23ImageStyle>`
   ${({ isNoMargin }) => (isNoMargin
     ? css`min-height: 240px;`
     : css`
-      border-radius: 8px;
-      margin: 24px 16px 0;
-      min-height: 216px;
+        border-radius: 8px;
+        padding: 16px 16px 0;
+        min-height: 232px;
       `)}
       
   width: 100%;
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    min-height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '192px')};
+    min-height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '208px')};
   }
 `;
 

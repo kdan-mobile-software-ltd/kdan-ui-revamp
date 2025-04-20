@@ -137,10 +137,6 @@ export const Card22Style: Story = {
           src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
           alt: 'img-multi-media-panel-1',
         },
-        hyperlink: {
-          href: 'https://www.google.com/',
-          label: 'go to google',
-        },
       },
       {
         title: 'KDAN「數位永續種子培育計畫」，培育具備數位永續思維的未來人才',
@@ -163,6 +159,7 @@ export const Card22Style: Story = {
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
+        height: { default: '600px', tablet: '512px' },
       },
     },
   },

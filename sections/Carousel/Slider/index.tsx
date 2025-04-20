@@ -6,7 +6,7 @@ import {
   DesktopArrowButton, Wrapper, MobileArrowButton,
   BottomPaginationWrapper, PaginationDot, ContentWrapper,
   SlideItem,
-  Hidden,
+  InvisibleFixedHeight,
 } from './styled';
 import { SliderProps } from './types';
 
@@ -15,6 +15,7 @@ export const Slider: React.FC<SliderProps> = ({
     isArrow = true,
     arrowBackgroundColor,
     arrowSvgColorFilter,
+    height,
   },
   children,
 }) => {
@@ -92,6 +93,7 @@ export const Slider: React.FC<SliderProps> = ({
         animationDirection={activeIndex.prev < activeIndex.current ? 'Right' : 'Left'}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        height={height}
       >
         {children.map((child, i) => (
           <SlideItem
@@ -101,9 +103,9 @@ export const Slider: React.FC<SliderProps> = ({
             {child}
           </SlideItem>
         ))}
-        <Hidden>
-          {children?.[activeIndex.current]}
-        </Hidden>
+        <InvisibleFixedHeight>
+          {children?.[0]}
+        </InvisibleFixedHeight>
       </ContentWrapper>
       {isArrow && (
         <DesktopArrowButton

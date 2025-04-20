@@ -1,3 +1,4 @@
+import { BreakpointKeyObj } from '@/constants/breakpoints';
 import { CustomColor } from '@/constants/themes/colors';
 
 export type ArrowCustomStyle = {
@@ -5,9 +6,11 @@ export type ArrowCustomStyle = {
   arrowSvgColorFilter?: string;
 };
 
+export type HeightStyle = { height?: BreakpointKeyObj<string> };
+
 export type SliderCustomStyle = {
   isArrow?: boolean;
-} & ArrowCustomStyle;
+} & HeightStyle & ArrowCustomStyle;
 
 export type SliderProps = {
   customStyle: SliderCustomStyle;

@@ -3,7 +3,7 @@ import { HOST } from '@/constants/config';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
-import { ArrowCustomStyle } from './types';
+import { ArrowCustomStyle, HeightStyle } from './types';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 type ContentWrapperProps = {
   currentActiveChild: number;
   animationDirection: 'Right' | 'Left'; // the fixed word from animation naming in /utils/style
-};
+} & HeightStyle;
 export const ContentWrapper = styled.div<ContentWrapperProps>`
   overflow: hidden;
   position: relative;
@@ -32,6 +32,14 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
+
+  ${({ height }) => height && Object.entries(height).map(([breakpoint, size]) => (
+    breakpoint === 'default'
+      ? `height: ${size};`
+      : `@media screen and (${MAX_WIDTH_QUERY[breakpoint]}) {
+            height: ${size};
+          }`
+  )).join(' ')}
 `;
 
 export const SlideItem = styled.div`
@@ -112,6 +120,6 @@ export const MobileArrowButton = styled.button`
   }
 `;
 
-export const Hidden = styled.section`
+export const InvisibleFixedHeight = styled.section`
   visibility: hidden;
 `;
