@@ -27,23 +27,25 @@ export const CardItem23: React.FC<CardItem23Props> = ({ data, customStyle }) => 
       )}
 
       <ContentWrapper>
-        {data.title && (
-        <Title
-          fontSize={{ default: 'h5' }}
-          fontWeight="700"
-          {...customStyle?.title}
-        >
-          {data.title}
-        </Title>
-        )}
-        {data.desc && (
-        <Desc
-          fontSize={{ default: 'body3' }}
-          margin="12px 0 0"
-          {...customStyle?.desc}
-          dangerouslySetInnerHTML={{ __html: data.desc }}
-        />
-        )}
+        <div>
+          {data.title && (
+          <Title
+            fontSize={{ default: 'h5' }}
+            fontWeight="700"
+            {...customStyle?.title}
+          >
+            {data.title}
+          </Title>
+          )}
+          {data.desc && (
+          <Desc
+            fontSize={{ default: 'body3' }}
+            margin="12px 0 0"
+            {...customStyle?.desc}
+            dangerouslySetInnerHTML={{ __html: data.desc }}
+          />
+          )}
+        </div>
         {data.hyperlink?.href && (
           <Hyperlink
             fontSize={{ default: 'button2' }}

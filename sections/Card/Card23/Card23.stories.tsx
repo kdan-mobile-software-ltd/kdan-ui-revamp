@@ -132,7 +132,7 @@ export const Card22Style: Story = {
       },
       {
         title: 'panel_4_title',
-        desc: 'panel_4_desc The subscription will automatically renew and your card.',
+        desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
         image: {
           src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
           alt: 'img-multi-media-panel-1',

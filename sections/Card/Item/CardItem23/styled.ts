@@ -46,6 +46,7 @@ export const ContentWrapper = styled.div`
   padding: 24px 16px;
   flex-grow: 1;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 `;
 
@@ -65,5 +66,4 @@ export const Desc = styled(Typography)`
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
-  flex-grow: 1;
 `;
