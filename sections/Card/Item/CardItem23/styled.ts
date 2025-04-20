@@ -21,7 +21,7 @@ export const Wrapper = styled.div<CardItem23WrapperStyle & { isNoHover: boolean;
     }
   `}
 
-  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+  @media screen and (${MAX_WIDTH_QUERY.laptop}) {
     width: 288px;
   }
 `;
@@ -37,7 +37,7 @@ export const Image = styled.img<CardItem23ImageStyle>`
       `)}
       
   width: 100%;
-  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+  @media screen and (${MAX_WIDTH_QUERY.laptop}) {
     min-height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '208px')};
   }
 `;

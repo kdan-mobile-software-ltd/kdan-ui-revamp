@@ -81,7 +81,7 @@ export const DesktopArrowButton = styled.button<ArrowCustomStyle>`
     `}
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: none;
   }
 `;
@@ -117,7 +117,7 @@ export const MobileArrowButton = styled.button`
     transform: rotate(180deg);
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
   }
 `;
