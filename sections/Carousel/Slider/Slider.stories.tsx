@@ -38,6 +38,7 @@ export const Basic: Story = {
     customStyle: {
       arrowBackgroundColor: '#00dc87',
       arrowSvgColorFilter: 'brightness(0) saturate(100%) invert(12%) sepia(10%) saturate(4600%) hue-rotate(149deg) brightness(96%) contrast(103%)',
+      paginationDotColor: '#00dc87',
     },
   },
 };

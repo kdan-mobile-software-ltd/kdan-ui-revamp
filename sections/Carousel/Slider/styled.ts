@@ -3,7 +3,7 @@ import { HOST } from '@/constants/config';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
-import { ArrowCustomStyle, HeightStyle } from './types';
+import { ArrowCustomStyle, HeightStyle, PaginationDotStyle } from './types';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -95,13 +95,14 @@ export const BottomPaginationWrapper = styled.div`
   height: 24px;
 `;
 
-export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
+export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean } & PaginationDotStyle>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: ${({ theme, isActive }) => (isActive
-    ? theme.colors.gray600 : theme.colors.gray400)};
+  background-color: ${({ theme, isActive, paginationDotColor }) => (isActive
+    ? (paginationDotColor || theme.colors.gray600)
+    : theme.colors.gray400)};
   transition: all 0.3s ease;
 `;
 
