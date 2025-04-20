@@ -66,4 +66,5 @@ export const Desc = styled(Typography)`
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
+  min-height: calc(1.55em * 3);
 `;

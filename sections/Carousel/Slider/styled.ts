@@ -47,6 +47,7 @@ export const SlideItem = styled.div`
   animation: animateHide .3s forwards ease-in-out;
   z-index: ${Z_INDEX.inactiveSlide};
   position: absolute;
+  width: 100%;
 `;
 
 export const DesktopArrowButton = styled.button<ArrowCustomStyle>`
