@@ -29,7 +29,7 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
 
   ${({ currentActiveChild, animationDirection }) => css`
     & > div:nth-child(${currentActiveChild}) {
-      animation: ${`animateShowFrom${animationDirection}`} .3s forwards ease-in-out;
+      animation: ${`animateShowFrom${animationDirection}`} 0.3s forwards ease-in-out;
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
@@ -44,7 +44,7 @@ export const ContentWrapper = styled.div<ContentWrapperProps>`
 `;
 
 export const SlideItem = styled.div`
-  animation: animateHide .3s forwards ease-in-out;
+  animation: animateHide 0.3s forwards ease-in-out;
   z-index: ${Z_INDEX.inactiveSlide};
   position: absolute;
   width: 100%;

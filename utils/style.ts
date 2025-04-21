@@ -70,7 +70,10 @@ export const slideAnimation = css`
 export const arrowIconRotateStyle = css<IsOpenPropsType>`
   transition: all 0.3s ease 0s;
   transform: rotate(0);
-  ${({ isOpen }) => isOpen && css`transform: rotate(-180deg);`} 
+  ${({ isOpen }) => isOpen
+    && css`
+      transform: rotate(-180deg);
+    `}
 `;
 
 export const buttonStyleReset = css`
@@ -79,8 +82,4 @@ export const buttonStyleReset = css`
   cursor: pointer;
 `;
 
-export const AlignBottomWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  padding-bottom: inherit;
-`;
+export const AlignBottomWrapper = styled.div``;

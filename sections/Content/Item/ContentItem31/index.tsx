@@ -5,7 +5,10 @@ import {
 } from './styled';
 import { ContentItem31Props } from './types';
 
-export const ContentItem31: React.FC<ContentItem31Props> = ({ data, customStyle }) => (
+export const ContentItem31: React.FC<ContentItem31Props> = ({
+  data,
+  customStyle,
+}) => (
   <Wrapper
     key={data.title}
     borderColor={customStyle?.wrapper?.borderColor}

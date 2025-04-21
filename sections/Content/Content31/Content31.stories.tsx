@@ -10,7 +10,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'fullscreen' },
 } as Meta<typeof Content31>;
 
 export default meta;

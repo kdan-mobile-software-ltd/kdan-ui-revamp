@@ -24,6 +24,11 @@ export const Wrapper = styled.div<CardItem23WrapperStyle & { isNoHover: boolean;
   @media screen and (${MAX_WIDTH_QUERY.laptop}) {
     width: 288px;
   }
+
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    width: 100%;
+    max-width: 480px;
+  }
 `;
 
 export const Image = styled.img<CardItem23ImageStyle>`
