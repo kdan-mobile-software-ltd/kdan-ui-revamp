@@ -21,9 +21,13 @@ const getVariantStyle = (variants: HyperlinkVariant): FlattenSimpleInterpolation
   }
 };
 
-export const StyledHyperlink = styled.a<HyperlinkCustomStyle>`
+export const hyperlinkCss = css<HyperlinkCustomStyle>`
   cursor: pointer;
   ${({ variant = 'noUnderline' }) => getVariantStyle(variant)}
   ${textCustomCss}
   ${({ customCss = '' }) => customCss}
+`;
+
+export const StyledHyperlink = styled.a<HyperlinkCustomStyle>`
+  ${hyperlinkCss}
 `;

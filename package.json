@@ -1,6 +1,6 @@
 {
   "name": "kdan-ui-revamp",
-  "version": "2.6.0",
+  "version": "2.6.1-beta-2",
   "license": "MIT",
   "description": "React library library of foundational and advanced components by Kdan web design system",
   "repository": {
@@ -109,9 +109,12 @@
     "webpack-cli": "^5.0.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17 || ^18",
-    "react-dom": "^16.8.0 || ^17 || ^18",
-    "styled-components": "5.3.9"
+    "@types/react": "^17 || ^18",
+    "@types/react-dom": "^17 || ^18",
+    "@types/styled-components": "^5",
+    "react": "^17 || ^18",
+    "react-dom": "^17 || ^18",
+    "styled-components": "^5"
   },
   "engines": {
     "node": ">=16"

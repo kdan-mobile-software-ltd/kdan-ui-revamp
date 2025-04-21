@@ -66,3 +66,7 @@ export type IsOpenPropsType = {
 export type HideAtMobilePropsType = {
   hideAtMobile?: boolean;
 };
+
+export type ArrowSvgColorFilter = {
+  arrowSvgColorFilter?: string;
+};

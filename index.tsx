@@ -6,6 +6,8 @@ export { useWindowWidth } from './hooks/useContainDimensions';
 export { getCurrentBreakpoint } from './utils/getCurrentBreakpoint';
 export * from './utils/style/textStyle';
 export { RwdWrapper } from './utils/style/wrapper';
+export { hyperlinkCss } from './components/Hyperlink/styled';
+export { resetCss as kdanUiResetCss } from './constants/themes/globalstyle';
 
 // components
 export * from './components/Button';

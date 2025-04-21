@@ -9,29 +9,29 @@ import { CardItem23 } from '../Item/CardItem23';
 const groupSizes = {
   default: 3,
   desktop: 3,
+  desktopS: 3,
   laptop: 2,
   tablet: 2,
   mobile: 1,
+  mobileM: 1,
 };
 
-export const Card23: React.FC<Card23Props> = ({ data, customStyle }) => {
+export const Card23: React.FC<Card23Props> = ({ data = [], customStyle }) => {
   const width = useWindowWidth();
 
-  const currentBreakpoint = getCurrentBreakpoint(width);
+  if (!data || !data?.length) return null;
 
+  const currentBreakpoint = getCurrentBreakpoint(width);
   const groupSize = groupSizes?.[currentBreakpoint] || 1;
   const sliderPage = Math.ceil(data.length / groupSize);
 
   return (data.length > groupSize ? (
     <Slider
-      customStyle={{
-        ...customStyle?.slider,
-        isWide: true,
-      }}
+      customStyle={customStyle.slider}
     >
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key
-        <GroupWrapper>
+        <GroupWrapper key={index}>
           {...data.slice(index * groupSize, (index * groupSize) + groupSize).map((item) => (
             <CardItem23
               key={item.title}

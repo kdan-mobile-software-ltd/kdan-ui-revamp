@@ -1,6 +1,8 @@
 import { ComponentPropsWithoutRef } from 'react';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
-import { BorderColorPropsType, CustomCssPropsType } from '@/constants/types/styled';
+import {
+  ArrowSvgColorFilter, BackgroundColorPropsType, BorderColorPropsType, CustomCssPropsType,
+} from '@/constants/types/styled';
 import { ImgData } from '@/constants/types/global';
 
 export type DropdownCustomStyle = {
@@ -10,10 +12,11 @@ export type DropdownCustomStyle = {
 
 export type SelectCustomStyle = {
   label?: TextCustomCssProps;
-  input?: BorderColorPropsType;
   dropdown?: DropdownCustomStyle;
   option?: CustomCssPropsType;
-};
+  wrapper?: CustomCssPropsType;
+  text?: TextCustomCssProps;
+} & BackgroundColorPropsType & BorderColorPropsType & ArrowSvgColorFilter;
 
 export type OptionType = {
   label: string;
@@ -24,15 +27,17 @@ export type DropdownDirection = 'upward' | 'downward' | 'auto'; // default is `a
 
 export type SelectDataProps = {
   label?: string;
+  placeholder?: string;
   icon?: ImgData;
   options: OptionType[];
   activeOption: OptionType[];
-  inputValue: string;
+  inputValue?: string;
   isMultiSelect?: boolean;
   isShowCancelAllOption?: boolean;
   onChange: (option: OptionType) => unknown;
-  onInputChange: (value: string) => unknown;
-  isHideAutocomplete?: boolean;
+  onInputChange?: (value: string) => unknown;
+  isHideSearch?: boolean;
+  searchPlaceholder?: string;
 };
 
 export type HTMLInputProps = ComponentPropsWithoutRef<'input'>;

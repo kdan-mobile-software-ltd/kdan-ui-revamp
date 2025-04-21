@@ -3,13 +3,16 @@ import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { CustomColor } from '@/constants/themes/colors';
 import { BackgroundColorPropsType, BorderColorPropsType } from '@/constants/types/styled';
 import { getCustomColorFromTheme } from '@/utils/style';
+import { limitedTextLine } from '@/utils/style/limitedTextLine';
 import styled from 'styled-components';
+import { HardRwdWrapper } from '@/utils/style/wrapper';
+import { IsTextPositionRightType } from './types';
 
-export const Wrapper = styled.div<BorderColorPropsType & BackgroundColorPropsType>`
-  width: 100%;
+export const Wrapper = styled(HardRwdWrapper)<BorderColorPropsType & BackgroundColorPropsType & IsTextPositionRightType>`
   border-radius: 8px;
   overflow: hidden;
   display: flex;
+  flex-direction: ${({ isTextPositionRight }) => (isTextPositionRight ? 'row-reverse' : 'row')};
 
   border: ${({ borderColor }) => getCustomColorFromTheme(borderColor || 'gray800')} 1.5px solid;
   background-color: ${({ backgroundColor }) => getCustomColorFromTheme(backgroundColor || 'transparent')};
@@ -19,15 +22,13 @@ export const Wrapper = styled.div<BorderColorPropsType & BackgroundColorPropsTyp
   }
 `;
 
-export const ContentWrapper = styled.div<{ minHeight?: string; }>`
+export const ContentWrapper = styled.div`
   width: 50%;
   padding: 40px 60px 40px 84px;
   position: relative;
-  min-height: ${({ minHeight }) => minHeight || '200px'};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 24px;
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     order: 1;
@@ -38,6 +39,7 @@ export const ContentWrapper = styled.div<{ minHeight?: string; }>`
 
 export const Title = styled(Typography)<{ borderLeftColor?: CustomColor }>`
   position: relative;
+  ${limitedTextLine(2)}
 
   &::before {
     content: ' ';
@@ -48,6 +50,13 @@ export const Title = styled(Typography)<{ borderLeftColor?: CustomColor }>`
     top: 0;
     left: -20px;
   }
+`;
+
+export const Desc = styled(Typography)`
+  ${limitedTextLine(5)}
+  min-height: calc(1.4em * 3);
+
+  ${({ customCss = '' }) => customCss}
 `;
 
 export const Image = styled.img`

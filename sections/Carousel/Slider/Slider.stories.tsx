@@ -8,7 +8,7 @@ const meta = {
   component: Slider,
   argTypes: {
     data: { control: 'object', description: '[required] only `title` is require in each Item<br><br> `toggleText` default is `{open: \'Open\', close: \'Close\'}`' },
-    customStyle: { control: 'object' },
+    customStyle: { control: 'object', description: '`arrowSvgColorFilter` could be generate from https://isotropic.co/tool/hex-color-to-css-filter/' },
   },
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
@@ -36,7 +36,9 @@ export const Basic: Story = {
       </div>
     )),
     customStyle: {
-      arrowColor: '#458f9c',
+      arrowBackgroundColor: '#00dc87',
+      arrowSvgColorFilter: 'brightness(0) saturate(100%) invert(12%) sepia(10%) saturate(4600%) hue-rotate(149deg) brightness(96%) contrast(103%)',
+      paginationDotColor: '#00dc87',
     },
   },
 };

@@ -8,11 +8,14 @@ export type CardItem23WrapperStyle = {
   backgroundColor?: CustomColor;
 };
 
+export type CardItem23ImageStyle = { isNoMargin?: boolean };
+
 export type CardItem23Style = {
   wrapper?: CardItem23WrapperStyle;
   title?: TextCustomCssProps;
   desc?: TextCustomCssProps;
   hyperlink?: TextCustomCssProps;
+  image?: CardItem23ImageStyle;
 };
 
 export type CardItem23Data = {
