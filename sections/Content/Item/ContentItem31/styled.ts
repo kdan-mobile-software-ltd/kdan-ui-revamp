@@ -26,6 +26,9 @@ export const ContentWrapper = styled.div`
   width: 50%;
   padding: 40px 60px 40px 84px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     order: 1;
@@ -52,6 +55,8 @@ export const Title = styled(Typography)<{ borderLeftColor?: CustomColor }>`
 export const Desc = styled(Typography)`
   ${limitedTextLine(5)}
   min-height: calc(1.4em * 3);
+
+  ${({ customCss = '' }) => customCss}
 `;
 
 export const Image = styled.img`

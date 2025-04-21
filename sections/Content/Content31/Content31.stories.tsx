@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { css } from 'styled-components';
 import { Content31 } from '.';
 
 const meta = {
@@ -59,6 +60,9 @@ export const Basic: Story = {
           borderColor: '#379fa1',
           backgroundColor: '#eeffee',
         },
+        desc: {
+          customCss: css`opacity: 0.8;`,
+        },
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
@@ -71,9 +75,8 @@ export const Basic: Story = {
 export const TextAtRight: Story = {
   args: {
     data: [{
-
-      title: 'panel_1_title Subscription Policies',
-      desc: 'panel_1_desc The subscription will automatically renew and your card.',
+      title: 'panel_1_title',
+      desc: 'panel_1_desc The subscription',
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
         alt: 'img-multi-media-panel-1',
