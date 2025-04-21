@@ -7,10 +7,10 @@ export const GroupWrapper = styled.div`
   padding: 12px 90px;
 
   @media screen and (${MAX_WIDTH_QUERY.desktopS}) {
-    padding: 0 70px;
+    padding: 12px 70px;
   }
 
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    padding: 0 16px;
+    padding: 12px 16px;
   }
 `;

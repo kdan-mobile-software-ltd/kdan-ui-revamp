@@ -121,7 +121,7 @@ export const TextAtRight: Story = {
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
-        height: { default: '320px', tablet: '565px' },
+        height: { default: '320px', tablet: '565px', mobile: '470px' },
       },
     },
   },

@@ -35,6 +35,10 @@ export const ContentWrapper = styled.div`
     padding: 24px 24px 24px 48px;
     width: 100%;
   }
+
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    padding: 24px;
+  }
 `;
 
 export const Title = styled(Typography)<{ borderLeftColor?: CustomColor }>`

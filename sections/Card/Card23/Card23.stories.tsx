@@ -9,7 +9,7 @@ const meta = {
     customStyle: { control: 'object' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'padded' },
 } as Meta<typeof Card23>;
 
 export default meta;
@@ -160,7 +160,7 @@ export const Card22Style: Story = {
       slider: {
         arrowBackgroundColor: '#379fa1',
         height: {
-          default: '600px', laptop: '487px', mobile: '496px', mobileM: '496px',
+          default: '536px', laptop: '512px', mobile: '512px', mobileM: '512px',
         },
       },
     },

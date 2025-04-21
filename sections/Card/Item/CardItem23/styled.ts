@@ -34,16 +34,16 @@ export const Wrapper = styled.div<CardItem23WrapperStyle & { isNoHover: boolean;
 export const Image = styled.img<CardItem23ImageStyle>`
   object-fit: cover;
   ${({ isNoMargin }) => (isNoMargin
-    ? css`min-height: 240px;`
+    ? css`height: 240px;`
     : css`
         border-radius: 8px;
         padding: 16px 16px 0;
-        min-height: 232px;
+        height: 232px;
       `)}
       
   width: 100%;
   @media screen and (${MAX_WIDTH_QUERY.laptop}) {
-    min-height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '208px')};
+    height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '208px')};
   }
 `;
 
