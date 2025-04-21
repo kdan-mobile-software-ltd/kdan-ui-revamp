@@ -5,10 +5,10 @@ import { BackgroundColorPropsType, BorderColorPropsType } from '@/constants/type
 import { getCustomColorFromTheme } from '@/utils/style';
 import { limitedTextLine } from '@/utils/style/limitedTextLine';
 import styled from 'styled-components';
+import { HardRwdWrapper } from '@/utils/style/wrapper';
 import { IsTextPositionRightType } from './types';
 
-export const Wrapper = styled.div<BorderColorPropsType & BackgroundColorPropsType & IsTextPositionRightType>`
-  width: 100%;
+export const Wrapper = styled(HardRwdWrapper)<BorderColorPropsType & BackgroundColorPropsType & IsTextPositionRightType>`
   border-radius: 8px;
   overflow: hidden;
   display: flex;

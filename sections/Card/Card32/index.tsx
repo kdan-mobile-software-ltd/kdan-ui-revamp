@@ -9,9 +9,11 @@ import { CardItem32 } from '../Item/CardItem32';
 const groupSizes = {
   default: 3,
   desktop: 3,
+  desktopS: 3,
   laptop: 3,
   tablet: 1,
   mobile: 1,
+  mobileM: 1,
 };
 
 export const Card32: React.FC<Card32Props> = ({ data, customStyle }) => {

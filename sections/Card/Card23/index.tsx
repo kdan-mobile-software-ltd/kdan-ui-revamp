@@ -9,9 +9,11 @@ import { CardItem23 } from '../Item/CardItem23';
 const groupSizes = {
   default: 3,
   desktop: 3,
+  desktopS: 3,
   laptop: 2,
   tablet: 2,
   mobile: 1,
+  mobileM: 1,
 };
 
 export const Card23: React.FC<Card23Props> = ({ data = [], customStyle }) => {

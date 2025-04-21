@@ -19,8 +19,8 @@ type Story = StoryObj<typeof meta>;
 export const Basic: Story = {
   args: {
     data: {
-      title: 'panel_1_title Subscription Policies',
-      desc: 'panel_1_desc The subscription will automatically renew and your card.',
+      title: 'panel_1_title Subscription Policies panel_1_title Subscription Policies',
+      desc: 'panel_1_desc The subscription will automatically renew and your card. panel_1_desc The subscription will automatically renew and your card.',
       image: {
         src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
         alt: 'img-multi-media-panel-1',

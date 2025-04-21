@@ -20,3 +20,22 @@ export const RwdWrapper = styled.div<CustomCssPropsType>`
 
   ${({ customCss }) => customCss}
 `;
+
+export const HardRwdWrapper = styled.div<CustomCssPropsType>`
+  width: 1080px;
+  margin: auto;
+  @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+    width: 944px;
+  }
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
+    width: 688px;
+  }
+  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    max-width: 512px;
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  ${({ customCss }) => customCss}
+`;
