@@ -5,6 +5,7 @@ export const GroupWrapper = styled.div`
   display: flex;
   gap: 60px;
   padding: 12px 90px;
+  justify-content: center;
 
   @media screen and (${MAX_WIDTH_QUERY.desktopS}) {
     padding: 12px 70px;

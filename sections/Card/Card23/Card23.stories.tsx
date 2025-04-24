@@ -285,3 +285,42 @@ export const NoCarouselAtDesktop: Story = {
     },
   },
 };
+
+export const Only2Cards: Story = {
+  args: {
+    data: [
+      {
+        title: 'panel_1_title',
+        desc: 'panel_1_desc The subscription will automatically renew and your card. The subscription will automatically renew and your card.',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'img-multi-media-panel-1',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+      {
+        title: 'panel_2_title',
+        desc: 'panel_2_desc The subscription will automatically renew and your card.',
+        image: {
+          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          alt: 'img-multi-media-panel-1',
+        },
+        hyperlink: {
+          href: 'https://www.google.com/',
+          label: 'go to google',
+        },
+      },
+    ],
+    customStyle: {
+      item: {
+        title: { color: '#379fa1' },
+      },
+      slider: {
+        arrowBackgroundColor: '#379fa1',
+      },
+    },
+  },
+};
