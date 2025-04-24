@@ -1,7 +1,7 @@
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
-import { HocHyperlinkData } from '@/components/Hyperlink/types';
+import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 
 export type EventBar11Data = {
   title: string;
@@ -12,7 +12,7 @@ export type EventBar11Data = {
 export type EventBar11CustomStyle = {
   backgroundColor?: CustomColor;
   title?: TextCustomCssProps;
-  hyperlink?: TextCustomCssProps;
+  hyperlink?: HyperlinkCustomStyle;
 };
 
 export type EventBar11Props = {
