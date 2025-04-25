@@ -60,7 +60,6 @@ export const Title = styled(Typography)<{ borderLeftColor?: CustomColor }>`
 
 export const Desc = styled(Typography)`
   ${limitedTextLine(5)}
-  min-height: calc(1.4em * 3);
 
   ${({ customCss = '' }) => customCss}
 `;
