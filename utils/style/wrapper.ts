@@ -28,11 +28,13 @@ export const HardRwdWrapper = styled.div<CustomCssPropsType>`
     width: 944px;
   }
   @media screen and (${MAX_WIDTH_QUERY.tablet}) {
-    width: 688px;
+  width: 688px;
   }
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
     max-width: 512px;
     width: calc(100% - 32px);
+  }
+  @media screen and (${MAX_WIDTH_QUERY.mobileM}) {
     margin-left: 16px;
     margin-right: 16px;
   }

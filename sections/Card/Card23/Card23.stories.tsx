@@ -203,7 +203,7 @@ export const FixedHeightWithRWD: Story = {
       },
       {
         title: 'KDAN「數位永續種子培育計畫」，培育具備數位永續思維的未來人才',
-        desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
+        desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
         image: {
           src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
           alt: 'img-multi-media-panel-1',
@@ -216,14 +216,16 @@ export const FixedHeightWithRWD: Story = {
     ],
     customStyle: {
       item: {
-        title: { color: '#379fa1' },
+        title: { color: '#379fa1', fontSize: { default: 'h6', laptop: 'h7' } },
+        desc: { fontSize: { default: 'body4', tablet: 'body5' } },
         image: { isNoMargin: true },
+        hyperlink: { fontSize: { default: 'button3' } },
         wrapper: { borderColor: 'gray500' },
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
         height: {
-          default: '600px', laptop: '487px', mobile: '496px', mobileM: '496px',
+          default: '536px', laptop: '512px', mobile: '512px', mobileM: '512px',
         },
       },
     },

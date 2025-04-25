@@ -11,6 +11,7 @@ export const Wrapper = styled.div<CardItem23WrapperStyle & { isNoHover: boolean;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  max-width: 320px;
   width: 320px;
   overflow: hidden;
 
@@ -22,6 +23,7 @@ export const Wrapper = styled.div<CardItem23WrapperStyle & { isNoHover: boolean;
   `}
 
   @media screen and (${MAX_WIDTH_QUERY.laptop}) {
+    max-width: 288px;
     width: 288px;
   }
 
@@ -34,16 +36,23 @@ export const Wrapper = styled.div<CardItem23WrapperStyle & { isNoHover: boolean;
 export const Image = styled.img<CardItem23ImageStyle>`
   object-fit: cover;
   ${({ isNoMargin }) => (isNoMargin
-    ? css`height: 240px;`
+    ? css`
+      height: 240px;
+      min-height: 240px;
+      width: 100%;
+    `
     : css`
         border-radius: 8px;
-        padding: 16px 16px 0;
+        margin: 16px 16px 0;
         height: 232px;
+        min-height: 232px;
+        width: calc(100% - 32px);
       `)}
       
-  width: 100%;
+  
   @media screen and (${MAX_WIDTH_QUERY.laptop}) {
     height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '208px')};
+    min-height: ${({ isNoMargin }) => (isNoMargin ? '216px' : '208px')};
   }
 `;
 
@@ -71,7 +80,6 @@ export const Desc = styled(Typography)`
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
-  min-height: calc(1.55em * 3);
 
   ${({ customCss = '' }) => customCss}
 `;
