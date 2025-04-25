@@ -48,6 +48,7 @@ export const SlideItem = styled.div`
   z-index: ${Z_INDEX.inactiveSlide};
   position: absolute;
   width: 100%;
+  height: 100%;
 `;
 
 export const DesktopArrowButton = styled.button<ArrowCustomStyle>`

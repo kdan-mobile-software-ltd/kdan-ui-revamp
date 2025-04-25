@@ -223,7 +223,7 @@ export const FixedHeightWithRWD: Story = {
       slider: {
         arrowBackgroundColor: '#379fa1',
         height: {
-          default: '600px', laptop: '487px', mobile: '496px', mobileM: '496px',
+          default: '536px', laptop: '512px', mobile: '512px', mobileM: '512px',
         },
       },
     },

@@ -6,6 +6,7 @@ export const GroupWrapper = styled.div`
   gap: 60px;
   padding: 12px 90px;
   justify-content: center;
+  height: 100%;
 
   @media screen and (${MAX_WIDTH_QUERY.desktopS}) {
     padding: 12px 70px;
