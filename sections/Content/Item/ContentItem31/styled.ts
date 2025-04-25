@@ -9,6 +9,7 @@ import { HardRwdWrapper } from '@/utils/style/wrapper';
 import { IsTextPositionRightType } from './types';
 
 export const Wrapper = styled(HardRwdWrapper)<BorderColorPropsType & BackgroundColorPropsType & IsTextPositionRightType>`
+  height: 100%;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -23,6 +24,7 @@ export const Wrapper = styled(HardRwdWrapper)<BorderColorPropsType & BackgroundC
 `;
 
 export const ContentWrapper = styled.div`
+  height: 100%;
   width: 50%;
   padding: 40px 60px 40px 84px;
   position: relative;

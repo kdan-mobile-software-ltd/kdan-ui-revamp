@@ -114,15 +114,17 @@ export const TextAtRight: Story = {
       item: {
         title: { color: '#379fa1', borderLeftColor: '#379fa1' },
         wrapper: {
-          isTextPositionRight: true,
           borderColor: '#379fa1',
           backgroundColor: '#eeffee',
         },
       },
       slider: {
         arrowBackgroundColor: '#379fa1',
-        height: { default: '320px', tablet: '565px', mobile: '470px' },
+        height: {
+          default: '320px', tablet: '632px', mobile: '554px', mobileM: '500px',
+        },
       },
+
     },
   },
 };
