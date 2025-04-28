@@ -13,7 +13,6 @@ export const GroupWrapper = styled(RwdWrapper)<LayoutNumbersOfColumn>`
   }
 
   @media screen and (${MAX_WIDTH_QUERY.mobile}) {
-    max-width: 400px;
     grid-template-columns: 1fr;
   }
 `;

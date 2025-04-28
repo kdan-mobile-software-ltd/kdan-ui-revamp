@@ -2,10 +2,7 @@ import styled, { css } from 'styled-components';
 import { button3FontStyle } from '@/constants/fonts';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { arrowIconRotateStyle, upDownAnimation } from '@/utils/style';
-import { HideAtMobilePropsType, IsOpenPropsType } from '@/constants/types/styled';
-import { HOST } from '@/constants/config';
-
-// use this combined with hooks/useToggle.tsx
+import { ArrowSvgColorFilter, HideAtMobilePropsType, IsOpenPropsType } from '@/constants/types/styled';
 
 export const ItemToggleAnimationWrapper = styled.div<HideAtMobilePropsType>`
   ${upDownAnimation}
@@ -33,15 +30,19 @@ export const ToggleWrapper = styled.button<IsOpenPropsType>`
   }
 `;
 
-export const SimpleToggle = styled.button<IsOpenPropsType>`
+export const SimpleToggle = styled.button<IsOpenPropsType & ArrowSvgColorFilter>`
   ${button3FontStyle}
   background-color: ${({ theme }) => theme.colors.transparent};
-  width: 24px;
-  height: 24px;
   border-color: ${({ theme }) => theme.colors.transparent};
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  background: url(${HOST}/assets/icon/vertical-arrow.svg) CENTER CENTER NO-REPEAT;
-  ${arrowIconRotateStyle}
+  display: flex;
+  ${({ arrowSvgColorFilter }) => arrowSvgColorFilter && css`
+    filter: ${arrowSvgColorFilter};
+  `}
+
+  > img {
+    ${arrowIconRotateStyle}
+  }
 `;

@@ -43,7 +43,7 @@ export const Select: React.FC<SelectProps> = ({
 
   useEffect(() => {
     (function filterOptions() {
-      if (data.isHideAutocomplete || !data.options || !isOpen) return;
+      if (data.isHideSearch || !data.options || !isOpen) return;
       if (isSearchFinish) {
         setOptions(data.options);
         return;
@@ -61,7 +61,7 @@ export const Select: React.FC<SelectProps> = ({
   const onOptionChange = (option: OptionType) => () => {
     if (!data.isMultiSelect) setIsOpen(false);
     data.onChange(option);
-    data.onInputChange('');
+    data?.onInputChange?.('');
     setIsSearchFinish(true);
   };
 
@@ -110,38 +110,59 @@ export const Select: React.FC<SelectProps> = ({
   return (
     <>
       {!!data?.label && <Label {...customStyle?.label}>{data.label}</Label>}
-      <Wrapper tabIndex={0} onBlur={closeDropdown} ref={wrapperRef}>
-        <SelectionWrapper onClick={toggleDropdown}>
+      <Wrapper
+        tabIndex={0}
+        onBlur={closeDropdown}
+        ref={wrapperRef}
+        customCss={customStyle?.wrapper?.customCss}
+        {...htmlProps}
+      >
+        <SelectionWrapper
+          onClick={toggleDropdown}
+          backgroundColor={customStyle?.backgroundColor}
+          borderColor={customStyle?.borderColor}
+        >
           {icon?.src && (
           <CustomSizeImage
             {...icon}
             customStyle={{ width: { default: '24px' }, height: { default: '24px' }, margin: '0 0 0 12px' }}
           />
           )}
-          <Typography fontSize={{ default: 'button3' }} margin="0 0 0 12px" style={{ width: '100%' }}>
-            {!activeOption[0]?.label
-              ? ''
-              : `${activeOption[0]?.label}${data.isMultiSelect && activeOption.length > 1 ? `, +${activeOption.length - 1}` : ''}`}
+          <Typography
+            fontSize={{ default: 'button3' }}
+            margin="0 0 0 12px"
+            style={{ width: '100%' }}
+            color={activeOption[0]?.label ? 'black' : 'gray400'}
+            {...customStyle?.text}
+          >
+            {activeOption[0]?.label
+              ? `${activeOption[0]?.label}${data.isMultiSelect && activeOption.length > 1 ? `, +${activeOption.length - 1}` : ''}`
+              : data?.placeholder || ''}
           </Typography>
 
           {data.isShowCancelAllOption && !!activeOption.length && (
             <CancelAllButton type="button" onClick={cancelAllOptions} disabled={htmlProps?.disabled} ref={cancelBtnRef} />
           )}
 
-          <SimpleToggle isOpen={isOpen} />
+          <SimpleToggle isOpen={isOpen} arrowSvgColorFilter={customStyle?.arrowSvgColorFilter}>
+            <CustomSizeImage
+              src={`${HOST}/assets/icon/vertical-arrow.svg`}
+              customStyle={{ width: { default: '24px' }, height: { default: '24px' } }}
+            />
+          </SimpleToggle>
         </SelectionWrapper>
 
         <Dropdown
           isOpen={isOpen}
           {...{ ...customStyle?.dropdown, openDirection, ref: dropdownRef }}
         >
-          {(data.isShowCancelAllOption || !data.isHideAutocomplete) && (
+          {(data.isShowCancelAllOption || !data.isHideSearch) && (
           <ToggleAllWrapper
             id="toggle-all"
             key="toggle-all"
             customCss={customStyle?.option?.customCss}
           >
-            {!data.isHideAutocomplete && (
+            {!data.isHideSearch && (
               <SearchWrapper>
                 <SearchIcon
                   src={`${HOST}/assets/icon/search.svg`}
@@ -151,7 +172,6 @@ export const Select: React.FC<SelectProps> = ({
                   autoComplete="off"
                   type="text"
                   customStyle={{
-                    ...customStyle?.input,
                     wrapper: {
                       customCss: css` flex-grow: 1; width: auto;`,
                     },
@@ -162,10 +182,10 @@ export const Select: React.FC<SelectProps> = ({
                   data={{ isShowClearButton: true }}
                   onChange={(e) => {
                     setIsSearchFinish(false);
-                    data.onInputChange(e.target.value);
+                    data?.onInputChange?.(e.target.value);
                   }}
                   value={inputValue}
-                  {...htmlProps}
+                  placeholder={data?.searchPlaceholder || ''}
                 />
               </SearchWrapper>
             )}

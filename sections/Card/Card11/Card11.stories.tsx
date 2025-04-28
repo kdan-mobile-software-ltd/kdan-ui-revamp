@@ -228,6 +228,11 @@ export const Items8Layout: Story = {
 };
 
 export const hideLongerThanConfig: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile',
+    },
+  },
   args: {
     data: {
       items: [

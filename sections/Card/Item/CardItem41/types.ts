@@ -1,4 +1,4 @@
-import { HocHyperlinkData } from '@/components/Hyperlink/types';
+import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData, SizeLS } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
@@ -17,7 +17,7 @@ export type CardItem41Style = {
   wrapper?: CardItem41WrapperStyle;
   desc?: TextCustomCssProps;
   userTitle?: TextCustomCssProps;
-  hyperlink?: TextCustomCssProps;
+  hyperlink?: HyperlinkCustomStyle;
   size?: SizeLS; // default is `small`
 };
 

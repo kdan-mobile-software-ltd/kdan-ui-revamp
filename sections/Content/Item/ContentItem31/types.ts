@@ -1,6 +1,7 @@
 import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { CustomColor } from '@/constants/themes/colors';
 import { ImgData } from '@/constants/types/global';
+import { CustomCssPropsType } from '@/constants/types/styled';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 
 export type ContentItem31Data = {
@@ -9,17 +10,17 @@ export type ContentItem31Data = {
   hyperlink?: HocHyperlinkData;
   image: ImgData;
 };
+export type IsTextPositionRightType = { isTextPositionRight?: boolean; };
 
 export type ContentItem31CustomStyle = {
   wrapper?: {
     borderColor?: CustomColor;
     backgroundColor?: CustomColor;
-    contentMinHeight?: string;
-  }
+  } & IsTextPositionRightType;
   title?: {
     borderLeftColor: CustomColor;
   } & TextCustomCssProps;
-  desc?: TextCustomCssProps;
+  desc?: TextCustomCssProps & CustomCssPropsType;
   hyperlink?: HyperlinkCustomStyle;
 };
 

@@ -9,9 +9,11 @@ import { CardItem41 } from '../Item/CardItem41';
 const groupSizes = {
   default: 3,
   desktop: 3,
+  desktopS: 3,
   laptop: 2,
-  tablet: 2,
+  tablet: 1,
   mobile: 1,
+  mobileM: 1,
 };
 
 export const Card41: React.FC<Card41Props> = ({ data, customStyle }) => {
@@ -24,7 +26,7 @@ export const Card41: React.FC<Card41Props> = ({ data, customStyle }) => {
 
   return (data.length > groupSize ? (
     <Slider
-      customStyle={customStyle.slider}
+      customStyle={customStyle?.slider}
     >
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key

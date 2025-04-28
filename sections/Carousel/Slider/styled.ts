@@ -3,7 +3,7 @@ import { HOST } from '@/constants/config';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
-import { CustomColor } from '@/constants/themes/colors';
+import { ArrowCustomStyle, HeightStyle, PaginationDotStyle } from './types';
 
 const Z_INDEX = {
   arrowButton: 50,
@@ -14,43 +14,57 @@ const Z_INDEX = {
 export const Wrapper = styled.div`
   position: relative;
   width: fit-content;
+  margin: 0 auto;
 `;
 
 // each content item with slide animation
 type ContentWrapperProps = {
   currentActiveChild: number;
   animationDirection: 'Right' | 'Left'; // the fixed word from animation naming in /utils/style
-};
+} & HeightStyle;
 export const ContentWrapper = styled.div<ContentWrapperProps>`
   overflow: hidden;
   position: relative;
-  
   ${slideAnimation}
 
-  & > div {
-    animation: animateHide .3s forwards ease-in-out;
-    z-index: ${Z_INDEX.inactiveSlide};
-    position: absolute;
-  }
-  
   ${({ currentActiveChild, animationDirection }) => css`
-    & > :nth-child(${currentActiveChild}) {
-      animation: ${`animateShowFrom${animationDirection}`} .3s forwards ease-in-out;
+    & > div:nth-child(${currentActiveChild}) {
+      animation: ${`animateShowFrom${animationDirection}`} 0.3s forwards ease-in-out;
       z-index: ${Z_INDEX.activeSlide};
     }
   `}
+
+  ${({ height }) => height && Object.entries(height).map(([breakpoint, size]) => (
+    breakpoint === 'default'
+      ? `height: ${size};`
+      : `@media screen and (${MAX_WIDTH_QUERY[breakpoint]}) {
+            height: ${size};
+          }`
+  )).join(' ')}
 `;
 
-export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
-  background: url('${HOST}/assets/icon/horizon-large-arrow.svg') CENTER CENTER NO-REPEAT;
-  background-color: ${({ arrowColor }) => getCustomColorFromTheme(arrowColor || 'gray400')};
+export const SlideItem = styled.div`
+  animation: animateHide 0.3s forwards ease-in-out;
+  z-index: ${Z_INDEX.inactiveSlide};
+  position: absolute;
+  width: 100%;
+  height: 100%;
+`;
+
+export const DesktopArrowButton = styled.button<ArrowCustomStyle>`
+  background-color: ${({ arrowBackgroundColor }) => getCustomColorFromTheme(arrowBackgroundColor || 'gray400')};
   position: absolute;
   width: 60px;
   height: 60px;
   border-radius: 100%;
+  border: 0;
   cursor: pointer;
   z-index: ${Z_INDEX.arrowButton};
   top: calc(50% - 32px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.left {
     transform: translate(-50%, -50%) rotate(180deg);
@@ -59,8 +73,16 @@ export const DesktopArrowButton = styled.button<{ arrowColor?: CustomColor }>`
     transform: translate(50%, -50%);
     right: 0;
   }
+  > img {
+    width: 24px;
+    height: 24px;
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+    ${({ arrowSvgColorFilter }) => arrowSvgColorFilter && css`
+      filter: ${arrowSvgColorFilter};
+    `}
+  }
+
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: none;
   }
 `;
@@ -74,12 +96,14 @@ export const BottomPaginationWrapper = styled.div`
   height: 24px;
 `;
 
-export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean }>`
+export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean } & PaginationDotStyle>`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: ${({ theme, isActive }) => (isActive
-    ? theme.colors.gray600 : theme.colors.gray400)};
+  cursor: pointer;
+  background-color: ${({ theme, isActive, paginationDotColor }) => (isActive
+    ? (paginationDotColor || theme.colors.gray600)
+    : theme.colors.gray400)};
   transition: all 0.3s ease;
 `;
 
@@ -89,16 +113,17 @@ export const MobileArrowButton = styled.button`
   height: 24px;
   cursor: pointer;
   display: none;
+  border: 0;
 
   &.left {
     transform: rotate(180deg);
   }
 
-  @media screen and (${MAX_WIDTH_QUERY.mobile}) {
+  @media screen and (${MAX_WIDTH_QUERY.tablet}) {
     display: block;
   }
 `;
 
-export const Hidden = styled.section`
+export const InvisibleFixedHeight = styled.section`
   visibility: hidden;
 `;
