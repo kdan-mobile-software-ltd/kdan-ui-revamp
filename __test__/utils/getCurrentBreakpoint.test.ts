@@ -5,6 +5,6 @@ describe('utils/getCurrentBreakpoint', () => {
     expect(getCurrentBreakpoint(1000)).toBe('tablet');
   });
   test('Should return `mobile` breakpoint at width of `300px`', () => {
-    expect(getCurrentBreakpoint(300)).toBe('mobile');
+    expect(getCurrentBreakpoint(300)).toBe('mobileM');
   });
 });
