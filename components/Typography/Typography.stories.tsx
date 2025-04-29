@@ -1,3 +1,5 @@
+import React from 'react';
+import styled from 'styled-components';
 import { Meta, StoryObj } from '@storybook/react';
 import { Typography } from '.';
 
@@ -39,5 +41,39 @@ export const FontWeight: Story = {
     margin: '10px',
     children: 'Hello World!',
     fontWeight: '900',
+  },
+};
+
+const BorderDiv = styled.div`
+  > * {
+    border: black solid 1px;
+  }
+`;
+
+export const All: Story = {
+  args: {
+    children: (
+      <BorderDiv>
+        <Typography fontSize={{ default: 'h1' }} as="h1">h1</Typography>
+        <Typography fontSize={{ default: 'h2' }} as="h2">h2</Typography>
+        <Typography fontSize={{ default: 'h3' }} as="h3">h3</Typography>
+        <Typography fontSize={{ default: 'h4' }} as="h4">h4</Typography>
+        <Typography fontSize={{ default: 'h5' }} as="h5">h5</Typography>
+        <Typography fontSize={{ default: 'h6' }} as="h6">h6</Typography>
+        <Typography fontSize={{ default: 'h7' }} as="h6">h7</Typography>
+        <Typography fontSize={{ default: 'h8' }} as="h6">h8</Typography>
+        <Typography fontSize={{ default: 'h9' }} as="h6">h9</Typography>
+        <Typography fontSize={{ default: 'body1' }}>body1</Typography>
+        <Typography fontSize={{ default: 'body2' }}>body2</Typography>
+        <Typography fontSize={{ default: 'body3' }}>body3</Typography>
+        <Typography fontSize={{ default: 'body4' }}>body4</Typography>
+        <Typography fontSize={{ default: 'body5' }}>body5</Typography>
+        <Typography fontSize={{ default: 'caption1' }}>caption1</Typography>
+        <Typography fontSize={{ default: 'button1' }}>button1</Typography>
+        <Typography fontSize={{ default: 'button2' }}>button2</Typography>
+        <Typography fontSize={{ default: 'button3' }}>button3</Typography>
+        <Typography fontSize={{ default: 'button4' }}>button4</Typography>
+      </BorderDiv>
+    ),
   },
 };
