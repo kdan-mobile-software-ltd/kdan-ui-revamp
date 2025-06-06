@@ -45,6 +45,6 @@ export const textCustomCss = css<TextCustomCssProps>`
   ${({ padding }) => padding && css`padding: ${padding};`}
   ${({ margin }) => margin && css`margin: ${margin};`}
   ${({ textAlign }) => textAlign && css`text-align: ${textAlign};`}
-  ${({ fontWeight }) => fontWeight && css`font-weight: ${fontWeight};`}
+  ${({ fontWeight }) => fontWeight && css`font-weight: ${fontWeight} !important;`}
   ${({ display }) => display && css`display: ${display};`}
 `;
