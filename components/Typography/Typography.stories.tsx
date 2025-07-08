@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Meta, StoryObj } from '@storybook/react';
 import { Typography } from '.';
 
@@ -38,9 +38,14 @@ export const FontWeight: Story = {
     fontSize: { default: 'h3', mobile: 'h7' },
     color: 'red',
     padding: '10px',
-    margin: '10px',
     children: 'Hello World!',
-    fontWeight: '900',
+    fontWeight: '200',
+    customCss: css`
+      margin: 10px;
+      @media screen and (max-width: 768px) {
+        margin: 0px;
+      }
+    `,
   },
 };
 
@@ -73,6 +78,26 @@ export const All: Story = {
         <Typography fontSize={{ default: 'button2' }}>button2</Typography>
         <Typography fontSize={{ default: 'button3' }}>button3</Typography>
         <Typography fontSize={{ default: 'button4' }}>button4</Typography>
+      </BorderDiv>
+    ),
+  },
+};
+
+const RedTypography = styled(Typography)`
+  color: red;
+  margin: 20px;
+  font-weight: 300;
+  @media screen and (max-width: 768px) {
+    color: green;
+    margin: 0px;
+  }
+`;
+
+export const StyledComponentInherit: Story = {
+  args: {
+    children: (
+      <BorderDiv>
+        <RedTypography fontSize={{ default: 'h1' }} as="h1">h1</RedTypography>
       </BorderDiv>
     ),
   },
