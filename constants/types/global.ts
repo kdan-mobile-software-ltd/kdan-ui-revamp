@@ -17,3 +17,6 @@ export type LayoutNumbersOfColumn = {
 export type LayoutHideLongerThan = {
   hideLongerThan?: number;
 };
+export type IsHideToggle = {
+  isHideToggle?: boolean;
+};
