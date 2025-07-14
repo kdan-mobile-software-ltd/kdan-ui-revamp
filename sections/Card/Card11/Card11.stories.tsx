@@ -24,7 +24,7 @@ export const Basic: Story = {
           title: 'panel_1_title',
           desc: 'panel_1_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -37,7 +37,7 @@ export const Basic: Story = {
           title: 'panel_2_title ',
           desc: 'panel_2_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -50,7 +50,7 @@ export const Basic: Story = {
           title: 'panel_3_title',
           desc: 'panel_3_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -63,7 +63,7 @@ export const Basic: Story = {
           title: 'panel_4_title',
           desc: 'panel_4_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -76,7 +76,7 @@ export const Basic: Story = {
           title: 'panel_5_title',
           desc: 'panel_5_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -89,7 +89,7 @@ export const Basic: Story = {
           title: 'panel_6_title',
           desc: 'panel_6_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -115,7 +115,7 @@ export const Items8Layout: Story = {
           title: 'panel_1_title',
           desc: 'panel_1_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -128,7 +128,7 @@ export const Items8Layout: Story = {
           title: 'panel_2_title ',
           desc: 'panel_2_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -141,7 +141,7 @@ export const Items8Layout: Story = {
           title: 'panel_3_title',
           desc: 'panel_3_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -154,7 +154,7 @@ export const Items8Layout: Story = {
           title: 'panel_4_title',
           desc: 'panel_4_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -167,7 +167,7 @@ export const Items8Layout: Story = {
           title: 'panel_5_title',
           desc: 'panel_5_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -180,7 +180,7 @@ export const Items8Layout: Story = {
           title: 'panel_6_title',
           desc: 'panel_6_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -193,7 +193,7 @@ export const Items8Layout: Story = {
           title: 'panel_7_title',
           desc: 'panel_7_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -206,7 +206,7 @@ export const Items8Layout: Story = {
           title: 'panel_8_title',
           desc: 'panel_8_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -240,7 +240,7 @@ export const hideLongerThanConfig: Story = {
           title: 'panel_1_title',
           desc: 'panel_1_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -253,7 +253,7 @@ export const hideLongerThanConfig: Story = {
           title: 'panel_2_title ',
           desc: 'panel_2_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -266,7 +266,7 @@ export const hideLongerThanConfig: Story = {
           title: 'panel_3_title',
           desc: 'panel_3_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -279,7 +279,7 @@ export const hideLongerThanConfig: Story = {
           title: 'panel_4_title',
           desc: 'panel_4_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -292,7 +292,7 @@ export const hideLongerThanConfig: Story = {
           title: 'panel_5_title',
           desc: 'panel_5_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -305,7 +305,7 @@ export const hideLongerThanConfig: Story = {
           title: 'panel_6_title',
           desc: 'panel_6_desc The subscription will automatically renew',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {

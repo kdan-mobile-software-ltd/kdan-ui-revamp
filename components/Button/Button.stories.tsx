@@ -39,7 +39,7 @@ export const Basic: Story = {
 };
 export const IconAppended: Story = {
   args: {
-    icon: { alt: 'icon', src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg' },
+    icon: { alt: 'icon', src: '/assets/mockImg/logo.svg' },
     children: 'buttonText',
     variant: 'filled',
     size: 'large',

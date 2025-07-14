@@ -164,7 +164,7 @@ export const SingleSelect2: Story = {
             placeholder: 'placeholder',
             label: '請選擇語系',
             icon: {
-              src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-language.svg',
+              src: '/assets/mockImg/logo.svg',
               alt: 'option-icon-1',
             },
             options: [

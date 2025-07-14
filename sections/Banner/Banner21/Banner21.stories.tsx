@@ -37,7 +37,7 @@ export const Basic: Story = {
         label: 'go to google',
       },
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt cc',
       },
     },

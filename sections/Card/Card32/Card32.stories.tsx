@@ -27,7 +27,7 @@ export const NoCarousel: Story = {
       {
         name: 'DottedSign',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'icon',
         },
         desc: 'Sign Documents Online & Save Some Time',
@@ -50,7 +50,7 @@ export const NoCarousel: Story = {
       {
         name: 'Pdf',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/campaign/ic-pdf-reader.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'icon',
         },
         desc: 'Make Your Best Work Better, Together with Document 365',
@@ -70,7 +70,7 @@ export const NoCarousel: Story = {
       {
         name: 'Markup Pro',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/campaign/ic-markup.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'icon',
         },
         desc: 'Read, Annotate and Share What Matters',

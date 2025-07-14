@@ -22,7 +22,7 @@ export const Basic: Story = {
       title: 'panel_1_title',
       desc: 'panel_1_desc The subscription will automatically renew',
       icon: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+        src: '/assets/mockImg/logo.svg',
         alt: 'img-multi-media-panel-1',
       },
       hyperlink: {
@@ -42,7 +42,7 @@ export const Background: Story = {
       title: 'background',
       desc: 'background background background',
       icon: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+        src: '/assets/mockImg/logo.svg',
         alt: 'img-multi-media-panel-1',
       },
       hyperlink: {
@@ -67,7 +67,7 @@ export const NoHyperlink: Story = {
       title: 'NoHyperlink',
       desc: 'background background background',
       icon: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+        src: '/assets/mockImg/logo.svg',
         alt: 'img-multi-media-panel-1',
       },
     },

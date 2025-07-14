@@ -21,7 +21,7 @@ export const Basic: Story = {
     data: {
       name: 'DottedSign',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'icon',
       },
       desc: 'Sign Documents Online & Save Some Time',
