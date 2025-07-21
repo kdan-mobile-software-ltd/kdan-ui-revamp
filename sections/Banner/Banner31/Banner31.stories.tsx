@@ -22,11 +22,11 @@ export const Basic: Story = {
       title: 'Headline Text Headline Text Headline Text ',
       desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text',
       rightImage: {
-        src: 'https://adnex-website.preparing.kdanmobile.com/images/customer-value/img_solution_section2_bg.svg',
+        src: '/assets/mockImg/transparent_bg.svg',
         alt: 'img-multi-media-panel-1',
       },
       leftImage: {
-        src: 'https://adnex-website.preparing.kdanmobile.com/images/customer-value/img_solution_section2_bg.svg',
+        src: '/assets/mockImg/transparent_bg.svg',
         alt: 'img-multi-media-panel-1',
       },
     },

@@ -24,7 +24,7 @@ export const Basic: Story = {
           title: 'panel_1_title Subscription Policies',
           desc: 'panel_1_desc The subscription will automatically renew and your card will be charged until you cancel. Coupons are for one-time use only.',
           icon: {
-            src: 'https://kdan-website.preparing.kdanmobile.com/images/kdan_all_icon/cloud/dottedsign.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           },
           hyperlink: {
@@ -36,7 +36,7 @@ export const Basic: Story = {
           title: 'panel_2_title',
           desc: 'panel_2_desc',
           icon: {
-            src: 'https://kdan-website.preparing.kdanmobile.com/images/kdan_all_icon/cloud/dottedsign.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-2',
           },
           hyperlink: {
@@ -48,7 +48,7 @@ export const Basic: Story = {
           title: 'panel_3_title',
           desc: 'panel_3_desc',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-3',
           },
         },
@@ -56,7 +56,7 @@ export const Basic: Story = {
           title: 'panel_4_title',
           desc: 'panel_4_desc',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-4',
           },
         },
@@ -64,7 +64,7 @@ export const Basic: Story = {
           title: 'panel_5_title',
           desc: 'panel_5_desc',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-5',
           },
         },
@@ -72,7 +72,7 @@ export const Basic: Story = {
           title: 'panel_6_title',
           desc: 'panel_6_desc',
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-6',
           },
         },
@@ -146,7 +146,7 @@ export const LessThanThree: Story = {
       items: [
         {
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-3',
           },
           title: 'panel_1_title Subscription Policies 2',
@@ -154,7 +154,7 @@ export const LessThanThree: Story = {
         },
         {
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-3',
           },
           title: 'panel_2_title 2',
@@ -162,7 +162,7 @@ export const LessThanThree: Story = {
         },
         {
           icon: {
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-next.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-3',
           },
           title: 'panel_3_title 2',

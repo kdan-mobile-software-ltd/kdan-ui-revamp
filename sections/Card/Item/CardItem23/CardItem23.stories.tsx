@@ -22,7 +22,7 @@ export const Basic: Story = {
       title: 'panel_1_title',
       desc: 'panel_1_desc The subscription will automatically renew',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
@@ -42,7 +42,7 @@ export const LimitTitleTo2LinesZh: Story = {
       title: 'KDAN「數位永續種子培育計畫」，培育具備數位永續思維的未來人才',
       desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
@@ -62,7 +62,7 @@ export const LimitTitleTo2LinesEn: Story = {
       title: '"Digital Seed Internship Program" — Nurturing Future Talent with a Digital Sustainability Mindset',
       desc: 'KDAN’s Digital Seed Internship Program aims to cultivate future-ready talent with a strong foundation in digital sustainability. Through personalized mentorship and diverse interdisciplinary courses, the program empowers interns to discover their potential, strengthen their professional skills, and unlock new growth opportunities.',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
@@ -83,7 +83,7 @@ export const SmallSize: Story = {
       title: 'Title Align Center',
       desc: 'background background background',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
@@ -106,7 +106,7 @@ export const NoHyperlink: Story = {
       title: 'NoHyperlink',
       desc: 'background background background',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
     },

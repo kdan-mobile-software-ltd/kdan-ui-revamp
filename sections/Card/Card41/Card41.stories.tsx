@@ -23,7 +23,7 @@ export const Basic: Story = {
         userTitle: 'by Allen',
         desc: 'panel_1_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -35,7 +35,7 @@ export const Basic: Story = {
         userTitle: 'by Jack',
         desc: 'panel_2_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -47,7 +47,7 @@ export const Basic: Story = {
         userTitle: 'by Aaron',
         desc: 'panel_3_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -59,7 +59,7 @@ export const Basic: Story = {
         userTitle: 'by Tom',
         desc: 'panel_4_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -71,7 +71,7 @@ export const Basic: Story = {
         userTitle: 'by Kevin',
         desc: 'panel_5_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -83,7 +83,7 @@ export const Basic: Story = {
         userTitle: 'by Frank',
         desc: 'panel_6_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -118,7 +118,7 @@ export const NoCarousel: Story = {
         userTitle: 'panel_1_title',
         desc: 'panel_1_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -130,7 +130,7 @@ export const NoCarousel: Story = {
         userTitle: 'panel_2_title',
         desc: 'panel_2_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -142,7 +142,7 @@ export const NoCarousel: Story = {
         userTitle: 'panel_3_title',
         desc: 'panel_3_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {

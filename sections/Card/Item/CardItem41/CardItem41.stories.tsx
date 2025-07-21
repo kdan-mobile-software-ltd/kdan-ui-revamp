@@ -22,7 +22,7 @@ export const Basic: Story = {
       userTitle: 'by Allen',
       desc: 'panel_1_desc The subscription will automatically renew',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
@@ -42,7 +42,7 @@ export const LargeSize: Story = {
       userTitle: 'by Allen',
       desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Text Body Text Body Text Body Text',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
@@ -63,7 +63,7 @@ export const LargeSizeWithFixedHeight: Story = {
       userTitle: 'by Allen',
       desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Text Body Text Body Text Body Text',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'alt aa',
       },
       hyperlink: {
