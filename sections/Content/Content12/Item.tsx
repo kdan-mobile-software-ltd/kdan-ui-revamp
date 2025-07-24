@@ -15,6 +15,7 @@ const Item: React.FC<Content12ItemProps> = ({
         customStyle={{
           width: { default: '288px' },
           height: { default: '216px' },
+          ...customStyle?.image,
         }}
       />
       )}

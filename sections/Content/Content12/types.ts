@@ -1,5 +1,6 @@
 import { HocHyperlinkData } from '@/components/Hyperlink/types';
 import { ImgData, LayoutHideLongerThan } from '@/constants/types/global';
+import { CustomImageSize } from '@/components/Image/styledImages';
 import { ContentItem1CustomStyle } from '../Item/ContentItem1/types';
 
 export type Content12Item = {
@@ -12,7 +13,9 @@ export type Content12Item = {
 
 export type Content12ItemProps = {
   data: Content12Item;
-  customStyle?: ContentItem1CustomStyle;
+  customStyle?: {
+    image?: CustomImageSize;
+  } & ContentItem1CustomStyle ;
   hideAtMobile: boolean;
 };
 
