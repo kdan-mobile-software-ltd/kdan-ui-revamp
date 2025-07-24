@@ -60,6 +60,54 @@ export const Basic: Story = {
   },
 };
 
+export const CustomImageSize: Story = {
+  args: {
+    data: {
+      items: [
+        {
+          title: 'panel_1_title Subscription Policies',
+          desc: 'panel_1_desc The subscription will automatically renew and your card will be charged until you cancel. Coupons are for one-time use only.',
+          hyperlink: {
+            href: 'https://www.google.com/',
+            label: 'go to google',
+          },
+          image: {
+            src: '/assets/mockImg/mock_img.jpg',
+            alt: 'alt aa',
+          },
+        },
+        {
+          title: 'panel_2_title',
+          desc: 'panel_2_desc',
+          hyperlink: {
+            href: 'https://ithelp.ithome.com.tw/',
+            label: 'go to ithome',
+          },
+          image: {
+            src: '/assets/mockImg/mock_img.jpg',
+            alt: 'alt aa',
+          },
+        },
+        {
+          title: 'panel_3_title',
+          desc: 'panel_3_desc',
+          image: {
+            src: '/assets/mockImg/mock_img.jpg',
+            alt: 'alt aa',
+          },
+        },
+      ],
+    },
+    customStyle: {
+      title: { color: 'gray700' },
+      image: {
+        width: { default: '288px' },
+        height: { default: '100px' },
+      },
+    },
+  },
+};
+
 export const HideLongerThan2: Story = {
   args: {
     data: {

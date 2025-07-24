@@ -89,7 +89,7 @@ const RedTypography = styled(Typography)`
   font-weight: 300;
   @media screen and (max-width: 768px) {
     color: green;
-    margin: 0px;
+    margin: 0;
   }
 `;
 
