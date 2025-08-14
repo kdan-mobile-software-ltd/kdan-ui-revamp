@@ -16,6 +16,7 @@ export const ItemToggleAnimationWrapper = styled.div<HideAtMobilePropsType>`
 `;
 
 export const ToggleWrapper = styled.button<IsOpenPropsType>`
+  border: 0;
   display: none;
   margin: 40px auto;
   padding: 12px 18px;

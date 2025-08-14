@@ -38,7 +38,7 @@ export const Basic: Story = {
       title: 'Headline 07 Headline 07 Headline 07',
       desc: 'Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05 Body 05  ',
       image: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+        src: '/assets/mockImg/mock_img.jpg',
         alt: 'img-multi-media-panel-1',
       },
     },

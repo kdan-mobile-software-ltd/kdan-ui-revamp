@@ -21,7 +21,7 @@ export const Basic: Story = {
     data: {
       title: 'Headline Text Headline Text Headline Text',
       icon: {
-        src: 'https://creative-store.preparing.kdanmobile.com/images/functions/img-writeon-adjust-video.svg',
+        src: '/assets/mockImg/logo.svg',
         alt: 'img-multi-media-panel-1',
       },
       hyperlink: {

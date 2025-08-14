@@ -23,7 +23,7 @@ export const Basic: Story = {
         title: 'panel_1_title',
         desc: 'panel_1_desc The subscription will automatically renew and your card. The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -35,7 +35,7 @@ export const Basic: Story = {
         title: 'panel_2_title',
         desc: 'panel_2_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -47,7 +47,7 @@ export const Basic: Story = {
         title: 'panel_3_title',
         desc: 'panel_3_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -59,7 +59,7 @@ export const Basic: Story = {
         title: 'panel_4_title',
         desc: 'panel_4_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -71,7 +71,7 @@ export const Basic: Story = {
         title: 'panel_5_title',
         desc: 'panel_5_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -83,7 +83,7 @@ export const Basic: Story = {
         title: 'panel_6_title',
         desc: 'panel_6_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -110,7 +110,7 @@ export const Card22Style: Story = {
         title: 'panel_2_title',
         desc: 'The subscription will renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -122,7 +122,7 @@ export const Card22Style: Story = {
         title: 'panel_3_title',
         desc: 'panel_3_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -134,7 +134,7 @@ export const Card22Style: Story = {
         title: 'panel_4_title',
         desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
       },
@@ -142,7 +142,7 @@ export const Card22Style: Story = {
         title: 'KDAN「數位永續種子培育計畫」，培育具備數位永續思維的未來人才',
         desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -173,7 +173,7 @@ export const FixedHeightWithRWD: Story = {
         title: 'panel_2_title',
         desc: 'The subscription will renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -185,7 +185,7 @@ export const FixedHeightWithRWD: Story = {
         title: 'panel_3_title',
         desc: 'panel_3_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -197,7 +197,7 @@ export const FixedHeightWithRWD: Story = {
         title: 'panel_4_title',
         desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
       },
@@ -205,7 +205,7 @@ export const FixedHeightWithRWD: Story = {
         title: 'KDAN「數位永續種子培育計畫」，培育具備數位永續思維的未來人才',
         desc: '計畫透過一對一導師制、多元通識課程等，幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。幫助實習生探索自我、增強職場競爭力，全面激發成長潛能。',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -244,7 +244,7 @@ export const NoCarouselAtDesktop: Story = {
         title: 'panel_1_title',
         desc: 'panel_1_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -256,7 +256,7 @@ export const NoCarouselAtDesktop: Story = {
         title: 'panel_2_title',
         desc: 'panel_2_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -268,7 +268,7 @@ export const NoCarouselAtDesktop: Story = {
         title: 'panel_3_title',
         desc: 'panel_3_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -295,7 +295,7 @@ export const Only2Cards: Story = {
         title: 'panel_1_title',
         desc: 'panel_1_desc The subscription will automatically renew and your card. The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {
@@ -307,7 +307,7 @@ export const Only2Cards: Story = {
         title: 'panel_2_title',
         desc: 'panel_2_desc The subscription will automatically renew and your card.',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+          src: '/assets/mockImg/mock_img.jpg',
           alt: 'img-multi-media-panel-1',
         },
         hyperlink: {

@@ -19,13 +19,15 @@ export const Card11: React.FC<Card11Props> = ({ data, customStyle }) => {
         {data.items.map((item, index) => (
           <ItemToggleAnimationWrapper
             key={item.title}
-            hideAtMobile={index >= hideLongerThan && !isOpenAtMobile}
+            hideAtMobile={index >= hideLongerThan
+              && !customStyle?.others?.isHideToggle
+              && !isOpenAtMobile}
           >
             <CardItem11 data={item} customStyle={customStyle} />
           </ItemToggleAnimationWrapper>
         ))}
       </ContentWrapper>
-      {ToggleButton}
+      {!customStyle?.others?.isHideToggle && ToggleButton}
     </Wrapper>
   );
 };

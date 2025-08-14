@@ -28,7 +28,7 @@ export const Basic: Story = {
           corner="square"
           type="submit"
           icon={{
-            src: 'https://creative-store.preparing.kdanmobile.com/images/icons/ic-detail-c365.svg',
+            src: '/assets/mockImg/logo.svg',
             alt: 'img-multi-media-panel-1',
           }}
         >

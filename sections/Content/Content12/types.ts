@@ -6,7 +6,6 @@ import { ContentItem1CustomStyle } from '../Item/ContentItem1/types';
 export type Content12Item = {
   title: string;
   desc?: string;
-  icon?: ImgData;
   hyperlink?: HocHyperlinkData;
   image?: ImgData;
 };

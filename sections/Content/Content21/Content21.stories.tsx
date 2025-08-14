@@ -36,7 +36,7 @@ export const Basic: Story = {
         title: 'Headline Text ',
         desc: 'Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text Body Text ',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt aa',
         },
         hyperlink: {
@@ -48,7 +48,7 @@ export const Basic: Story = {
         title: 'title bb',
         desc: 'desc bb',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt bb',
         },
         hyperlink: {
@@ -60,7 +60,7 @@ export const Basic: Story = {
         title: 'title cc',
         desc: 'desc cc',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt cc',
         },
       },
@@ -68,7 +68,7 @@ export const Basic: Story = {
         title: 'title dd',
         desc: 'desc dd',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt dd',
         },
       },
@@ -82,7 +82,7 @@ export const CustomImageSize: Story = {
         title: 'title aa',
         desc: 'desc aa',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt aa',
         },
         hyperlink: {
@@ -94,7 +94,7 @@ export const CustomImageSize: Story = {
         title: 'title bb',
         desc: 'desc bb',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt bb',
         },
         hyperlink: {
@@ -119,7 +119,7 @@ export const ImageOnTheRight: Story = {
         title: 'title aa',
         desc: 'desc aa',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt aa',
         },
         hyperlink: {
@@ -131,7 +131,7 @@ export const ImageOnTheRight: Story = {
         title: 'title bb',
         desc: 'desc bb',
         image: {
-          src: 'https://creative-store.preparing.kdanmobile.com/images/cards/img-c365-business.svg',
+            src: '/assets/mockImg/mock_img.jpg',
           alt: 'alt bb',
         },
         hyperlink: {
