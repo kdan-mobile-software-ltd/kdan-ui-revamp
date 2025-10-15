@@ -101,9 +101,11 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean } &
   height: 10px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: ${({ theme, isActive, paginationDotColor }) => (isActive
-    ? (paginationDotColor || theme.colors.gray600)
-    : theme.colors.gray400)};
+  background-color: ${({
+    theme, isActive, paginationDotColorActive, paginationDotColorInactive,
+  }) => (isActive
+    ? (getCustomColorFromTheme(paginationDotColorActive) || theme.colors.gray600)
+    : (getCustomColorFromTheme(paginationDotColorInactive) || theme.colors.gray400))};
   transition: all 0.3s ease;
 `;
 

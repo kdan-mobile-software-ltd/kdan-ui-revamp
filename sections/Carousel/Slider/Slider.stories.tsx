@@ -38,7 +38,34 @@ export const Basic: Story = {
     customStyle: {
       arrowBackgroundColor: '#00dc87',
       arrowSvgColorFilter: 'brightness(0) saturate(100%) invert(12%) sepia(10%) saturate(4600%) hue-rotate(149deg) brightness(96%) contrast(103%)',
-      paginationDotColor: '#00dc87',
+      paginationDotColorActive: '#00dc87',
+      paginationDotColorInactive: 'gray400',
+    },
+  },
+};
+export const FullWidth: Story = {
+  args: {
+    children: ['#323323', '#32A3A3', '#3233AA', '#32AA23', '#AA3323', '#AAAA23'].map((item, index) => (
+      <div
+        style={{
+          width: '100vw', height: '500px', backgroundColor: item, opacity: 0.5,
+        }}
+        key={item}
+      >
+        <span style={{
+          fontSize: '48px', color: 'white',
+        }}
+        >
+          {index}
+        </span>
+      </div>
+    )),
+    customStyle: {
+      arrowBackgroundColor: '#00dc87',
+      arrowSvgColorFilter: 'brightness(0) saturate(100%) invert(12%) sepia(10%) saturate(4600%) hue-rotate(149deg) brightness(96%) contrast(103%)',
+      paginationDotColorActive: '#00dc87',
+      paginationDotColorInactive: 'gray800',
+      isArrow: false,
     },
   },
 };
