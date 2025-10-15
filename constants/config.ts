@@ -8,7 +8,7 @@ const configs = {
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
   },
   preparing: {
-    HOST: '',
+    HOST: 'https://kdan-ui.preparing.kdanmobile.com',
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
   },
   production: {
