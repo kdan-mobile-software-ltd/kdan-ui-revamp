@@ -12,6 +12,7 @@ export type PaginationDotStyle = { paginationDotColor?: CustomColor };
 
 export type SliderCustomStyle = {
   isArrow?: boolean;
+  alwaysShowMobileArrow?: boolean;
 } & HeightStyle & ArrowCustomStyle & PaginationDotStyle;
 
 export type SliderProps = {
