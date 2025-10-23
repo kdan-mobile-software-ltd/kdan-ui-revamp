@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { HOST } from '@/constants/config';
 import { MAX_WIDTH_QUERY } from '@/constants/breakpoints';
 import { getCustomColorFromTheme, slideAnimation } from '@/utils/style';
 import { ThemePropsType } from '@/constants/types/styled';
+import { S3_HORIZON_ARROW } from '@/utils/style/s3Icons';
 import { ArrowCustomStyle, HeightStyle, PaginationDotStyle } from './types';
 
 const Z_INDEX = {
@@ -109,12 +109,12 @@ export const PaginationDot = styled.div<ThemePropsType & { isActive: boolean } &
   transition: all 0.3s ease;
 `;
 
-export const MobileArrowButton = styled.button`
-  background: url('${HOST}/assets/icon/horizon-arrow.svg') CENTER CENTER NO-REPEAT;
+export const MobileArrowButton = styled.button<{ alwaysShowMobileArrow?: boolean }>`
+  background: url('${S3_HORIZON_ARROW}') CENTER CENTER NO-REPEAT;
   width: 24px;
   height: 24px;
   cursor: pointer;
-  display: none;
+  display: ${({ alwaysShowMobileArrow }) => (alwaysShowMobileArrow ? 'block' : 'none')};
   border: 0;
 
   &.left {

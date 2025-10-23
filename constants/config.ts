@@ -6,14 +6,17 @@ const configs = {
   development: {
     HOST: '',
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
+    COMMON_WIDGET_HOST: 'https://cw-static.kdan.com/preparing',
   },
   preparing: {
     HOST: 'https://kdan-ui.preparing.kdanmobile.com',
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
+    COMMON_WIDGET_HOST: 'https://cw-static.kdan.com/preparing',
   },
   production: {
     HOST: 'https://kdan-ui.kdanmobile.com',
     KDAN_S3_STORAGE: 'https://files.kdanmobile.com/web-assets',
+    COMMON_WIDGET_HOST: 'https://cw-static.kdan.com/preparing',
   },
 };
 
@@ -22,4 +25,5 @@ const config = configs[env] || configs.production;
 export const {
   HOST,
   KDAN_S3_STORAGE,
+  COMMON_WIDGET_HOST,
 } = config;
