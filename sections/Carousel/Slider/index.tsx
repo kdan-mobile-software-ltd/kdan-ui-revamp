@@ -18,6 +18,7 @@ export const Slider: React.FC<SliderProps> = ({
     paginationDotColorInactive,
     arrowSvgColorFilter,
     height,
+    alwaysShowMobileArrow = false,
   },
   children,
 }) => {
@@ -121,7 +122,12 @@ export const Slider: React.FC<SliderProps> = ({
         </DesktopArrowButton>
       )}
       <BottomPaginationWrapper>
-        <MobileArrowButton onClick={goPrevPage} className="left" type="button" />
+        <MobileArrowButton
+          alwaysShowMobileArrow={alwaysShowMobileArrow}
+          onClick={goPrevPage}
+          className="left"
+          type="button"
+        />
         {[...Array(dataLength).keys()].map((index) => (
           <PaginationDot
             key={index}
@@ -131,7 +137,12 @@ export const Slider: React.FC<SliderProps> = ({
             paginationDotColorInactive={paginationDotColorInactive}
           />
         ))}
-        <MobileArrowButton onClick={goNextPage} className="right" type="button" />
+        <MobileArrowButton
+          alwaysShowMobileArrow={alwaysShowMobileArrow}
+          onClick={goNextPage}
+          className="right"
+          type="button"
+        />
       </BottomPaginationWrapper>
     </Wrapper>
   );

@@ -11,7 +11,7 @@ const meta = {
     customStyle: { control: 'object', description: '`arrowSvgColorFilter` could be generate from https://isotropic.co/tool/hex-color-to-css-filter/' },
   },
   tags: ['autodocs'],
-  parameters: { layout: 'centered' },
+  parameters: { layout: 'fullscreen' },
 } as Meta<SliderProps>;
 
 export default meta;
@@ -66,6 +66,7 @@ export const FullWidth: Story = {
       paginationDotColorActive: '#00dc87',
       paginationDotColorInactive: 'gray800',
       isArrow: false,
+      alwaysShowMobileArrow: true,
     },
   },
 };
