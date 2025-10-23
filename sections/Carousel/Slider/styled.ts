@@ -13,7 +13,6 @@ const Z_INDEX = {
 
 export const Wrapper = styled.div`
   position: relative;
-  width: fit-content;
   margin: 0 auto;
 `;
 
