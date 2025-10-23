@@ -8,7 +8,10 @@ export type ArrowCustomStyle = {
 
 export type HeightStyle = { height?: BreakpointKeyObj<string> };
 
-export type PaginationDotStyle = { paginationDotColor?: CustomColor };
+export type PaginationDotStyle = {
+  paginationDotColorActive?: CustomColor;
+  paginationDotColorInactive?: CustomColor;
+};
 
 export type SliderCustomStyle = {
   isArrow?: boolean;

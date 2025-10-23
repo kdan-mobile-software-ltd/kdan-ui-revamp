@@ -14,7 +14,8 @@ export const Slider: React.FC<SliderProps> = ({
   customStyle: {
     isArrow = true,
     arrowBackgroundColor,
-    paginationDotColor,
+    paginationDotColorActive,
+    paginationDotColorInactive,
     arrowSvgColorFilter,
     height,
     alwaysShowMobileArrow = false,
@@ -132,7 +133,8 @@ export const Slider: React.FC<SliderProps> = ({
             key={index}
             onClick={goSpecificPage(index)}
             isActive={activeIndex.current === index}
-            paginationDotColor={paginationDotColor}
+            paginationDotColorActive={paginationDotColorActive}
+            paginationDotColorInactive={paginationDotColorInactive}
           />
         ))}
         <MobileArrowButton
