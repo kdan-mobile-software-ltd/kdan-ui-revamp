@@ -8,7 +8,7 @@ import { ImgData } from '@/constants/types/global';
 export type DropdownCustomStyle = {
   maxHeight?: string;
   openDirection?: DropdownDirection;
-} & TextCustomCssProps;
+} & TextCustomCssProps & CustomCssPropsType;
 
 export type SelectCustomStyle = {
   label?: TextCustomCssProps;
