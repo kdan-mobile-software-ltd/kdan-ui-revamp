@@ -77,8 +77,8 @@ export const arrowIconRotateStyle = css<IsOpenPropsType>`
 `;
 
 export const buttonStyleReset = css`
-  background-color: ${({ theme }) => theme.colors.transparent};
-  border-color: ${({ theme }) => theme.colors.transparent};
+  background-color: transparent;
+  border-color: transparent;
   cursor: pointer;
 `;
 
