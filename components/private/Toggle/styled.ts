@@ -33,8 +33,8 @@ export const ToggleWrapper = styled.button<IsOpenPropsType>`
 
 export const SimpleToggle = styled.button<IsOpenPropsType & ArrowSvgColorFilter>`
   ${button3FontStyle}
-  background-color: ${({ theme }) => theme.colors.transparent};
-  border-color: ${({ theme }) => theme.colors.transparent};
+  background-color: transparent;
+  border-color: transparent;
   cursor: pointer;
   justify-content: center;
   align-items: center;
