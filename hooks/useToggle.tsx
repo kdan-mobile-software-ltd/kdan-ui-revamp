@@ -1,6 +1,6 @@
 import { CustomSizeImage } from '@/components/Image/styledImages';
 import { SimpleToggle, ToggleWrapper } from '@/components/private/Toggle/styled';
-import { HOST } from '@/constants/config';
+import { S3_VERTICAL_ARROW } from '@/utils/style/s3Icons';
 import React, { useState } from 'react';
 
 export type UseToggleProps = {
@@ -41,7 +41,7 @@ export const useToggle = (param: UseToggleProps = {
           <SimpleToggle onClick={toggle} isOpen={isOpen}>
             {text}
             <CustomSizeImage
-              src={`${HOST}/assets/icon/vertical-arrow.svg`}
+              src={S3_VERTICAL_ARROW}
               customStyle={{ width: { default: '24px' }, height: { default: '24px' } }}
             />
           </SimpleToggle>
