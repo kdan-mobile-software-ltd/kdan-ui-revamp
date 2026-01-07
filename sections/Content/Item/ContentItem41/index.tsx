@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography } from '@/components/Typography';
-import { HOST } from '@/constants/config';
+import { S3_VERTICAL_ARROW } from '@/utils/style/s3Icons';
 import {
   Wrapper, DescWrapper, ToggleWrapper, ToggleIcon, Title,
 } from './styled';
@@ -16,7 +16,7 @@ export const ContentItem41: React.FC<ContentItem41Props> = ({ data, customStyle 
         <ToggleIcon
           arrowSvgColorFilter={customStyle?.arrowSvgColorFilter}
           isOpen={isOpen}
-          src={`${HOST}/assets/icon/vertical-arrow.svg`}
+          src={S3_VERTICAL_ARROW}
           alt="toggle-icon"
         />
       </ToggleWrapper>
