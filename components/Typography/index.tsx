@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { CustomCssPropsType, ThemePropsType } from '@/constants/types/styled';
 import { TextCustomCssProps, textCustomCss } from '@/utils/style/textStyle';
 
-export type TypographyProps = ThemePropsType & TextCustomCssProps;
+export type TypographyProps = ThemePropsType & TextCustomCssProps & CustomCssPropsType;
 
 export const Typography = styled.p<TypographyProps & CustomCssPropsType>`
   ${textCustomCss}
