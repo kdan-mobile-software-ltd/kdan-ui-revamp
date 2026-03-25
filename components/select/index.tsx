@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import { css } from 'styled-components';
 import { HOST } from '@/constants/config';
+import { S3_VERTICAL_ARROW } from '@/utils/style/s3Icons';
 import { SimpleToggle } from '../private/Toggle/styled';
 import { Label } from '../TextField/styled';
 import { TextField } from '../TextField';
@@ -146,7 +147,7 @@ export const Select: React.FC<SelectProps> = ({
 
           <SimpleToggle isOpen={isOpen} arrowSvgColorFilter={customStyle?.arrowSvgColorFilter}>
             <CustomSizeImage
-              src={`${HOST}/assets/icon/vertical-arrow.svg`}
+              src={S3_VERTICAL_ARROW}
               customStyle={{ width: { default: '24px' }, height: { default: '24px' } }}
             />
           </SimpleToggle>

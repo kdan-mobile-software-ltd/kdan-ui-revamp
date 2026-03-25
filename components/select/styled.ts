@@ -55,7 +55,7 @@ export const Dropdown = styled.ul<IsOpenPropsType & DropdownCustomStyle & Custom
 `;
 
 export type OptionStyleType = ThemePropsType & CustomCssPropsType & { isBottom?: boolean; };
-export const Option = styled.option<OptionStyleType>`
+export const Option = styled.li<OptionStyleType>`
   padding: 10px 12px;
   transition: background-color ease-in-out .1s;
   background-color: ${({ theme }) => theme.colors.white};
