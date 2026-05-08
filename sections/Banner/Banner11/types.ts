@@ -1,4 +1,5 @@
 import { CustomColor } from '@/constants/themes/colors';
+import { TitleTag, DescTag } from '../tagGuards';
 import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { CustomImageSize } from '@/components/Image/styledImages';
@@ -21,8 +22,8 @@ export type Banner11CustomStyle = {
   image?: CustomImageSize;
 };
 export type Banner11CustomTag = {
-  title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  desc?: 'p' | 'span';
+  title?: TitleTag;
+  desc?: DescTag;
 }
 
 export type Banner11Props = {

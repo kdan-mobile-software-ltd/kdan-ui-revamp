@@ -1,4 +1,5 @@
 import { CustomColor } from '@/constants/themes/colors';
+import { TitleTag, DescTag } from '../tagGuards';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
 
@@ -10,8 +11,8 @@ export type Banner31Data = {
 };
 
 export type Banner31CustomTag = {
-  title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  desc?: 'p' | 'span';
+  title?: TitleTag;
+  desc?: DescTag;
 };
 
 export type Banner31CustomStyle = {
