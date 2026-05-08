@@ -1,11 +1,12 @@
 import { CustomColor } from '@/constants/themes/colors';
+import { TitleTag, DescTag } from '../tagGuards';
 import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { ReactNode } from 'react';
 
 export type Banner21CustomTag = {
-  title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  desc?: 'p' | 'span';
+  title?: TitleTag;
+  desc?: DescTag;
 };
 
 export type Banner21CustomStyle = {
