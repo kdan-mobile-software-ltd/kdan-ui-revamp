@@ -5,10 +5,15 @@ import {
 } from '../styled';
 import { Banner11Props } from './types';
 
-export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, children }) => (
+export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, customTag, children }) => (
   <WrapperWithFlexGap>
     <div>
-      <Title fontSize={{ default: 'h2', tablet: 'h4' }} fontWeight="700" color={customStyle?.title?.color}>
+      <Title
+        fontSize={{ default: 'h2', tablet: 'h4' }}
+        fontWeight="700"
+        color={customStyle?.title?.color}
+        {...customTag?.title ? { as: customTag.title } : {}}
+      >
         {data.title}
       </Title>
       {data.desc && (
@@ -17,6 +22,7 @@ export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, children 
         color={customStyle?.desc?.color}
         margin="12px 0 0"
         dangerouslySetInnerHTML={{ __html: data.desc }}
+        {...customTag?.desc ? { as: customTag.desc } : {}}
       />
       )}
 

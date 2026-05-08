@@ -3,6 +3,11 @@ import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/t
 import { ImgData } from '@/constants/types/global';
 import { ReactNode } from 'react';
 
+export type Banner21CustomTag = {
+  title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  desc?: 'p' | 'span';
+};
+
 export type Banner21CustomStyle = {
   title?: {
     color: CustomColor;
@@ -23,5 +28,6 @@ export type Banner21Data = {
 export type Banner21Props = {
   data: Banner21Data;
   customStyle?: Banner21CustomStyle;
+  customTag?: Banner21CustomTag;
   children: ReactNode;
 };
