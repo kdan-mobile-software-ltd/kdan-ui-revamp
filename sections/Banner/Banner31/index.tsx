@@ -14,10 +14,20 @@ export const Banner31: React.FC<Banner31Props> = ({ data, customStyle, customTag
       customStyle={{ height: { default: '400px' }, width: { default: '320px' } }}
     />
     <ContentWrapper>
-      <Typography fontSize={{ default: 'h2', tablet: 'h4' }} fontWeight="700" textAlign="center" {...customStyle?.title} {...isValidTitleTag(customTag?.title) ? { as: customTag.title } : {}}>
+      <Typography
+        fontSize={{ default: 'h2', tablet: 'h4' }}
+        fontWeight="700"
+        textAlign="center"
+        {...customStyle?.title}
+        {...customTag?.title && isValidTitleTag(customTag.title) ? { as: customTag.title } : {}}
+      >
         {data.title}
       </Typography>
-      <Desc fontSize={{ default: 'body1', tablet: 'body3' }} {...customStyle?.desc} {...isValidDescTag(customTag?.desc) ? { as: customTag.desc } : {}}>
+      <Desc
+        fontSize={{ default: 'body1', tablet: 'body3' }}
+        {...customStyle?.desc}
+        {...customTag?.desc && isValidDescTag(customTag.desc) ? { as: customTag.desc } : {}}
+      >
         {data.desc}
       </Desc>
     </ContentWrapper>

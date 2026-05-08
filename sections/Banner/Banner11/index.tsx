@@ -13,7 +13,7 @@ export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, customTag
         fontSize={{ default: 'h2', tablet: 'h4' }}
         fontWeight="700"
         color={customStyle?.title?.color}
-        {...isValidTitleTag(customTag?.title) ? { as: customTag.title } : {}}
+        {...customTag?.title && isValidTitleTag(customTag.title) ? { as: customTag.title } : {}}
       >
         {data.title}
       </Title>
@@ -23,7 +23,7 @@ export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, customTag
         color={customStyle?.desc?.color}
         margin="12px 0 0"
         dangerouslySetInnerHTML={{ __html: data.desc }}
-        {...isValidDescTag(customTag?.desc) ? { as: customTag.desc } : {}}
+        {...customTag?.desc && isValidDescTag(customTag.desc) ? { as: customTag.desc } : {}}
       />
       )}
 
