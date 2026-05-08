@@ -5,9 +5,9 @@ import {
 } from '../styled';
 import { Banner21Props } from './types';
 
-export const Banner21: React.FC<Banner21Props> = ({ data, customStyle, children }) => (
+export const Banner21: React.FC<Banner21Props> = ({ data, customStyle, customTag, children }) => (
   <Wrapper alignCenter>
-    <Title fontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color}>
+    <Title fontSize={{ default: 'h2', tablet: 'h4' }} color={customStyle?.title?.color} {...customTag?.title ? { as: customTag.title } : {}}>
       {data.title}
     </Title>
     {data.desc && (
@@ -16,6 +16,7 @@ export const Banner21: React.FC<Banner21Props> = ({ data, customStyle, children 
       color={customStyle?.desc?.color}
       margin="12px 0 0"
       dangerouslySetInnerHTML={{ __html: data.desc }}
+      {...customTag?.desc ? { as: customTag.desc } : {}}
     />
     )}
 

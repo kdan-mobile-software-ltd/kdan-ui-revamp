@@ -20,9 +20,14 @@ export type Banner11CustomStyle = {
   hyperlink?: HyperlinkCustomStyle;
   image?: CustomImageSize;
 };
+export type Banner11CustomTag = {
+  title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  desc?: 'p' | 'span';
+}
 
 export type Banner11Props = {
   data: Banner11Data;
   customStyle?: Banner11CustomStyle;
+  customTag?: Banner11CustomTag;
   children: ReactNode;
 };

@@ -35,3 +35,13 @@ export const Basic: Story = {
     },
   },
 };
+
+export const CustomTag: Story = {
+  args: {
+    ...Basic.args,
+    customTag: {
+      title: 'h1',
+      desc: 'span',
+    },
+  },
+};
