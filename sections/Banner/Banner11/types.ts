@@ -1,4 +1,5 @@
 import { CustomColor } from '@/constants/themes/colors';
+import { TitleTag, DescTag } from '../tagGuards';
 import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { CustomImageSize } from '@/components/Image/styledImages';
@@ -20,9 +21,14 @@ export type Banner11CustomStyle = {
   hyperlink?: HyperlinkCustomStyle;
   image?: CustomImageSize;
 };
+export type Banner11CustomTag = {
+  title?: TitleTag;
+  desc?: DescTag;
+}
 
 export type Banner11Props = {
   data: Banner11Data;
   customStyle?: Banner11CustomStyle;
+  customTag?: Banner11CustomTag;
   children: ReactNode;
 };

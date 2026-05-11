@@ -1,7 +1,13 @@
 import { CustomColor } from '@/constants/themes/colors';
+import { TitleTag, DescTag } from '../tagGuards';
 import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { ReactNode } from 'react';
+
+export type Banner21CustomTag = {
+  title?: TitleTag;
+  desc?: DescTag;
+};
 
 export type Banner21CustomStyle = {
   title?: {
@@ -23,5 +29,6 @@ export type Banner21Data = {
 export type Banner21Props = {
   data: Banner21Data;
   customStyle?: Banner21CustomStyle;
+  customTag?: Banner21CustomTag;
   children: ReactNode;
 };
