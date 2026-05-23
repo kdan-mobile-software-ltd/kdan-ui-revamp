@@ -1,7 +1,7 @@
 import { CustomColor } from '@/constants/themes/colors';
-import { TitleTag, DescTag } from '../tagGuards';
 import { ImgData } from '@/constants/types/global';
 import { TextCustomCssProps } from '@/utils/style/textStyle';
+import { TitleTag, DescTag } from '../tagGuards';
 
 export type Banner31Data = {
   title: string;

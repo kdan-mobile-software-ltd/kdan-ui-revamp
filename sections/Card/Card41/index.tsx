@@ -31,7 +31,7 @@ export const Card41: React.FC<Card41Props> = ({ data, customStyle }) => {
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key
         <GroupWrapper>
-          {...data.slice(index * groupSize, (index * groupSize) + groupSize).map((item) => (
+          {data.slice(index * groupSize, (index * groupSize) + groupSize).map((item) => (
             <CardItem41
               key={item.userTitle}
               data={item}

@@ -6,7 +6,9 @@ import {
 import { Banner11Props } from './types';
 import { isValidTitleTag, isValidDescTag } from '../tagGuards';
 
-export const Banner11: React.FC<Banner11Props> = ({ data, customStyle, customTag, children }) => (
+export const Banner11: React.FC<Banner11Props> = ({
+  data, customStyle, customTag, children,
+}) => (
   <WrapperWithFlexGap>
     <div>
       <Title

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-var-requires
 const glob = require('glob');
 
 const ignore = ['./node_modules/**']; // Exclude node_modules folder
