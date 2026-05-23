@@ -25,14 +25,11 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
     '@storybook/addon-a11y',
+    '@storybook/addon-webpack5-compiler-babel',
   ],
   framework: {
     name: '@storybook/react-webpack5',
-    options: {
-      builder: {
-        useSWC: true,
-      },
-    },
+    options: {},
   },
   docs: {
     autodocs: 'tag',
