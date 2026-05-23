@@ -1,3 +1,5 @@
+import path from 'path';
+import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -29,6 +31,11 @@ export default {
     ...Object.keys(pkg.peerDependencies || {}),
   ],
   plugins: [
+    alias({
+      entries: [
+        { find: '@', replacement: path.resolve(process.cwd()) },
+      ],
+    }),
     peerDepsExternal(),
     typescript({
       typescript: ttypescript,
