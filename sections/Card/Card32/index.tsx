@@ -29,7 +29,7 @@ export const Card32: React.FC<Card32Props> = ({ data, customStyle }) => {
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key
         <GroupWrapper>
-          {...data.slice(index * groupSize, (index * groupSize) + groupSize).map((item, idx) => (
+          {data.slice(index * groupSize, (index * groupSize) + groupSize).map((item, idx) => (
             <CardItem32
               key={item.name}
               data={item}
