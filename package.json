@@ -94,7 +94,7 @@
     "lint-staged": "^13.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^2.79.1",
+    "rollup": "2.80.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
@@ -115,6 +115,12 @@
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^5"
+  },
+  "resolutions": {
+    "flatted": "3.4.2",
+    "form-data": "^4.0.4",
+    "handlebars": "4.7.9",
+    "tar": "7.5.11"
   },
   "engines": {
     "node": ">=16"

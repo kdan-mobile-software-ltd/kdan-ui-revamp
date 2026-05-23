@@ -42,7 +42,9 @@ export default {
       extensions: ['.ts', '.tsx'],
       plugins: ['styled-components'],
     }),
-    terser(),
+    terser({
+      maxWorkers: 1,
+    }),
     del({ targets: 'dist/*' }),
   ],
 };
