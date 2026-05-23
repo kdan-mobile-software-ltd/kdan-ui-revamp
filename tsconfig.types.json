@@ -1,0 +1,31 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
+    "declarationDir": "dist/esm",
+    "emitDeclarationOnly": true,
+    "rootDir": "."
+  },
+  "include": [
+    "index.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "constants/**/*.ts",
+    "constants/**/*.tsx",
+    "hooks/**/*.ts",
+    "hooks/**/*.tsx",
+    "sections/**/*.ts",
+    "sections/**/*.tsx",
+    "utils/**/*.ts",
+    "utils/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.stories.tsx",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    ".storybook"
+  ]
+}

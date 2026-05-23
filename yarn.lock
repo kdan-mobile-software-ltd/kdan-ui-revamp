@@ -1774,6 +1774,11 @@
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.1.2.tgz#1cf95080bb7072fafaa3cb13b442fab4695c3893"
   integrity sha512-fdDH1LSGfZdTH2sxdpVMw31BanV28K/Gry0cVFxaNP77neJSkd82mM8ErPNYs9e+0O7SdHBLTDzDgwUuy18RnQ==
 
+"@rollup/plugin-alias@5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-5.1.1.tgz#53601d88cda8b1577aa130b4a6e452283605bf26"
+  integrity sha512-PR9zDb+rOzkRb2VD+EuKB7UC41vU5DIwZ5qqCpk0KJudcWAyi8rvYOhS7+L5aZCspw1stTViLgN5v6FF1p5cgQ==
+
 "@rollup/plugin-babel@^6.0.3":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-6.1.0.tgz#5766913722057f28a56365bb6c1ca61306c7e527"
@@ -2447,14 +2452,7 @@
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.3.7.tgz#b89ddf2cd83b4feafcc4e2ea41afdfb95a0d194f"
   integrity sha512-MEe3UeoENYVFXzoXEWsvcpg6ZvlrFNlOQ7EOsvhI3CfAXwzPfO8Qwuxd40nepsYKqyyVQnTdEfv68q91yLcKrQ==
 
-"@types/react@*":
-  version "19.2.15"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.2.15.tgz#9e2c6a4251a290f5c525c3143caa872fa6e01e0d"
-  integrity sha512-eRwcGNHve+E8qtEQSSRl6urh+rFop4v8gm6O8rGv25CodbvFdLjA1vVQ1KkiFE0w0UPOnb8tDiFKL5lp0rtY5Q==
-  dependencies:
-    csstype "^3.2.2"
-
-"@types/react@^18.0.26":
+"@types/react@*", "@types/react@18.3.29", "@types/react@^18.0.26":
   version "18.3.29"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.29.tgz#7f3b6e1515499d4fd199cc8fd4710114be36c1a2"
   integrity sha512-ch0qJdr2JY0r04NXSprbK6TXOgnaJ1Tz23fm5W+z0/CBah6BSBc3n96h7K9GOtwh0HrilNWHIBzE1Ko4Dcw/Wg==
