@@ -34,7 +34,9 @@ export default {
       typescript: ttypescript,
       tsconfig: './tsconfig.build.json',
     }),
-    nodeResolve(),
+    nodeResolve({
+      extensions: ['.mjs', '.js', '.json', '.node', '.ts', '.tsx'],
+    }),
     commonjs(),
     babel({
       babelHelpers: 'runtime',
