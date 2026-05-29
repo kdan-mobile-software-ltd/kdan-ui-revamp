@@ -32,7 +32,7 @@ export const Card23: React.FC<Card23Props> = ({ data = [], customStyle }) => {
       {[...Array(sliderPage).keys()].map((index) => (
         // eslint-disable-next-line react/jsx-key
         <GroupWrapper key={index}>
-          {...data.slice(index * groupSize, (index * groupSize) + groupSize).map((item) => (
+          {data.slice(index * groupSize, (index * groupSize) + groupSize).map((item) => (
             <CardItem23
               key={item.title}
               data={item}

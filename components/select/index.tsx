@@ -1,5 +1,5 @@
 import React, {
-  FocusEvent, useEffect, useRef, useState,
+  ComponentPropsWithoutRef, FocusEvent, useEffect, useRef, useState,
 } from 'react';
 import { css } from 'styled-components';
 import { HOST } from '@/constants/config';
@@ -41,6 +41,7 @@ export const Select: React.FC<SelectProps> = ({
     activeOption,
     inputValue,
   } = data;
+  const wrapperProps = htmlProps as ComponentPropsWithoutRef<'div'>;
 
   useEffect(() => {
     (function filterOptions() {
@@ -116,7 +117,7 @@ export const Select: React.FC<SelectProps> = ({
         onBlur={closeDropdown}
         ref={wrapperRef}
         customCss={customStyle?.wrapper?.customCss}
-        {...htmlProps}
+        {...wrapperProps}
       >
         <SelectionWrapper
           onClick={toggleDropdown}

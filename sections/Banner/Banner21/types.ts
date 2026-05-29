@@ -1,8 +1,8 @@
 import { CustomColor } from '@/constants/themes/colors';
-import { TitleTag, DescTag } from '../tagGuards';
 import { HocHyperlinkData, HyperlinkCustomStyle } from '@/components/Hyperlink/types';
 import { ImgData } from '@/constants/types/global';
 import { ReactNode } from 'react';
+import { TitleTag, DescTag } from '../tagGuards';
 
 export type Banner21CustomTag = {
   title?: TitleTag;

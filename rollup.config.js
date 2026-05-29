@@ -1,3 +1,5 @@
+import path from 'path';
+import alias from '@rollup/plugin-alias';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -29,12 +31,19 @@ export default {
     ...Object.keys(pkg.peerDependencies || {}),
   ],
   plugins: [
+    alias({
+      entries: [
+        { find: '@', replacement: path.resolve(process.cwd()) },
+      ],
+    }),
     peerDepsExternal(),
     typescript({
       typescript: ttypescript,
       tsconfig: './tsconfig.build.json',
     }),
-    nodeResolve(),
+    nodeResolve({
+      extensions: ['.mjs', '.js', '.json', '.node', '.ts', '.tsx'],
+    }),
     commonjs(),
     babel({
       babelHelpers: 'runtime',
@@ -42,7 +51,9 @@ export default {
       extensions: ['.ts', '.tsx'],
       plugins: ['styled-components'],
     }),
-    terser(),
+    terser({
+      maxWorkers: 1,
+    }),
     del({ targets: 'dist/*' }),
   ],
 };

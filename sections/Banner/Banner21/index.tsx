@@ -6,7 +6,9 @@ import {
 import { Banner21Props } from './types';
 import { isValidTitleTag, isValidDescTag } from '../tagGuards';
 
-export const Banner21: React.FC<Banner21Props> = ({ data, customStyle, customTag, children }) => (
+export const Banner21: React.FC<Banner21Props> = ({
+  data, customStyle, customTag, children,
+}) => (
   <Wrapper alignCenter>
     <Title
       fontSize={{ default: 'h2', tablet: 'h4' }}
